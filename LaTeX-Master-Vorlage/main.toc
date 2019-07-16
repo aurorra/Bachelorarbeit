@@ -11,21 +11,27 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.1}Notation and Convention}{2}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Mathematical Background}{3}{section.2.2}
+\contentsline {subsection}{\numberline {2.1.1}General Notation}{2}{subsection.2.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.1}Matrices}{3}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.1.2}Tensor Notation}{3}{subsection.2.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.2}Singular Value Decomposition}{3}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.1.3}Summary}{3}{subsection.2.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}Continuum Mechanics}{3}{section.2.3}
+\contentsline {section}{\numberline {2.2}Mathematical Background}{4}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.4}Deformation}{4}{section.2.4}
+\contentsline {subsection}{\numberline {2.2.1}Matrices}{4}{subsection.2.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.5}Deformation Gradient}{4}{section.2.5}
+\contentsline {subsection}{\numberline {2.2.2}Singular Value Decomposition}{4}{subsection.2.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.6}Material Constants}{5}{section.2.6}
+\contentsline {section}{\numberline {2.3}Continuum Mechanics}{4}{section.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.7}Deformation Energy}{5}{section.2.7}
+\contentsline {section}{\numberline {2.4}Deformation}{5}{section.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.5}Deformation Gradient}{5}{section.2.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.6}Material Constants}{6}{section.2.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.7}Deformation Energy}{6}{section.2.7}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}Background}{7}{chapter.3}
 \defcounter {refsection}{0}\relax 

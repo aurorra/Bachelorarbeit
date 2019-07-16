@@ -5,11 +5,16 @@ In this chapter we will examine the topic of the paper \textit{Stable Neo-Hookea
 
 
 \section{Notation and Convention}
+
+\subsection{General Notation}
 At first we will declare the notation used in this thesis to avoid misunderstandings. We will use the common notation used in continuum mechanics and additionally we will include the declarations in the paper \textit{Stable Neo-Hookean Flesh Simulation}. 
 \\
 Scalars are represented by regular, normal-weight variables whereas 
-tensors and matrices are represented by upper-case bold variables such as \textbf{F}. Vectors will be denoted by bold lower-case variables.
-\\
+tensors and matrices are represented by upper-case bold letters. Vectors will be denoted by bold lower-case variables.
+
+
+\subsection{Tensor Notation}
+
 Furthermore we will use the tensor notation used in the paper \textit{Stable Neo-Hookean Flesh Simulation}. They decided to to define vectorization vec(.) as column-wise flattening of a matrix into a vector (\cite{Smith:2018:SNF:3191713.3180491}, 12:5) similar to Golub and Van Loan (2012):
 
 \[
@@ -18,6 +23,28 @@ Furthermore we will use the tensor notation used in the paper \textit{Stable Neo
 
 In order to indicate that we are dealing with a vectorized matrix we will use the symbol $\check{.}$ as shown above.
 
+Additionally we well have to deal with $4^{th}$ order tensors in the following matrix-of-matrices form:
+
+\[
+\mathbb{A} = 
+\left[\begin{array}{cc}{\begin{bmatrix} a & c \\ b & d \end{bmatrix}} & {\begin{bmatrix} a & c \\ b & d \end{bmatrix}} \\ {\begin{bmatrix} a & c \\ b & d \end{bmatrix}} & {\begin{bmatrix} a & c \\ b & d \end{bmatrix}}\end{array}\right]
+=
+\left[\begin{array}{cc}{\left[\mathbf{A}_{00}\right]} & {\left[\mathbf{A}_{01}\right]} \\ {\left[\mathbf{A}_{10}\right]} & {\left[\mathbf{A}_{11}\right]}\end{array}\right]
+\]
+
+These matrices are denoted by using blackboard bold.
+
+TODO: 2nd order matrix, see paper 4.1 Tensor Notation
+
+\subsection{Summary}
+A quick overview of the used notation:
+
+\begin{addmargin}[2cm]{2cm}
+a: scalar \\
+\textbf{A}: matrix or tensor \\
+\textbf{a}: vector \\
+vec(\textbf{A}) = $\boldsymbol{\check{a}}$: vectorized matrix \\
+\end{addmargin}
 
 \section{Mathematical Background}
 
