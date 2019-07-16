@@ -1,0 +1,205 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{anyt/global//global/global}
+    \entry{Google2015}{online}{}
+      \name{author}{1}{}{%
+        {{hash=8b36e9207c24c76e6719268e49201d94}{%
+           family={Google},
+           familyi={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{8b36e9207c24c76e6719268e49201d94}
+      \strng{fullhash}{8b36e9207c24c76e6719268e49201d94}
+      \strng{bibnamehash}{8b36e9207c24c76e6719268e49201d94}
+      \strng{authorbibnamehash}{8b36e9207c24c76e6719268e49201d94}
+      \strng{authornamehash}{8b36e9207c24c76e6719268e49201d94}
+      \strng{authorfullhash}{8b36e9207c24c76e6719268e49201d94}
+      \field{labelalpha}{Goo}
+      \field{sortinit}{G}
+      \field{sortinithash}{5e8d2bf9d38de41b1528bd307546008f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Google}
+      \field{urlday}{6}
+      \field{urlmonth}{10}
+      \field{urlyear}{2015}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb http://www.google.de
+      \endverb
+      \verb{url}
+      \verb http://www.google.de
+      \endverb
+      \keyw{online}
+    \endentry
+    \entry{Knappen2009}{book}{}
+      \name{author}{1}{}{%
+        {{hash=c57ab499bde2e342db92a47b764ab394}{%
+           family={Knappen},
+           familyi={K\bibinitperiod},
+           given={Joerg},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Muenchen}%
+      }
+      \list{publisher}{1}{%
+        {Oldenbourg Verlag}%
+      }
+      \strng{namehash}{c57ab499bde2e342db92a47b764ab394}
+      \strng{fullhash}{c57ab499bde2e342db92a47b764ab394}
+      \strng{bibnamehash}{c57ab499bde2e342db92a47b764ab394}
+      \strng{authorbibnamehash}{c57ab499bde2e342db92a47b764ab394}
+      \strng{authornamehash}{c57ab499bde2e342db92a47b764ab394}
+      \strng{authorfullhash}{c57ab499bde2e342db92a47b764ab394}
+      \field{labelalpha}{Kna09}
+      \field{sortinit}{K}
+      \field{sortinithash}{9fd838a31ba64d981e8f44562bd33f89}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{ueberarbeitete und erweiterte Auflage}
+      \field{isbn}{978-3-486-59015-9}
+      \field{title}{Schnell ans Ziel mit LATEX 2e -}
+      \field{year}{2009}
+      \keyw{book}
+    \endentry
+    \entry{LiesenMehrmann2015}{book}{}
+      \name{author}{2}{}{%
+        {{hash=0e43dd09a211b18cddbf5b30b23000de}{%
+           family={Liesen},
+           familyi={L\bibinitperiod},
+           given={Joerg},
+           giveni={J\bibinitperiod}}}%
+        {{hash=9ea3694a4f993cf0fe21281abf196b87}{%
+           family={Mehrmann},
+           familyi={M\bibinitperiod},
+           given={Volker},
+           giveni={V\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Springer International Publishing, Switzerland 2015}%
+      }
+      \list{publisher}{1}{%
+        {Springer, Cham}%
+      }
+      \strng{namehash}{c681d8d17f8d35c3a5e249efccf42183}
+      \strng{fullhash}{c681d8d17f8d35c3a5e249efccf42183}
+      \strng{bibnamehash}{c681d8d17f8d35c3a5e249efccf42183}
+      \strng{authorbibnamehash}{c681d8d17f8d35c3a5e249efccf42183}
+      \strng{authornamehash}{c681d8d17f8d35c3a5e249efccf42183}
+      \strng{authorfullhash}{c681d8d17f8d35c3a5e249efccf42183}
+      \field{labelalpha}{LM15}
+      \field{sortinit}{L}
+      \field{sortinithash}{2c7981aaabc885868aba60f0c09ee20f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1st ed. 2015}
+      \field{isbn}{978-3-319-24344-3}
+      \field{title}{Linear algebra}
+      \field{year}{2015}
+      \keyw{book}
+    \endentry
+    \entry{PEXELS2015}{online}{}
+      \name{author}{1}{}{%
+        {{hash=295b9e638194f58448a38718deeb709d}{%
+           family={PEXELS},
+           familyi={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{295b9e638194f58448a38718deeb709d}
+      \strng{fullhash}{295b9e638194f58448a38718deeb709d}
+      \strng{bibnamehash}{295b9e638194f58448a38718deeb709d}
+      \strng{authorbibnamehash}{295b9e638194f58448a38718deeb709d}
+      \strng{authornamehash}{295b9e638194f58448a38718deeb709d}
+      \strng{authorfullhash}{295b9e638194f58448a38718deeb709d}
+      \field{labelalpha}{PEX}
+      \field{sortinit}{P}
+      \field{sortinithash}{8d51b3d5b78d75b54308d706b9bbe285}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Black and white branches tree}
+      \verb{urlraw}
+      \verb https://www.pexels.com/photo/black-and-white-branches-tree-high-279/
+      \endverb
+      \verb{url}
+      \verb https://www.pexels.com/photo/black-and-white-branches-tree-high-279/
+      \endverb
+      \keyw{image}
+    \endentry
+    \entry{STREAM2018}{online}{}
+      \name{author}{1}{}{%
+        {{hash=fb87e4e42b7f6d1a5587dd87a3c5e5c5}{%
+           family={Pixar},
+           familyi={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{fb87e4e42b7f6d1a5587dd87a3c5e5c5}
+      \strng{fullhash}{fb87e4e42b7f6d1a5587dd87a3c5e5c5}
+      \strng{bibnamehash}{fb87e4e42b7f6d1a5587dd87a3c5e5c5}
+      \strng{authorbibnamehash}{fb87e4e42b7f6d1a5587dd87a3c5e5c5}
+      \strng{authornamehash}{fb87e4e42b7f6d1a5587dd87a3c5e5c5}
+      \strng{authorfullhash}{fb87e4e42b7f6d1a5587dd87a3c5e5c5}
+      \field{labelalpha}{Pix}
+      \field{sortinit}{P}
+      \field{sortinithash}{8d51b3d5b78d75b54308d706b9bbe285}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Deformation Map}
+      \verb{urlraw}
+      \verb https://dl.acm.org/ft_gateway.cfm?id=3180491&ftid=2009597
+      \endverb
+      \verb{url}
+      \verb https://dl.acm.org/ft_gateway.cfm?id=3180491&ftid=2009597
+      \endverb
+      \keyw{image}
+    \endentry
+    \entry{Spencer1980}{book}{}
+      \name{author}{1}{}{%
+        {{hash=b5acc57bd0b7dd8fa4089fbd7cd6e7cc}{%
+           family={Spencer},
+           familyi={S\bibinitperiod},
+           given={A.\bibnamedelimi J.\bibnamedelimi M.},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {31 East 2nd Street, Mineola, N.Y. 11501}%
+      }
+      \list{publisher}{1}{%
+        {Dover Publications, Inc.}%
+      }
+      \strng{namehash}{b5acc57bd0b7dd8fa4089fbd7cd6e7cc}
+      \strng{fullhash}{b5acc57bd0b7dd8fa4089fbd7cd6e7cc}
+      \strng{bibnamehash}{b5acc57bd0b7dd8fa4089fbd7cd6e7cc}
+      \strng{authorbibnamehash}{b5acc57bd0b7dd8fa4089fbd7cd6e7cc}
+      \strng{authornamehash}{b5acc57bd0b7dd8fa4089fbd7cd6e7cc}
+      \strng{authorfullhash}{b5acc57bd0b7dd8fa4089fbd7cd6e7cc}
+      \field{labelalpha}{Spe80}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2004}
+      \field{isbn}{0-486-43594-6 (pbk.)}
+      \field{title}{Continuum Mechanics}
+      \field{year}{1980}
+      \keyw{book}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

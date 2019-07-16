@@ -1,0 +1,768 @@
+This is LuaTeX, Version 1.0.4 (TeX Live 2017/W32TeX)  (format=lualatex 2018.3.10)  15 JUL 2019 23:09
+ restricted system commands enabled.
+**paper.tex
+(./paper.tex
+LaTeX2e <2017-04-15>
+Lua module: luaotfload-main 2017/01/29 2.80001 OpenType layout system.
+Lua module: lualibs 2017-02-01 2.5 ConTeXt Lua standard libraries.
+Lua module: lualibs-extended 2017-02-01 2.5 ConTeXt Lua libraries -- extended co
+llection.(using cache: C:/texlive/2017/texmf-var/luatex-cache/generic)
+luaotfload | conf : Root cache directory is C:/texlive/2017/texmf-var/luatex-cac
+he/generic/names.
+luaotfload | init : Loading fontloader “fontloader-2017-02-11.lua” from kpse
+-resolved path “c:/texlive/2017/texmf-dist/tex/luatex/luaotfload/fontloader-20
+17-02-11.lua”.
+Lua-only attribute luaotfload@state = 1
+Lua-only attribute luaotfload@noligature = 2
+Lua-only attribute luaotfload@syllabe = 3
+luaotfload | init : Context OpenType loader version “3.027”
+Inserting `luaotfload.node_processor' at position 1 in `pre_linebreak_filter'.
+Inserting `luaotfload.node_processor' at position 1 in `hpack_filter'.
+Inserting `luaotfload.define_font' at position 1 in `define_font'.
+Lua-only attribute luaotfload_color_attribute = 4
+luaotfload | conf : Root cache directory is C:/texlive/2017/texmf-var/luatex-cac
+he/generic/names.
+Inserting `luaotfload.aux.set_sscale_dimens' at position 1 in `luaotfload.patch_
+font'.
+Inserting `luaotfload.aux.patch_cambria_domh' at position 2 in `luaotfload.patch
+_font'.
+Inserting `luaotfload.aux.fixup_fontdata' at position 1 in `luaotfload.patch_fon
+t_unsafe'.
+Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
+'.
+Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
+.
+luaotfload | main : initialization completed in 0.304 seconds
+Babel <3.18> and hyphenation patterns for 1 language(s) loaded.
+! Undefined control sequence.
+l.1 \chapter
+          {Paper} \label{c:Paper}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 \chapter{P
+            aper} \label{c:Paper}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+luaotfload | db : Font names database loaded from C:/texlive/2017/texmf-var/luat
+ex-cache/generic/names/luaotfload-names.luc(save: C:/texlive/2017/texmf-var/luat
+ex-cache/generic/fonts/otl/lmroman10-italic.lua)(save: C:/texlive/2017/texmf-var
+/luatex-cache/generic/fonts/otl/lmroman10-italic.luc)
+Overfull \hbox (20.0pt too wide) in paragraph at lines 1--3
+[]Paper
+ []
+
+
+Overfull \hbox (17.63pt too wide) in paragraph at lines 1--3
+\TU/lmr/m/it/10 Sta-
+ []
+
+
+Overfull \hbox (11.76001pt too wide) in paragraph at lines 1--3
+\TU/lmr/m/it/10 ble
+ []
+
+
+Overfull \hbox (20.21pt too wide) in paragraph at lines 1--3
+\TU/lmr/m/it/10 Neo-
+ []
+
+
+Overfull \hbox (36.56001pt too wide) in paragraph at lines 1--3
+\TU/lmr/m/it/10 Hookean
+ []
+
+
+Overfull \hbox (22.89pt too wide) in paragraph at lines 1--3
+\TU/lmr/m/it/10 Flesh
+ []
+
+
+Overfull \hbox (20.45pt too wide) in paragraph at lines 1--3
+\TU/lmr/m/it/10 Sim-
+ []
+
+
+Overfull \hbox (8.95pt too wide) in paragraph at lines 1--3
+\TU/lmr/m/it/10 u-
+ []
+
+
+Overfull \hbox (11.25pt too wide) in paragraph at lines 1--3
+\TU/lmr/m/it/10 la-
+ []
+
+
+Overfull \hbox (17.12001pt too wide) in paragraph at lines 1--3
+\TU/lmr/m/it/10 tion\nullfont .
+ []
+
+! Undefined control sequence.
+l.4 \section
+          {Deformation}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4 \section{D
+            eformation}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+(save: C:/texlive/2017/texmf-var/luatex-cache/generic/fonts/otl/lmroman10-regula
+r.lua)(save: C:/texlive/2017/texmf-var/luatex-cache/generic/fonts/otl/lmroman10-
+regular.luc)(save: C:/texlive/2017/texmf-var/luatex-cache/generic/fonts/otl/lmro
+man10-bold.lua)(save: C:/texlive/2017/texmf-var/luatex-cache/generic/fonts/otl/l
+mroman10-bold.luc)
+! Undefined control sequence.
+<write> ...eference `fig:deformationmap' on page \thepage 
+                                                  \space undefined\on@line .
+l.5 ...rmation map. In Fig. \ref{fig:deformationmap}
+                                                   we have on the left side ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `fig:deformationmap' on page  undefined on input line 5
+.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 5.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 5.
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 4--6
+[]Deformation
+ []
+
+
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 4--6
+[]
+ []
+
+
+Overfull \hbox (5.95834pt too wide) in paragraph at lines 4--6
+\OML/cmm/m/it/10 $\nullfont . 
+ []
+
+
+! LaTeX Error: Environment figure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.7 \begin{figure}
+                [!htbp]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.7 \begin{figure}[
+                 !htbp]
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.9 	\includegraphics
+                   [width=0.5\textwidth]{resources/deformation_map}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+]
+l.9 	\includegraphics[width=0.5\textwidth]
+                                        {resources/deformation_map}
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+]
+l.9 	\includegraphics[width=0.5\textwidth]
+                                        {resources/deformation_map}
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Missing $ inserted.
+<inserted text> 
+$
+l.9 ...s[width=0.5\textwidth]{resources/deformation_
+                                                  map}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+l.9 ...dth=0.5\textwidth]{resources/deformation_map}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+! LaTeX Error: \caption outside float.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 	\caption
+            {Deformation Map {\cite{STREAM2018}}}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+\citation{STREAM2018}
+! Undefined control sequence.
+<write> ... Warning: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.10 	\caption{Deformation Map {\cite{STREAM2018}
+                                               }}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `STREAM2018' on page  undefined on input line 10.
+
+
+! LaTeX Error: \begin{document} ended by \end{figure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.12 \end{figure}
+               
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Missing $ inserted.
+<inserted text> 
+$
+l.12 \end{figure}
+               
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.12 \end{figure}
+               
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 7--13
+[][!htbp]
+ []
+
+
+Overfull \hbox (110.80153pt too wide) in paragraph at lines 7--13
+[width=0.5]resources/deformation$[][]\OML/cmm/m/it/10 ap[][]$ 
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.14 W
+    hen applying a force over an object naturally the object itself undergoe...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 14--15
+[]When
+ []
+
+
+! LaTeX Error: Environment addmargin undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.16 \begin{addmargin}
+                    [2cm]{2cm}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.16 \begin{addmargin}[
+                     2cm]{2cm}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: \begin{document} ended by \end{addmargin}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.19 \end{addmargin}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 16--20
+[][2cm]2cm
+ []
+
+
+Overfull \hbox (26.45001pt too wide) in paragraph at lines 16--20
+\TU/lmr/m/it/10 Strain
+ []
+
+
+Overfull \hbox (7.67pt too wide) in paragraph at lines 16--20
+\TU/lmr/m/it/10 =
+ []
+
+
+Overfull \hbox (20.96pt too wide) in paragraph at lines 16--20
+\TU/lmr/m/it/10 mea-
+ []
+
+
+Overfull \hbox (17.77pt too wide) in paragraph at lines 16--20
+\TU/lmr/m/it/10 sure
+ []
+
+
+Overfull \hbox (8.18001pt too wide) in paragraph at lines 16--20
+\TU/lmr/m/it/10 of
+ []
+
+
+Overfull \hbox (13.29001pt too wide) in paragraph at lines 16--20
+\TU/lmr/m/it/10 de-
+ []
+
+
+Overfull \hbox (15.98001pt too wide) in paragraph at lines 16--20
+\TU/lmr/m/it/10 for-
+ []
+
+
+Overfull \hbox (16.87pt too wide) in paragraph at lines 16--20
+\TU/lmr/m/it/10 ma-
+ []
+
+
+Overfull \hbox (17.56001pt too wide) in paragraph at lines 16--20
+\TU/lmr/m/it/10 tion 
+ []
+
+
+Overfull \hbox (25.43001pt too wide) in paragraph at lines 16--20
+\TU/lmr/m/it/10 Stress
+ []
+
+
+Overfull \hbox (7.67pt too wide) in paragraph at lines 16--20
+\TU/lmr/m/it/10 =
+ []
+
+
+Overfull \hbox (20.58003pt too wide) in paragraph at lines 16--20
+\TU/lmr/m/it/10 force
+ []
+
+
+Overfull \hbox (13.42001pt too wide) in paragraph at lines 16--20
+\TU/lmr/m/it/10 per
+ []
+
+
+Overfull \hbox (17.38pt too wide) in paragraph at lines 16--20
+\TU/lmr/m/it/10 unit
+ []
+
+
+Overfull \hbox (18.02002pt too wide) in paragraph at lines 16--20
+\TU/lmr/m/it/10 area
+ []
+
+! Undefined control sequence.
+l.22 \section
+           {Deformation Gradient}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.22 \section{D
+             eformation Gradient}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 22--23
+[]Deformation
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.24 T
+    he deformation gradient $F$ is also shown in Fig. \ref{fig:deformationma...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+<write> ...eference `fig:deformationmap' on page \thepage 
+                                                  \space undefined\on@line .
+l.24 ... also shown in Fig. \ref{fig:deformationmap}
+                                                  . It offers us a measureme...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `fig:deformationmap' on page  undefined on input line 2
+4.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 24--25
+[]The
+ []
+
+
+Overfull \hbox (7.81946pt too wide) in paragraph at lines 24--25
+\OML/cmm/m/it/10 F$
+ []
+
+
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 24--25
+[].
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.26 M
+    easure for the deformation, length and volume change etc.
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 26--30
+[]Measure
+ []
+
+! Undefined control sequence.
+l.34 \section
+           {Deformation Energy}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.34 \section{D
+             eformation Energy}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 34--35
+[]Deformation
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.36 I
+    n order to get a convincing simulation of high quality we must choose an...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 36--39
+[]In
+ []
+
+
+! LaTeX Error: Environment definition undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.40 \begin{definition}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.41   T
+      his is a definition.
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: \begin{document} ended by \end{definition}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.42 \end{definition}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 41--43
+[]This
+ []
+
+! Undefined control sequence.
+l.46 \section
+           {Material Constants}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.46 \section{M
+             aterial Constants}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 46--47
+[]Material
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.48 N
+    aturally the properties of the material the object consists of play an i...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 48--49
+[]Naturally
+ []
+
+
+Overfull \hbox (6.02548pt too wide) in paragraph at lines 48--49
+\OML/cmm/m/it/10 $
+ []
+
+
+Overfull \hbox (5.83336pt too wide) in paragraph at lines 48--49
+\OML/cmm/m/it/10 $
+ []
+
+
+Overfull \hbox (23.65001pt too wide) in paragraph at lines 48--49
+\TU/lmr/m/it/10 Lamé
+ []
+
+
+Overfull \hbox (15.47pt too wide) in paragraph at lines 48--49
+\TU/lmr/m/it/10 Pa-
+ []
+
+
+Overfull \hbox (20.58pt too wide) in paragraph at lines 48--49
+\TU/lmr/m/it/10 ram-
+ []
+
+
+Overfull \hbox (8.18001pt too wide) in paragraph at lines 48--49
+\TU/lmr/m/it/10 e-
+ []
+
+
+Overfull \hbox (16.23001pt too wide) in paragraph at lines 48--49
+\TU/lmr/m/it/10 ters\nullfont .
+ []
+
+
+Overfull \hbox (35.41pt too wide) in paragraph at lines 48--49
+\TU/lmr/m/it/10 Poisso’s
+ []
+
+
+Overfull \hbox (15.47pt too wide) in paragraph at lines 48--49
+\TU/lmr/m/it/10 Ra-
+ []
+
+
+Overfull \hbox (11.50002pt too wide) in paragraph at lines 48--49
+\TU/lmr/m/it/10 tio
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.50 \[
+      \sigma =  \frac{\lambda}{2(\lambda + \mu)} \in [-0.5, 0.5] \]
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 50--50
+[][] 
+ []
+
+
+Overfull \hbox (114.22044pt too wide) detected at line 50
+\OML/cmm/m/it/10  \OT1/cmr/m/n/10 = [] \OMS/cmsy/m/n/10 2 \OT1/cmr/m/n/10 [\OM
+S/cmsy/m/n/10  \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 5\OML/cmm/m/i
+t/10 ; \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 5]
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.52 T
+    he poisson's ratio is of importance for us since it characterizes the ma...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+)
+! Emergency stop.
+<*> paper.tex
+          
+*** (job aborted, no legal \end found)
+
+
+
+Here is how much of LuaTeX's memory you used:
+ 36 strings out of 494480
+ 100000,89155 words of node,token memory allocated 17690 words of node memory still in use:
+   104 hlist, 1 vlist, 1 rule, 13 disc, 15 local_par, 1 dir, 6 math, 525 glue, 2
+6 kern, 53 penalty, 2001 glyph, 60 attribute, 35 glue_spec, 60 attribute_list, 1
+ temp, 2 write nodes
+   avail lists: 2:1,3:19,4:64,5:2,8:22,10:63
+ 4270 multiletter control sequences out of 65536+600000
+ 27 fonts using 1130499 bytes
+ 18i,6n,21p,380b,110s stack positions out of 5000i,500n,10000p,200000b,100000s
+!  ==> Fatal error occurred, no output PDF file produced!
