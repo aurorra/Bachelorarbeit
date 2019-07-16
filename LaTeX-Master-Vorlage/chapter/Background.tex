@@ -4,9 +4,20 @@ This chapter will provide the necessary background in continuum mechanics and ma
 In this chapter we will examine the topic of the paper \textit{Stable Neo-Hookean Flesh Simulation}. The goal of the paper was to model deformations for virtual characters that have human-like features.
 
 
-\section{Notation}
-At first we will declare the notation used in this thesis to avoid misunderstandings. We will use the common notation used in continuum mechanics.
-This is a test.
+\section{Notation and Convention}
+At first we will declare the notation used in this thesis to avoid misunderstandings. We will use the common notation used in continuum mechanics and additionally we will include the declarations in the paper \textit{Stable Neo-Hookean Flesh Simulation}. 
+\\
+Scalars are represented by regular, normal-weight variables whereas 
+tensors and matrices are represented by upper-case bold variables such as \textbf{F}. Vectors will be denoted by bold lower-case variables.
+\\
+Furthermore we will use the tensor notation used in the paper \textit{Stable Neo-Hookean Flesh Simulation}. They decided to to define vectorization vec(.) as column-wise flattening of a matrix into a vector (\cite{Smith:2018:SNF:3191713.3180491}, 12:5) similar to Golub and Van Loan (2012):
+
+\[
+\textbf{A} = \begin{bmatrix} a & c \\ b & d \end{bmatrix} \qquad vec(\textbf{A}) = \boldsymbol{\check{a}} = \begin{bmatrix} a \\ b \\ c \\ d \end{bmatrix}.
+\]
+
+In order to indicate that we are dealing with a vectorized matrix we will use the symbol $\check{.}$ as shown above.
+
 
 \section{Mathematical Background}
 
@@ -49,7 +60,7 @@ The deformation gradient $F$ is also shown in Fig. \ref{fig:deformationmap}. It 
 For our needs we define the deformation gradient as followed:
 
 \[
-F = \left[ \,f_0\, \bigg| \,f_1\, \bigg| \,f_2\, \right] = \begin{bmatrix} f_0 & f_3 & f_6 \\ f_1 & f_4 & f_7 \\ f_2 & f_5 & f_8 \end{bmatrix}
+\textbf{F} = \left[ \,f_0\, \bigg| \,f_1\, \bigg| \,f_2\, \right] = \begin{bmatrix} f_0 & f_3 & f_6 \\ f_1 & f_4 & f_7 \\ f_2 & f_5 & f_8 \end{bmatrix}
 \]
 
 
