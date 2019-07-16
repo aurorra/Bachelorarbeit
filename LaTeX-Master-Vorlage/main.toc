@@ -39,26 +39,36 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.1.1}Previous Work}{7}{subsection.3.1.1}
 \defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1.2}Stable Neo-Hookean Energy}{8}{subsection.3.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.2}Energy Analysis}{8}{section.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2.1}First Piola-Kirchhoff Stress (PK1)}{8}{subsection.3.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2.2}The Energy Hessian Terms}{8}{subsection.3.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2.3}The Tikhonov, Mu, and Gradient Terms}{8}{subsection.3.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2.4}The Volume Hessian}{8}{subsection.3.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2.5}The Complete Eigensystem}{8}{subsection.3.2.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.3}Discussion}{9}{section.3.3}
+\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\nonumberline Abbildungsverzeichnis}{A}{chapter*.6}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\nonumberline Tabellenverzeichnis}{B}{chapter*.7}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\nonumberline Quelltextverzeichnis}{C}{chapter*.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Literaturverzeichnis}{F}{chapter*.9}
+\contentsline {chapter}{Anhang A}{F}{appendix.A}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Onlinequellen}{G}{chapter*.10}
+\contentsline {section}{\numberline {A.1}Diagramm}{F}{section.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Bildquellen}{H}{chapter*.11}
+\contentsline {section}{\numberline {A.2}Tabelle}{F}{section.A.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Anhang A}{I}{appendix.A}
+\contentsline {section}{\numberline {A.3}Screenshot}{F}{section.A.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}Diagramm}{I}{section.A.1}
+\contentsline {section}{\numberline {A.4}Graph}{F}{section.A.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}Tabelle}{I}{section.A.2}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.3}Screenshot}{I}{section.A.3}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.4}Graph}{I}{section.A.4}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Eigenst\"andigkeitserkl\"arung}{J}{chapter*.12}
+\contentsline {chapter}{\nonumberline Eigenst\"andigkeitserkl\"arung}{G}{chapter*.9}

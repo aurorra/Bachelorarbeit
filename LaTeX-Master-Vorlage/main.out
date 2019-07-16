@@ -17,15 +17,20 @@
 \BOOKMARK [0][-]{chapter.3}{Paper}{}% 17
 \BOOKMARK [1][-]{section.3.1}{Energy Formulation}{chapter.3}% 18
 \BOOKMARK [2][-]{subsection.3.1.1}{Previous Work}{section.3.1}% 19
-\BOOKMARK [0][-]{chapter*.6}{Abbildungsverzeichnis}{}% 20
-\BOOKMARK [0][-]{chapter*.7}{Tabellenverzeichnis}{}% 21
-\BOOKMARK [0][-]{chapter*.8}{Quelltextverzeichnis}{}% 22
-\BOOKMARK [0][-]{chapter*.9}{Literaturverzeichnis}{}% 23
-\BOOKMARK [0][-]{chapter*.10}{Onlinequellen}{}% 24
-\BOOKMARK [0][-]{chapter*.11}{Bildquellen}{}% 25
-\BOOKMARK [0][-]{appendix.A}{Anhang A}{}% 26
-\BOOKMARK [1][-]{section.A.1}{Diagramm}{appendix.A}% 27
-\BOOKMARK [1][-]{section.A.2}{Tabelle}{appendix.A}% 28
-\BOOKMARK [1][-]{section.A.3}{Screenshot}{appendix.A}% 29
-\BOOKMARK [1][-]{section.A.4}{Graph}{appendix.A}% 30
-\BOOKMARK [0][-]{chapter*.12}{Eigenst\344ndigkeitserkl\344rung}{}% 31
+\BOOKMARK [2][-]{subsection.3.1.2}{Stable Neo-Hookean Energy}{section.3.1}% 20
+\BOOKMARK [1][-]{section.3.2}{Energy Analysis}{chapter.3}% 21
+\BOOKMARK [2][-]{subsection.3.2.1}{First Piola-Kirchhoff Stress \(PK1\)}{section.3.2}% 22
+\BOOKMARK [2][-]{subsection.3.2.2}{The Energy Hessian Terms}{section.3.2}% 23
+\BOOKMARK [2][-]{subsection.3.2.3}{The Tikhonov, Mu, and Gradient Terms}{section.3.2}% 24
+\BOOKMARK [2][-]{subsection.3.2.4}{The Volume Hessian}{section.3.2}% 25
+\BOOKMARK [2][-]{subsection.3.2.5}{The Complete Eigensystem}{section.3.2}% 26
+\BOOKMARK [1][-]{section.3.3}{Discussion}{chapter.3}% 27
+\BOOKMARK [0][-]{chapter*.6}{Abbildungsverzeichnis}{}% 28
+\BOOKMARK [0][-]{chapter*.7}{Tabellenverzeichnis}{}% 29
+\BOOKMARK [0][-]{chapter*.8}{Quelltextverzeichnis}{}% 30
+\BOOKMARK [0][-]{appendix.A}{Anhang A}{}% 31
+\BOOKMARK [1][-]{section.A.1}{Diagramm}{appendix.A}% 32
+\BOOKMARK [1][-]{section.A.2}{Tabelle}{appendix.A}% 33
+\BOOKMARK [1][-]{section.A.3}{Screenshot}{appendix.A}% 34
+\BOOKMARK [1][-]{section.A.4}{Graph}{appendix.A}% 35
+\BOOKMARK [0][-]{chapter*.9}{Eigenst\344ndigkeitserkl\344rung}{}% 36
