@@ -25,7 +25,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.3}Continuum Mechanics}{4}{section.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.4}Deformation}{4}{section.2.4}
+\contentsline {section}{\numberline {2.4}Deformation}{5}{section.2.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.5}Deformation Gradient}{5}{section.2.5}
 \defcounter {refsection}{0}\relax 
@@ -33,27 +33,29 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.7}Deformation Energy}{6}{section.2.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Paper}{7}{chapter.3}
+\contentsline {chapter}{\numberline {3}Paper}{8}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Energy Formulation}{7}{section.3.1}
+\contentsline {section}{\numberline {3.1}Energy Formulation}{8}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.1}Previous Work}{7}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.1}Previous Work}{8}{subsection.3.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.2}Stable Neo-Hookean Energy}{8}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.2}Stable Neo-Hookean Energy}{9}{subsection.3.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Energy Analysis}{8}{section.3.2}
+\contentsline {section}{\numberline {3.2}Energy Analysis}{9}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.1}First Piola-Kirchhoff Stress (PK1)}{8}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.1}First Piola-Kirchhoff Stress (PK1)}{9}{subsection.3.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.2}The Energy Hessian Terms}{8}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.2}The Energy Hessian Terms}{9}{subsection.3.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.3}The Tikhonov, Mu, and Gradient Terms}{8}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.3}The Tikhonov, Mu, and Gradient Terms}{9}{subsection.3.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.4}The Volume Hessian}{8}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.4}The Volume Hessian}{9}{subsection.3.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.5}The Complete Eigensystem}{8}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.5}The Complete Eigensystem}{9}{subsection.3.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Discussion}{9}{section.3.3}
+\contentsline {section}{\numberline {3.3}Experiments with the Code}{10}{section.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.4}Discussion}{10}{section.3.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\nonumberline Abbildungsverzeichnis}{A}{chapter*.6}
 \defcounter {refsection}{0}\relax 
@@ -61,18 +63,14 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\nonumberline Quelltextverzeichnis}{C}{chapter*.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Literaturverzeichnis}{F}{chapter*.9}
+\contentsline {chapter}{Anhang A}{F}{appendix.A}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Bildquellen}{G}{chapter*.10}
+\contentsline {section}{\numberline {A.1}Diagramm}{F}{section.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Anhang A}{H}{appendix.A}
+\contentsline {section}{\numberline {A.2}Tabelle}{F}{section.A.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}Diagramm}{H}{section.A.1}
+\contentsline {section}{\numberline {A.3}Screenshot}{F}{section.A.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}Tabelle}{H}{section.A.2}
+\contentsline {section}{\numberline {A.4}Graph}{F}{section.A.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.3}Screenshot}{H}{section.A.3}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.4}Graph}{H}{section.A.4}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Eigenst\"andigkeitserkl\"arung}{I}{chapter*.11}
+\contentsline {chapter}{\nonumberline Eigenst\IeC {\"a}ndigkeitserkl\IeC {\"a}rung}{G}{chapter*.9}
