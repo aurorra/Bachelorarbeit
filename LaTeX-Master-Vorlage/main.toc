@@ -57,20 +57,24 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.4}Discussion}{10}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Abbildungsverzeichnis}{A}{chapter*.6}
+\contentsline {chapter}{\nonumberline Abbildungsverzeichnis}{A}{chapter*.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Tabellenverzeichnis}{B}{chapter*.7}
+\contentsline {chapter}{\nonumberline Tabellenverzeichnis}{B}{chapter*.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Quelltextverzeichnis}{C}{chapter*.8}
+\contentsline {chapter}{\nonumberline Quelltextverzeichnis}{C}{chapter*.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Anhang A}{F}{appendix.A}
+\contentsline {chapter}{\nonumberline Literaturverzeichnis}{F}{chapter*.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}Diagramm}{F}{section.A.1}
+\contentsline {chapter}{\nonumberline Bildquellen}{G}{chapter*.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}Tabelle}{F}{section.A.2}
+\contentsline {chapter}{Anhang A}{H}{appendix.A}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.3}Screenshot}{F}{section.A.3}
+\contentsline {section}{\numberline {A.1}Diagramm}{H}{section.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.4}Graph}{F}{section.A.4}
+\contentsline {section}{\numberline {A.2}Tabelle}{H}{section.A.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Eigenst\IeC {\"a}ndigkeitserkl\IeC {\"a}rung}{G}{chapter*.9}
+\contentsline {section}{\numberline {A.3}Screenshot}{H}{section.A.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A.4}Graph}{H}{section.A.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline Eigenst\IeC {\"a}ndigkeitserkl\IeC {\"a}rung}{I}{chapter*.12}
