@@ -40,9 +40,10 @@ Calculations
 Calculations
 
 \section{Experiments with the Code}
-The authors of the paper \textit{Stable Neo-Hookean Flesh Simulation} \cite{Smith:2018:SNF:3191713.3180491} kindly provided the implementation for an application of their formulated energy. In this code they implemented the stretch test on a cube. 
+The authors of the paper \textit{Stable Neo-Hookean Flesh Simulation} \cite{Smith:2018:SNF:3191713.3180491} kindly provided the implementation for an application of their formulated energy. In this code they implemented the stretch test on a cube. The output were 26 static images with show the deformation in 25 steps. 
+TODO: EXPLAIN HOW THEY DID IT IN SIMPLE WORDS
 \\
-The following images show the stretch test with $\mu = 1.0$, $\lambda = 10.0$ and a resolution of 10.0 on a tetrahedral and a hexahedral mesh.
+The following images show the stretch test with $\mu = 1.0$, $\lambda = 10.0$ and a resolution of 10.0 on a tetrahedral and a hexahedral mesh:
 
 \begin{figure}[!htbp]
 	\centering
@@ -55,7 +56,7 @@ The following images show the stretch test with $\mu = 1.0$, $\lambda = 10.0$ an
         \includegraphics[width=0.24\textwidth]{resources/hexcli_step16.png}
         \hfill
         \includegraphics[width=0.24\textwidth]{resources/hexcli_step24.png}
-        \caption{Bildreihe Hexcli}
+        \caption{Stretch test on a hexahedral mesh}
     \end{subfigure}
     \vskip\baselineskip
     \begin{subfigure}[b]{\textwidth}
@@ -67,11 +68,12 @@ The following images show the stretch test with $\mu = 1.0$, $\lambda = 10.0$ an
         \includegraphics[width=0.24\textwidth]{resources/tetcli_step16.png}
         \hfill
         \includegraphics[width=0.24\textwidth]{resources/tetcli_step24.png}
-        \caption{Bildreihe Tetcli}
+        \caption{Stretch test on a tetrahedral mesh}
     \end{subfigure}
-    \caption{Global caption.}
-    
+    \caption{Stretch test performed on a cube with (a) a hexahedral mesh and (b) a tetrahedral mesh}
 \end{figure}
+
+
 
 
 

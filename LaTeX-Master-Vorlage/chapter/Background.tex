@@ -5,25 +5,23 @@ In this chapter we will examine the topic of the paper \textit{Stable Neo-Hookea
 
 
 \section{Notation and Convention}
+At first we will declare the notation used in this thesis to avoid misunderstandings. We will use the common notation used in continuum mechanics taken from \cite{Spencer1980}. Additionally we will include the declarations formulated in the paper \textit{Stable Neo-Hookean Flesh Simulation}. 
 
 \subsection{General Notation}
-At first we will declare the notation used in this thesis to avoid misunderstandings. We will use the common notation used in continuum mechanics and additionally we will include the declarations in the paper \textit{Stable Neo-Hookean Flesh Simulation}. 
-\\
-Scalars are represented by regular, normal-weight variables whereas 
-tensors and matrices are represented by upper-case bold letters. Vectors will be denoted by bold lower-case variables.
+Scalars are represented by regular, normal-weight variables such as $a$ whereas 
+tensors and matrices are represented by upper-case bold letters as for example $\textbf{A}$. Vectors will be denoted by bold lower-case variables like $\textbf{a}$. 
 
 
 \subsection{Tensor Notation}
-
-Furthermore we will use the tensor notation used in the paper \textit{Stable Neo-Hookean Flesh Simulation}. They decided to to define vectorization vec(.) as column-wise flattening of a matrix into a vector (\cite{Smith:2018:SNF:3191713.3180491}, 12:5) similar to Golub and Van Loan (2012):
+Furthermore we will use the tensor notation used in the paper \textit{Stable Neo-Hookean Flesh Simulation}. They decided to to define vectorization vec(.) as column-wise flattening of a matrix into a vector (\cite{Smith:2018:SNF:3191713.3180491}, 12:5) similar to Golub and Van Loan (2012) \cite{golub2012matrix}.
 
 \[
-\textbf{A} = \begin{bmatrix} a & c \\ b & d \end{bmatrix} \qquad vec(\textbf{A}) = \boldsymbol{\check{a}} = \begin{bmatrix} a \\ b \\ c \\ d \end{bmatrix}.
+\textbf{A} = \begin{bmatrix} a & c \\ b & d \end{bmatrix} \qquad \operatorname{vec}(\textbf{A}) = \boldsymbol{\check{a}} = \begin{bmatrix} a \\ b \\ c \\ d \end{bmatrix}.
 \]
 
 In order to indicate that we are dealing with a vectorized matrix we will use the symbol $\check{.}$ as shown above.
 
-Additionally we well have to deal with $4^{th}$ order tensors in the following matrix-of-matrices form:
+Additionally we will have to deal with $4^{th}$ order tensors in the following form of matrix-of-matrices:
 
 \[
 \mathbb{A} = 
@@ -33,8 +31,15 @@ Additionally we well have to deal with $4^{th}$ order tensors in the following m
 \]
 
 These matrices are denoted by using blackboard bold.
+\\
+If we now vectorize $\mathbb{A}$ we receive the following form:
 
-TODO: 2nd order matrix, see paper 4.1 Tensor Notation
+\[
+\mathbb{A} = \operatorname{vec}(\mathbb{A})=\left[\operatorname{vec}\left(\mathrm{A}_{00}\right)\left|\operatorname{vec}\left(\mathrm{A}_{10}\right)\right| \operatorname{vec}\left(\mathrm{A}_{01}\right) | \operatorname{vec}\left(\mathrm{A}_{11}\right)\right]
+=\left[\begin{array}{llll}{a} & {e} & {i} & {m} \\ {b} & {f} & {j} & {n} \\ {c} & {g} & {k} & {o} \\ {d} & {h} & {l} & {p}\end{array}\right]=\boldsymbol{\check{A}}
+\]
+
+The advantage of this form is that we can write several expressions as a cross product which we will need later.
 
 \subsection{Summary}
 A quick overview of the used notation:
