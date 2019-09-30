@@ -19,6 +19,36 @@
 
 \refsection{0}
   \datalist[entry]{anyt/global//global/global}
+    \entry{golub2012matrix}{misc}{}
+      \name{author}{2}{}{%
+        {{hash=6b27671b091a8b3948f1eb0eb0458d05}{%
+           family={Golub\bibnamedelima Gene},
+           familyi={G\bibinitperiod\bibinitdelim G\bibinitperiod},
+           given={H},
+           giveni={H\bibinitperiod}}}%
+        {{hash=ad9e6e2fb9a12aeb248ea9315c9ba876}{%
+           family={Van\bibnamedelimb Loan\bibnamedelima Charles},
+           familyi={V\bibinitperiod\bibinitdelim L\bibinitperiod\bibinitdelim C\bibinitperiod},
+           given={F},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {JHU Press}%
+      }
+      \strng{namehash}{a6fc24fa2ede3174d07209950c3c3df9}
+      \strng{fullhash}{a6fc24fa2ede3174d07209950c3c3df9}
+      \strng{bibnamehash}{a6fc24fa2ede3174d07209950c3c3df9}
+      \strng{authorbibnamehash}{a6fc24fa2ede3174d07209950c3c3df9}
+      \strng{authornamehash}{a6fc24fa2ede3174d07209950c3c3df9}
+      \strng{authorfullhash}{a6fc24fa2ede3174d07209950c3c3df9}
+      \field{labelalpha}{GV12}
+      \field{sortinit}{G}
+      \field{sortinithash}{5e8d2bf9d38de41b1528bd307546008f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Matrix computations. Vol. 3}
+      \field{year}{2012}
+    \endentry
     \entry{LiesenMehrmann2015}{book}{}
       \name{author}{2}{}{%
         {{hash=0e43dd09a211b18cddbf5b30b23000de}{%

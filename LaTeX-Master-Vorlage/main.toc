@@ -57,24 +57,26 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.4}Discussion}{10}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Abbildungsverzeichnis}{A}{chapter*.7}
+\contentsline {chapter}{\nonumberline Abbildungsverzeichnis}{A}{chapter*.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Tabellenverzeichnis}{B}{chapter*.8}
+\contentsline {chapter}{\nonumberline Tabellenverzeichnis}{B}{chapter*.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Quelltextverzeichnis}{C}{chapter*.9}
+\contentsline {chapter}{\nonumberline Quelltextverzeichnis}{C}{chapter*.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Literature}{F}{chapter*.10}
+\contentsline {chapter}{\nonumberline Bibliography}{F}{chapter*.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Images Resources}{G}{chapter*.11}
+\contentsline {chapter}{\nonumberline Online Sources}{G}{chapter*.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Anhang A}{H}{appendix.A}
+\contentsline {chapter}{\nonumberline Figure Sources}{H}{chapter*.13}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}Diagramm}{H}{section.A.1}
+\contentsline {chapter}{Anhang A}{I}{appendix.A}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}Tabelle}{H}{section.A.2}
+\contentsline {section}{\numberline {A.1}Diagramm}{I}{section.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.3}Screenshot}{H}{section.A.3}
+\contentsline {section}{\numberline {A.2}Tabelle}{I}{section.A.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.4}Graph}{H}{section.A.4}
+\contentsline {section}{\numberline {A.3}Screenshot}{I}{section.A.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Eigenst\"andigkeitserkl\"arung}{I}{chapter*.12}
+\contentsline {section}{\numberline {A.4}Graph}{I}{section.A.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline Eigenst\IeC {\"a}ndigkeitserkl\IeC {\"a}rung}{J}{chapter*.14}

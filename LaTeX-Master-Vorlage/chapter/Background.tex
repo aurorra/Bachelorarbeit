@@ -36,7 +36,13 @@ If we now vectorize $\mathbb{A}$ we receive the following form:
 
 \[
 \mathbb{A} = \operatorname{vec}(\mathbb{A})=\left[\operatorname{vec}\left(\mathrm{A}_{00}\right)\left|\operatorname{vec}\left(\mathrm{A}_{10}\right)\right| \operatorname{vec}\left(\mathrm{A}_{01}\right) | \operatorname{vec}\left(\mathrm{A}_{11}\right)\right]
-=\left[\begin{array}{llll}{a} & {e} & {i} & {m} \\ {b} & {f} & {j} & {n} \\ {c} & {g} & {k} & {o} \\ {d} & {h} & {l} & {p}\end{array}\right]=\boldsymbol{\check{A}}
+\]
+
+This term is equivalent to the following notation:
+
+\[
+\mathbb{A}=\left[\begin{array}{llll}{a} & {e} & {i} & {m} \\ {b} & {f} & {j} & {n} \\ {c} & {g} & {k} & {o} \\ {d} & {h} & {l} & {p}\end{array}\right] 
+=\boldsymbol{\check{A}}
 \]
 
 The advantage of this form is that we can write several expressions as a cross product which we will need later.
@@ -48,7 +54,7 @@ A quick overview of the used notation:
 a: scalar \\
 \textbf{A}: matrix or tensor \\
 \textbf{a}: vector \\
-vec(\textbf{A}) = $\boldsymbol{\check{a}}$: vectorized matrix \\
+vec(\textbf{A}) = $\boldsymbol{\check{a}}$: vectorized matrix
 \end{addmargin}
 
 \section{Mathematical Background}
@@ -96,10 +102,14 @@ For our needs we define the deformation gradient as followed:
 \]
 
 
-Measure for the deformation, length and volume change etc.
-Nonlinear deformations
+\todoredefined[inline]{
+TODO: Include measure for the deformation, length and volume change etc. \\
+Nonlinear deformations: \\
 http://www.continuummechanics.org/deformationgradient.html
-also add some examples
+\\ also add some examples
+}
+
+
 
 \section{Material Constants}
 

@@ -1,16 +1,16 @@
 [0] Config.pm:302> INFO - This is Biber 2.10
 [0] Config.pm:305> INFO - Logfile is 'main.blg'
-[43] biber-MSWIN32:313> INFO - === 
-[70] Biber.pm:371> INFO - Reading 'main.bcf'
-[179] Biber.pm:857> INFO - Found 4 citekeys in bib section 0
-[197] Biber.pm:3976> INFO - Processing section 0
-[215] Biber.pm:4136> INFO - Looking for bibtex format file 'references/references.bib' for section 0
-[219] bibtex.pm:1444> INFO - Reading ascii input as UTF-8
-[224] bibtex.pm:1490> INFO - LaTeX decoding ...
-[241] bibtex.pm:1306> INFO - Found BibTeX data source 'references/references.bib'
-[316] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
-[316] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[319] Biber.pm:3804> INFO - Sorting list 'anyt/global//global/global' of type 'entry' with template 'anyt' and locale 'de-DE'
-[320] Biber.pm:3810> INFO - No sort tailoring available for locale 'de-DE'
-[344] bbl.pm:617> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[346] bbl.pm:720> INFO - Output to main.bbl
+[44] biber-MSWIN32:313> INFO - === 
+[79] Biber.pm:371> INFO - Reading 'main.bcf'
+[200] Biber.pm:857> INFO - Found 5 citekeys in bib section 0
+[223] Biber.pm:3976> INFO - Processing section 0
+[241] Biber.pm:4136> INFO - Looking for bibtex format file 'references/references.bib' for section 0
+[243] bibtex.pm:1444> INFO - Reading ascii input as UTF-8
+[246] bibtex.pm:1490> INFO - LaTeX decoding ...
+[279] bibtex.pm:1306> INFO - Found BibTeX data source 'references/references.bib'
+[350] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[350] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[353] Biber.pm:3804> INFO - Sorting list 'anyt/global//global/global' of type 'entry' with template 'anyt' and locale 'de-DE'
+[363] Biber.pm:3810> INFO - No sort tailoring available for locale 'de-DE'
+[392] bbl.pm:617> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[400] bbl.pm:720> INFO - Output to main.bbl

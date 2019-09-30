@@ -3,7 +3,8 @@
 
 % Ränder (Standard bottom ca. 52mm anbzüglich von ca. 4mm für die nach oben rechts gewanderte Seitenzahl)
 %Anpassung der Seitenränder
-\usepackage[bottom=48mm,left=30mm,right=30mm]{geometry}
+%\usepackage[bottom=48mm,left=30mm,right=30mm]{geometry}
+\usepackage[bottom=30mm,left=40mm,right=40mm]{geometry}
 
 % Ränder bei Bedarf zeigen
 %\usepackage{showframe}
@@ -94,6 +95,9 @@
 
 %Ermöglicht Verknüpfungen innerhalb des Dokumentes (e.g. for PDF), Links werden durch "hidelink" nicht explizit hervorgehoben
 \usepackage[hidelinks,german]{hyperref}
+
+\usepackage{todonotes}
+\newcommand{\todoredefined}[2][]{\todo[color=green, #1]{#2}}
 
 %Used for making definitions and theorems
 \usepackage{amsthm}

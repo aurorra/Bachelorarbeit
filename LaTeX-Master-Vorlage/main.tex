@@ -59,11 +59,29 @@
 \printglossary[title={Glossar}] \clearpage
 \printglossary[style=dottedlocations,type=\acronymtype,title={Abkürzungsverzeichnis}] \clearpage
 
-\printbibliography[heading=bibintoc, keyword={book}, title={Literature}]\clearpage
-\printbibliography[heading=bibintoc, keyword={article}, title={Articles}]\clearpage
-\printbibliography[heading=bibintoc, keyword={online}, title={Online Resources}]\clearpage
-\printbibliography[heading=bibintoc, type=misc,title={Various References}] \clearpage
-\printbibliography[heading=bibintoc, keyword={image}, title={Images Resources}]\clearpage
+
+% trying to make bibliography work
+\defbibfilter{booksAndPapers}{
+  type=article or
+  type=inproceedings or
+  type=incollection or
+  type=book or
+  type=inbook or
+  type=misc
+}
+\defbibfilter{onlineSource}{
+  type=online
+}
+
+\printbibliography[heading=bibintoc, filter=booksAndPapers, title={Bibliography}]\clearpage
+\printbibliography[heading=bibintoc, filter=onlineSource, title={Online Sources}]\clearpage
+\printbibliography[heading=bibintoc, keyword={image}, title={Figure Sources}]\clearpage
+
+%\printbibliography[heading=bibintoc, keyword={book}, title={Literature}]\clearpage
+%\printbibliography[heading=bibintoc, keyword={article}, title={Articles}]\clearpage
+%\printbibliography[heading=bibintoc, keyword={online}, title={Online Resources}]\clearpage
+%\printbibliography[heading=bibintoc, type=misc,title={Various References}] \clearpage
+%\printbibliography[heading=bibintoc, keyword={image}, title={Images Resources}]\clearpage
 
 % Anhang
 \input{chapter/Anhang}
