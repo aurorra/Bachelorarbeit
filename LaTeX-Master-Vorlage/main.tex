@@ -44,7 +44,7 @@
 \tableofcontents \newpage
 
 \pagenumbering{arabic}
-\input{chapter/Einleitung} \clearpage
+\input{chapter/Introduction} \clearpage
 \input{chapter/Background} \clearpage
 %\input{chapter/Beispiele} \clearpage
 \input{chapter/Paper} \clearpage
@@ -52,12 +52,14 @@
 \pagenumbering{Alph}
 \listoffigures \clearpage
 \listoftables \clearpage
-\lstlistoflistings \clearpage
+
+%\lstlistoflistings \clearpage
 
 \printindex \clearpage
 
-\printglossary[title={Glossar}] \clearpage
-\printglossary[style=dottedlocations,type=\acronymtype,title={Abkürzungsverzeichnis}] \clearpage
+%\printglossary[title={Glossar}] \clearpage
+
+\printglossary[style=dottedlocations,type=\acronymtype,title={List of Abbreviations}] \clearpage
 
 
 % trying to make bibliography work
@@ -84,9 +86,11 @@
 %\printbibliography[heading=bibintoc, keyword={image}, title={Images Resources}]\clearpage
 
 % Anhang
-\input{chapter/Anhang}
+%\input{chapter/Anhang}
 
 % Eigenständigkeitserklärung
-\input{chapter/Eigenstaendigkeitserklaerung}
+%\input{chapter/Declaration_of_Originality}
+% This is required since 2012!!
+\includepdf{Erklaerung.pdf}
 
 \end{document}

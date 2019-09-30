@@ -1,5 +1,4 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
-\babel@toc {ngerman}{}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \defcounter {refsection}{0}\relax 
@@ -57,26 +56,12 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.4}Discussion}{10}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Abbildungsverzeichnis}{A}{chapter*.8}
+\contentsline {chapter}{\nonumberline List of Figures}{A}{chapter*.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Tabellenverzeichnis}{B}{chapter*.9}
+\contentsline {chapter}{\nonumberline List of Tables}{B}{chapter*.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Quelltextverzeichnis}{C}{chapter*.10}
+\contentsline {chapter}{\nonumberline Bibliography}{D}{chapter*.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Bibliography}{F}{chapter*.11}
+\contentsline {chapter}{\nonumberline Online Sources}{E}{chapter*.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Online Sources}{G}{chapter*.12}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Figure Sources}{H}{chapter*.13}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Anhang A}{I}{appendix.A}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}Diagramm}{I}{section.A.1}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}Tabelle}{I}{section.A.2}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.3}Screenshot}{I}{section.A.3}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.4}Graph}{I}{section.A.4}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Eigenst\IeC {\"a}ndigkeitserkl\IeC {\"a}rung}{J}{chapter*.14}
+\contentsline {chapter}{\nonumberline Figure Sources}{F}{chapter*.12}
