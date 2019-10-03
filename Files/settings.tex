@@ -1,6 +1,9 @@
 %Dokumentenklasse "scrbook" - Erweitert um den Verweis auf die Verzeichnisse und Texteigenschaften
 \documentclass[chapterprefix=true, 12pt, a4paper, oneside, parskip=half, listof=totoc, bibliography=totoc, numbers=noendperiod]{scrbook}
 
+%Definierung eigener Farben bei nutzung eines selbst vergebene Namens
+\usepackage[table,xcdraw]{xcolor}
+
 % Ränder (Standard bottom ca. 52mm anbzüglich von ca. 4mm für die nach oben rechts gewanderte Seitenzahl)
 %Anpassung der Seitenränder
 %\usepackage[bottom=48mm,left=30mm,right=30mm]{geometry}
@@ -14,6 +17,9 @@
 
 %Blindtext
 \usepackage{blindtext}
+
+%Erlaubt die Darstellung von Sourcecode mit Highlighting
+\usepackage{listings}
 
 %Erlaubt unteranderem Umbrücke captions
 \usepackage{caption}
@@ -77,12 +83,6 @@
 
 %Erlaubt Seitenumbrüche mit Tabellen
 \usepackage{longtable}
-
-%Erlaubt die Darstellung von Sourcecode mit Highlighting
-\usepackage{listings}
-
-%Definierung eigener Farben bei nutzung eines selbst vergebene Namens
-\usepackage[table,xcdraw]{xcolor}
 
 %Vektorgrafiken
 \usepackage{tikz}
