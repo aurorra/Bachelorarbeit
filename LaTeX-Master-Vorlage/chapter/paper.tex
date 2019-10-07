@@ -1,0 +1,83 @@
+\chapter{Paper} \label{c:Paper}
+In this chapter we will examine the topic of the paper \textit{Stable Neo-Hookean Flesh Simulation}. The goal of the paper was to model deformations for virtual characters that have human-like features. They concentrated on the deformation energy.
+
+\section{Energy Formulation}
+
+For our needs we need a hyperelastic energy that is stable in the following four important ways:
+
+\begin{itemize}
+\item Inversion stability
+\item Reflection stability
+\item Rest stability
+\item Meta-stability under degeneracy
+\end{itemize}
+
+TODO: explain each step
+
+\subsection{Previous Work}
+Here comes previous work in neo-hookean energy formulation. What is neo-hookean and why do we need it here?
+And what is wrong with each one.
+
+\subsection{Stable Neo-Hookean Energy}
+Conclude to the energy proposed in the paper.
+
+\section{Energy Analysis}
+Calculations and Herleitungen
+
+\subsection{First Piola-Kirchhoff Stress (PK1)}
+Explain.
+
+\subsection{The Energy Hessian Terms}
+Calculations
+
+\subsection{The Tikhonov, Mu, and Gradient Terms}
+Calculations
+
+\subsection{The Volume Hessian}
+Calculations
+ 
+\subsection{The Complete Eigensystem}
+Calculations
+
+\section{Experiments with the Code}
+The authors of the paper \textit{Stable Neo-Hookean Flesh Simulation} \cite{Smith:2018:SNF:3191713.3180491} kindly provided the implementation for an application of their formulated energy. In this code they implemented the stretch test on a cube. The output were 26 static images with show the deformation in 25 steps. 
+TODO: EXPLAIN HOW THEY DID IT IN SIMPLE WORDS
+\\
+The following images show the stretch test with $\mu = 1.0$, $\lambda = 10.0$ and a resolution of 10.0 on a tetrahedral and a hexahedral mesh:
+
+\begin{figure}[!htbp]
+	\centering
+	\begin{subfigure}[b]{\textwidth}
+        \centering
+        \includegraphics[width=0.24\textwidth]{resources/hexcli_step0.png}
+        \hfill
+        \includegraphics[width=0.24\textwidth]{resources/hexcli_step8.png}
+        \hfill
+        \includegraphics[width=0.24\textwidth]{resources/hexcli_step16.png}
+        \hfill
+        \includegraphics[width=0.24\textwidth]{resources/hexcli_step24.png}
+        \caption{Stretch test on a hexahedral mesh}
+    \end{subfigure}
+    \vskip\baselineskip
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \includegraphics[width=0.24\textwidth]{resources/tetcli_step0.png}
+        \hfill
+        \includegraphics[width=0.24\textwidth]{resources/tetcli_step8.png}
+        \hfill
+        \includegraphics[width=0.24\textwidth]{resources/tetcli_step16.png}
+        \hfill
+        \includegraphics[width=0.24\textwidth]{resources/tetcli_step24.png}
+        \caption{Stretch test on a tetrahedral mesh}
+    \end{subfigure}
+    \caption{Stretch test performed on a cube with (a) a hexahedral mesh and (b) a tetrahedral mesh}
+\end{figure}
+
+
+
+
+
+\section{Discussion}
+Stuff, Taylor approx.
+
+
