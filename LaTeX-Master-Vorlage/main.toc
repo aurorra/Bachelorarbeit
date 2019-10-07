@@ -36,7 +36,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.1}Energy Formulation}{10}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.1}Previous Work}{10}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.1}Previous Work}{11}{subsection.3.1.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.1.2}Stable Neo-Hookean Energy}{11}{subsection.3.1.2}
 \defcounter {refsection}{0}\relax 
@@ -50,7 +50,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.4}The Volume Hessian}{11}{subsection.3.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.5}The Complete Eigensystem}{11}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.5}The Complete Eigensystem}{12}{subsection.3.2.5}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.3}Experiments with the Code}{12}{section.3.3}
 \defcounter {refsection}{0}\relax 

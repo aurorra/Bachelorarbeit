@@ -1,9 +1,8 @@
 \chapter{Paper} \label{c:Paper}
-In this chapter we will examine the topic of the paper \textit{Stable Neo-Hookean Flesh Simulation}. The goal of the paper was to model deformations for virtual characters that have human-like features. They concentrated on the deformation energy.
+In this chapter we will examine the topic of the paper \textit{Stable Neo-Hookean Flesh Simulation} \cite{Smith:2018:SNF:3191713.3180491}. In the interest of understanding the thought process of the authors I will include some of their calculations a bit more detailed. In addition examples and visualisations should help for a better understanding. 
 
 \section{Energy Formulation}
-
-For our needs we need a hyperelastic energy that is stable in the following four important ways:
+The core goal of the paper was to model deformations for virtual characters that have human-like features. They concentrated on the deformation energy. In order to achieve a convincing result as a first step we need to specify some requirements. For our needs in this case the stability of the energy is important. More precisely we need a hyperelastic energy that is stable in the following four important ways:
 
 \begin{itemize}
 \item Inversion stability
@@ -42,14 +41,18 @@ Calculations
 Calculations
 
 \section{Experiments with the Code}
-The authors of the paper \textit{Stable Neo-Hookean Flesh Simulation} \cite{Smith:2018:SNF:3191713.3180491} kindly provided the implementation for an application of their formulated energy. In this code they implemented the stretch test on a cube. The output were 26 static images with show the deformation in 25 steps. 
+The authors of the paper \textit{Stable Neo-Hookean Flesh Simulation} \cite{Smith:2018:SNF:3191713.3180491} kindly provided the implementation for an application of their formulated energy. In this code they implemented the stretch test on a cube. The outputs were 26 static images with show the deformation in 25 steps. The parameters the code expects are the two lamé parameters $\mu$ and $\lambda$ and a value for defining the desired resolution the objects should have.
 
 \todoredefined[inline]{
-TODO: Explain how the code is implemented in simple words and how the energy is taken in account with the poisson's ratio.
+TODO: Explain how the code is implemented in simple words and how the energy is taken in account with the poisson's ratio. Make scheme with input - box / code - output. Do I have to reference code?
 }
 
+For starters let us take common values for $\mu$ and $\lambda$. We first start with $\mu = 1.0$, $\lambda = 10.0$ and a resolution of 10.0. For the poisson's ratio we get the value $0.4545$:
 
-The following images show the stretch test with $\mu = 1.0$, $\lambda = 10.0$ and a resolution of 10.0 on a tetrahedral and a hexahedral mesh:
+\[ \sigma =  \frac{10.0}{2 (10.0 + 1.0)} = 0.4545 \in [-1, 0.5] \]
+
+
+The following images in figure \ref{fig:stretchtest} show the stretch test with $\mu = 1.0$, $\lambda = 10.0$ and a resolution of 10.0 on a tetrahedral and a hexahedral mesh.
 
 \begin{figure}[!htbp]
 	\centering
@@ -77,6 +80,7 @@ The following images show the stretch test with $\mu = 1.0$, $\lambda = 10.0$ an
         \caption{Stretch test on a tetrahedral mesh}
     \end{subfigure}
     \caption{Stretch test performed on a cube with (a) a hexahedral mesh and (b) a tetrahedral mesh}
+    \label{fig:stretchtest}
 \end{figure}
 
 
