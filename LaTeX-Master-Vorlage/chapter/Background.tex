@@ -120,10 +120,8 @@ TODO: Adjust so the equal sign is at the same place in each column.
 }
 
 
-\section{Deformation Gradient}
-
-The deformation gradient $F$ is also shown in Fig. \ref{fig:deformationmap}. It offers us a measurement of the deformation. With its help we can amongst other things calculate the volume and length change an object undergoes during a deformation.
-For our needs we define the deformation gradient as followed:
+\subsection{Deformation Gradient}
+The deformation gradient \textbf{F} offers us as said previously a measurement of the deformation. With its help we can amongst other things calculate the volume and length change an object undergoes during a deformation. For our needs we define the deformation gradient exactely as the authors of the paper \cite{Smith:2018:SNF:3191713.3180491} did:
 
 \[
 \textbf{F} = \left[ \,f_0\, \bigg| \,f_1\, \bigg| \,f_2\, \right] = \begin{bmatrix} f_0 & f_3 & f_6 \\ f_1 & f_4 & f_7 \\ f_2 & f_5 & f_8 \end{bmatrix}
@@ -131,39 +129,64 @@ For our needs we define the deformation gradient as followed:
 
 
 \todoredefined[inline]{
-TODO: Include measure for the deformation, length and volume change etc. \\
-Nonlinear deformations: \\
-http://www.continuummechanics.org/deformationgradient.html
-\\ also add some examples
+TODO: Add some examples. Already include definitions of the paper?
+\\ Some more sources:
+\\ http://www.continuummechanics.org/deformationgradient.html
 }
 
 
 
 \section{Material Constants}
+When we look at a deformation of an object we need to consider the material the object consists of. A material can be very stiff like steel or easily deformable ones like robber. 
 
-Naturally the properties of the material the object consists of play an important rule in the deformation process. The two constants $\mu$ and $\lambda$ that are crucial for us are called \textit{Lamé Parameters}. The formula in which they appear is called \textit{Poisso's Ratio} and is of the following form:
+The two constants $\mu$ and $\lambda$ that are crucial for us are called \textit{Lamé Parameters}. With the help of these two constants we can calculate the \textit{Poisson's Ratio}:
 
 \[ \sigma =  \frac{\lambda}{2(\lambda + \mu)} \in [-1, 0.5] \]
 
-The poisson's ratio is of importance for us since it characterizes the materials resistance to volume change. Usually the poisson's ratio of a material is positive.
+The poisson's ratio is of importance for us because it characterizes the materials resistance to volume change. Usually the poisson's ratio of a material is positive. A negative value would mean that the material becomes wider in the cross section when it is stretched. This behaviour is very uncommon in nature. Here are some examples of the poisson's ratio of common materials:
+
+\begin{table}[h!]
+\centering
+    \begin{tabular}{ | l | l |}
+    \hline
+    Material & Poisson's ratio \\ \hline
+    rubber & 0.4999 \\ \hline
+    titanium & 0.265-0.34 \\ \hline
+    glass & 0.18–0.3 \\ \hline
+    cork & 0.0 \\ \hline
+    \end{tabular}
+    \caption{Different materials with their poisson's ratio}
+\label{table:1}
+\end{table}
+
+
+For the simulation of human-like flesh we have to choose a poisson's ratio that is almost 0.5 in order to get realistic results.
+\\ 
+
+\todoredefined[inline]{
+TODO: Add some examples and images. Explain poisson's ratio a bit better. Why must poisson's ratio be 0.5? Add some references. Make table more beautiful. Add reference to table, now it is wikipedia (https://en.wikipedia.org/wiki/Poisson%27s_ratio).
 \\
-For the simulation of human-like flesh we have to choose a poisson's ratio that is almost 0.5 to get realistic results.
-\\ further reading: http://silver.neep.wisc.edu/~lakes/PoissonIntro.html
+Further reading: http://silver.neep.wisc.edu/~lakes/PoissonIntro.html
+}
+
 
 
 \section{Deformation Energy}
-
-In order to get a convincing simulation of high quality we must choose an appropriate energy. In the case of modelling deformations on human-like characters we have to choose an elastic energy. The key property that makes an energy elastic is that if all the forces that are applied over an object add up to zero the object must come back to its rest shape.
+In order to get a convincing simulation of high quality we must choose an appropriate energy. In the case of modelling deformations on human-like characters we have to choose an elastic energy. The key property that makes an energy elastic is that if all the forces that are applied over an object add up to zero the object must come back into its rest shape.
 \\
-The energy then has to be minimized to get the results we want.
+The energy then has to be minimized in order to get the results we want.
 
 \begin{definition}
   This is a definition.
 \end{definition}
 
 
+\todoredefined[inline]{
+TODO: Add some exaples and visualisations. What exactly is it and what role does it play in a deformation process?
+\\ To include: Piola-Kirchhoff Stress, Cauchy Green invariant, polar decomposition, cauchy green tensor
+}
 
-To include: Piola-Kirchhoff Stress, Cauchy Green invariant, polar decomposition, cauchy green tensor
+
 
 
 

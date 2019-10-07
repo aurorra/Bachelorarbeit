@@ -1933,6 +1933,7 @@
     <bcf:citekey order="8">STREAM2018</bcf:citekey>
     <bcf:citekey order="9">STREAM2018</bcf:citekey>
     <bcf:citekey order="10">Smith:2018:SNF:3191713.3180491</bcf:citekey>
+    <bcf:citekey order="11">Smith:2018:SNF:3191713.3180491</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="anyt">
