@@ -1,12 +1,11 @@
 \chapter{Background} \label{c:Background}
-The goal we are striving for is to simulate human-like characters. In order to narrow it down even further we concentrate on the behaviour of the flesh of the character. 
+The goal we are striving for is to animate human-like characters. In order to narrow it down even further we concentrate on the behaviour of the flesh of the character. 
 For understanding the thematics of simulating human-like flesh it is necessary to have a basic mathematical background and knowledge of continuum mechanics. The goal of this chapter is to deliver an understanding in the topics mentioned.
-
-In this chapter we will examine the topic of the paper \textit{Stable Neo-Hookean Flesh Simulation}. The goal of the paper was to model deformations for virtual characters that have human-like features.
 
 
 \section{Notation and Convention}
-At first we will declare the notation used in this thesis to avoid misunderstandings. We will use the common notation used in continuum mechanics taken from \cite{Spencer1980}. Additionally we will include the declarations formulated in the paper \textit{Stable Neo-Hookean Flesh Simulation}. 
+At first we will declare the notation used in this thesis to avoid misunderstandings. We will use the common notation used in continuum mechanics taken from the book \textit{Continuum Mechanics} \cite{Spencer1980}. Additionally we will include some more specific declarations formulated in the paper \textit{Stable Neo-Hookean Flesh Simulation} \cite{Smith:2018:SNF:3191713.3180491}. 
+
 
 \subsection{General Notation}
 Scalars are represented by regular, normal-weight variables such as $a$ whereas 
@@ -16,13 +15,13 @@ tensors and matrices are represented by upper-case bold letters as for example $
 \subsection{Tensor Notation}
 Furthermore we will use the tensor notation used in the paper \textit{Stable Neo-Hookean Flesh Simulation}. They decided to to define vectorization vec(.) as column-wise flattening of a matrix into a vector (\cite{Smith:2018:SNF:3191713.3180491}, 12:5) similar to Golub and Van Loan (2012) \cite{golub2012matrix}.
 
+In order to indicate that we are dealing with a vectorized matrix we will use the symbol $\check{.}$ as shown in the following equation:
+
 \[
 \textbf{A} = \begin{bmatrix} a & c \\ b & d \end{bmatrix} \qquad \operatorname{vec}(\textbf{A}) = \boldsymbol{\check{a}} = \begin{bmatrix} a \\ b \\ c \\ d \end{bmatrix}.
 \]
 
-In order to indicate that we are dealing with a vectorized matrix we will use the symbol $\check{.}$ as shown above.
-
-Additionally we will have to deal with $4^{th}$ order tensors in the following form of matrix-of-matrices:
+Additionally we will have to deal with $4^{th}$ order tensors in a form of matrix-of-matrices. These matrices are denoted by using blackboard bold:
 
 \[
 \mathbb{A} = 
@@ -31,36 +30,38 @@ Additionally we will have to deal with $4^{th}$ order tensors in the following f
 \left[\begin{array}{cc}{\left[\mathbf{A}_{00}\right]} & {\left[\mathbf{A}_{01}\right]} \\ {\left[\mathbf{A}_{10}\right]} & {\left[\mathbf{A}_{11}\right]}\end{array}\right]
 \]
 
-These matrices are denoted by using blackboard bold.
-\\
-If we now vectorize $\mathbb{A}$ we receive the following form:
+If we now vectorize $\mathbb{A}$ we receive the form described in the following:
 
 \[
 \mathbb{A} = \operatorname{vec}(\mathbb{A})=\left[\operatorname{vec}\left(\mathrm{A}_{00}\right)\left|\operatorname{vec}\left(\mathrm{A}_{10}\right)\right| \operatorname{vec}\left(\mathrm{A}_{01}\right) | \operatorname{vec}\left(\mathrm{A}_{11}\right)\right]
 \]
 
-This term is equivalent to the following notation:
+This term above is equivalent to the following notation:
 
 \[
 \mathbb{A}=\left[\begin{array}{llll}{a} & {e} & {i} & {m} \\ {b} & {f} & {j} & {n} \\ {c} & {g} & {k} & {o} \\ {d} & {h} & {l} & {p}\end{array}\right] 
 =\boldsymbol{\check{A}}
 \]
 
-The advantage of this form is that we can write several expressions as a cross product which we will need later.
+The advantage of this form is that we can write several expressions as a cross product. We will need this property later to simplify complicated expressions and calculations.
+
 
 \subsection{Summary}
-A quick overview of the used notation:
+A quick overview of the notation used so far:
 
-\begin{addmargin}[2cm]{2cm}
-a: scalar \\
-\textbf{A}: matrix or tensor \\
-\textbf{a}: vector \\
-vec(\textbf{A}) = $\boldsymbol{\check{a}}$: vectorized matrix
+\begin{addmargin}[1cm]{1cm}
+a: Scalar \\
+\textbf{A}: Matrix or tensor \\
+\textbf{a}: Vector \\
+vec(\textbf{A}) = $\boldsymbol{\check{a}}$: Vectorized matrix
 \end{addmargin}
 
-\section{Mathematical Background}
 
-Since mathematics plays an important role in our field of interest we will build a solid background in this chapter. A basic understanding of linear algebra is assumed.
+
+
+\section{Mathematical Background}
+Since mathematics play an important role in our field of interest we need to build a solid background before we go further into the physics part. This chapter should cover all the important concepts used later in the calculations. A basic understanding of linear algebra is assumed.
+
 
 \subsection{Matrices}
 At first we will discuss the physical or geometrical meaning of some common matrix properties.
@@ -70,13 +71,31 @@ At first we will discuss the physical or geometrical meaning of some common matr
 
 The singular value decomposition (SVD) will play an important role in the following. It is important for our application since it represents the best possible approximation of a given matrix by a matrix of low rank. This approximation can be looked at as a compression of the data given (\cite{LiesenMehrmann2015}, S. 295).
 
+\todoredefined[inline]{
+TODO: Complete this section. Add lemmas and theorems used afterwards in the calculations. Possible adjustments may come at the end.
+}
+
+
+
 \section{Continuum Mechanics}
-In this section we will give a broad introduction the field of Continuum Mechanics.
-In Continuum Mechanics we are less interested in small particles like atoms or molecules of an object but concentrate on pieces of matter which are in comparison very large. We are therefore concerned with the mechanical behavior of solids and fluids on the macroscopic scale (\cite{Spencer1980}, p. 1).
+In this section we will give a broad introduction into the field of Continuum Mechanics. In Continuum Mechanics we are less interested in small particles like atoms or molecules of an object but rather concentrate on pieces of matter which are in comparison very large. We are therefore concerned with the mechanical behavior of solids and fluids on the macroscopic scale (\cite{Spencer1980}, p. 1).
 
 
 \section{Deformation}
-Graphically we can imagine a deformation with the help of a deformation map. In Fig. \ref{fig:deformationmap} we have on the left side an ellipse that signifies an object in its rest state. On the right side in the same image we can see the ellipse in a deformed state. We can map each point from its rest state to the deformed one with the help of the function $\phi$.
+When applying a force over an object naturally the object itself undergoes a deformation. In the following we will be consistent with most previous literature in continuum mechanics and use the term strain as a measure of deformation and stress as the force per unit area.
+
+\begin{addmargin}[2cm]{2cm}
+\textit{Strain = measure of deformation}  \\
+\textit{Stress = force per unit area} 
+\end{addmargin}
+
+
+\todoredefined[inline]{
+TODO: Decide whether to include the above paragraph and how to connect it better to the paper.
+}
+
+
+Now let us have a look at a deformation in a rather mathematical sense. Graphically we can imagine a deformation with the help of a two dimensional deformation map as shown in Fig. \ref{fig:deformationmap}. Here we have on the left side an ellipse that represents an object or material in its rest state. A function $\phi$ maps this rest state of the ellipse to a deformed state shown in Fig. \ref{fig:deformationmap} on the right side. Mathematically spoken this means that we can map each point of a chosen object from its rest state to a deformed one.
 
 \begin{figure}[!htbp]
 	\centering
@@ -85,12 +104,20 @@ Graphically we can imagine a deformation with the help of a deformation map. In 
 	\label{fig:deformationmap}
 \end{figure}
 
-When applying a force over an object naturally the object itself undergoes a deformation. In the following we will be consistent with most previous literature in continuum mechanics and use the term strain as a measure of deformation and stress as the force per unit area.
+In conclusion the function $\phi$ describes our deformation. If we derive $\phi$ we can calculate the deformation gradient \textbf{F} which serves as a measure of the deformation in the following sense: 
 
-\begin{addmargin}[2cm]{2cm}
-\textit{Strain = measure of deformation}  \\
-\textit{Stress = force per unit area} 
-\end{addmargin}
+\[
+\begin{array}{l}
+{\text { Deformation gradient: }} {\mathbf{F}=\operatorname{\nabla} \phi}
+\\
+{\text { Length changes: }} {\qquad I_{C}=\operatorname{tr}\left(\mathbf{F}^{T} \mathbf{F}\right)} 
+\\ 
+{\text { Volume changes: }} {\qquad J=\operatorname{det}(\mathbf{F})}\end{array}
+\]
+
+\todoredefined[inline]{
+TODO: Adjust so the equal sign is at the same place in each column.
+}
 
 
 \section{Deformation Gradient}

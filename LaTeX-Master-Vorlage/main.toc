@@ -28,40 +28,40 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.5}Deformation Gradient}{7}{section.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.6}Material Constants}{7}{section.2.6}
+\contentsline {section}{\numberline {2.6}Material Constants}{8}{section.2.6}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.7}Deformation Energy}{8}{section.2.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Paper}{9}{chapter.3}
+\contentsline {chapter}{\numberline {3}Paper}{10}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Energy Formulation}{9}{section.3.1}
+\contentsline {section}{\numberline {3.1}Energy Formulation}{10}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.1}Previous Work}{9}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.1}Previous Work}{10}{subsection.3.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.2}Stable Neo-Hookean Energy}{10}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.2}Stable Neo-Hookean Energy}{11}{subsection.3.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Energy Analysis}{10}{section.3.2}
+\contentsline {section}{\numberline {3.2}Energy Analysis}{11}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.1}First Piola-Kirchhoff Stress (PK1)}{10}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.1}First Piola-Kirchhoff Stress (PK1)}{11}{subsection.3.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.2}The Energy Hessian Terms}{10}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.2}The Energy Hessian Terms}{11}{subsection.3.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.3}The Tikhonov, Mu, and Gradient Terms}{10}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.3}The Tikhonov, Mu, and Gradient Terms}{11}{subsection.3.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.4}The Volume Hessian}{10}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.4}The Volume Hessian}{11}{subsection.3.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.5}The Complete Eigensystem}{10}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.5}The Complete Eigensystem}{11}{subsection.3.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Experiments with the Code}{11}{section.3.3}
+\contentsline {section}{\numberline {3.3}Experiments with the Code}{12}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Discussion}{11}{section.3.4}
+\contentsline {section}{\numberline {3.4}Discussion}{12}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline List of Figures}{A}{chapter*.9}
+\contentsline {chapter}{\nonumberline List of Figures}{A}{chapter*.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline List of Tables}{B}{chapter*.10}
+\contentsline {chapter}{\nonumberline List of Tables}{B}{chapter*.13}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Bibliography}{D}{chapter*.11}
+\contentsline {chapter}{\nonumberline Bibliography}{D}{chapter*.14}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Online Sources}{E}{chapter*.12}
+\contentsline {chapter}{\nonumberline Online Sources}{E}{chapter*.15}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Figure Sources}{F}{chapter*.13}
+\contentsline {chapter}{\nonumberline Figure Sources}{F}{chapter*.16}

@@ -1926,12 +1926,13 @@
     <bcf:citekey order="1">Smith:2018:SNF:3191713.3180491</bcf:citekey>
     <bcf:citekey order="2">Spencer1980</bcf:citekey>
     <bcf:citekey order="3">Smith:2018:SNF:3191713.3180491</bcf:citekey>
-    <bcf:citekey order="4">golub2012matrix</bcf:citekey>
-    <bcf:citekey order="5">LiesenMehrmann2015</bcf:citekey>
-    <bcf:citekey order="6">Spencer1980</bcf:citekey>
-    <bcf:citekey order="7">STREAM2018</bcf:citekey>
+    <bcf:citekey order="4">Smith:2018:SNF:3191713.3180491</bcf:citekey>
+    <bcf:citekey order="5">golub2012matrix</bcf:citekey>
+    <bcf:citekey order="6">LiesenMehrmann2015</bcf:citekey>
+    <bcf:citekey order="7">Spencer1980</bcf:citekey>
     <bcf:citekey order="8">STREAM2018</bcf:citekey>
-    <bcf:citekey order="9">Smith:2018:SNF:3191713.3180491</bcf:citekey>
+    <bcf:citekey order="9">STREAM2018</bcf:citekey>
+    <bcf:citekey order="10">Smith:2018:SNF:3191713.3180491</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="anyt">
