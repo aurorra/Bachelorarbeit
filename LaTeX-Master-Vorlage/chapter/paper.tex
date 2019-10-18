@@ -1,23 +1,64 @@
 \chapter{Paper} \label{c:Paper}
-In this chapter we will examine the topic of the paper \textit{Stable Neo-Hookean Flesh Simulation} \cite{Smith:2018:SNF:3191713.3180491}. In the interest of understanding the thought process of the authors I will include some of their calculations a bit more detailed. In addition examples and visualisations should help for a better understanding. 
+In this chapter we will examine the topic of the paper \textit{Stable Neo-Hookean Flesh Simulation} \cite{Smith:2018:SNF:3191713.3180491}. In the interest of understanding the thought process of the authors I will include some of their calculations a bit more detailed. In addition examples and visualisations should help for a better perception. 
 
 \section{Energy Formulation}
 The core goal of the paper was to model deformations for virtual characters that have human-like features. They concentrated on the deformation energy. In order to achieve a convincing result as a first step we need to specify some requirements. For our needs in this case the stability of the energy is important. More precisely we need a hyperelastic energy that is stable in the following four important ways:
 
-\begin{itemize}
-\item Inversion stability
-\item Reflection stability
-\item Rest stability
-\item Meta-stability under degeneracy
-\end{itemize}
+\textbf{1. Inversion Stability:} Given some arbitrary object it is possible that while deforming the object we can arrive at a zero volume state or even an entire inversion. Take for example the tetrahedron shown in figure \ref{fig:inversion_1}. In figure \ref{fig:inversion_2} we see a deformed state of this tetrahedron where the volume is scaled down to zero and we are left with a simple triangle. In figure \ref{fig:inversion_3} image we have an inversion of the object. The needed deformation energy has to be able to deal with both cases.
+
+\begin{figure}[!ht]
+\centering
+\begin{subfigure}{.3\textwidth}
+  \centering
+  % include first image
+  \includegraphics[width=.8\linewidth]{resources/inversion_1}  
+  \caption{Rest state}
+  \label{fig:inversion_1}
+\end{subfigure}
+\begin{subfigure}{.3\textwidth}
+  \centering
+  % include first image
+  \includegraphics[width=.8\linewidth]{resources/inversion_2}  
+  \caption{Zero-volume state}
+  \label{fig:inversion_2}
+\end{subfigure}
+\begin{subfigure}{.3\textwidth}
+  \centering
+  % include second image
+  \includegraphics[width=.8\linewidth]{resources/inversion_3}  
+  \caption{Inversed state}
+  \label{fig:inversion_3}
+\end{subfigure}
+\caption{Inversion of a tetrahedron {\cite{STREAM2018}}}
+\label{fig:inversion}
+\end{figure}
+
+
+\textbf{2. Reflection stability:} A reflection is rotation around the coordinate origin.
+
+\textbf{3. Rest stability:} When deforming an object in a certain way we apply one or multiple forces over that object. With rest stability we want that if the sum of forces is equal to zero the object must be back in its rest state.
+
+\textbf{4. Meta-stability under degeneracy:} We can crush an object into an arbitrary shape like a plane, line or point. That process is illustrated for a cube in figure \ref{fig:meta_stability}. The cube should now be able to recover to its actual shape after the deformation.
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{resources/meta_stability}
+	\caption{Illustration of meta stability {\cite{STREAM2018}}}
+	\label{fig:meta_stability}
+\end{figure}
+
+Based on these four requirements we will in the following determine if a deformation energy is suited for our needs.
 
 \todoredefined[inline]{
-TODO: explain each step
+TODO: Finish reflection stability. Maybe add own images? Some more sources?
 }
 
 \subsection{Previous Work}
-Here comes previous work in neo-hookean energy formulation. What is neo-hookean and why do we need it here?
+\todoredefined[inline]{
+TODO: Here comes previous work in neo-hookean energy formulation. What is neo-hookean and why do we need it here?
 And what is wrong with each one.
+}
+
 
 \subsection{Stable Neo-Hookean Energy}
 Conclude to the energy proposed in the paper.
@@ -84,6 +125,9 @@ The following images in figure \ref{fig:stretchtest} show the stretch test with 
 \end{figure}
 
 
+\todoredefined[inline]{
+TODO: Load into OpenFlipper and screenshot results. Include more examples and what went right and what went wrong.
+}
 
 
 
