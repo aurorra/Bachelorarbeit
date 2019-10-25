@@ -4,7 +4,11 @@ In this chapter we will examine the topic of the paper \textit{Stable Neo-Hookea
 \section{Energy Formulation}
 The core goal of the paper was to model deformations for virtual characters that have human-like features. They concentrated on the deformation energy. In order to achieve a convincing result as a first step we need to specify some requirements. For our needs in this case the stability of the energy is important. More precisely we need a hyperelastic energy that is stable in the following four important ways:
 
-\textbf{1. Inversion Stability:} Given some arbitrary object it is possible that while deforming the object we can arrive at a zero volume state or even an entire inversion. Take for example the tetrahedron shown in figure \ref{fig:inversion_1}. In figure \ref{fig:inversion_2} we see a deformed state of this tetrahedron where the volume is scaled down to zero and we are left with a simple triangle. In figure \ref{fig:inversion_3} image we have an inversion of the object. The needed deformation energy has to be able to deal with both cases.
+\textbf{1. Inversion Stability:} Given some arbitrary object it is possible that while deforming the object we can arrive at a zero volume state or even an entire inversion. Take for example the tetrahedron shown in figure \ref{fig:inversion_1}. In figure \ref{fig:inversion_2} we see a deformed state of this tetrahedron where the volume is scaled down to zero and we are left with a simple triangle. In figure \ref{fig:inversion_3} image we have an inversion of the object. The needed deformation energy has to be able to deal with both cases. That means that the energy has to be singularity-free and does not need any filters or threshold (\cite{Smith:2018:SNF:3191713.3180491}, 12:3).
+
+\todoredefined[inline]{
+TODO: Explain what last sentence means. Reference correct like this?
+}
 
 \begin{figure}[!ht]
 \centering
@@ -35,6 +39,7 @@ The core goal of the paper was to model deformations for virtual characters that
 
 
 \textbf{2. Reflection stability:} A reflection is rotation around the coordinate origin.
+For the deformation energy we need it to be well behaved regardless of the reflection convention used in the singular value decomposition.
 
 \textbf{3. Rest stability:} When deforming an object in a certain way we apply one or multiple forces over that object. With rest stability we want that if the sum of forces is equal to zero the object must be back in its rest state.
 
