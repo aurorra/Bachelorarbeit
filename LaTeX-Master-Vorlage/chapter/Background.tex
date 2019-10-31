@@ -75,6 +75,32 @@ At first we will discuss the physical or geometrical meaning of some common matr
 
 The singular value decomposition (SVD) will play an important role in formulating the deformation gradient. It is important for our application since it represents the best possible approximation of a given matrix by a matrix of low rank. This approximation can be looked at as a compression of the data given (\cite{LiesenMehrmann2015}, S. 295).
 
+\begin{definition}[\textbf{Singular Values}]
+The singular values of a matrix A $\in$ $\mathbb{R}^{m x n}$ are the square roots of the eigenvalues of $AA^{\mathrm{T}}$.
+\end{definition}
+
+The theorem of the singular value decomposition tells us that we can factor every m-by-n matrix into one orthogonal m-by-m, one diagonal m-by-n and one orthogonal n-by-n matrix. More formally:
+
+\begin{theorem}[\textbf{The SVD Theorem}]
+Let A $\in$ $\mathbb{R}^{m x n}$ be a matrix having r positive singular values, m $\geq$ n. Then there exist orthogonal matrices U $\in$ $\mathbb{R}^{m x m}$, V $\in$ $\mathbb{R}^{n x n}$ and a diagonal matrix $\tilde{\Sigma}$ $\in$ $\mathbb{R}^{m x n}$ such that
+
+\[
+\begin{array}{l}{A=U \tilde{\Sigma} V^{\mathrm{T}}} \\ {\tilde{\Sigma}=\left[\begin{array}{ll}{\Sigma} & {0} \\ {0} & {0}\end{array}\right]}\end{array}
+\]
+
+where $\Sigma$ = diag ($\sigma$1, $\sigma$2, . . . , $\sigma$r), and $\sigma$1 $\geq$ $\sigma$2 $\geq$ · · · $\geq$ $\sigma$r $>$ 0 are the positive singular values of A.
+
+\end{theorem}
+Reference: \cite{ford2014numerical}, chap. 15
+
+\todoredefined[inline]{
+TODO: Check reference. Make paragraphs work together. Add examples.
+}
+
+
+\subsection{Polar Decomposition}
+
+
 \todoredefined[inline]{
 TODO: Complete this section. Add lemmas and theorems used afterwards in the calculations. Possible adjustments may come at the end.
 }
@@ -137,6 +163,14 @@ TODO: Add some examples. Already include definitions of the paper?
 \\ Some more sources:
 \\ http://www.continuummechanics.org/deformationgradient.html
 }
+
+\subsection{Polar Decomposition of the Deformation Gradient}
+With the help of mathematics we can decompose the deformation gradient in the following form:
+
+\[
+F = R S
+\]
+
 
 
 

@@ -1,16 +1,18 @@
 [0] Config.pm:302> INFO - This is Biber 2.10
 [0] Config.pm:305> INFO - Logfile is 'main.blg'
-[37] biber-MSWIN32:313> INFO - === 
-[65] Biber.pm:371> INFO - Reading 'main.bcf'
-[182] Biber.pm:857> INFO - Found 5 citekeys in bib section 0
-[197] Biber.pm:3976> INFO - Processing section 0
-[212] Biber.pm:4136> INFO - Looking for bibtex format file 'references/references.bib' for section 0
-[214] bibtex.pm:1444> INFO - Reading ascii input as UTF-8
-[215] bibtex.pm:1490> INFO - LaTeX decoding ...
-[231] bibtex.pm:1306> INFO - Found BibTeX data source 'references/references.bib'
-[299] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[299] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[299] Biber.pm:3804> INFO - Sorting list 'anyt/global//global/global' of type 'entry' with template 'anyt' and locale 'en-US'
-[299] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-US'
-[313] bbl.pm:617> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[315] bbl.pm:720> INFO - Output to main.bbl
+[38] biber-MSWIN32:313> INFO - === 
+[70] Biber.pm:371> INFO - Reading 'main.bcf'
+[190] Biber.pm:857> INFO - Found 6 citekeys in bib section 0
+[210] Biber.pm:3976> INFO - Processing section 0
+[228] Biber.pm:4136> INFO - Looking for bibtex format file 'references/references.bib' for section 0
+[230] bibtex.pm:1444> INFO - Reading ascii input as UTF-8
+[232] bibtex.pm:1490> INFO - LaTeX decoding ...
+[252] bibtex.pm:1306> INFO - Found BibTeX data source 'references/references.bib'
+[308] Utils.pm:193> WARN - I didn't find a database entry for 'William2014' (section 0)
+[325] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[326] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[326] Biber.pm:3804> INFO - Sorting list 'anyt/global//global/global' of type 'entry' with template 'anyt' and locale 'en-US'
+[326] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-US'
+[340] bbl.pm:617> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[343] bbl.pm:720> INFO - Output to main.bbl
+[343] Biber.pm:110> INFO - WARNINGS: 1
