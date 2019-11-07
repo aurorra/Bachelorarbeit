@@ -74,6 +74,65 @@
       \field{title}{Matrix computations. Vol. 3}
       \field{year}{2012}
     \endentry
+    \entry{lakes1987foam}{article}{}
+      \name{author}{1}{}{%
+        {{hash=2328ccc2c624bc1b0a47d15e111ad865}{%
+           family={Lakes},
+           familyi={L\bibinitperiod},
+           given={Roderic},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Association for the Advancement of Science}%
+      }
+      \strng{namehash}{2328ccc2c624bc1b0a47d15e111ad865}
+      \strng{fullhash}{2328ccc2c624bc1b0a47d15e111ad865}
+      \strng{bibnamehash}{2328ccc2c624bc1b0a47d15e111ad865}
+      \strng{authorbibnamehash}{2328ccc2c624bc1b0a47d15e111ad865}
+      \strng{authornamehash}{2328ccc2c624bc1b0a47d15e111ad865}
+      \strng{authorfullhash}{2328ccc2c624bc1b0a47d15e111ad865}
+      \field{labelalpha}{Lak87}
+      \field{sortinit}{L}
+      \field{sortinithash}{2c7981aaabc885868aba60f0c09ee20f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Science}
+      \field{title}{Foam structures with a negative Poisson's ratio}
+      \field{volume}{235}
+      \field{year}{1987}
+      \field{pages}{1038\bibrangedash 1041}
+      \range{pages}{4}
+    \endentry
+    \entry{lakes1993advances}{article}{}
+      \name{author}{1}{}{%
+        {{hash=2328ccc2c624bc1b0a47d15e111ad865}{%
+           family={Lakes},
+           familyi={L\bibinitperiod},
+           given={Roderic},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley Online Library}%
+      }
+      \strng{namehash}{2328ccc2c624bc1b0a47d15e111ad865}
+      \strng{fullhash}{2328ccc2c624bc1b0a47d15e111ad865}
+      \strng{bibnamehash}{2328ccc2c624bc1b0a47d15e111ad865}
+      \strng{authorbibnamehash}{2328ccc2c624bc1b0a47d15e111ad865}
+      \strng{authornamehash}{2328ccc2c624bc1b0a47d15e111ad865}
+      \strng{authorfullhash}{2328ccc2c624bc1b0a47d15e111ad865}
+      \field{labelalpha}{Lak93}
+      \field{sortinit}{L}
+      \field{sortinithash}{2c7981aaabc885868aba60f0c09ee20f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Advanced Materials}
+      \field{number}{4}
+      \field{title}{Advances in negative Poisson's ratio materials}
+      \field{volume}{5}
+      \field{year}{1993}
+      \field{pages}{293\bibrangedash 296}
+      \range{pages}{4}
+    \endentry
     \entry{LiesenMehrmann2015}{book}{}
       \name{author}{2}{}{%
         {{hash=0e43dd09a211b18cddbf5b30b23000de}{%

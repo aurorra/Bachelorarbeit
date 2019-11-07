@@ -194,11 +194,11 @@ F = R S
 \subsection{Material Constants}
 When we look at a deformation of an object we need to consider the material the object consists of. A material can be very stiff like steel or easily deformable like rubber. In order to measure the deformation in a specific material we need the \textit{Poisson's Ratio} of said material. The poisson's ratio is a material constant that is defined as 
 
-\[
-	\sigma = - \frac{\epsilon_{11}}{\epsilon_{22}} \in [-1, 0.5]
-\] 
+\begin{equation}\label{eq:poisson}
+\sigma = - \frac{\epsilon_{11}}{\epsilon_{22}} \in [-1, 0.5]
+\end{equation}
 
-where $\epsilon_{11}$ is the lateral and $\epsilon_{22}$ the axial strain. The range in which $\sigma$ lies in starts at $-1$ and goes up to $0.5$ \cite{PhysRevB.80.132104}. Usually the poisson's ratio of a material is positive. A negative value would mean that the material becomes wider in the cross section when it is stretched. This behaviour is very uncommon in nature. In our use case we need the poisson's ratio as a characterization for the resistance to volume change of a given material.
+where $\epsilon_{11}$ is the lateral and $\epsilon_{22}$ the axial strain. The range in which $\sigma$ lies in starts at $-1$ and goes up to $0.5$ \cite{PhysRevB.80.132104}. Usually the poisson's ratio of a material is positive. A negative value would mean that the material becomes wider in the cross section when it is stretched. This behaviour is very uncommon in nature. Examples of materials with a negative poisson's ratio are for instance discussed in \textit{Foam structures with a negative Poisson's ratio} \cite{lakes1987foam} or \textit{Advances in negative Poisson's ratio materials} \cite{lakes1993advances}.
 
 Here are some examples of the poisson's ratio of various materials:
 
@@ -225,17 +225,20 @@ Here are some examples of the poisson's ratio of various materials:
 \label{table:1}
 \end{table}
 
+In the context of flesh simulations we use the poisson's ratio as a characterization for the resistance to volume change of flesh. Biological tissues such as flesh, fat and muscles have one important property: Volume preservation. As a result the poisson's ratio is a higher value, meaning it is found in the range between 0.45 and 0.5 \cite{Smith:2018:SNF:3191713.3180491}.
 
-The two constants $\mu$ and $\lambda$ that are crucial for us are called \textit{Lamé Parameters}. With the help of these two constants we can calculate the \textit{Poisson's Ratio}:
+The calculation of the poisson's ratio defined as in equation \ref{eq:poisson} is a challenge. Fortunately we can make use of the \textit{Lamé Parameters}. These are the two constants $\mu$ and $\lambda$ that are specific for a material. With the help of these two constants we can transform equation \ref{eq:poisson} into the following form:
 
-\[ \sigma =  \frac{\lambda}{2(\lambda + \mu)}  \]
+\begin{equation}\label{eq:poisson_ratio}
+\sigma =  \frac{\lambda}{2(\lambda + \mu)}
+\end{equation}
 
-
-For the simulation of human-like flesh we have to choose a poisson's ratio that is almost 0.5 in order to get realistic results.
-\\ 
+This equation allows us to calculate the poisson's ratio much easier. 
 
 \todoredefined[inline]{
-TODO: Add some examples and images. Explain poisson's ratio a bit better. Why must poisson's ratio be 0.5? Add some references. Make table more beautiful. Add reference to table, now it is wikipedia (https://en.wikipedia.org/wiki/Poisson%27s_ratio).
+TODO: Topic generally covered, maybe adjust the following:
+Explain why volume preservation => high poisson's ratio. Explain how to get formula with lamé parameters, explain lamé parameters.
+Explain more on negative poisson's value?
 \\
 Further reading: http://silver.neep.wisc.edu/~lakes/PoissonIntro.html
 }
