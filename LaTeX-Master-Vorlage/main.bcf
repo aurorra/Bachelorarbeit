@@ -1931,16 +1931,20 @@
     <bcf:citekey order="6">LiesenMehrmann2015</bcf:citekey>
     <bcf:citekey order="7">ford2014numerical</bcf:citekey>
     <bcf:citekey order="8">Spencer1980</bcf:citekey>
-    <bcf:citekey order="9">STREAM2018</bcf:citekey>
+    <bcf:citekey order="9">Spencer1980</bcf:citekey>
     <bcf:citekey order="10">STREAM2018</bcf:citekey>
-    <bcf:citekey order="11">Smith:2018:SNF:3191713.3180491</bcf:citekey>
+    <bcf:citekey order="11">STREAM2018</bcf:citekey>
     <bcf:citekey order="12">Smith:2018:SNF:3191713.3180491</bcf:citekey>
-    <bcf:citekey order="13">Smith:2018:SNF:3191713.3180491</bcf:citekey>
-    <bcf:citekey order="14">STREAM2018</bcf:citekey>
-    <bcf:citekey order="15">STREAM2018</bcf:citekey>
-    <bcf:citekey order="16">STREAM2018</bcf:citekey>
-    <bcf:citekey order="17">STREAM2018</bcf:citekey>
-    <bcf:citekey order="18">Smith:2018:SNF:3191713.3180491</bcf:citekey>
+    <bcf:citekey order="13">PhysRevB.80.132104</bcf:citekey>
+    <bcf:citekey order="14">PhysRevB.80.132104</bcf:citekey>
+    <bcf:citekey order="15">PhysRevB.80.132104</bcf:citekey>
+    <bcf:citekey order="16">Smith:2018:SNF:3191713.3180491</bcf:citekey>
+    <bcf:citekey order="17">Smith:2018:SNF:3191713.3180491</bcf:citekey>
+    <bcf:citekey order="18">STREAM2018</bcf:citekey>
+    <bcf:citekey order="19">STREAM2018</bcf:citekey>
+    <bcf:citekey order="20">STREAM2018</bcf:citekey>
+    <bcf:citekey order="21">STREAM2018</bcf:citekey>
+    <bcf:citekey order="22">Smith:2018:SNF:3191713.3180491</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="anyt">

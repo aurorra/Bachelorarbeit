@@ -19,6 +19,31 @@
 
 \refsection{0}
   \datalist[entry]{anyt/global//global/global}
+    \entry{ford2014numerical}{book}{}
+      \name{author}{1}{}{%
+        {{hash=4bf15b49912cde7e5b6008e01bb67f28}{%
+           family={Ford},
+           familyi={F\bibinitperiod},
+           given={William},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Academic Press}%
+      }
+      \strng{namehash}{4bf15b49912cde7e5b6008e01bb67f28}
+      \strng{fullhash}{4bf15b49912cde7e5b6008e01bb67f28}
+      \strng{bibnamehash}{4bf15b49912cde7e5b6008e01bb67f28}
+      \strng{authorbibnamehash}{4bf15b49912cde7e5b6008e01bb67f28}
+      \strng{authornamehash}{4bf15b49912cde7e5b6008e01bb67f28}
+      \strng{authorfullhash}{4bf15b49912cde7e5b6008e01bb67f28}
+      \field{labelalpha}{For14}
+      \field{sortinit}{F}
+      \field{sortinithash}{669c706c6f1fbf3b5a83d26f1d9e9e72}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Numerical linear algebra with applications: Using MATLAB}
+      \field{year}{2014}
+    \endentry
     \entry{golub2012matrix}{misc}{}
       \name{author}{2}{}{%
         {{hash=6b27671b091a8b3948f1eb0eb0458d05}{%
@@ -84,6 +109,51 @@
       \field{title}{Linear algebra}
       \field{year}{2015}
       \keyw{book}
+    \endentry
+    \entry{PhysRevB.80.132104}{article}{}
+      \name{author}{2}{}{%
+        {{hash=51c8c350aecf597fad399121ff0b9215}{%
+           family={Mott},
+           familyi={M\bibinitperiod},
+           given={P.\bibnamedelimi H.},
+           giveni={P\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=cdf16a24b1b8812abf0f3f555ba31449}{%
+           family={Roland},
+           familyi={R\bibinitperiod},
+           given={C.\bibnamedelimi M.},
+           giveni={C\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society}%
+      }
+      \strng{namehash}{6caa870aef8d116f55eed016ebd9ae04}
+      \strng{fullhash}{6caa870aef8d116f55eed016ebd9ae04}
+      \strng{bibnamehash}{6caa870aef8d116f55eed016ebd9ae04}
+      \strng{authorbibnamehash}{6caa870aef8d116f55eed016ebd9ae04}
+      \strng{authornamehash}{6caa870aef8d116f55eed016ebd9ae04}
+      \strng{authorfullhash}{6caa870aef8d116f55eed016ebd9ae04}
+      \field{labelalpha}{MR09}
+      \field{sortinit}{M}
+      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{13}
+      \field{journaltitle}{Phys. Rev. B}
+      \field{month}{10}
+      \field{title}{Limits to Poisson's ratio in isotropic materials}
+      \field{volume}{80}
+      \field{year}{2009}
+      \field{pages}{132104}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1103/PhysRevB.80.132104
+      \endverb
+      \verb{urlraw}
+      \verb https://link.aps.org/doi/10.1103/PhysRevB.80.132104
+      \endverb
+      \verb{url}
+      \verb https://link.aps.org/doi/10.1103/PhysRevB.80.132104
+      \endverb
     \endentry
     \entry{STREAM2018}{online}{}
       \name{author}{1}{}{%
@@ -198,7 +268,6 @@
       \keyw{book}
     \endentry
   \enddatalist
-  \missing{William2014}
 \endrefsection
 \endinput
 
