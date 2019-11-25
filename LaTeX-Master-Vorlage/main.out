@@ -22,19 +22,18 @@
 \BOOKMARK [2][-]{subsection.3.2.1}{Stability}{section.3.2}% 22
 \BOOKMARK [2][-]{subsection.3.2.2}{Existing Neo-Hookean Energies}{section.3.2}% 23
 \BOOKMARK [2][-]{subsection.3.2.3}{Rest Stabilization}{section.3.2}% 24
-\BOOKMARK [2][-]{subsection.3.2.4}{Lam\351 Reparametrization}{section.3.2}% 25
-\BOOKMARK [2][-]{subsection.3.2.5}{Previous Work}{section.3.2}% 26
-\BOOKMARK [2][-]{subsection.3.2.6}{Stable Neo-Hookean Energy}{section.3.2}% 27
-\BOOKMARK [1][-]{section.3.3}{Energy Analysis}{chapter.3}% 28
-\BOOKMARK [2][-]{subsection.3.3.1}{First Piola-Kirchhoff Stress \(PK1\)}{section.3.3}% 29
-\BOOKMARK [2][-]{subsection.3.3.2}{The Energy Hessian Terms}{section.3.3}% 30
-\BOOKMARK [2][-]{subsection.3.3.3}{The Tikhonov, Mu, and Gradient Terms}{section.3.3}% 31
-\BOOKMARK [2][-]{subsection.3.3.4}{The Volume Hessian}{section.3.3}% 32
-\BOOKMARK [2][-]{subsection.3.3.5}{The Complete Eigensystem}{section.3.3}% 33
-\BOOKMARK [1][-]{section.3.4}{Experiments with the Code}{chapter.3}% 34
-\BOOKMARK [1][-]{section.3.5}{Discussion}{chapter.3}% 35
-\BOOKMARK [0][-]{chapter*.30}{List of Figures}{}% 36
-\BOOKMARK [0][-]{chapter*.31}{List of Tables}{}% 37
-\BOOKMARK [0][-]{chapter*.32}{Bibliography}{}% 38
-\BOOKMARK [0][-]{chapter*.33}{Online Sources}{}% 39
-\BOOKMARK [0][-]{chapter*.34}{Figure Sources}{}% 40
+\BOOKMARK [2][-]{subsection.3.2.4}{Meta-Stability under Degeneracy}{section.3.2}% 25
+\BOOKMARK [2][-]{subsection.3.2.5}{Lam\351 Reparametrization}{section.3.2}% 26
+\BOOKMARK [1][-]{section.3.3}{Energy Analysis}{chapter.3}% 27
+\BOOKMARK [2][-]{subsection.3.3.1}{First Piola-Kirchhoff Stress \(PK1\)}{section.3.3}% 28
+\BOOKMARK [2][-]{subsection.3.3.2}{The Energy Hessian Terms}{section.3.3}% 29
+\BOOKMARK [2][-]{subsection.3.3.3}{The Tikhonov, Mu, and Gradient Terms}{section.3.3}% 30
+\BOOKMARK [2][-]{subsection.3.3.4}{The Volume Hessian}{section.3.3}% 31
+\BOOKMARK [2][-]{subsection.3.3.5}{The Complete Eigensystem}{section.3.3}% 32
+\BOOKMARK [1][-]{section.3.4}{Experiments with the Code}{chapter.3}% 33
+\BOOKMARK [1][-]{section.3.5}{Discussion}{chapter.3}% 34
+\BOOKMARK [0][-]{chapter*.32}{List of Figures}{}% 35
+\BOOKMARK [0][-]{chapter*.33}{List of Tables}{}% 36
+\BOOKMARK [0][-]{chapter*.34}{Bibliography}{}% 37
+\BOOKMARK [0][-]{chapter*.35}{Online Sources}{}% 38
+\BOOKMARK [0][-]{chapter*.36}{Figure Sources}{}% 39

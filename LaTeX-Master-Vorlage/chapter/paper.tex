@@ -183,22 +183,42 @@ P_{E}(F) = \frac{\partial \Psi_{D}}{\partial F} \left[ \frac{\mu}{2}\left(I_{C}-
 \[
 = \mu F + \lambda (\operatorname{det}(F)-\alpha)  \frac{\partial}{\partial F} \operatorname{det}(F)
 \]
-Solving for an alpha that satisfies $P_{E}(I)=0$ gives us $\alpha=1+\frac{\mu}{\lambda}$.
+Solving for an alpha that satisfies $P_{E}(I)=0$ gives us $\alpha=1+\frac{\mu}{\lambda}$. Now $\Psi_{E}$ has to be changed accordingly:
+\[
+\Psi_{E} = \frac{\mu}{2}\left(I_{C}-3\right) +\frac{\lambda}{2}(J-1-\frac{\mu}{\lambda})^{2}
+\]
+\[
+= \frac{\mu}{2}\left(I_{C}-3\right) - \mu\left(J-1\right) + \frac{\lambda}{2}(J-1)^{2} + \left(\frac{\mu}{\lambda}\right)^{2}
+\]
+Since constant disappear under differentiation this expression is functionally equivalent to 
+\[
+\Psi_{E} = \frac{\mu}{2}\left(I_{C}-3\right) - \mu\left(J-1\right) + \frac{\lambda}{2}(J-1)^{2}.
+\]
+Now one can notice that $\Psi_{E}$ looks very similar to $\Psi_{Neo}$. The difference is that we replaced $log(J)$ with $(J-1)$ in $\Psi_{E}$. Remember that $(J-1)$ is the first term in the taylor approximation of $log(J)$ at $J=1$.
+
+\todoredefined[inline]{
+TODO: Add "Zwischenschritte"? Include all calculations? Do we need a bit of a better conclusion of what we did (taylor, neo, sing. free, rest stable)?
+}
+
+\subsection{Meta-Stability under Degeneracy}
+The final energy is
+\begin{equation}\label{eq:stable_energy}
+\Psi_{new} = \frac{\mu}{2}\left(I_{C}-3\right) + \frac{\lambda}{2}(J-\alpha)^{2} - \frac{\mu}{2}\left(I_{C}+1\right).
+\end{equation}
+With that adjustment the rest stability term shifts to $\alpha=1+\frac{\mu}{\lambda}-\left(\frac{\mu}{4}\right)\lambda$.
+
+\todoredefined[inline]{
+TODO: How much needs to be explained here?
+}
 
 \subsection{Lamé Reparametrization}
-
-\subsection{Previous Work}
 \todoredefined[inline]{
-TODO: Here comes previous work in neo-hookean energy formulation. What is neo-hookean and why do we need it here?
-And what is wrong with each one.
+TODO: How much needs to be explained here?
 }
 
 
-\subsection{Stable Neo-Hookean Energy}
-Conclude to the energy proposed in the paper.
-
 \section{Energy Analysis}
-Calculations and Herleitungen
+In this chapter it is shown that one can perform a complete eigenanalysis on equation \ref{eq:stable_energy}.
 
 \subsection{First Piola-Kirchhoff Stress (PK1)}
 Explain.
