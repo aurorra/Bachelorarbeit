@@ -82,19 +82,57 @@ TODO: Finish reflection stability. Maybe add own images? Some more sources?
 }
 
 \subsection{Existing Neo-Hookean Energies}
-A commonly used energy function is defined as follows (see e.g. \cite{bonet1997nonlinear}, p.148):
 
+In previous literature a few energies were proposed.
+
+\begin{table}[!htbp]
+\centering
+    \begin{tabular}{ | l | l |}
+    \hline
+    \textbf{Energy} & \textbf{Author(s)} \\ \hline
+    $\Psi_{Neo}=\frac{\mu}{2}\left(I_{C}-3\right)-\mu \ln J+\frac{\lambda}{2}(\ln J)^{2}$ & Mooney 1940 \\ \hline
+    $\Psi_{\mathrm{A}}=\frac{\mu}{2}\left(I_{C}-3\right)-\mu \log J+\frac{\lambda}{2}(J-1)^{2}$ & Odgen 1997 \\ \hline
+    $\Psi_{\mathrm{B}}=\frac{\mu}{2}\left(J^{-2 / 3} I_{C}-3\right)+\frac{\lambda}{2}(J-1)^{2}$ & Bower 2009 \\ \hline
+    $\Psi_{\mathrm{C}}=\frac{\mu}{2}\left(J^{-2 / 3} I_{C}-3\right)+\frac{\lambda}{2}(J-1)$ & Wang and Yang 2016 \\ \hline
+    \end{tabular}
+    \caption{Summary of proposed energies taken from \cite{Smith:2018:SNF:3191713.3180491}}
+\label{table:1}
+\end{table}
+
+Each energy formulation can be split up into a 1D length term and a 3D volume term.
+
+\begin{table}[!htbp]
+\centering
+    \begin{tabular}{ | l | l | l |}
+    \hline
+    \textbf{Energy} & \textbf{1D length term} & \textbf{3D volume term} \\ \hline
+    $\Psi_{Neo}$ & $\frac{\mu}{2}\left(I_{C}-3\right)$ & $-\mu \ln J+\frac{\lambda}{2}(\ln J)^{2}$ \\ \hline
+    $\Psi_{\mathrm{A}}$ & $\frac{\mu}{2}\left(I_{C}-3\right)$ & $-\mu \log J+\frac{\lambda}{2}(J-1)^{2}$ \\ \hline
+    $\Psi_{\mathrm{B}}$ & $\frac{\mu}{2}\left(J^{-2 / 3} I_{C}-3\right)$ & $+\frac{\lambda}{2}(J-1)^{2}$ \\ \hline
+    $\Psi_{\mathrm{C}}$ & $\frac{\mu}{2}\left(J^{-2 / 3} I_{C}-3\right)+$ & $\frac{\lambda}{2}(J-1)$ \\ \hline
+    \end{tabular}
+    \caption{Energies split up into its 1D length and 3D volume term}
+\label{table:1}
+\end{table}
+
+\textbf{1D Length Term:} This term penalizes length changes. Mooney proposed the energy (\cite{mooney1940theory})
 \[
-\Psi=\frac{\mu}{2}\left(I_{C}-3\right)-\mu \ln J+\frac{\lambda}{2}(\ln J)^{2}
+\Psi_{M}=\frac{\mu}{2}\left(I_{C}-3\right)
+\]
+which was later known as "Neo-Hookean" energy. 
+
+If we expand the energy with the singular values of the deformation gradient \textbf{F} we get the following term:
+\[
+\Psi_{M}=\frac{\mu}{2}\left(I_{C}-3\right) = \frac{\mu}{2}\left(\sigma_{0}^2 + \sigma_{1}^2 + \sigma_{2}^2 - 3\right)
 \]
 
-where $\lambda$ and $\mu$ are the material constants and $J = det(F)$.
-
-In the literature appear many more different formulations of the energy. Each one consists of a 1D length term and a 3D volume term.
-
-\textbf{1D Length Term:} This term penalizes length changes.
+The energy as it is formulated reaches its minimum at a zero volume change, meaning $I_{C}=0$ and $\Psi_{M}=-3$. Mooney added the hard constraint that $J=1$ so that the energy is minimized at the volume preserving configuration. Note that the energy is singularity free and well defined under inversion.
 
 \textbf{3D Volume Term:} Here we are dealing with a volume-preserving penalty term. 
+
+\todoredefined[inline]{
+TODO: Bonet and Wood 2008 or 1997? Table looks ugly, improve and add resources.
+}
 
 \subsection{Rest Stabilization}
 

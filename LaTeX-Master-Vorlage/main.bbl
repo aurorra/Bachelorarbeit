@@ -199,6 +199,36 @@
       \field{year}{2015}
       \keyw{book}
     \endentry
+    \entry{mooney1940theory}{article}{}
+      \name{author}{1}{}{%
+        {{hash=abd78f46e6fd141fc46ce6489944e582}{%
+           family={Mooney},
+           familyi={M\bibinitperiod},
+           given={Melvin},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {AIP}%
+      }
+      \strng{namehash}{abd78f46e6fd141fc46ce6489944e582}
+      \strng{fullhash}{abd78f46e6fd141fc46ce6489944e582}
+      \strng{bibnamehash}{abd78f46e6fd141fc46ce6489944e582}
+      \strng{authorbibnamehash}{abd78f46e6fd141fc46ce6489944e582}
+      \strng{authornamehash}{abd78f46e6fd141fc46ce6489944e582}
+      \strng{authorfullhash}{abd78f46e6fd141fc46ce6489944e582}
+      \field{labelalpha}{Moo40}
+      \field{sortinit}{M}
+      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of applied physics}
+      \field{number}{9}
+      \field{title}{A theory of large elastic deformation}
+      \field{volume}{11}
+      \field{year}{1940}
+      \field{pages}{582\bibrangedash 592}
+      \range{pages}{11}
+    \endentry
     \entry{PhysRevB.80.132104}{article}{}
       \name{author}{2}{}{%
         {{hash=51c8c350aecf597fad399121ff0b9215}{%
