@@ -90,10 +90,10 @@ In previous literature a few energies were proposed.
     \begin{tabular}{ | l | l |}
     \hline
     \textbf{Energy} & \textbf{Author(s)} \\ \hline
-    $\Psi_{Neo}=\frac{\mu}{2}\left(I_{C}-3\right)-\mu \ln J+\frac{\lambda}{2}(\ln J)^{2}$ & e.g. Bonet and Wood 2008 \\ \hline
+    $\Psi_{Neo}=\frac{\mu}{2}\left(I_{C}-3\right)-\mu \log J+\frac{\lambda}{2}(\log J)^{2}$ & e.g. Bonet and Wood 2008 \\ \hline
     $\Psi_{\mathrm{A}}=\frac{\mu}{2}\left(I_{C}-3\right)-\mu \log J+\frac{\lambda}{2}(J-1)^{2}$ & Odgen 1997 \\ \hline
     $\Psi_{\mathrm{B}}=\frac{\mu}{2}\left(J^{-2 / 3} I_{C}-3\right)+\frac{\lambda}{2}(J-1)^{2}$ & Bower 2009 \\ \hline
-    $\Psi_{\mathrm{C}}=\frac{\mu}{2}\left(J^{-2 / 3} I_{C}-3\right)+\frac{\lambda}{2}(J-1)$ & Wang and Yang 2016 \\ \hline
+    $\Psi_{\mathrm{C}}=\frac{\mu}{2}\left(J^{-2 / 3} I_{C}-3\right)+\frac{\lambda}{2}(J-1)^{2}$ & Wang and Yang 2016 \\ \hline
     \end{tabular}
     \caption{Summary of proposed energies taken from \cite{Smith:2018:SNF:3191713.3180491}}
 \label{table:1}
@@ -106,10 +106,10 @@ Each energy formulation can be split up into a 1D length term and a 3D volume te
     \begin{tabular}{ | l | l | l |}
     \hline
     \textbf{Energy} & \textbf{1D length term} & \textbf{3D volume term} \\ \hline
-    $\Psi_{Neo}$ & $\frac{\mu}{2}\left(I_{C}-3\right)$ & $-\mu \ln J+\frac{\lambda}{2}(\ln J)^{2}$ \\ \hline
+    $\Psi_{Neo}$ & $\frac{\mu}{2}\left(I_{C}-3\right)$ & $-\mu \log J+\frac{\lambda}{2}(\log J)^{2}$ \\ \hline
     $\Psi_{\mathrm{A}}$ & $\frac{\mu}{2}\left(I_{C}-3\right)$ & $-\mu \log J+\frac{\lambda}{2}(J-1)^{2}$ \\ \hline
     $\Psi_{\mathrm{B}}$ & $\frac{\mu}{2}\left(J^{-2 / 3} I_{C}-3\right)$ & $\frac{\lambda}{2}(J-1)^{2}$ \\ \hline
-    $\Psi_{\mathrm{C}}$ & $\frac{\mu}{2}\left(J^{-2 / 3} I_{C}-3\right)$ & $\frac{\lambda}{2}(J-1)$ \\ \hline
+    $\Psi_{\mathrm{C}}$ & $\frac{\mu}{2}\left(J^{-2 / 3} I_{C}-3\right)$ & $\frac{\lambda}{2}(J-1)^{2}$ \\ \hline
     \end{tabular}
     \caption{Energies split up into its 1D length and 3D volume term}
 \label{table:1}
@@ -121,9 +121,9 @@ Each energy formulation can be split up into a 1D length term and a 3D volume te
 \]
 that is used in $\Psi_{Neo}$ and $\Psi_{A}$. If we expand the energy with the singular values of the deformation gradient \textbf{F} we get the following term:
 \[
-\Psi_{M}=\frac{\mu}{2}\left(I_{C}-3\right) = \frac{\mu}{2}\left(\sigma_{0}^2 + \sigma_{1}^2 + \sigma_{2}^2 - 3\right)
+\Psi_{M}=\frac{\mu}{2}\left(\sigma_{0}^2 + \sigma_{1}^2 + \sigma_{2}^2 - 3\right)
 \]
-The energy as it is formulated reaches its minimum at a zero volume change, meaning $I_{C}=0$ and $\Psi_{M}=-3$. Mooney added the hard constraint that $J=1$ so that the energy is minimized at the volume preserving configuration. Note that the energy is singularity free and well defined under inversion.
+The energy as it is formulated reaches its minimum at a zero volume change, meaning $I_{C}=0$ which results in $\Psi_{M}=-3$. Mooney added the hard constraint that $J=1$ so that the energy is minimized at the volume preserving configuration. Note that the energy is singularity free and well defined under inversion.
 
 The second term 
 \[
@@ -131,19 +131,59 @@ The second term
 \]
 is used in $\Psi_{B}$ and $\Psi_{C}$ was introduced by Rivlin in 1948. Using the singular values of F we get the following term:
 \[
-\Psi_{R} = \frac{\mu}{2}\left(J^{-2 / 3} I_{C}-3\right) = \frac{\mu}{2}\left(\frac{\sigma_{0}^2 + \sigma_{1}^2 + \sigma_{2}^2}{(\sigma_{0}  \sigma_{1}  \sigma_{2})^\frac{2}{3}}
+\Psi_{R} = \frac{\mu}{2}\left(\frac{\sigma_{0}^2 + \sigma_{1}^2 + \sigma_{2}^2}{(\sigma_{0}  \sigma_{1}  \sigma_{2})^\frac{2}{3}}
  - 3\right)
 \]
 Unfortunately this term is not singularity free. If either $\sigma_{0}$, $\sigma_{1}$ or $\sigma_{2}$ is equal to zero the result is not defined anymore.
 
 
-\textbf{3D Volume Term:} Here we are dealing with a volume-preserving penalty term. 
+\textbf{3D Volume Term:} Here we are dealing with a volume-preserving penalty term. The volume term of $\Psi_{Neo}$, meaning
+\[
+\Psi_{Neo, volume} = -\mu \log J+\frac{\lambda}{2}(\log J)^{2}
+\]
+results in some numerical problems since the logarithmic function is not defined for $J<0$ and grows unbounded for $J \rightarrow 0$. In conclusion $\Psi_{Neo, volume}$ is not singularity free. 
+The same applies for the 3D volume term of $\Psi_{A}$
+\[
+\Psi_{A, volume} = -\mu \log J+\frac{\lambda}{2}(J-1)^{2}.
+\]
+The term of $\Psi_{A}$ and $\Psi_{B}$
+\[
+\Psi_{M} = \frac{\lambda}{2}(J-1)^{2}
+\]
+does not have these noted difficulties. It is bounded, well defined and invertible. After these observations we combine the robust length with the robust volume term
+\[
+\Psi_{D} = \frac{\mu}{2}\left(I_{C}-3\right) +\frac{\lambda}{2}(J-1)^{2}
+\]
+which is singularity free and well defined under inversion.
 
 \todoredefined[inline]{
-TODO: Bonet and Wood 2008 or 1997? Table looks ugly, improve and add resources.
+TODO: Bonet and Wood 2008 or 1997? Table looks ugly, improve and add resources. minimum at IC=0 or J=0? Overall okay?
 }
 
 \subsection{Rest Stabilization}
+Although $\Psi_{D}$ meets almost all of our requirements it is not rest stable. This can be shown with the Piola-Kirchhoff (PK1) stress tensor:
+\[
+P_{D}(I) = \frac{\partial \Psi_{D}}{\partial F} (I) = \frac{\partial \Psi_{D}}{\partial F} \left[ \frac{\mu}{2}\left(I_{C}-3\right) +\frac{\lambda}{2}(J-1)^{2} \right]
+\]
+\[
+= \frac{\partial \Psi_{D}}{\partial F}  \frac{\mu}{2}\left(\operatorname{tr}(\mathrm{I}^{T} \mathrm{I})-3\right) +\frac{\partial \Psi_{D}}{\partial F} \frac{\lambda}{2}(\operatorname{tr}(\mathrm{I})-1)^{2}
+\]
+\[
+= \mu I + \lambda (\operatorname{det}(I)-1)  \frac{\partial}{\partial F} \operatorname{det}(I) = \mu I \neq 0
+\]
+
+If the energy had rest stability $P_{D}(I)$ would resolve to zero. Unfortunately this is not the case here. In order to solve that problem the authors modified $(J-1)^{2}$ to $(J-\alpha)^{2}$:
+\[
+\Psi_{E} = \frac{\mu}{2}\left(I_{C}-3\right) +\frac{\lambda}{2}(J-\alpha)^{2}
+\]
+therefore resulting to:
+\[
+P_{E}(F) = \frac{\partial \Psi_{D}}{\partial F} \left[ \frac{\mu}{2}\left(I_{C}-3\right) +\frac{\lambda}{2}(J-\alpha)^{2} \right]
+\]
+\[
+= \mu F + \lambda (\operatorname{det}(F)-\alpha)  \frac{\partial}{\partial F} \operatorname{det}(F)
+\]
+Solving for an alpha that satisfies $P_{E}(I)=0$ gives us $\alpha=1+\frac{\mu}{\lambda}$.
 
 \subsection{Lamé Reparametrization}
 
