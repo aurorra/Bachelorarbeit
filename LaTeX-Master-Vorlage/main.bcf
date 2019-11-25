@@ -1943,11 +1943,14 @@
     <bcf:citekey order="18">Smith:2018:SNF:3191713.3180491</bcf:citekey>
     <bcf:citekey order="19">Smith:2018:SNF:3191713.3180491</bcf:citekey>
     <bcf:citekey order="20">Smith:2018:SNF:3191713.3180491</bcf:citekey>
-    <bcf:citekey order="21">STREAM2018</bcf:citekey>
-    <bcf:citekey order="22">STREAM2018</bcf:citekey>
+    <bcf:citekey order="21">Smith:2018:SNF:3191713.3180491</bcf:citekey>
+    <bcf:citekey order="22">Smith:2018:SNF:3191713.3180491</bcf:citekey>
     <bcf:citekey order="23">STREAM2018</bcf:citekey>
     <bcf:citekey order="24">STREAM2018</bcf:citekey>
-    <bcf:citekey order="25">Smith:2018:SNF:3191713.3180491</bcf:citekey>
+    <bcf:citekey order="25">STREAM2018</bcf:citekey>
+    <bcf:citekey order="26">STREAM2018</bcf:citekey>
+    <bcf:citekey order="27">bonet1997nonlinear</bcf:citekey>
+    <bcf:citekey order="28">Smith:2018:SNF:3191713.3180491</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="anyt">

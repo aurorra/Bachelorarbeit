@@ -19,6 +19,36 @@
 
 \refsection{0}
   \datalist[entry]{anyt/global//global/global}
+    \entry{bonet1997nonlinear}{book}{}
+      \name{author}{2}{}{%
+        {{hash=1f328278070b466b433976f886673f62}{%
+           family={Bonet},
+           familyi={B\bibinitperiod},
+           given={Javier},
+           giveni={J\bibinitperiod}}}%
+        {{hash=c66f726f6ff99613939906de99f3ddfd}{%
+           family={Wood},
+           familyi={W\bibinitperiod},
+           given={Richard\bibnamedelima D},
+           giveni={R\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge university press}%
+      }
+      \strng{namehash}{aa7bb8a75fb5aac856632290ca1a0b10}
+      \strng{fullhash}{aa7bb8a75fb5aac856632290ca1a0b10}
+      \strng{bibnamehash}{aa7bb8a75fb5aac856632290ca1a0b10}
+      \strng{authorbibnamehash}{aa7bb8a75fb5aac856632290ca1a0b10}
+      \strng{authornamehash}{aa7bb8a75fb5aac856632290ca1a0b10}
+      \strng{authorfullhash}{aa7bb8a75fb5aac856632290ca1a0b10}
+      \field{labelalpha}{BW97}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Nonlinear continuum mechanics for finite element analysis}
+      \field{year}{1997}
+    \endentry
     \entry{ford2014numerical}{book}{}
       \name{author}{1}{}{%
         {{hash=4bf15b49912cde7e5b6008e01bb67f28}{%

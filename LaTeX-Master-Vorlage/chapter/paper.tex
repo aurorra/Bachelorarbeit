@@ -1,7 +1,30 @@
 \chapter{Paper} \label{c:Paper}
 In this chapter we will examine the topic of the paper \textit{Stable Neo-Hookean Flesh Simulation} \cite{Smith:2018:SNF:3191713.3180491}. In the interest of understanding the thought process of the authors I will include some of their calculations a bit more detailed. In addition examples and visualisations should help for a better perception. 
 
+\section{Deformation Gradient}
+
+\begin{table}[!htbp]
+\centering
+    \begin{tabular}{ | l | l |}
+    \hline
+    \textbf{Symbol} & \textbf{Definition} \\ \hline
+    $\mathrm{F=RS}$ & Polar decomposition \\ \hline
+    $J=\operatorname{det}(\mathrm{F})$ & Relative volume change \\ \hline
+    $\mathrm{C}=\mathrm{F}^{T} \mathrm{F}$ & Right Cauchy-Green  \\ \hline	
+    $I_{C}=\operatorname{tr}(\mathrm{C})$ & First right Cauchy-Green invariant \\ \hline
+    \end{tabular}
+    \caption{Quantities Derived from the Deformation Gradient \textbf{F} taken from \cite{Smith:2018:SNF:3191713.3180491}}
+\label{table:1}
+\end{table}
+
+\todoredefined[inline]{
+TODO: Add in Background? Explain more each entity
+}
+
+
 \section{Energy Formulation}
+
+\subsection{Stability}
 The core goal of the paper was to model deformations for virtual characters that have human-like features. They concentrated on the deformation energy. In order to achieve a convincing result as a first step we need to specify some requirements. For our needs in this case the stability of the energy is important. More precisely we need a hyperelastic energy that is stable in the following four important ways:
 
 \textbf{1. Inversion Stability:} Given some arbitrary object it is possible that while deforming the object we can arrive at a zero volume state or even an entire inversion. Take for example the tetrahedron shown in figure \ref{fig:inversion_1}. In figure \ref{fig:inversion_2} we see a deformed state of this tetrahedron where the volume is scaled down to zero and we are left with a simple triangle. In figure \ref{fig:inversion_3} image we have an inversion of the object. The needed deformation energy has to be able to deal with both cases. That means that the energy has to be singularity-free and does not need any filters or threshold (\cite{Smith:2018:SNF:3191713.3180491}, 12:3).
@@ -57,6 +80,25 @@ Based on these four requirements we will in the following determine if a deforma
 \todoredefined[inline]{
 TODO: Finish reflection stability. Maybe add own images? Some more sources?
 }
+
+\subsection{Existing Neo-Hookean Energies}
+A commonly used energy function is defined as follows (see e.g. \cite{bonet1997nonlinear}, p.148):
+
+\[
+\Psi=\frac{\mu}{2}\left(I_{C}-3\right)-\mu \ln J+\frac{\lambda}{2}(\ln J)^{2}
+\]
+
+where $\lambda$ and $\mu$ are the material constants and $J = det(F)$.
+
+In the literature appear many more different formulations of the energy. Each one consists of a 1D length term and a 3D volume term.
+
+\textbf{1D Length Term:} This term penalizes length changes.
+
+\textbf{3D Volume Term:} Here we are dealing with a volume-preserving penalty term. 
+
+\subsection{Rest Stabilization}
+
+\subsection{Lamé Reparametrization}
 
 \subsection{Previous Work}
 \todoredefined[inline]{

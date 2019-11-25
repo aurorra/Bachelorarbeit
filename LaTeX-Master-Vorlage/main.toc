@@ -20,7 +20,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2.1}Matrices}{5}{subsection.2.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.2}Singular Value Decomposition}{5}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.2}Singular Value Decomposition}{6}{subsection.2.2.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2.3}Polar Decomposition}{6}{subsection.2.2.3}
 \defcounter {refsection}{0}\relax 
@@ -38,34 +38,44 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}Paper}{12}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Energy Formulation}{12}{section.3.1}
+\contentsline {section}{\numberline {3.1}Deformation Gradient}{12}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.1}Previous Work}{14}{subsection.3.1.1}
+\contentsline {section}{\numberline {3.2}Energy Formulation}{13}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.2}Stable Neo-Hookean Energy}{14}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.2.1}Stability}{13}{subsection.3.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Energy Analysis}{14}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.2}Existing Neo-Hookean Energies}{14}{subsection.3.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.1}First Piola-Kirchhoff Stress (PK1)}{14}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.3}Rest Stabilization}{15}{subsection.3.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.2}The Energy Hessian Terms}{14}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.4}Lam\'e Reparametrization}{15}{subsection.3.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.3}The Tikhonov, Mu, and Gradient Terms}{14}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.5}Previous Work}{15}{subsection.3.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.4}The Volume Hessian}{14}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.6}Stable Neo-Hookean Energy}{15}{subsection.3.2.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.5}The Complete Eigensystem}{15}{subsection.3.2.5}
+\contentsline {section}{\numberline {3.3}Energy Analysis}{15}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Experiments with the Code}{15}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}First Piola-Kirchhoff Stress (PK1)}{15}{subsection.3.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Discussion}{15}{section.3.4}
+\contentsline {subsection}{\numberline {3.3.2}The Energy Hessian Terms}{15}{subsection.3.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline List of Figures}{A}{chapter*.24}
+\contentsline {subsection}{\numberline {3.3.3}The Tikhonov, Mu, and Gradient Terms}{15}{subsection.3.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline List of Tables}{B}{chapter*.25}
+\contentsline {subsection}{\numberline {3.3.4}The Volume Hessian}{16}{subsection.3.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Bibliography}{D}{chapter*.26}
+\contentsline {subsection}{\numberline {3.3.5}The Complete Eigensystem}{16}{subsection.3.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Online Sources}{E}{chapter*.27}
+\contentsline {section}{\numberline {3.4}Experiments with the Code}{16}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Figure Sources}{F}{chapter*.28}
+\contentsline {section}{\numberline {3.5}Discussion}{17}{section.3.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline List of Figures}{A}{chapter*.27}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline List of Tables}{B}{chapter*.28}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline Bibliography}{D}{chapter*.29}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline Online Sources}{E}{chapter*.30}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline Figure Sources}{F}{chapter*.31}
