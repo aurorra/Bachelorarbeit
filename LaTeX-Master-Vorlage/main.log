@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.0.4 (TeX Live 2017/W32TeX)  (format=lualatex 2018.3.10)  29 NOV 2019 16:46
+This is LuaTeX, Version 1.0.4 (TeX Live 2017/W32TeX)  (format=lualatex 2018.3.10)  29 NOV 2019 17:35
  restricted system commands enabled.
 **main.tex
 (./main.tex
@@ -32,7 +32,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.219 seconds
+luaotfload | main : initialization completed in 0.250 seconds
 Babel <3.18> and hyphenation patterns for 1 language(s) loaded.
 \@input{settings.aux}
 
@@ -2364,8 +2364,8 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 (c:/texlive/2017/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
-)
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 267.
+) [19]
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 282.
 
 (c:/texlive/2017/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -2375,61 +2375,61 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 268.
+(Font)              <10.95> on input line 283.
 
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 284--284
+Overfull \hbox (11.24983pt too wide) in paragraph at lines 299--299
 [] 
  []
 
-[19]
-<resources/hexcli_step0.png, id=445, 1912.14375pt x 1038.88126pt>
+<resources/hexcli_step0.png, id=440, 1912.14375pt x 1038.88126pt>
 File: resources/hexcli_step0.png Graphic file (type png)
 <use resources/hexcli_step0.png>
-Package luatex.def Info: resources/hexcli_step0.png  used on input line 297.
+Package luatex.def Info: resources/hexcli_step0.png  used on input line 312.
 (luatex.def)             Requested size: 88.77463pt x 48.22188pt.
-<resources/hexcli_step8.png, id=446, 1912.14375pt x 1038.88126pt>
+<resources/hexcli_step8.png, id=441, 1912.14375pt x 1038.88126pt>
 File: resources/hexcli_step8.png Graphic file (type png)
 <use resources/hexcli_step8.png>
-Package luatex.def Info: resources/hexcli_step8.png  used on input line 299.
+Package luatex.def Info: resources/hexcli_step8.png  used on input line 314.
 (luatex.def)             Requested size: 88.77463pt x 48.22188pt.
-<resources/hexcli_step16.png, id=447, 1912.14375pt x 1038.88126pt>
+<resources/hexcli_step16.png, id=442, 1912.14375pt x 1038.88126pt>
 File: resources/hexcli_step16.png Graphic file (type png)
 <use resources/hexcli_step16.png>
-Package luatex.def Info: resources/hexcli_step16.png  used on input line 301.
+Package luatex.def Info: resources/hexcli_step16.png  used on input line 316.
 (luatex.def)             Requested size: 88.77463pt x 48.22188pt.
-<resources/hexcli_step24.png, id=448, 1912.14375pt x 1038.88126pt>
+<resources/hexcli_step24.png, id=443, 1912.14375pt x 1038.88126pt>
 File: resources/hexcli_step24.png Graphic file (type png)
 <use resources/hexcli_step24.png>
-Package luatex.def Info: resources/hexcli_step24.png  used on input line 303.
+Package luatex.def Info: resources/hexcli_step24.png  used on input line 318.
 (luatex.def)             Requested size: 88.77463pt x 48.22188pt.
-<resources/tetcli_step0.png, id=449, 1912.14375pt x 1038.88126pt>
+<resources/tetcli_step0.png, id=444, 1912.14375pt x 1038.88126pt>
 File: resources/tetcli_step0.png Graphic file (type png)
 <use resources/tetcli_step0.png>
-Package luatex.def Info: resources/tetcli_step0.png  used on input line 309.
+Package luatex.def Info: resources/tetcli_step0.png  used on input line 324.
 (luatex.def)             Requested size: 88.77463pt x 48.22188pt.
-<resources/tetcli_step8.png, id=450, 1912.14375pt x 1038.88126pt>
+<resources/tetcli_step8.png, id=445, 1912.14375pt x 1038.88126pt>
 File: resources/tetcli_step8.png Graphic file (type png)
 <use resources/tetcli_step8.png>
-Package luatex.def Info: resources/tetcli_step8.png  used on input line 311.
+Package luatex.def Info: resources/tetcli_step8.png  used on input line 326.
 (luatex.def)             Requested size: 88.77463pt x 48.22188pt.
-<resources/tetcli_step16.png, id=451, 1912.14375pt x 1038.88126pt>
+<resources/tetcli_step16.png, id=446, 1912.14375pt x 1038.88126pt>
 File: resources/tetcli_step16.png Graphic file (type png)
 <use resources/tetcli_step16.png>
-Package luatex.def Info: resources/tetcli_step16.png  used on input line 313.
+Package luatex.def Info: resources/tetcli_step16.png  used on input line 328.
 (luatex.def)             Requested size: 88.77463pt x 48.22188pt.
-<resources/tetcli_step24.png, id=452, 1912.14375pt x 1038.88126pt>
+<resources/tetcli_step24.png, id=447, 1912.14375pt x 1038.88126pt>
 File: resources/tetcli_step24.png Graphic file (type png)
 <use resources/tetcli_step24.png>
-Package luatex.def Info: resources/tetcli_step24.png  used on input line 315.
+Package luatex.def Info: resources/tetcli_step24.png  used on input line 330.
 (luatex.def)             Requested size: 88.77463pt x 48.22188pt.
 
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 325--325
+Overfull \hbox (11.24983pt too wide) in paragraph at lines 340--340
 [] 
  []
 
-) [20
-\pgfsyspdfmark {pgfid19}{19562754}{46921318}
-\pgfsyspdfmark {pgfid20}{19562754}{17625470}
+[20
+\pgfsyspdfmark {pgfid19}{19562754}{22042886}
+]) [21
+\pgfsyspdfmark {pgfid20}{19562754}{33738982}
 <./resources/hexcli_step0.png><./resources/hexcli_step8.png><./resources/hexcli_
 step16.png><./resources/hexcli_step24.png><./resources/tetcli_step0.png><./resou
 rces/tetcli_step8.png><./resources/tetcli_step16.png><./resources/tetcli_step24.
@@ -2495,7 +2495,7 @@ chapter without number
 
 
 ]
-<Erklaerung.pdf, id=520, 597.23125pt x 845.1575pt>
+<Erklaerung.pdf, id=523, 597.23125pt x 845.1575pt>
 File: Erklaerung.pdf Graphic file (type pdf)
 <use Erklaerung.pdf>
 Package luatex.def Info: Erklaerung.pdf  used on input line 94.
@@ -2504,7 +2504,7 @@ File: Erklaerung.pdf Graphic file (type pdf)
 <use Erklaerung.pdf>
 Package luatex.def Info: Erklaerung.pdf  used on input line 94.
 (luatex.def)             Requested size: 597.22978pt x 845.15544pt.
-<Erklaerung.pdf, id=523, page=1, 597.23125pt x 845.1575pt>
+<Erklaerung.pdf, id=526, page=1, 597.23125pt x 845.1575pt>
 File: Erklaerung.pdf Graphic file (type pdf)
 <use Erklaerung.pdf, page 1>
 Package luatex.def Info: Erklaerung.pdf , page1 used on input line 94.
@@ -2546,12 +2546,12 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 49070 strings out of 494480
+ 49071 strings out of 494480
  100000,1648299 words of node,token memory allocated
- 897 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 2 glue, 1 kern, 54 attribute, 93 glue_spec, 54 attr
+ 913 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 2 glue, 1 kern, 58 attribute, 93 glue_spec, 58 attr
 ibute_list, 1 write, 7 pdf_action nodes
-   avail lists: 1:4,2:1037,3:231,4:106,5:202,6:1676,7:805,8:157,9:422,10:17,11:1
+   avail lists: 1:4,2:1218,3:311,4:133,5:255,6:1676,7:829,8:157,9:518,10:17,11:1
 50
  51142 multiletter control sequences out of 65536+600000
  75 fonts using 7718975 bytes
@@ -2576,10 +2576,10 @@ o12.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texlive
 ts/type1/public/lm/lmtt10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/lm/
 lmtt12.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm1
 0.pfb>
-Output written on main.pdf (32 pages, 1979874 bytes).
+Output written on main.pdf (33 pages, 1989971 bytes).
 
-PDF statistics: 626 PDF objects out of 1000 (max. 8388607)
- 532 compressed objects within 6 object streams
- 124 named destinations out of 1000 (max. 131072)
+PDF statistics: 629 PDF objects out of 1000 (max. 8388607)
+ 534 compressed objects within 6 object streams
+ 125 named destinations out of 1000 (max. 131072)
  328 words of extra memory for PDF output out of 10000 (max. 100000000)
 

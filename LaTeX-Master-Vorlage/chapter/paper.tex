@@ -248,7 +248,22 @@ with $\alpha=1+\frac{\mu}{\lambda}-\left(\frac{\mu}{4}\right)\lambda$. For futur
 \]
 
 \subsection{The Energy Hessian Terms}
-Calculations
+Using the scalar notation for F the hessian of the energy can be written in a fourth-order matrix-of-matrices:
+\[
+\frac{\partial^2 \psi}{\partial F^2} = \frac{\partial P(F)}{\partial F} = 
+\left[\begin{array}{ccc}{\left[\frac{\partial P(F)}{\partial f_0}\right]} & {\left[\frac{\partial P(F)}{\partial f_3}\right]} & {\left[\frac{\partial P(F)}{\partial f_6}\right]} \\ {\left[\frac{\partial P(F)}{\partial f_1}\right]} & {\left[\frac{\partial P(F)}{\partial f_4}\right]} & {\left[\frac{\partial P(F)}{\partial f_7}\right]} \\ {\left[\frac{\partial P(F)}{\partial f_2}\right]} & {\left[\frac{\partial P(F)}{\partial f_5}\right]} & {\left[\frac{\partial P(F)}{\partial f_8}\right]} \end{array}\right]
+\]
+
+in which each entry is defined as
+\[
+\frac{\partial P(F)}{\partial f_i} = \frac{\partial}{\partial f_i} \left[ \mu \left( 1 - \frac{1}{\operatorname{tr}(\mathrm{F}^{T}F) + 1}\right) F + \lambda(J-\alpha)\frac{\partial J}{\partial F} \right]
+\]
+\[
+\stackrel{\text{prod.rule}}{=} \frac{\partial F}{\partial f_i} \mu \left( 1 - \frac{1}{\operatorname{tr}(\mathrm{F}^{T}F) + 1}\right) + F \mu \frac{1}{\left(\operatorname{tr}(\mathrm{F}^{T}F) + 1\right)^2} f_i 2  
+\]
+\[
++ \lambda \frac{\partial J}{\partial f_i} \frac{\partial J}{\partial F}+ \lambda (J- \alpha) \frac{\partial^2 J}{\partial F\partial f_i}
+\]
 
 \subsection{The Tikhonov, Mu, and Gradient Terms}
 Calculations
