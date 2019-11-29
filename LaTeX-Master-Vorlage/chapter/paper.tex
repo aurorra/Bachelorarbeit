@@ -180,9 +180,10 @@ therefore resulting to:
 \[
 P_{E}(F) = \frac{\partial \Psi_{D}}{\partial F} \left[ \frac{\mu}{2}\left(I_{C}-3\right) +\frac{\lambda}{2}(J-\alpha)^{2} \right]
 \]
-\[
+\begin{equation}\label{eq:pk1_unstable}
 = \mu F + \lambda (\operatorname{det}(F)-\alpha)  \frac{\partial}{\partial F} \operatorname{det}(F)
-\]
+\end{equation}
+
 Solving for an alpha that satisfies $P_{E}(I)=0$ gives us $\alpha=1+\frac{\mu}{\lambda}$. Now $\Psi_{E}$ has to be changed accordingly:
 \[
 \Psi_{E} = \frac{\mu}{2}\left(I_{C}-3\right) +\frac{\lambda}{2}(J-1-\frac{\mu}{\lambda})^{2}
@@ -199,7 +200,7 @@ Now one can notice that $\Psi_{E}$ looks very similar to $\Psi_{Neo}$. The diffe
 \sum_{n=0}^{\infty} = \frac{f^{(n)}(1)}{n!} (J-1)^{n} =
 \]
 \[
-= (J-1) - \frac{1}{2} (J-1)^{2} + \frac{1}{3} (J-1)^{3} -\frac{1}{4} (J-1)^{4} + ...
+= \boldsymbol{(J-1)} - \frac{1}{2} (J-1)^{2} + \frac{1}{3} (J-1)^{3} -\frac{1}{4} (J-1)^{4} + ...
 \]
 
 \todoredefined[inline]{
@@ -209,7 +210,7 @@ TODO: Add "Zwischenschritte"? Include all calculations? Do we need a bit of a be
 \subsection{Meta-Stability under Degeneracy}
 The final energy is
 \begin{equation}\label{eq:stable_energy}
-\Psi_{new} = \frac{\mu}{2}\left(I_{C}-3\right) + \frac{\lambda}{2}(J-\alpha)^{2} - \frac{\mu}{2}\left(I_{C}+1\right).
+\Psi_{new} = \frac{\mu}{2}\left(I_{C}-3\right) + \frac{\lambda}{2}(J-\alpha)^{2} - \frac{\mu}{2} \operatorname{log}\left(I_{C}+1\right).
 \end{equation}
 With that adjustment the rest stability term shifts to $\alpha=1+\frac{\mu}{\lambda}-\left(\frac{\mu}{4}\right)\lambda$.
 
@@ -230,6 +231,20 @@ In this chapter it is shown that one can perform a complete eigenanalysis on equ
 We start with PK1 for equation \ref{eq:stable_energy}:
 \[
 P(F) = \frac{\partial \Psi_{D}}{\partial F} \left[ \frac{\mu}{2}\left(I_{C}-3\right) + \frac{\lambda}{2}(J-\alpha)^{2} - \frac{\mu}{2}\left(I_{C}+1\right) \right]
+\]
+\[
+\stackrel{\text{eq.\ref{eq:pk1_unstable}}}{=} \mu F + \lambda (\operatorname{det}(F)-\alpha)  \frac{\partial}{\partial F} \operatorname{det}(F) - \frac{\partial}{\partial F} \left[\operatorname{log}\left(\operatorname{tr}(\mathrm{F}^{T}F)+1\right)\right]
+\]
+\[
+= \mu F + \lambda (\operatorname{det}(F)-\alpha)  \frac{\partial}{\partial F} \operatorname{det}(F) - \mu F \frac{1}{\operatorname{tr}(\mathrm{F}^{T}F) + 1}
+\]
+\[
+= \mu \left( 1 - \frac{1}{\operatorname{tr}(\mathrm{F}^{T}F) + 1}\right) F + \lambda(J-\alpha)\frac{\partial J}{\partial F}
+\]
+
+with $\alpha=1+\frac{\mu}{\lambda}-\left(\frac{\mu}{4}\right)\lambda$. For future use we write $\frac{\partial J}{\partial F}$ as cross products:
+\[
+\frac{\partial J}{\partial F} = \left[ \,f_1 \times f_2\, \bigg| \,f_2 \times f_0\, \bigg| \,f_0 \times f_1\, \right].
 \]
 
 \subsection{The Energy Hessian Terms}

@@ -58,9 +58,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.3.2}The Energy Hessian Terms}{18}{subsection.3.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.3}The Tikhonov, Mu, and Gradient Terms}{18}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.3}The Tikhonov, Mu, and Gradient Terms}{19}{subsection.3.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.4}The Volume Hessian}{18}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.4}The Volume Hessian}{19}{subsection.3.3.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.3.5}The Complete Eigensystem}{19}{subsection.3.3.5}
 \defcounter {refsection}{0}\relax 
