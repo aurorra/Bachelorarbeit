@@ -194,7 +194,13 @@ Since constant disappear under differentiation this expression is functionally e
 \[
 \Psi_{E} = \frac{\mu}{2}\left(I_{C}-3\right) - \mu\left(J-1\right) + \frac{\lambda}{2}(J-1)^{2}.
 \]
-Now one can notice that $\Psi_{E}$ looks very similar to $\Psi_{Neo}$. The difference is that we replaced $log(J)$ with $(J-1)$ in $\Psi_{E}$. Remember that $(J-1)$ is the first term in the taylor approximation of $log(J)$ at $J=1$.
+Now one can notice that $\Psi_{E}$ looks very similar to $\Psi_{Neo}$. The difference is that we replaced $log(J)$ with $(J-1)$ in $\Psi_{E}$. Remember that $(J-1)$ is the first term in the taylor approximation of $log(J)$ at $J=1$:
+\[
+\sum_{n=0}^{\infty} = \frac{f^{(n)}(1)}{n!} (J-1)^{n} =
+\]
+\[
+= (J-1) - \frac{1}{2} (J-1)^{2} + \frac{1}{3} (J-1)^{3} -\frac{1}{4} (J-1)^{4} + ...
+\]
 
 \todoredefined[inline]{
 TODO: Add "Zwischenschritte"? Include all calculations? Do we need a bit of a better conclusion of what we did (taylor, neo, sing. free, rest stable)?
@@ -221,7 +227,10 @@ TODO: How much needs to be explained here?
 In this chapter it is shown that one can perform a complete eigenanalysis on equation \ref{eq:stable_energy}.
 
 \subsection{First Piola-Kirchhoff Stress (PK1)}
-Explain.
+We start with PK1 for equation \ref{eq:stable_energy}:
+\[
+P(F) = \frac{\partial \Psi_{D}}{\partial F} \left[ \frac{\mu}{2}\left(I_{C}-3\right) + \frac{\lambda}{2}(J-\alpha)^{2} - \frac{\mu}{2}\left(I_{C}+1\right) \right]
+\]
 
 \subsection{The Energy Hessian Terms}
 Calculations
@@ -236,26 +245,27 @@ Calculations
 Calculations
 
 
-\begin{tikzpicture}[node distance=2cm]
-\node (dec1) [decision] {Decision 1};
-
-\node (pro2a) [process, left of=dec1, yshift=-0.5cm] {Process 2a};
-\node (pro2b) [process, right of=dec1, xshift=2cm] {Process 2b};
-
-\draw [arrow] (pro2a) -- (dec1);
-\draw [arrow] (dec1) -- (pro2b);
-
-
-\end{tikzpicture}
-
-
 
 
 \section{Experiments with the Code}
-The authors of the paper \textit{Stable Neo-Hookean Flesh Simulation} \cite{Smith:2018:SNF:3191713.3180491} kindly provided the implementation for an application of their formulated energy. In this code they implemented the stretch test on a cube. The outputs were 26 static images with show the deformation in 25 steps. The parameters the code expects are the two lamé parameters $\mu$ and $\lambda$ and a value for defining the desired resolution the objects should have.
+The authors of the paper \textit{Stable Neo-Hookean Flesh Simulation} \cite{Smith:2018:SNF:3191713.3180491} provided the implementation for an application of their formulated energy. In said code they implemented the stretch test on a cube. Their implementation demands a directory into which the output files should be saved, the two lamé parameters $\mu$ and $\lambda$ and a value for defining the desired resolution as input data. Here is an example for a command with resolution = 10, $\mu=1.0$, $\lambda=10.0$ and asks the output files to be written into the directory \textit{output}:
+\begin{lstlisting}[language=bash]
+$ ./tetcli 10 stable_neo_hookean 1.0 10.0 output
+\end{lstlisting}
+
+The algorithm then calculates the deformation in 25 steps and the deformation increases in each step. The outputs are 26 static objects that show the object in its rest state and the 25 steps of deformation.
+
+\begin{tikzpicture}[node distance=2cm]
+\node (input) [process] {$\mu$, $\lambda$, resolution};
+\node (code) [decision, right of=input, xshift=3cm] {Code};
+\node (output) [process, right of=code, xshift=3cm] {26 objects};
+
+\draw [arrow] (input) -- node[anchor=south] {Input}(code);
+\draw [arrow] (code) -- node[anchor=south] {Output}(output);
+\end{tikzpicture}
 
 \todoredefined[inline]{
-TODO: Explain how the code is implemented in simple words and how the energy is taken in account with the poisson's ratio. Make scheme with input - box / code - output. Do I have to reference code?
+TODO: Explain how the code is implemented in simple words and how the energy is taken in account with the poisson's ratio. Do I have to reference code? Explain tetcli and Hexcli.
 }
 
 For starters let us take common values for $\mu$ and $\lambda$. We first start with $\mu = 1.0$, $\lambda = 10.0$ and a resolution of 10.0. For the poisson's ratio we get the value $0.4545$:
