@@ -259,10 +259,10 @@ in which each entry is defined as
 \frac{\partial P(F)}{\partial f_i} = \frac{\partial}{\partial f_i} \left[ \mu \left( 1 - \frac{1}{\operatorname{tr}(\mathrm{F}^{T}F) + 1}\right) F + \lambda(J-\alpha)\frac{\partial J}{\partial F} \right]
 \]
 \[
-\stackrel{\text{prod.rule}}{=} \frac{\partial F}{\partial f_i} \mu \left( 1 - \frac{1}{\operatorname{tr}(\mathrm{F}^{T}F) + 1}\right) + F \mu \frac{1}{\left(\operatorname{tr}(\mathrm{F}^{T}F) + 1\right)^2} f_i 2  
+\stackrel{\text{prod.rule}}{=} \underbrace{\frac{\partial F}{\partial f_i} \mu \left( 1 - \frac{1}{\operatorname{tr}(\mathrm{F}^{T}F) + 1}\right)}_{\mathrm{T}_{i}}  + \underbrace{F \mu \frac{2}{\left(\operatorname{tr}(\mathrm{F}^{T}F) + 1\right)^2} f_i}_{_{\mathrm{M}_{i}}}
 \]
 \[
-+ \lambda \frac{\partial J}{\partial f_i} \frac{\partial J}{\partial F}+ \lambda (J- \alpha) \frac{\partial^2 J}{\partial F\partial f_i}
++ \underbrace{\lambda \frac{\partial J}{\partial f_i} \frac{\partial J}{\partial F}}_{_{\mathrm{G}_{i}}}+ \underbrace{\lambda (J- \alpha) \frac{\partial^2 J}{\partial F\partial f_i}}_{_{\mathrm{H}_{i}}}
 \]
 
 \subsection{The Tikhonov, Mu, and Gradient Terms}
