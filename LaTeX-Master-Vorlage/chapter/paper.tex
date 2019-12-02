@@ -14,7 +14,7 @@ In this chapter we will examine the topic of the paper \textit{Stable Neo-Hookea
     $I_{C}=\operatorname{tr}(\mathrm{C})$ & First right Cauchy-Green invariant \\ \hline
     \end{tabular}
     \caption{Quantities Derived from the Deformation Gradient \textbf{F} taken from \cite{Smith:2018:SNF:3191713.3180491}}
-\label{table:1}
+\label{table:gradient_quantities}
 \end{table}
 
 \todoredefined[inline]{
@@ -96,7 +96,7 @@ In previous literature a few energies were proposed.
     $\Psi_{\mathrm{C}}=\frac{\mu}{2}\left(J^{-2 / 3} I_{C}-3\right)+\frac{\lambda}{2}(J-1)^{2}$ & Wang and Yang 2016 \\ \hline
     \end{tabular}
     \caption{Summary of proposed energies taken from \cite{Smith:2018:SNF:3191713.3180491}}
-\label{table:1}
+\label{table:energies}
 \end{table}
 
 Each energy formulation can be split up into a 1D length term and a 3D volume term.
@@ -112,7 +112,7 @@ Each energy formulation can be split up into a 1D length term and a 3D volume te
     $\Psi_{\mathrm{C}}$ & $\frac{\mu}{2}\left(J^{-2 / 3} I_{C}-3\right)$ & $\frac{\lambda}{2}(J-1)^{2}$ \\ \hline
     \end{tabular}
     \caption{Energies split up into its 1D length and 3D volume term}
-\label{table:1}
+\label{table:energies_split}
 \end{table}
 
 \textbf{1D Length Term:} This term penalizes length changes. Mooney (\cite{mooney1940theory}) originally proposed the 1D length term 
@@ -268,7 +268,8 @@ r+ \underbrace{\lambda \frac{\partial J}{\partial f_i} \frac{\partial J}{\partia
 Each term in the final equation $\mathrm{T}_i$, $\mathrm{M}_i$, $\mathrm{G}_i$, $\mathrm{H}_i$ respectively the Tikohonov, Mu, volume Gradient and volume Hessian term will be examined separately in the following.
 
 \subsection{The Tikhonov, Mu, and Gradient Terms}
-\textbf{Tikhonov}: The Tikhonov term can be viewed as a fourth-order matrix-of-matrices
+\subsubsection{Tikhonov}
+The Tikhonov term can be viewed as a fourth-order matrix-of-matrices
 \[
 \mathbb{T} = \frac{\partial \mathbf{F}}{\partial f_i} = \left[\begin{array}{ccc}{\begin{bmatrix} 1 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}} & {\begin{bmatrix} 0 & 1 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}} & {\begin{bmatrix} 0 & 0 & 1 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}} \\ {\begin{bmatrix} 0 & 0 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}} & {\begin{bmatrix} 0 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 0 \end{bmatrix}} & {\begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{bmatrix}} \\ {\begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 1 & 0 & 0 \end{bmatrix}} & {\begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 1 & 0 \end{bmatrix}} & {\begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 1 \end{bmatrix}} \end{array}\right].
 \]
@@ -277,7 +278,8 @@ If we vectorize $\mathbb{T}$ we get the identity matrix $\mathbb{I} \in \mathbb{
 \operatorname{vec}(\mathbb{T}) =  \mathbf{\check{T}} = \mathbb{I} = \in \mathbb{R}^{9x9}.
 \]
 
-\textbf{Mu}: The Mu term has the same structure with different entries
+\subsubsection{Mu}
+The Mu term has the same structure with different entries
 \[
 \mathbb{M} = \mathbf{F} f_i = \left[\begin{array}{ccc}{\begin{bmatrix} f_0^2 & f_0f_3 & f_0f_6 \\ f_0f_1 & f_0f_4 & f_0f_7 \\ f_0f_2 & f_0f_5 & f_0f_8 \end{bmatrix}} & {\begin{bmatrix} f_3f_0 & f_3^2 & f_3f_6 \\ f_3f_1 & f_3f_4 & f_3f_7 \\ f_3f_2 & f_3f_5 & f_3f_8 \end{bmatrix}} & {\begin{bmatrix} f_6f_0 & f_6f_3 & f_6f_6 \\ f_6f_1 & f_6f_4 & f_6f_7 \\ f_6f_2 & f_6f_5 & f_6f_8 \end{bmatrix}} \\ {\begin{bmatrix} f_1f_0 & f_1f_3 & f_1f_6 \\ f_1^2 & f_1f_4 & f_1f_7 \\ f_1f_2 & f_1f_5 & f_1f_8 \end{bmatrix}} & {\begin{bmatrix} f_4f_0 & f_4f_3 & f_4f_6 \\ f_4f_1 & f_4^2 & f_4f_7 \\ f_4f_2 & f_4f_5 & f_4f_8 \end{bmatrix}} & {\begin{bmatrix} f_7f_0 & f_7f_3 & f_7f_6 \\ f_7f_1 & f_7f_4 & f_7^2 \\ f_7f_2 & f_7f_5 & f_7f_8 \end{bmatrix}} \\ {\begin{bmatrix} f_2f_0 & f_2f_3 & f_2f_6 \\ f_2f_1 & f_2f_4 & f_2f_7 \\ f_2^2 & f_2f_5 & f_2f_8 \end{bmatrix}} & {\begin{bmatrix} f_5f_0 & f_5f_3 & f_5f_6 \\ f_5f_1 & f_5f_4 & f_5f_7 \\ f_5f_2 & f_5^2 & f_5f_8 \end{bmatrix}} & {\begin{bmatrix} f_8f_0 & f_8f_3 & f_8f_6 \\ f_8f_1 & f_8f_4 & f_8f_7 \\ f_8f_2 & f_8f_5 & f_8^2 \end{bmatrix}} \end{array}\right].
 \]
@@ -295,7 +297,8 @@ This matrix has rank one and has a single non-zero eigenvalue. In order to exami
 \]
 in which $\|\cdot\|_F$ stands for the Frobenius norm and $\sigma_i$ for the singular values from $\mathbf{\Sigma}$ in the SVD of $\mathbf{F}$ stated in eq. \ref{eq:svd_simga}. The eigenvector is $\mathbf{\check{f}} / \| \mathbf{\check{f}} \|$. The eigenvalue is always non-negative and large if $\mathbf{F}$ contains a large strech.
 
-\textbf{Gradient}: The gradient term also has the same structure as the two terms before with different entries defined by
+\subsubsection{Gradient}
+The gradient term also has the same structure as the two terms before with different entries defined by
 \[
 \mathbb{G}(\mathbf{F}) = \frac{\partial J}{\partial \mathbf{F}} \frac{\partial J}{\partial fi}.
 \]
@@ -312,13 +315,37 @@ The eigenvector is $\mathbf{\check{g}} / \| \mathbf{\check{g}} \|$.
 
 
 \subsection{The Volume Hessian}
-Calculations
+The volume Hessian term is of the form
+\[
+\mathbb{H} = \frac{\partial^2 J}{\partial \mathbf{F} \partial f_i} \in \mathbb{R}^{9\times 9}.
+\]
+Vectorizing $\mathbb{H}$ reveals the structure
+\[
+\operatorname{vec}(\mathbb{H}) = \mathbf{\check{H}} = \left[ \begin{matrix}
+0 & -\mathbf{\widehat{f_2}} & \mathbf{\widehat{f_1}} \\ \mathbf{\widehat{f_2}} & 0 & -\mathbf{\widehat{f_0}} \\ -\mathbf{\widehat{f_1}} & \mathbf{\widehat{f_0}} & 0 \end{matrix} \right]
+\]
+where $\mathbf{\widehat{f_1}}$ stands for a cross-product matrix:
+\[
+\mathbf{\widehat{x}} = \left[ \begin{matrix}
+0 & -x_2 & x_1 \\ x_2 & 0 & -x_0 \\ -x_1 & x_0 & 0 \end{matrix} \right].
+\]
+One can easily observe that $\mathbf{\check{H}}$ is a \textit{self-similar} cross-product matrix. Meaning that the macro structure of the matrix is the same as the micro structure.
+
+\subsubsection{Volume Hessian Eigenvalues}
+For determining the eigenvalues of $\mathbf{\check{H}}$ one needs to examine the two characteristic polynomials:
+
+\begin{align*}
+&\epsilon^3 - \operatorname{tr}(\mathbf{C}) \epsilon - 2 J = 0 \tag{1}  \\
+&\epsilon^3 - \operatorname{tr}(\mathbf{C}) \epsilon^2 + \frac{1}{2} \left( \operatorname{tr^2}(\mathbf{C}) - \operatorname{tr}(\mathbf{C}^2) \right) \epsilon - \operatorname{det}(\mathbf{C}) = 0 \tag(2)
+\end{align*}
+
+where $\epsilon$ denote the eigenvalues of $\mathbf{\check{H}}$ and $\mathbf{C}$ is taken from table \ref{table:gradient_quantities}. Equation (1) is easier to solve and 
  
 \subsection{The Complete Eigensystem}
 Calculations
 
 \todoredefined[inline]{
-TODO: Make notation consistent (bold, cursive etc.) Explain better each step. Include all calculations? Make matrix of matrices more beautiful (more space). Eigenvalues of Mu and Gradient term better explain?
+TODO: Make notation consistent (bold, cursive etc.) Explain better each step. Include all calculations? Make matrix of matrices more beautiful (more space). Eigenvalues of Mu and Gradient term better explain? Check each equation if correctly written.
 }
 
 
