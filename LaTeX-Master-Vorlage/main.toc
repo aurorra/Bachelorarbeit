@@ -30,11 +30,11 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.4.1}Deformation Gradient}{8}{subsection.2.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.2}Polar Decomposition of the Deformation Gradient}{9}{subsection.2.4.2}
+\contentsline {subsubsection}{\nonumberline Polar Decomposition of the Deformation Gradient}{9}{section*.14}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.3}Material Constants}{10}{subsection.2.4.3}
+\contentsline {subsection}{\numberline {2.4.2}Material Constants}{10}{subsection.2.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.4}Deformation Energy}{11}{subsection.2.4.4}
+\contentsline {subsection}{\numberline {2.4.3}Deformation Energy}{11}{subsection.2.4.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}Paper}{12}{chapter.3}
 \defcounter {refsection}{0}\relax 
@@ -46,9 +46,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.2}Existing Neo-Hookean Energies}{14}{subsection.3.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\nonumberline 1D Length Term}{15}{section*.25}
+\contentsline {subsubsection}{\nonumberline 1D Length Term}{15}{section*.27}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\nonumberline 3D Volume Term}{16}{section*.26}
+\contentsline {subsubsection}{\nonumberline 3D Volume Term}{16}{section*.28}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.3}Rest Stabilization}{16}{subsection.3.2.3}
 \defcounter {refsection}{0}\relax 
@@ -64,15 +64,15 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.3.3}The Tikhonov, Mu, and Gradient Terms}{20}{subsection.3.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\nonumberline Tikhonov}{20}{section*.32}
+\contentsline {subsubsection}{\nonumberline Tikhonov}{20}{section*.34}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\nonumberline Mu}{21}{section*.33}
+\contentsline {subsubsection}{\nonumberline Mu}{21}{section*.35}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\nonumberline Gradient}{22}{section*.34}
+\contentsline {subsubsection}{\nonumberline Gradient}{22}{section*.36}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.3.4}The Volume Hessian}{22}{subsection.3.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\nonumberline Volume Hessian Eigenvalues}{24}{section*.37}
+\contentsline {subsubsection}{\nonumberline Volume Hessian Eigenvalues}{24}{section*.39}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.3.5}The Complete Eigensystem}{24}{subsection.3.3.5}
 \defcounter {refsection}{0}\relax 
@@ -80,12 +80,12 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.5}Discussion}{26}{section.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline List of Figures}{A}{chapter*.48}
+\contentsline {chapter}{\nonumberline List of Figures}{A}{chapter*.50}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline List of Tables}{B}{chapter*.49}
+\contentsline {chapter}{\nonumberline List of Tables}{B}{chapter*.51}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Bibliography}{D}{chapter*.50}
+\contentsline {chapter}{\nonumberline Bibliography}{D}{chapter*.52}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Online Sources}{E}{chapter*.51}
+\contentsline {chapter}{\nonumberline Online Sources}{E}{chapter*.53}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Figure Sources}{F}{chapter*.52}
+\contentsline {chapter}{\nonumberline Figure Sources}{F}{chapter*.54}

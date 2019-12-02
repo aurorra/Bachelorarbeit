@@ -13,27 +13,26 @@
 \BOOKMARK [1][-]{section.2.3}{Continuum Mechanics}{chapter.2}% 13
 \BOOKMARK [1][-]{section.2.4}{Deformation}{chapter.2}% 14
 \BOOKMARK [2][-]{subsection.2.4.1}{Deformation Gradient}{section.2.4}% 15
-\BOOKMARK [2][-]{subsection.2.4.2}{Polar Decomposition of the Deformation Gradient}{section.2.4}% 16
-\BOOKMARK [2][-]{subsection.2.4.3}{Material Constants}{section.2.4}% 17
-\BOOKMARK [2][-]{subsection.2.4.4}{Deformation Energy}{section.2.4}% 18
-\BOOKMARK [0][-]{chapter.3}{Paper}{}% 19
-\BOOKMARK [1][-]{section.3.1}{Deformation Gradient}{chapter.3}% 20
-\BOOKMARK [1][-]{section.3.2}{Energy Formulation}{chapter.3}% 21
-\BOOKMARK [2][-]{subsection.3.2.1}{Stability}{section.3.2}% 22
-\BOOKMARK [2][-]{subsection.3.2.2}{Existing Neo-Hookean Energies}{section.3.2}% 23
-\BOOKMARK [2][-]{subsection.3.2.3}{Rest Stabilization}{section.3.2}% 24
-\BOOKMARK [2][-]{subsection.3.2.4}{Meta-Stability under Degeneracy}{section.3.2}% 25
-\BOOKMARK [2][-]{subsection.3.2.5}{Lam\351 Reparametrization}{section.3.2}% 26
-\BOOKMARK [1][-]{section.3.3}{Energy Analysis}{chapter.3}% 27
-\BOOKMARK [2][-]{subsection.3.3.1}{First Piola-Kirchhoff Stress \(PK1\)}{section.3.3}% 28
-\BOOKMARK [2][-]{subsection.3.3.2}{The Energy Hessian Terms}{section.3.3}% 29
-\BOOKMARK [2][-]{subsection.3.3.3}{The Tikhonov, Mu, and Gradient Terms}{section.3.3}% 30
-\BOOKMARK [2][-]{subsection.3.3.4}{The Volume Hessian}{section.3.3}% 31
-\BOOKMARK [2][-]{subsection.3.3.5}{The Complete Eigensystem}{section.3.3}% 32
-\BOOKMARK [1][-]{section.3.4}{Experiments with the Code}{chapter.3}% 33
-\BOOKMARK [1][-]{section.3.5}{Discussion}{chapter.3}% 34
-\BOOKMARK [0][-]{chapter*.48}{List of Figures}{}% 35
-\BOOKMARK [0][-]{chapter*.49}{List of Tables}{}% 36
-\BOOKMARK [0][-]{chapter*.50}{Bibliography}{}% 37
-\BOOKMARK [0][-]{chapter*.51}{Online Sources}{}% 38
-\BOOKMARK [0][-]{chapter*.52}{Figure Sources}{}% 39
+\BOOKMARK [2][-]{subsection.2.4.2}{Material Constants}{section.2.4}% 16
+\BOOKMARK [2][-]{subsection.2.4.3}{Deformation Energy}{section.2.4}% 17
+\BOOKMARK [0][-]{chapter.3}{Paper}{}% 18
+\BOOKMARK [1][-]{section.3.1}{Deformation Gradient}{chapter.3}% 19
+\BOOKMARK [1][-]{section.3.2}{Energy Formulation}{chapter.3}% 20
+\BOOKMARK [2][-]{subsection.3.2.1}{Stability}{section.3.2}% 21
+\BOOKMARK [2][-]{subsection.3.2.2}{Existing Neo-Hookean Energies}{section.3.2}% 22
+\BOOKMARK [2][-]{subsection.3.2.3}{Rest Stabilization}{section.3.2}% 23
+\BOOKMARK [2][-]{subsection.3.2.4}{Meta-Stability under Degeneracy}{section.3.2}% 24
+\BOOKMARK [2][-]{subsection.3.2.5}{Lam\351 Reparametrization}{section.3.2}% 25
+\BOOKMARK [1][-]{section.3.3}{Energy Analysis}{chapter.3}% 26
+\BOOKMARK [2][-]{subsection.3.3.1}{First Piola-Kirchhoff Stress \(PK1\)}{section.3.3}% 27
+\BOOKMARK [2][-]{subsection.3.3.2}{The Energy Hessian Terms}{section.3.3}% 28
+\BOOKMARK [2][-]{subsection.3.3.3}{The Tikhonov, Mu, and Gradient Terms}{section.3.3}% 29
+\BOOKMARK [2][-]{subsection.3.3.4}{The Volume Hessian}{section.3.3}% 30
+\BOOKMARK [2][-]{subsection.3.3.5}{The Complete Eigensystem}{section.3.3}% 31
+\BOOKMARK [1][-]{section.3.4}{Experiments with the Code}{chapter.3}% 32
+\BOOKMARK [1][-]{section.3.5}{Discussion}{chapter.3}% 33
+\BOOKMARK [0][-]{chapter*.50}{List of Figures}{}% 34
+\BOOKMARK [0][-]{chapter*.51}{List of Tables}{}% 35
+\BOOKMARK [0][-]{chapter*.52}{Bibliography}{}% 36
+\BOOKMARK [0][-]{chapter*.53}{Online Sources}{}% 37
+\BOOKMARK [0][-]{chapter*.54}{Figure Sources}{}% 38

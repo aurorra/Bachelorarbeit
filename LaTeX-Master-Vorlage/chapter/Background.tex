@@ -198,14 +198,16 @@ TODO: Add some examples. Already include definitions of the paper?
 \\ http://www.continuummechanics.org/deformationgradient.html
 }
 
-\subsection{Polar Decomposition of the Deformation Gradient}
-With the help of mathematics we can decompose the deformation gradient in the following form:
+\subsubsection{Polar Decomposition of the Deformation Gradient}
+With the help of mathematics one can decompose the deformation gradient in the following form:
 
 \[
 \mathbf{F} = \mathbf{RS}
 \]
 
-
+\todoredefined[inline]{
+TODO: Explain more here.
+}
 
 
 \subsection{Material Constants}
@@ -242,15 +244,15 @@ Here are some examples of the poisson's ratio of various materials:
 \label{table:1}
 \end{table}
 
-In the context of flesh simulations we use the poisson's ratio as a characterization for the resistance to volume change of flesh. Biological tissues such as flesh, fat and muscles have one important property: Volume preservation. As a result the poisson's ratio is a higher value, meaning it is found in the range between 0.45 and 0.5 \cite{Smith:2018:SNF:3191713.3180491}.
+In the context of flesh simulations I use the poisson's ratio as a characterization for the resistance to volume change of flesh. Biological tissues such as flesh, fat and muscles have one important property: Volume preservation. As a result the poisson's ratio is a higher value, meaning it is found in the range between 0.45 and 0.5 \cite{Smith:2018:SNF:3191713.3180491}.
 
-The calculation of the poisson's ratio defined as in equation \ref{eq:poisson} is a challenge. Fortunately we can make use of the \textit{Lamé Parameters}. These are the two constants $\mu$ and $\lambda$ that are specific for a material. With the help of these two constants we can transform equation \ref{eq:poisson} into the following form:
+The calculation of the poisson's ratio defined in equation \ref{eq:poisson} is a challenge. Fortunately we can make use of the \textit{Lamé Parameters}. These are the two constants $\mu$ and $\lambda$ that are specific for a material. With the help of these two constants one can transform the equation \ref{eq:poisson} into the following form:
 
 \begin{equation}\label{eq:poisson_ratio}
 \sigma =  \frac{\lambda}{2(\lambda + \mu)}
 \end{equation}
 
-This equation allows us to calculate the poisson's ratio much easier. 
+This equation allows to calculate the poisson's ratio much easier. 
 
 \todoredefined[inline]{
 TODO: Topic generally covered, maybe adjust the following:
@@ -263,14 +265,9 @@ Further reading: http://silver.neep.wisc.edu/~lakes/PoissonIntro.html
 
 
 \subsection{Deformation Energy}
-In order to get a convincing simulation of high quality we must choose an appropriate energy. In the case of modelling deformations on human-like characters we have to choose an elastic energy. The key property that makes an energy elastic is that if all the forces that are applied over an object add up to zero the object must come back into its rest shape.
+In order to get a convincing simulation of high quality one must choose an appropriate energy. In the case of modelling deformations on human-like characters an elastic energy needs to be chosen. The key property that makes an energy elastic is that if all the forces that are applied over an object add up to zero the object must come back into its rest shape.
 \\
 The energy then has to be minimized in order to get the results we want.
-
-\begin{definition}
-  This is a definition.
-\end{definition}
-
 
 \todoredefined[inline]{
 TODO: Add some exaples and visualisations. What exactly is it and what role does it play in a deformation process? Hyperelastic energy, connect with paper.
