@@ -2,23 +2,24 @@
 In this chapter we will examine the topic of the paper \textit{Stable Neo-Hookean Flesh Simulation} \cite{Smith:2018:SNF:3191713.3180491}. In the interest of understanding the thought process of the authors I will include some of their calculations a bit more detailed. In addition examples and visualisations should help for a better perception. 
 
 \section{Deformation Gradient}
+In the following calculations some properties of the deformation gradient $\mathbf{F}$ covered in the background chapter will be used. These properties are summarized in table \ref{table:gradient_quantities} for a better overview:
 
 \begin{table}[!htbp]
 \centering
     \begin{tabular}{ | l | l |}
     \hline
     \textbf{Symbol} & \textbf{Definition} \\ \hline
-    $\mathrm{F=RS}$ & Polar decomposition \\ \hline
-    $J=\operatorname{det}(\mathrm{F})$ & Relative volume change \\ \hline
-    $\mathrm{C}=\mathrm{F}^{T} \mathrm{F}$ & Right Cauchy-Green  \\ \hline	
-    $I_{C}=\operatorname{tr}(\mathrm{C})$ & First right Cauchy-Green invariant \\ \hline
+    $\mathbf{F} = \mathbf{RS}$ & Polar decomposition \\ \hline
+    $J=\operatorname{det}(\mathbf{F})$ & Relative volume change \\ \hline
+    $\mathbf{C}=\mathbf{F}^\intercal \mathbf{F}$ & Right Cauchy-Green  \\ \hline	
+    $I_{C}=\operatorname{tr}(\mathbf{C})$ & First right Cauchy-Green invariant \\ \hline
     \end{tabular}
     \caption{Quantities Derived from the Deformation Gradient \textbf{F} taken from \cite{Smith:2018:SNF:3191713.3180491}}
 \label{table:gradient_quantities}
 \end{table}
 
 \todoredefined[inline]{
-TODO: Add in Background? Explain more each entity
+TODO: Check if everything is explained enough in Background.
 }
 
 
@@ -83,7 +84,7 @@ TODO: Finish reflection stability. Maybe add own images? Some more sources?
 
 \subsection{Existing Neo-Hookean Energies}
 
-In previous literature a few energies were proposed.
+In previous literature a few energies were proposed that should be analysed properly.
 
 \begin{table}[!htbp]
 \centering
@@ -99,7 +100,7 @@ In previous literature a few energies were proposed.
 \label{table:energies}
 \end{table}
 
-Each energy formulation can be split up into a 1D length term and a 3D volume term.
+Each energy formulation can be split up into a 1D length term and a 3D volume term. The 1D length term penalizes length changes the object undergoes whereas the 3D volume term is a volume-preserving penalty term.
 
 \begin{table}[!htbp]
 \centering
@@ -115,7 +116,8 @@ Each energy formulation can be split up into a 1D length term and a 3D volume te
 \label{table:energies_split}
 \end{table}
 
-\textbf{1D Length Term:} This term penalizes length changes. Mooney (\cite{mooney1940theory}) originally proposed the 1D length term 
+\subsubsection{1D Length Term}
+Mooney (\cite{mooney1940theory}) originally proposed the 1D length term 
 \[
 \Psi_{M}=\frac{\mu}{2}\left(I_{C}-3\right)
 \]
@@ -123,88 +125,78 @@ that is used in $\Psi_{Neo}$ and $\Psi_{A}$. If we expand the energy with the si
 \[
 \Psi_{M}=\frac{\mu}{2}\left(\sigma_{0}^2 + \sigma_{1}^2 + \sigma_{2}^2 - 3\right)
 \]
-The energy as it is formulated reaches its minimum at a zero volume change, meaning $I_{C}=0$ which results in $\Psi_{M}=-3$. Mooney added the hard constraint that $J=1$ so that the energy is minimized at the volume preserving configuration. Note that the energy is singularity free and well defined under inversion.
+The energy as it is formulated reaches its minimum at a zero volume state, meaning $I_{C}=0$ which results in $\Psi_{M}=-3$. Mooney added the hard constraint that $J=1$ so that the energy is minimized at the volume preserving configuration that is closest to the stretch space origin. Note that the energy is singularity free and well defined under inversion.
 
 The second term 
 \[
 \Psi_{R} = \frac{\mu}{2}\left(J^{-2 / 3} I_{C}-3\right)
 \]
-is used in $\Psi_{B}$ and $\Psi_{C}$ was introduced by Rivlin in 1948. Using the singular values of F we get the following term:
+is used in $\Psi_{B}$ and $\Psi_{C}$ and was introduced by Rivlin in 1948. Using the singular values of \textbf{F} we get the following term:
 \[
 \Psi_{R} = \frac{\mu}{2}\left(\frac{\sigma_{0}^2 + \sigma_{1}^2 + \sigma_{2}^2}{(\sigma_{0}  \sigma_{1}  \sigma_{2})^\frac{2}{3}}
  - 3\right)
 \]
 Unfortunately this term is not singularity free. If either $\sigma_{0}$, $\sigma_{1}$ or $\sigma_{2}$ is equal to zero the result is not defined anymore.
 
-
-\textbf{3D Volume Term:} Here we are dealing with a volume-preserving penalty term. The volume term of $\Psi_{Neo}$, meaning
+\subsubsection{3D Volume Term}
+The volume term of $\Psi_{Neo}$, meaning
 \[
 \Psi_{Neo, volume} = -\mu \log J+\frac{\lambda}{2}(\log J)^{2}
 \]
 results in some numerical problems since the logarithmic function is not defined for $J<0$ and grows unbounded for $J \rightarrow 0$. In conclusion $\Psi_{Neo, volume}$ is not singularity free. 
-The same applies for the 3D volume term of $\Psi_{A}$
+The same applies for the 3D volume term of $\Psi_{A}$, namely
 \[
 \Psi_{A, volume} = -\mu \log J+\frac{\lambda}{2}(J-1)^{2}.
 \]
-The term of $\Psi_{A}$ and $\Psi_{B}$
+The term of $\Psi_{A}$ and $\Psi_{B}$ which is of the form
 \[
 \Psi_{M} = \frac{\lambda}{2}(J-1)^{2}
 \]
-does not have these noted difficulties. It is bounded, well defined and invertible. After these observations we combine the robust length with the robust volume term
+does not have these noted difficulties. It is bounded, well defined and invertible. After these observations we combine the robust length with the robust volume term and receive $\Psi_D$ that is defined as
 \[
 \Psi_{D} = \frac{\mu}{2}\left(I_{C}-3\right) +\frac{\lambda}{2}(J-1)^{2}
 \]
-which is singularity free and well defined under inversion.
+and is singularity free and well defined under inversion. Unfortunately $\Psi_D$ does not satisfy the requirement of being rest stable which will be discussed in the next section.
 
 \todoredefined[inline]{
-TODO: Bonet and Wood 2008 or 1997? Table looks ugly, improve and add resources. minimum at IC=0 or J=0? Overall okay?
+TODO: Bonet and Wood 2008 or 1997? Table looks ugly, improve and add resources. Overall okay?
 }
 
 \subsection{Rest Stabilization}
-Although $\Psi_{D}$ meets almost all of our requirements it is not rest stable. This can be shown with the Piola-Kirchhoff (PK1) stress tensor:
+Although $\Psi_{D}$ meets almost all stated requirements it is not rest stable. This can be shown with the Piola-Kirchhoff (PK1) stress tensor for $\Psi_D$ depending on the identity matrix $\mathbf{I}$:
+\begin{align*}
+P_{D}(\mathbf{I}) &= \frac{\partial \Psi_{D}}{\partial \mathbf{F}} (\mathbf{I}) = \frac{\partial \Psi_{D}}{\partial \mathbf{F}} \left[ \frac{\mu}{2}\left(I_{C}-3\right) +\frac{\lambda}{2}(J-1)^{2} \right] \\
+&= \frac{\partial \Psi_{D}}{\partial \mathbf{F}}  \frac{\mu}{2}\left(\operatorname{tr}(\mathbf{I}^\intercal \mathbf{I})-3\right) +\frac{\partial \Psi_{D}}{\partial \mathbf{F}} \frac{\lambda}{2}(\operatorname{tr}(\mathbf{I})-1)^{2} \\
+&= \mu I + \lambda (\operatorname{det}(\mathbf{I})-1)  \frac{\partial}{\partial \mathbf{F}} \operatorname{det}(\mathbf{I}) = \mu \mathbf{I} \neq 0
+\end{align*}
+
+If the energy had rest stability $P_{D}(\mathbf{I})$ would resolve to zero. Unfortunately this is not the case here. In order to solve that problem the authors modified $(J-1)^{2}$ to $(J-\alpha)^{2}$. Using this modification the energy shifts to
 \[
-P_{D}(I) = \frac{\partial \Psi_{D}}{\partial F} (I) = \frac{\partial \Psi_{D}}{\partial F} \left[ \frac{\mu}{2}\left(I_{C}-3\right) +\frac{\lambda}{2}(J-1)^{2} \right]
-\]
-\[
-= \frac{\partial \Psi_{D}}{\partial F}  \frac{\mu}{2}\left(\operatorname{tr}(\mathrm{I}^{T} \mathrm{I})-3\right) +\frac{\partial \Psi_{D}}{\partial F} \frac{\lambda}{2}(\operatorname{tr}(\mathrm{I})-1)^{2}
-\]
-\[
-= \mu I + \lambda (\operatorname{det}(I)-1)  \frac{\partial}{\partial F} \operatorname{det}(I) = \mu I \neq 0
+\Psi_{E} = \frac{\mu}{2}\left(I_{C}-3\right) +\frac{\lambda}{2}(J-\alpha)^{2}.
 \]
 
-If the energy had rest stability $P_{D}(I)$ would resolve to zero. Unfortunately this is not the case here. In order to solve that problem the authors modified $(J-1)^{2}$ to $(J-\alpha)^{2}$:
-\[
-\Psi_{E} = \frac{\mu}{2}\left(I_{C}-3\right) +\frac{\lambda}{2}(J-\alpha)^{2}
-\]
-therefore resulting to:
-\[
-P_{E}(F) = \frac{\partial \Psi_{D}}{\partial F} \left[ \frac{\mu}{2}\left(I_{C}-3\right) +\frac{\lambda}{2}(J-\alpha)^{2} \right]
-\]
-\begin{equation}\label{eq:pk1_unstable}
-= \mu F + \lambda (\operatorname{det}(F)-\alpha)  \frac{\partial}{\partial F} \operatorname{det}(F)
-\end{equation}
-
-Solving for an alpha that satisfies $P_{E}(I)=0$ gives us $\alpha=1+\frac{\mu}{\lambda}$. Now $\Psi_{E}$ has to be changed accordingly:
-\[
-\Psi_{E} = \frac{\mu}{2}\left(I_{C}-3\right) +\frac{\lambda}{2}(J-1-\frac{\mu}{\lambda})^{2}
-\]
-\[
-= \frac{\mu}{2}\left(I_{C}-3\right) - \mu\left(J-1\right) + \frac{\lambda}{2}(J-1)^{2} + \left(\frac{\mu}{\lambda}\right)^{2}
-\]
+Taking $\Psi_E$ in the PK1 equation from before we get
+\begin{align*}
+P_{E}(\mathbf{F}) &= \frac{\partial \Psi_{E}}{\partial \mathbf{F}} \left[ \frac{\mu}{2}\left(I_{C}-3\right) +\frac{\lambda}{2}(J-\alpha)^{2} \right] \\
+&= \mu \mathbf{F} + \lambda (\operatorname{det}(\mathbf{F})-\alpha)  \frac{\partial}{\partial \mathbf{F}} \operatorname{det}(\mathbf{F}).
+\end{align*}
+Solving for an alpha that satisfies $P_{E}(\mathbf{I})=0$ gives us $\alpha=1+\frac{\mu}{\lambda}$. Now $\Psi_{E}$ has to be changed accordingly:
+\begin{align*}
+\Psi_{E} &= \frac{\mu}{2}\left(I_{C}-3\right) +\frac{\lambda}{2}(J-1-\frac{\mu}{\lambda})^{2} \\
+&= \frac{\mu}{2}\left(I_{C}-3\right) - \mu\left(J-1\right) + \frac{\lambda}{2}(J-1)^{2} + \left(\frac{\mu}{\lambda}\right)^{2}.
+\end{align*}
 Since constant disappear under differentiation this expression is functionally equivalent to 
 \[
 \Psi_{E} = \frac{\mu}{2}\left(I_{C}-3\right) - \mu\left(J-1\right) + \frac{\lambda}{2}(J-1)^{2}.
 \]
-Now one can notice that $\Psi_{E}$ looks very similar to $\Psi_{Neo}$. The difference is that we replaced $log(J)$ with $(J-1)$ in $\Psi_{E}$. Remember that $(J-1)$ is the first term in the taylor approximation of $log(J)$ at $J=1$:
-\[
-\sum_{n=0}^{\infty} = \frac{f^{(n)}(1)}{n!} (J-1)^{n} =
-\]
-\[
-= \boldsymbol{(J-1)} - \frac{1}{2} (J-1)^{2} + \frac{1}{3} (J-1)^{3} -\frac{1}{4} (J-1)^{4} + ...
-\]
+Now one can notice that $\Psi_{E}$ looks very similar to $\Psi_{Neo}$. The difference is that $log(J)$ is replaced with $(J-1)$ in $\Psi_{E}$. Remember that $(J-1)$ is the first term in the taylor approximation of $\operatorname{log}(J)$ at $J=1$:
+\begin{align*}
+\sum_{n=0}^{\infty} &= \frac{f^{(n)}(1)}{n!} (J-1)^{n} \\
+&= \boldsymbol{(J-1)} - \frac{1}{2} (J-1)^{2} + \frac{1}{3} (J-1)^{3} -\frac{1}{4} (J-1)^{4} + ...
+\end{align*}
 
 \todoredefined[inline]{
-TODO: Add "Zwischenschritte"? Include all calculations? Do we need a bit of a better conclusion of what we did (taylor, neo, sing. free, rest stable)?
+TODO: Add "Zwischenschritte"? Include all calculations? Do we need a bit of a better conclusion of what we did (taylor, neo, sing. free, rest stable)? Check consistency of calculations (when trace when $I_C$ etc.).
 }
 
 \subsection{Meta-Stability under Degeneracy}
@@ -225,47 +217,45 @@ TODO: How much needs to be explained here?
 
 
 \section{Energy Analysis}
-In this chapter it is shown that one can perform a complete eigenanalysis on equation \ref{eq:stable_energy}.
+The goal of this chapter is to show that a complete eigenanalysis can be performed on equation \ref{eq:stable_energy}.
+
 
 \subsection{First Piola-Kirchhoff Stress (PK1)}
-We start with PK1 for equation \ref{eq:stable_energy}:
-\[
-P(F) = \frac{\partial \Psi_{D}}{\partial F} \left[ \frac{\mu}{2}\left(I_{C}-3\right) + \frac{\lambda}{2}(J-\alpha)^{2} - \frac{\mu}{2}\left(I_{C}+1\right) \right]
-\]
-\[
-\stackrel{\text{eq.\ref{eq:pk1_unstable}}}{=} \mu F + \lambda (\operatorname{det}(F)-\alpha)  \frac{\partial}{\partial F} \operatorname{det}(F) - \frac{\partial}{\partial F} \left[\operatorname{log}\left(\operatorname{tr}(\mathrm{F}^{T}F)+1\right)\right]
-\]
-\[
-= \mu F + \lambda (\operatorname{det}(F)-\alpha)  \frac{\partial}{\partial F} \operatorname{det}(F) - \mu F \frac{1}{\operatorname{tr}(\mathrm{F}^{T}F) + 1}
-\]
-\[
-= \mu \left( 1 - \frac{1}{\operatorname{tr}(\mathrm{F}^{T}F) + 1}\right) F + \lambda(J-\alpha)\frac{\partial J}{\partial F}
-\]
+In order to analyse the energy PK1 can be used for equation \ref{eq:stable_energy}:
+\begin{align*}
+P(\mathbf{F}) &= \frac{\partial \Psi_{D}}{\partial \mathbf{F}} \left[ \frac{\mu}{2}\left(I_{C}-3\right) + \frac{\lambda}{2}(J-\alpha)^{2} - \frac{\mu}{2}\left(I_{C}+1\right) \right] \\
+&= \mu \mathbf{F} + \lambda (\operatorname{det}(\mathbf{F})-\alpha)  \frac{\partial}{\partial \mathbf{F}} \operatorname{det}(\mathbf{F}) - \frac{\partial}{\partial \mathbf{F}} \left[\operatorname{log}\left(\operatorname{tr}(\mathbf{F}^\intercal \mathbf{F})+1\right)\right] \\
+&= \mu \mathbf{F} + \lambda (\operatorname{det}(\mathbf{F})-\alpha)  \frac{\partial}{\partial \mathbf{F}} \operatorname{det}(\mathbf{F}) - \mu \mathbf{F} \frac{1}{\operatorname{tr}(\mathbf{F}^\intercal \mathbf{F}) + 1} \\
+&= \mu \left( 1 - \frac{1}{\operatorname{tr}(\mathbf{F}^\intercal \mathbf{F}) + 1}\right) \mathbf{F} + \lambda(J-\alpha)\frac{\partial J}{\partial \mathbf{F}}
+\end{align*}
 
-with $\alpha=1+\frac{\mu}{\lambda}-\left(\frac{\mu}{4}\right)\lambda$. For future use we write $\frac{\partial J}{\partial \mathbf{F}}$ as cross products:
+with $\alpha=1+\frac{\mu}{\lambda}-\left(\frac{\mu}{4}\right)\lambda$. For future use it can be more practical to write $\frac{\partial J}{\partial \mathbf{F}}$ as a result of cross products:
 \begin{equation}\label{eq:cross_product}
 \frac{\partial J}{\partial \mathbf{F}} = \left[ \,f_1 \times f_2\, \bigg| \,f_2 \times f_0\, \bigg| \,f_0 \times f_1\, \right].
 \end{equation}
 
+\todoredefined[inline]{
+TODO: Is it easy to follow? Maybe add some explanations of some steps? Maybe move cross product into background instead of here.
+}
 
 \subsection{The Energy Hessian Terms}
-Using the scalar notation for F the hessian of the energy can be written in a fourth-order matrix-of-matrices:
+Using the scalar notation for $\mathbf{F}$ the hessian of the energy can be written in a fourth-order matrix-of-matrices:
 \[
-\frac{\partial^2 \psi}{\partial F^2} = \frac{\partial P(F)}{\partial F} = 
-\left[\begin{array}{ccc}{\left[\frac{\partial P(F)}{\partial f_0}\right]} & {\left[\frac{\partial P(F)}{\partial f_3}\right]} & {\left[\frac{\partial P(F)}{\partial f_6}\right]} \\ {\left[\frac{\partial P(F)}{\partial f_1}\right]} & {\left[\frac{\partial P(F)}{\partial f_4}\right]} & {\left[\frac{\partial P(F)}{\partial f_7}\right]} \\ {\left[\frac{\partial P(F)}{\partial f_2}\right]} & {\left[\frac{\partial P(F)}{\partial f_5}\right]} & {\left[\frac{\partial P(F)}{\partial f_8}\right]} \end{array}\right]
+\frac{\partial^2 \psi}{\partial \mathbf{F}^2} = \frac{\partial P(\mathbf{F})}{\partial \mathbf{F}} = 
+\left[\begin{array}{ccc}{\left[\frac{\partial P(\mathbf{F})}{\partial f_0}\right]} & {\left[\frac{\partial P(\mathbf{F})}{\partial f_3}\right]} & {\left[\frac{\partial P(\mathbf{F})}{\partial f_6}\right]} \\ {\left[\frac{\partial P(\mathbf{F})}{\partial f_1}\right]} & {\left[\frac{\partial P(\mathbf{F})}{\partial f_4}\right]} & {\left[\frac{\partial P(\mathbf{F})}{\partial f_7}\right]} \\ {\left[\frac{\partial P(\mathbf{F})}{\partial f_2}\right]} & {\left[\frac{\partial P(\mathbf{F})}{\partial f_5}\right]} & {\left[\frac{\partial P(\mathbf{F})}{\partial f_8}\right]} \end{array}\right]
 \]
 
 in which each entry is defined as
 \[
-\frac{\partial P(F)}{\partial f_i} = \frac{\partial}{\partial f_i} \left[ \mu \left( 1 - \frac{1}{\operatorname{tr}(\mathrm{F}^{T}F) + 1}\right) F + \lambda(J-\alpha)\frac{\partial J}{\partial F} \right]
+\frac{\partial P(\mathbf{F})}{\partial f_i} = \frac{\partial}{\partial f_i} \left[ \mu \left( 1 - \frac{1}{\operatorname{tr}(\mathbf{F}^\intercal \mathbf{F}) + 1}\right) \mathbf{F} + \lambda(J-\alpha)\frac{\partial J}{\partial \mathbf{F}} \right]
 \]
 \[
-\stackrel{\text{prod.rule}}{=} \underbrace{\frac{\partial F}{\partial f_i} \mu \left( 1 - \frac{1}{\operatorname{tr}(\mathrm{F}^{T}F) + 1}\right)}_{\mathrm{T}_{i}}  + \underbrace{F \mu \frac{2}{\left(\operatorname{tr}(\mathrm{F}^{T}F) + 1\right)^2} f_i}_{_{\mathrm{M}_{i}}}
+\stackrel{\text{prod.rule}}{=} \underbrace{\frac{\partial \mathbf{F}}{\partial f_i} \mu \left( 1 - \frac{1}{\operatorname{tr}(\mathbf{F}^\intercal \mathbf{F}) + 1}\right)}_{\mathrm{T}_{i}}  + \underbrace{\mathbf{F} \mu \frac{2}{\left(\operatorname{tr}(\mathbf{F^\intercal}\mathbf{F}) + 1\right)^2} f_i}_{_{\mathrm{M}_{i}}}
 \]
 \[
-r+ \underbrace{\lambda \frac{\partial J}{\partial f_i} \frac{\partial J}{\partial F}}_{_{\mathrm{G}_{i}}}+ \underbrace{\lambda (J- \alpha) \frac{\partial^2 J}{\partial F\partial f_i}}_{_{\mathrm{H}_{i}}} \in \mathbb{R}^{3}
+r+ \underbrace{\lambda \frac{\partial J}{\partial f_i} \frac{\partial J}{\partial \mathbf{F}}}_{_{\mathrm{G}_{i}}}+ \underbrace{\lambda (J- \alpha) \frac{\partial^2 J}{\partial \mathbf{F}\partial f_i}}_{_{\mathrm{H}_{i}}} \in \mathbb{R}^{3}.
 \]
-Each term in the final equation $\mathrm{T}_i$, $\mathrm{M}_i$, $\mathrm{G}_i$, $\mathrm{H}_i$ respectively the Tikohonov, Mu, volume Gradient and volume Hessian term will be examined separately in the following.
+Each term in the final equation $\mathrm{T}_i$, $\mathrm{M}_i$, $\mathrm{G}_i$, $\mathrm{H}_i$ respectively the Tikohonov, Mu, volume Gradient and volume Hessian term will be examined separately in the following sections.
 
 \subsection{The Tikhonov, Mu, and Gradient Terms}
 \subsubsection{Tikhonov}
@@ -273,9 +263,9 @@ The Tikhonov term can be viewed as a fourth-order matrix-of-matrices
 \[
 \mathbb{T} = \frac{\partial \mathbf{F}}{\partial f_i} = \left[\begin{array}{ccc}{\begin{bmatrix} 1 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}} & {\begin{bmatrix} 0 & 1 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}} & {\begin{bmatrix} 0 & 0 & 1 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}} \\ {\begin{bmatrix} 0 & 0 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}} & {\begin{bmatrix} 0 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 0 \end{bmatrix}} & {\begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{bmatrix}} \\ {\begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 1 & 0 & 0 \end{bmatrix}} & {\begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 1 & 0 \end{bmatrix}} & {\begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 1 \end{bmatrix}} \end{array}\right].
 \]
-If we vectorize $\mathbb{T}$ we get the identity matrix $\mathbb{I} \in \mathbb{R}^{9x9}$ which is full rank, positive definite and independent of the values in F. It serves as a regularizer for the rest of the energy
+If we vectorize $\mathbb{T}$ we get the identity matrix $\mathbf{I} \in \mathbb{R}^{9x9}$ which is full rank, positive definite and independent of the values in F. It serves as a regularizer for the rest of the energy
 \[
-\operatorname{vec}(\mathbb{T}) =  \mathbf{\check{T}} = \mathbb{I} = \in \mathbb{R}^{9x9}.
+\operatorname{vec}(\mathbb{T}) =  \mathbf{\check{T}} = \mathbf{I} = \in \mathbb{R}^{9x9}.
 \]
 
 \subsubsection{Mu}
@@ -333,10 +323,9 @@ One can easily observe that $\mathbf{\check{H}}$ is a \textit{self-similar} cros
 
 \subsubsection{Volume Hessian Eigenvalues}
 For determining the eigenvalues of $\mathbf{\check{H}}$ one needs to examine the two characteristic polynomials:
-
 \begin{align*}
 &\epsilon^3 - \operatorname{tr}(\mathbf{C}) \epsilon - 2 J = 0 \tag{1}  \\
-&\epsilon^3 - \operatorname{tr}(\mathbf{C}) \epsilon^2 + \frac{1}{2} \left( \operatorname{tr^2}(\mathbf{C}) - \operatorname{tr}(\mathbf{C}^2) \right) \epsilon - \operatorname{det}(\mathbf{C}) = 0 \tag(2)
+&\epsilon^3 - \operatorname{tr}(\mathbf{C}) \epsilon^2 + \frac{1}{2} \left( \operatorname{tr^2}(\mathbf{C}) - \operatorname{tr}(\mathbf{C}^2) \right) \epsilon - \operatorname{det}(\mathbf{C}) = 0 \tag{2}
 \end{align*}
 
 where $\epsilon$ denote the eigenvalues of $\mathbf{\check{H}}$ and $\mathbf{C}$ is taken from table \ref{table:gradient_quantities}. Equation (1) is easier to solve and 

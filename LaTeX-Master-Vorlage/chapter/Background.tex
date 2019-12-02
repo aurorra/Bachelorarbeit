@@ -13,19 +13,19 @@ tensors and matrices are represented by upper-case bold letters as for example $
 
 
 \subsection{Tensor Notation}
-Furthermore we will use the tensor notation used in the paper \textit{Stable Neo-Hookean Flesh Simulation}. They decided to to define vectorization vec(.) as column-wise flattening of a matrix into a vector (\cite{Smith:2018:SNF:3191713.3180491}, 12:5) similar to Golub and Van Loan (2012) \cite{golub2012matrix}.
+Furthermore we will use the tensor notation used in the paper \textit{Stable Neo-Hookean Flesh Simulation}. They decided to to define vectorization vec(\cdot) as column-wise flattening of a matrix into a vector (\cite{Smith:2018:SNF:3191713.3180491}, 12:5) similar to Golub and Van Loan (2012) \cite{golub2012matrix}.
 
-In order to indicate that we are dealing with a vectorized matrix we will use the symbol $\check{.}$ as shown in the following equation:
+In order to indicate that we are dealing with a vectorized matrix we will use the symbol $\check{\cdot}$ as shown in the following equation:
 
 \[
-\textbf{A} = \begin{bmatrix} a & c \\ b & d \end{bmatrix} \qquad \operatorname{vec}(\textbf{A}) = \boldsymbol{\check{a}} = \begin{bmatrix} a \\ b \\ c \\ d \end{bmatrix}.
+\textbf{A} = \begin{bmatrix} a & c \\ b & d \end{bmatrix} \qquad \operatorname{vec}(\textbf{A}) = \mathbf{\check{a}} = \begin{bmatrix} a \\ b \\ c \\ d \end{bmatrix}.
 \]
 
 Additionally we will have to deal with $4^{th}$ order tensors in a form of matrix-of-matrices. These matrices are denoted by using blackboard bold:
 
 \[
 \mathbb{A} = 
-\left[\begin{array}{cc}{\begin{bmatrix} a & c \\ b & d \end{bmatrix}} & {\begin{bmatrix} a & c \\ b & d \end{bmatrix}} \\ {\begin{bmatrix} a & c \\ b & d \end{bmatrix}} & {\begin{bmatrix} a & c \\ b & d \end{bmatrix}}\end{array}\right]
+\left[\begin{array}{cc}{\begin{bmatrix} a & c \\ b & d \end{bmatrix}} & {\begin{bmatrix} i & k \\ j & l \end{bmatrix}} \\ {\begin{bmatrix} e & g \\ f & h \end{bmatrix}} & {\begin{bmatrix} m & o \\ n & p \end{bmatrix}}\end{array}\right]
 =
 \left[\begin{array}{cc}{\left[\mathbf{A}_{00}\right]} & {\left[\mathbf{A}_{01}\right]} \\ {\left[\mathbf{A}_{10}\right]} & {\left[\mathbf{A}_{11}\right]}\end{array}\right]
 \]
@@ -33,7 +33,7 @@ Additionally we will have to deal with $4^{th}$ order tensors in a form of matri
 If we now vectorize $\mathbb{A}$ we receive the form described in the following line:
 
 \[
-\mathbb{A} = \operatorname{vec}(\mathbb{A})=\left[\operatorname{vec}\left(\mathrm{A}_{00}\right)\left|\operatorname{vec}\left(\mathrm{A}_{10}\right)\right| \operatorname{vec}\left(\mathrm{A}_{01}\right) | \operatorname{vec}\left(\mathrm{A}_{11}\right)\right]
+\mathbb{A} = \operatorname{vec}(\mathbb{A})= \left[ \,\operatorname{vec}\left(\mathbf{A}_{00}\right)\, \bigg| \,\operatorname{vec}\left(\mathbf{A}_{10}\right)\, \bigg| \,\operatorname{vec}\left(\mathbf{A}_{01}\right)\, \bigg| \,\operatorname{vec}\left(\mathbf{A}_{11}\right)\, \right]
 \]
 
 This term above is equivalent to the notation described here:
@@ -58,7 +58,7 @@ $\mathbb{A} = \mathbf{\check{A}}$: matrix-of-matrices
 \end{addmargin}
 
 \todoredefined[inline]{
-TODO: Check if all notations are declared when adding something.
+TODO: Check if all notations used later are declared. Make matrix of matrices better looking.
 }
 
 
@@ -83,20 +83,21 @@ The singular value decomposition (SVD) will play an important role in formulatin
 
 \begin{definition}[\textbf{Singular Values}]
 \label{singular_values}
-The singular values of a matrix A $\in$ $\mathbb{R}^{m x n}$ are the square roots of the eigenvalues of $AA^{\mathrm{T}}$.
+The singular values of a matrix $\mathbf{A}$ $\in$ $\mathbb{R}^{m x n}$ are the square roots of the eigenvalues of $\mathbf{AA}^{\intercal}$.
 \end{definition}
 
 The theorem of the singular value decomposition tells us that we can factor every m-by-n matrix into one orthogonal m-by-m, one diagonal m-by-n and one orthogonal n-by-n matrix. More formally:
 
 \begin{theorem}[\textbf{The SVD Theorem}]
 \label{SVD}
-Let A $\in$ $\mathbb{R}^{m x n}$ be a matrix having r positive singular values, m $\geq$ n. Then there exist orthogonal matrices U $\in$ $\mathbb{R}^{m x m}$, V $\in$ $\mathbb{R}^{n x n}$ and a diagonal matrix $\tilde{\Sigma}$ $\in$ $\mathbb{R}^{m x n}$ such that
+Let $\mathbf{A}$ $\in$ $\mathbb{R}^{m x n}$ be a matrix having r positive singular values, m $\geq$ n. Then there exist orthogonal matrices $\mathbf{U}$ $\in$ $\mathbb{R}^{m x m}$, $\mathbf{V}$ $\in$ $\mathbb{R}^{n x n}$ and a diagonal matrix $\mathbf{\tilde{\Sigma}}$ $\in$ $\mathbb{R}^{m x n}$ such that
 
-\[
-\begin{array}{l}{A=U \tilde{\Sigma} V^{\mathrm{T}}} \\ {\tilde{\Sigma}=\left[\begin{array}{ll}{\Sigma} & {0} \\ {0} & {0}\end{array}\right]}\end{array}
-\]
+\begin{align*}
+\mathbf{A} &= \mathbf{U \tilde{\Sigma} V^\intercal} \\
+\mathbf{\tilde{\Sigma}} &= \left[ \begin{array}{cc} \mathbf{\Sigma} & 0 \\ 0 & 0 \end{array} \right]
+\end{align*}
 
-where $\Sigma$ = diag ($\sigma$1, $\sigma$2, . . . , $\sigma$r), and $\sigma$1 $\geq$ $\sigma$2 $\geq$ · · · $\geq$ $\sigma$r $>$ 0 are the positive singular values of A.
+where $\mathbf{\Sigma}$ = diag ($\sigma$1, $\sigma$2, . . . , $\sigma$r), and $\sigma$1 $\geq$ $\sigma$2 $\geq$ · · · $\geq$ $\sigma$r $>$ 0 are the positive singular values of $\mathbf{A}$.
 
 \end{theorem}
 The definition and theorem were taken from \cite{ford2014numerical} (def. \ref{SVD} S.113, thm. \ref{singular_values} S.300).
@@ -112,11 +113,11 @@ TODO: Check reference. Make paragraphs work together. Add examples.
 \begin{theorem}[\textbf{The Polar Decomposition Theorem}]
 \label{PD}
 
-Let \textbf{F} be a non-singular square matrix. Then \textbf{F} can be decomposed uniquely into either of the following two products
+Let $\mathbf{F}$ be a non-singular square matrix. Then $\mathbf{F}$ can be decomposed uniquely into either of the following two products
 \[
-\boldsymbol{F} = \boldsymbol{RU}, \quad \boldsymbol{F} = \boldsymbol{VR}
+\mathbf{F} = \mathbf{RU}, \quad \mathbf{F} = \mathbf{VR}
 \]
-where \textbf{R} is orthogonal and \textbf{U} and \textbf{V} are positive definite symmetric matrices.
+where $\mathbf{R}$ is orthogonal and $\mathbf{U}$ and $\mathbf{V}$ are positive definite symmetric matrices.
 \end{theorem}
 
 The definition and theorem were taken from \cite{Spencer1980} (thm. \ref{PD} S.12).
@@ -189,7 +190,7 @@ in which $\mathbf{\Sigma}$ stands for
 \mathbf{\Sigma} = \left[\begin{matrix}  \sigma_0 & 0 & 0 \\ 0 & \sigma_1 & 0 \\ 0 & 0 & \sigma_2 \end{matrix}\right] .
 \end{equation}
 
-The $\sigma_i$ denote the singular values of $\mathbf{\Sigma}$. Unlike the normal convention the authors of the paper \textit{Stable Neo-Hookean Flesh Simulation} the rotation variant moves reflections to $\mathbf{\Sigma}$. This results into $\operatorname{det}(\mathbf{U})=\operatorname{det}(\mathbf{V})=1$ and the property that $\Sigma$ is allowed to have negative entries.
+The $\sigma_i$ denote the singular values of $\mathbf{\Sigma}$. Unlike the normal convention the authors of the paper \textit{Stable Neo-Hookean Flesh Simulation} the rotation variant moves reflections to $\mathbf{\Sigma}$. This results into $\operatorname{det}(\mathbf{U})=\operatorname{det}(\mathbf{V})=1$ and the property that $\mathbf{\Sigma}$ is allowed to have negative entries.
 
 
 
