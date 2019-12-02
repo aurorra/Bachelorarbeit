@@ -1,10 +1,10 @@
 \chapter{Background} \label{c:Background}
-The goal we are striving for is to animate human-like characters. In order to narrow it down even further we concentrate on the behaviour of the flesh of the character. 
+The goal I am striving for is to animate human-like characters. In order to narrow it down even further I concentrate on the behaviour of the flesh of the character. 
 For understanding the thematics of simulating human-like flesh it is necessary to have a basic mathematical background and knowledge of continuum mechanics. The goal of this chapter is to deliver an understanding in the topics mentioned.
 
 
 \section{Notation and Convention}
-At first we will declare the notation used in this thesis to avoid misunderstandings. We will use the common notation used in continuum mechanics taken from the book \textit{Continuum Mechanics} \cite{Spencer1980}. Additionally we will include some more specific declarations formulated and used in the paper \textit{Stable Neo-Hookean Flesh Simulation} \cite{Smith:2018:SNF:3191713.3180491}. 
+At first I will declare the notation used in this thesis to avoid misunderstandings. I will use the common notation used in continuum mechanics taken from the book \textit{Continuum Mechanics} \cite{Spencer1980}. Additionally I will include some more specific declarations formulated and used by the authors of the paper \textit{Stable Neo-Hookean Flesh Simulation} \cite{Smith:2018:SNF:3191713.3180491}. 
 
 
 \subsection{General Notation}
@@ -13,15 +13,15 @@ tensors and matrices are represented by upper-case bold letters as for example $
 
 
 \subsection{Tensor Notation}
-Furthermore we will use the tensor notation used in the paper \textit{Stable Neo-Hookean Flesh Simulation}. They decided to to define vectorization vec(\cdot) as column-wise flattening of a matrix into a vector (\cite{Smith:2018:SNF:3191713.3180491}, 12:5) similar to Golub and Van Loan (2012) \cite{golub2012matrix}.
+Furthermore I will use the tensor notation used in the paper \textit{Stable Neo-Hookean Flesh Simulation}. They decided to to define vectorization vec(\cdot) as column-wise flattening of a matrix into a vector (\cite{Smith:2018:SNF:3191713.3180491}, 12:5) similar to Golub and Van Loan (2012) \cite{golub2012matrix}.
 
-In order to indicate that we are dealing with a vectorized matrix we will use the symbol $\check{\cdot}$ as shown in the following equation:
+In order to indicate that I am dealing with a vectorized matrix I will use the symbol $\check{\cdot}$ as shown in the following equation:
 
 \[
 \textbf{A} = \begin{bmatrix} a & c \\ b & d \end{bmatrix} \qquad \operatorname{vec}(\textbf{A}) = \mathbf{\check{a}} = \begin{bmatrix} a \\ b \\ c \\ d \end{bmatrix}.
 \]
 
-Additionally we will have to deal with $4^{th}$ order tensors in a form of matrix-of-matrices. These matrices are denoted by using blackboard bold:
+Additionally I will have to deal with $4^{th}$ order tensors in a form of matrix-of-matrices. These matrices are denoted by using blackboard bold:
 
 \[
 \mathbb{A} = 
@@ -30,20 +30,20 @@ Additionally we will have to deal with $4^{th}$ order tensors in a form of matri
 \left[\begin{array}{cc}{\left[\mathbf{A}_{00}\right]} & {\left[\mathbf{A}_{01}\right]} \\ {\left[\mathbf{A}_{10}\right]} & {\left[\mathbf{A}_{11}\right]}\end{array}\right]
 \]
 
-If we now vectorize $\mathbb{A}$ we receive the form described in the following line:
+When vectorizing $\mathbb{A}$ the received form looks as described in the following line:
 
 \[
-\mathbb{A} = \operatorname{vec}(\mathbb{A})= \left[ \,\operatorname{vec}\left(\mathbf{A}_{00}\right)\, \bigg| \,\operatorname{vec}\left(\mathbf{A}_{10}\right)\, \bigg| \,\operatorname{vec}\left(\mathbf{A}_{01}\right)\, \bigg| \,\operatorname{vec}\left(\mathbf{A}_{11}\right)\, \right]
+\mathbb{A} = \operatorname{vec}(\mathbb{A})= \left[ \,\operatorname{vec}\left(\mathbf{A}_{00}\right)\, \bigg| \,\operatorname{vec}\left(\mathbf{A}_{10}\right)\, \bigg| \,\operatorname{vec}\left(\mathbf{A}_{01}\right)\, \bigg| \,\operatorname{vec}\left(\mathbf{A}_{11}\right)\, \right].
 \]
 
 This term above is equivalent to the notation described here:
 
 \[
 \mathbb{A}=\left[\begin{array}{llll}{a} & {e} & {i} & {m} \\ {b} & {f} & {j} & {n} \\ {c} & {g} & {k} & {o} \\ {d} & {h} & {l} & {p}\end{array}\right] 
-=\boldsymbol{\check{A}}
+=\boldsymbol{\check{A}}.
 \]
 
-The advantage of this form is that we can write several expressions as a cross product. We will need this property later to simplify complicated expressions and calculations.
+The advantage of this form is that one can write several expressions as a cross product. I will need this property later to simplify complicated expressions and calculations.
 
 
 \subsection{Summary}
@@ -64,22 +64,22 @@ TODO: Check if all notations used later are declared. Make matrix of matrices be
 
 
 \section{Mathematical Background}
-Since mathematics play an important role in our field of interest we need to build a solid background before we go further into more complex calculations. This chapter should cover all the important concepts used later in the calculations. A basic understanding of linear algebra is assumed.
+Since mathematics play an important role in the field of interest the first step is to build a solid background before diving further into more complex calculations. This chapter should cover all the important concepts used later in the calculations. A basic understanding of linear algebra is assumed.
 
 
 \subsection{Matrices}
-At first we will discuss the physical or geometrical meaning of some common matrix properties.
+At first I will discuss the physical or geometrical meaning of some common matrix properties.
 
-A matrix \textbf{A} is positive definite if $\textbf{x}^{T}\textbf{Ax}$ is positive for all of the non-zero values of the column matrix \textbf{x}.
+A matrix \textbf{A} is positive definite if $\textbf{x}^\intercal \textbf{Ax}$ is positive for all of the non-zero values of the column matrix \textbf{x}.
 
 \todoredefined[inline]{
-TODO: positive definite matrices definition and lemmas, orthogonal, etc.
+TODO: Not done yet. What needs to be covered here? positive definite matrices definition and lemmas, orthogonal, etc. Should it even be included?
 }
 
 
 \subsection{Singular Value Decomposition}
 
-The singular value decomposition (SVD) will play an important role in formulating the deformation gradient. It is important for our application since it represents the best possible approximation of a given matrix by a matrix of low rank. This approximation can be looked at as a compression of the data given (\cite{LiesenMehrmann2015}, S. 295).
+The singular value decomposition (SVD) will play an important role in formulating the deformation gradient. It is important for this application since it represents the best possible approximation of a given matrix by a matrix of low rank. This approximation can be looked at as a compression of the data given (\cite{LiesenMehrmann2015}, S. 295).
 
 \begin{definition}[\textbf{Singular Values}]
 \label{singular_values}
@@ -91,12 +91,10 @@ The theorem of the singular value decomposition tells us that we can factor ever
 \begin{theorem}[\textbf{The SVD Theorem}]
 \label{SVD}
 Let $\mathbf{A}$ $\in$ $\mathbb{R}^{m x n}$ be a matrix having r positive singular values, m $\geq$ n. Then there exist orthogonal matrices $\mathbf{U}$ $\in$ $\mathbb{R}^{m x m}$, $\mathbf{V}$ $\in$ $\mathbb{R}^{n x n}$ and a diagonal matrix $\mathbf{\tilde{\Sigma}}$ $\in$ $\mathbb{R}^{m x n}$ such that
-
 \begin{align*}
 \mathbf{A} &= \mathbf{U \tilde{\Sigma} V^\intercal} \\
 \mathbf{\tilde{\Sigma}} &= \left[ \begin{array}{cc} \mathbf{\Sigma} & 0 \\ 0 & 0 \end{array} \right]
 \end{align*}
-
 where $\mathbf{\Sigma}$ = diag ($\sigma$1, $\sigma$2, . . . , $\sigma$r), and $\sigma$1 $\geq$ $\sigma$2 $\geq$ · · · $\geq$ $\sigma$r $>$ 0 are the positive singular values of $\mathbf{A}$.
 
 \end{theorem}
@@ -130,11 +128,11 @@ TODO: Complete this section. Add lemmas and theorems used afterwards in the calc
 
 
 \section{Continuum Mechanics}
-In this section we will give a broad introduction into the field of Continuum Mechanics. In Continuum Mechanics we are less interested in small particles like atoms or molecules of an object but rather concentrate on pieces of matter which are in comparison very large. We are therefore concerned with the mechanical behavior of solids and fluids on the macroscopic scale (\cite{Spencer1980}, p. 1).
+In this section I will give a broad introduction into the field of Continuum Mechanics. In Continuum Mechanics one is less interested in small particles like atoms or molecules of an object but rather in pieces of matter which are in comparison very large. I are therefore concerned with the mechanical behavior of solids and fluids on the macroscopic scale (\cite{Spencer1980}, p. 1).
 
 
 \section{Deformation}
-When applying a force over an object naturally the object itself undergoes a deformation. In the following we will be consistent with most previous literature in continuum mechanics and use the term strain as a measure of deformation and stress as the force per unit area:
+When applying a force over an object naturally the object itself undergoes a deformation. In the following I will be consistent with most previous literature in continuum mechanics and use the term strain as a measure of deformation and stress as the force per unit area:
 
 \begin{addmargin}[2cm]{2cm}
 \textit{Strain = measure of deformation}  \\
@@ -147,7 +145,7 @@ TODO: Decide whether to include the above paragraph and how to connect it better
 }
 
 
-Now let us have a look at a deformation in a rather mathematical sense. Graphically we can imagine a deformation with the help of a two dimensional deformation map as shown in Fig. \ref{fig:deformationmap}. Here we have on the left side an ellipse that represents an object or material in its rest state. A function $\phi$ maps this rest state of the ellipse to a deformed state shown in Fig. \ref{fig:deformationmap} on the right side. Mathematically spoken this means that we can map each point of a chosen object from its rest state to a deformed one.
+Now let us have a look at a deformation in a rather mathematical sense. Graphically one can imagine a deformation with the help of a two dimensional deformation map as shown in Fig. \ref{fig:deformationmap}. Here on the left side there is an ellipse that represents an object or material in its rest state. A function $\phi$ maps this rest state of the ellipse to a deformed state shown in Fig. \ref{fig:deformationmap} on the right side. Mathematically spoken this means that one can map each point of a chosen object from its rest state to a deformed one.
 
 \begin{figure}[!htbp]
 	\centering
@@ -156,7 +154,7 @@ Now let us have a look at a deformation in a rather mathematical sense. Graphica
 	\label{fig:deformationmap}
 \end{figure}
 
-In conclusion the function $\phi$ describes our deformation. If we derive $\phi$ we can calculate the deformation gradient \textbf{F} which serves as a measure of the deformation in the following sense: 
+In conclusion the function $\phi$ describes the deformation. When deriving $\phi$ one can calculate the deformation gradient \textbf{F} which serves as a measure of the deformation in the following sense: 
 
 \[
 \begin{array}{l}
@@ -168,21 +166,21 @@ In conclusion the function $\phi$ describes our deformation. If we derive $\phi$
 \]
 
 \todoredefined[inline]{
-TODO: Adjust so the equal sign is at the same place in each column. Explain strain and stress and their meaning for later use in material constants (not explained in paper).
+TODO: Adjust so the equal sign is at the same place in each column. Explain strain and stress and their meaning for later use in material constants (not explained in paper). Include own image instead of the one here?
 }
 
 
 \subsection{Deformation Gradient}
-The deformation gradient \textbf{F} offers us as said previously a measurement of the deformation. With its help we can amongst other things calculate the volume and length change an object undergoes during a deformation. For our needs we define the deformation gradient exactely as the authors of the paper \cite{Smith:2018:SNF:3191713.3180491} did:
+The deformation gradient \textbf{F} offers as said previously a measurement of the deformation. With its help one can amongst other things calculate the volume and length change an object undergoes during a deformation. For my needs I define the deformation gradient exactely as the authors of the paper \cite{Smith:2018:SNF:3191713.3180491} did:
 
 \begin{equation}\label{eq:deformation_gradient}
 \textbf{F} = \left[ \,f_0\, \bigg| \,f_1\, \bigg| \,f_2\, \right] = \begin{bmatrix} f_0 & f_3 & f_6 \\ f_1 & f_4 & f_7 \\ f_2 & f_5 & f_8 \end{bmatrix}.
 \end{equation}
 
-Using the SVD theorem mentioned in theorem \ref{SVD} $\mathbf{F}$ can be written in the form of
+Using the SVD theorem mentioned in thm.\ref{SVD} $\mathbf{F}$ can be written in the form of
 
 \begin{equation}\label{eq:svd_gradient}
-\mathbf{F} = \mathbf{U \Sigma V\intercal}
+\mathbf{F} = \mathbf{U \Sigma V^\intercal}
 \end{equation}
 
 in which $\mathbf{\Sigma}$ stands for
@@ -190,7 +188,7 @@ in which $\mathbf{\Sigma}$ stands for
 \mathbf{\Sigma} = \left[\begin{matrix}  \sigma_0 & 0 & 0 \\ 0 & \sigma_1 & 0 \\ 0 & 0 & \sigma_2 \end{matrix}\right] .
 \end{equation}
 
-The $\sigma_i$ denote the singular values of $\mathbf{\Sigma}$. Unlike the normal convention the authors of the paper \textit{Stable Neo-Hookean Flesh Simulation} the rotation variant moves reflections to $\mathbf{\Sigma}$. This results into $\operatorname{det}(\mathbf{U})=\operatorname{det}(\mathbf{V})=1$ and the property that $\mathbf{\Sigma}$ is allowed to have negative entries.
+The $\sigma_i$ denote the singular values of $\mathbf{\Sigma}$. Unlike the normal convention the authors of the paper \textit{Stable Neo-Hookean Flesh Simulation} decided that the rotation variant moves reflections to $\mathbf{\Sigma}$. This results into $\operatorname{det}(\mathbf{U})=\operatorname{det}(\mathbf{V})=1$ and the property that $\mathbf{\Sigma}$ is allowed to have negative entries.
 
 
 

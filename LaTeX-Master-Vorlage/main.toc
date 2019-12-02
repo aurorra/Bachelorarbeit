@@ -22,7 +22,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2.2}Singular Value Decomposition}{6}{subsection.2.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.3}Polar Decomposition}{7}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.3}Polar Decomposition}{6}{subsection.2.2.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.3}Continuum Mechanics}{7}{section.2.3}
 \defcounter {refsection}{0}\relax 
@@ -72,20 +72,20 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.3.4}The Volume Hessian}{22}{subsection.3.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\nonumberline Volume Hessian Eigenvalues}{23}{section*.35}
+\contentsline {subsubsection}{\nonumberline Volume Hessian Eigenvalues}{24}{section*.37}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.5}The Complete Eigensystem}{23}{subsection.3.3.5}
+\contentsline {subsection}{\numberline {3.3.5}The Complete Eigensystem}{24}{subsection.3.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Experiments with the Code}{23}{section.3.4}
+\contentsline {section}{\numberline {3.4}Experiments with the Code}{25}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.5}Discussion}{25}{section.3.5}
+\contentsline {section}{\numberline {3.5}Discussion}{26}{section.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline List of Figures}{A}{chapter*.44}
+\contentsline {chapter}{\nonumberline List of Figures}{A}{chapter*.48}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline List of Tables}{B}{chapter*.45}
+\contentsline {chapter}{\nonumberline List of Tables}{B}{chapter*.49}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Bibliography}{D}{chapter*.46}
+\contentsline {chapter}{\nonumberline Bibliography}{D}{chapter*.50}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Online Sources}{E}{chapter*.47}
+\contentsline {chapter}{\nonumberline Online Sources}{E}{chapter*.51}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Figure Sources}{F}{chapter*.48}
+\contentsline {chapter}{\nonumberline Figure Sources}{F}{chapter*.52}

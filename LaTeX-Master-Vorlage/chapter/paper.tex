@@ -302,16 +302,23 @@ As in the Mu term one can notice a single non-zero, non-negative:
 \]
 The eigenvector is $\mathbf{\check{g}} / \| \mathbf{\check{g}} \|$.
 
+\todoredefined[inline]{
+TODO: Not all proofs and calculations included yet. Add or leave out some if too confusing.
+}
 
 
 \subsection{The Volume Hessian}
 The volume Hessian term is of the form
 \[
-\mathbb{H} = \frac{\partial^2 J}{\partial \mathbf{F} \partial f_i} \in \mathbb{R}^{9\times 9}.
+\mathbb{H} = \frac{\partial^2 J}{\partial \mathbf{F} \partial f_i} = \left[\begin{array}{ccc}{\frac{\partial}{\partial \mathbf{F}}\left[\frac{\partial J}{\partial f_0}\right]} & {\frac{\partial}{\partial \mathbf{F}}\left[\frac{\partial J}{\partial f_3}\right]} & {\frac{\partial}{\partial \mathbf{F}}\left[\frac{\partial J}{\partial f_6}\right]} \\ {\frac{\partial}{\partial \mathbf{F}}\left[\frac{\partial J}{\partial f_1}\right]} & {\frac{\partial}{\partial \mathbf{F}}\left[\frac{\partial J}{\partial f_4}\right]} & {\frac{\partial}{\partial \mathbf{F}}\left[\frac{\partial J}{\partial f_7}\right]} \\ {\frac{\partial}{\partial \mathbf{F}}\left[\frac{\partial J}{\partial f_2}\right]} & {\frac{\partial}{\partial \mathbf{F}}\left[\frac{\partial J}{\partial f_5}\right]} & {\frac{\partial}{\partial \mathbf{F}}\left[\frac{\partial J}{\partial f_8}\right]} \end{array}\right].
 \]
 Vectorizing $\mathbb{H}$ reveals the structure
 \[
-\operatorname{vec}(\mathbb{H}) = \mathbf{\check{H}} = \left[ \begin{matrix}
+\operatorname{vec}(\mathbb{H}) = \mathbf{\check{H}} = \begin{bmatrix} 0 & 0 & 0 & 0 & f_8 & 0 & 0 & -f_5 & f_4 \\ 0 & 0 & 0 & -f_8 & 0 & f_6 & f_5 & 0 & -f_3 \\ 0 & 0 & 0 & f_7 & -f_6 & 0 & -f_4 & f_3 & 0 \\ 0 & -f_8 & f_7 & 0 & 0 & 0 & 0 & f_2 & -f_1 \\ f_8 & 0 & -f_6 & 0 & 0 & 0 & -f_2 & 0 & f_0 \\ -f_7 & f_6 & 0 & 0 & 0 & 0 & f_1 & -f_0 & 0 \\ 0 & f_5 & -f_4 & 0 & -f_2 & f_1 & 0 & 0 & 0 \\ -f_5 & 0 & f_3 & f_2 & 0 & -f_0 & 0 & 0 & 0 \\ f_4 & -f_3 & 0 & -f_1 & f_0 & 0 & 0 & 0 & 0 \end{bmatrix}.
+\]
+We can write $\mathbf{\check{H}}$ as a cross-product matrix in the form
+\[
+\mathbf{\check{H}} = \left[ \begin{matrix}
 0 & -\mathbf{\widehat{f_2}} & \mathbf{\widehat{f_1}} \\ \mathbf{\widehat{f_2}} & 0 & -\mathbf{\widehat{f_0}} \\ -\mathbf{\widehat{f_1}} & \mathbf{\widehat{f_0}} & 0 \end{matrix} \right]
 \]
 where $\mathbf{\widehat{f_1}}$ stands for a cross-product matrix:
@@ -321,6 +328,10 @@ where $\mathbf{\widehat{f_1}}$ stands for a cross-product matrix:
 \]
 One can easily observe that $\mathbf{\check{H}}$ is a \textit{self-similar} cross-product matrix. Meaning that the macro structure of the matrix is the same as the micro structure.
 
+\todoredefined[inline]{
+TODO: Check each $f_1$ and $-$ in vectorization of H because it's exhausting.
+}
+
 \subsubsection{Volume Hessian Eigenvalues}
 For determining the eigenvalues of $\mathbf{\check{H}}$ one needs to examine the two characteristic polynomials:
 \begin{align*}
@@ -328,10 +339,25 @@ For determining the eigenvalues of $\mathbf{\check{H}}$ one needs to examine the
 &\epsilon^3 - \operatorname{tr}(\mathbf{C}) \epsilon^2 + \frac{1}{2} \left( \operatorname{tr^2}(\mathbf{C}) - \operatorname{tr}(\mathbf{C}^2) \right) \epsilon - \operatorname{det}(\mathbf{C}) = 0 \tag{2}
 \end{align*}
 
-where $\epsilon$ denote the eigenvalues of $\mathbf{\check{H}}$ and $\mathbf{C}$ is taken from table \ref{table:gradient_quantities}. Equation (1) is easier to solve and 
+where $\epsilon$ denote the eigenvalues of $\mathbf{\check{H}}$ and $\mathbf{C}$ is taken from table \ref{table:gradient_quantities}. Equation (1) is easier to solve and corresponds o the characteristic polynomial of $\mathbf{C}$. Given its roots $\epsilon_\alpha$, $\epsilon_\beta$, $\epsilon_\gamma$ the eigenvalues of $\mathbf{\check{H}}$ are: $\pm \sqrt{\epsilon_\alpha}$, $\pm \sqrt{\epsilon_\beta}$, $\pm \sqrt{\epsilon_\gamma}$. Using the singular values of $\mathbf{F}$ the eigenvalues can be written nicely in the following way:
+\begin{align*}
+&\epsilon_3 = \sigma_0 &\epsilon_6 = -\sigma_0 \\
+&\epsilon_4 = \sigma_1 &\epsilon_7 = -\sigma_1 \\
+&\epsilon_5 = \sigma_2 &\epsilon_8 = -\sigma_2.
+\end{align*}
+The remaining eigenvalues can be obtained by equation (2). This equation represents a depressed cube and the roots can be obtained by
+\[
+\epsilon_k = 2 \sqrt{\frac{I_C}{3}} \operatorname{cos}\left[ \frac{1}{3} \left( \operatorname{arccos}\left(\frac{3 J}{I_C} \sqrt{\frac{3}{I_C}} \right) + 2 \pi k \right) \right] \quad  k= 0,1,2.
+\]
+
+\todoredefined[inline]{
+TODO: Not happy with this section, improve and complete
+}
  
 \subsection{The Complete Eigensystem}
-Calculations
+\todoredefined[inline]{
+TODO: Include what is necessary.
+}
 
 \todoredefined[inline]{
 TODO: Make notation consistent (bold, cursive etc.) Explain better each step. Include all calculations? Make matrix of matrices more beautiful (more space). Eigenvalues of Mu and Gradient term better explain? Check each equation if correctly written.
