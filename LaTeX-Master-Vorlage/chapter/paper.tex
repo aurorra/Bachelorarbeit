@@ -242,10 +242,11 @@ P(F) = \frac{\partial \Psi_{D}}{\partial F} \left[ \frac{\mu}{2}\left(I_{C}-3\ri
 = \mu \left( 1 - \frac{1}{\operatorname{tr}(\mathrm{F}^{T}F) + 1}\right) F + \lambda(J-\alpha)\frac{\partial J}{\partial F}
 \]
 
-with $\alpha=1+\frac{\mu}{\lambda}-\left(\frac{\mu}{4}\right)\lambda$. For future use we write $\frac{\partial J}{\partial F}$ as cross products:
-\[
-\frac{\partial J}{\partial F} = \left[ \,f_1 \times f_2\, \bigg| \,f_2 \times f_0\, \bigg| \,f_0 \times f_1\, \right].
-\]
+with $\alpha=1+\frac{\mu}{\lambda}-\left(\frac{\mu}{4}\right)\lambda$. For future use we write $\frac{\partial J}{\partial \mathbf{F}}$ as cross products:
+\begin{equation}\label{eq:cross_product}
+\frac{\partial J}{\partial \mathbf{F}} = \left[ \,f_1 \times f_2\, \bigg| \,f_2 \times f_0\, \bigg| \,f_0 \times f_1\, \right].
+\end{equation}
+
 
 \subsection{The Energy Hessian Terms}
 Using the scalar notation for F the hessian of the energy can be written in a fourth-order matrix-of-matrices:
@@ -294,11 +295,20 @@ This matrix has rank one and has a single non-zero eigenvalue. In order to exami
 \]
 in which $\|\cdot\|_F$ stands for the Frobenius norm and $\sigma_i$ for the singular values from $\mathbf{\Sigma}$ in the SVD of $\mathbf{F}$ stated in eq. \ref{eq:svd_simga}. The eigenvector is $\mathbf{\check{f}} / \| \mathbf{\check{f}} \|$. The eigenvalue is always non-negative and large if $\mathbf{F}$ contains a large strech.
 
-\textbf{Gradient}:
-\begin{align*}
-\mathbb{G}(\mathbf{F}) &= \frac{\partial J}{\partial \mathbf{F}} \frac{\partial J}{\partial fi} \\ \\
-\operatorname{vec}(\mathbb{G}(\mathbf{F})) &= \mathbf{\check{G}} = \operatorname{vec}\left(\frac{\partial J}{\partial \mathbf{F}}\right) \operatorname{vec}\left(\frac{\partial J}{\partial \mathbf{F}}\right)^\intercal = \mathbf{\check{g}} \mathbf{\check{g}}^\intercal
-\end{align*}
+\textbf{Gradient}: The gradient term also has the same structure as the two terms before with different entries defined by
+\[
+\mathbb{G}(\mathbf{F}) = \frac{\partial J}{\partial \mathbf{F}} \frac{\partial J}{\partial fi}.
+\]
+The vectorized matrix $\mathbf{\check{G}}$ can be written in a similar form as for the Mu term. With the help of the cross product of $\partial J / \partial \mathbf{F}$ stated in eq. \ref{eq:cross_product} $\mathbf{\check{G}}$ can be written as an outer product in the following way:
+\[
+\operatorname{vec}(\mathbb{G}(\mathbf{F})) = \mathbf{\check{G}} = \operatorname{vec}\left(\frac{\partial J}{\partial \mathbf{F}}\right) \operatorname{vec}\left(\frac{\partial J}{\partial \mathbf{F}}\right)^\intercal = \mathbf{\check{g}} \mathbf{\check{g}}^\intercal.
+\]
+As in the Mu term one can notice a single non-zero, non-negative:
+\[
+\| \mathbf{\check{g}} \|^2_2 = \left\| \frac{\partial J}{\partial \mathbf{F}} \right \|^2_F = \left[ (\sigma_0 \sigma_1)^2 + (\sigma_0 \sigma_2)^2 + (\sigma_1 \sigma_2)^2 \right].
+\]
+The eigenvector is $\mathbf{\check{g}} / \| \mathbf{\check{g}} \|$.
+
 
 
 \subsection{The Volume Hessian}
@@ -308,7 +318,7 @@ Calculations
 Calculations
 
 \todoredefined[inline]{
-TODO: Make notation consistent (bold, cursive etc.) Explain better each step. Include all calculations? Make matrix of matrices more beautiful (more space). Eigenvalues of Mu term?
+TODO: Make notation consistent (bold, cursive etc.) Explain better each step. Include all calculations? Make matrix of matrices more beautiful (more space). Eigenvalues of Mu and Gradient term better explain?
 }
 
 
