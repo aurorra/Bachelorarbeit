@@ -53,8 +53,8 @@ A quick overview of the notation used so far:
 a: Scalar \\
 \textbf{A}: Matrix or tensor \\
 \textbf{a}: Vector \\
-vec(\textbf{A}) = $\boldsymbol{\check{a}}$: Vectorized matrix \\
-$\mathbb{A} = \boldsymbol{\check{A}}$: matrix-of-matrices
+vec(\textbf{A}) = $\mathbf{\check{a}}$: Vectorized matrix \\
+$\mathbb{A} = \mathbf{\check{A}}$: matrix-of-matrices
 \end{addmargin}
 
 \todoredefined[inline]{
@@ -123,7 +123,7 @@ The definition and theorem were taken from \cite{Spencer1980} (thm. \ref{PD} S.1
 
 
 \todoredefined[inline]{
-TODO: Complete this section. Add lemmas and theorems used afterwards in the calculations. Possible adjustments may come at the end.
+TODO: Complete this section. Add lemmas and theorems used afterwards in the calculations. Possible adjustments may come at the end. Add Frobenius norm?
 }
 
 
@@ -174,9 +174,23 @@ TODO: Adjust so the equal sign is at the same place in each column. Explain stra
 \subsection{Deformation Gradient}
 The deformation gradient \textbf{F} offers us as said previously a measurement of the deformation. With its help we can amongst other things calculate the volume and length change an object undergoes during a deformation. For our needs we define the deformation gradient exactely as the authors of the paper \cite{Smith:2018:SNF:3191713.3180491} did:
 
-\[
-\textbf{F} = \left[ \,f_0\, \bigg| \,f_1\, \bigg| \,f_2\, \right] = \begin{bmatrix} f_0 & f_3 & f_6 \\ f_1 & f_4 & f_7 \\ f_2 & f_5 & f_8 \end{bmatrix}
-\]
+\begin{equation}\label{eq:deformation_gradient}
+\textbf{F} = \left[ \,f_0\, \bigg| \,f_1\, \bigg| \,f_2\, \right] = \begin{bmatrix} f_0 & f_3 & f_6 \\ f_1 & f_4 & f_7 \\ f_2 & f_5 & f_8 \end{bmatrix}.
+\end{equation}
+
+Using the SVD theorem mentioned in theorem \ref{SVD} $\mathbf{F}$ can be written in the form of
+
+\begin{equation}\label{eq:svd_gradient}
+\mathbf{F} = \mathbf{U \Sigma V\intercal}
+\end{equation}
+
+in which $\mathbf{\Sigma}$ stands for
+\begin{equation}\label{eq:svd_simga}
+\mathbf{\Sigma} = \left[\begin{matrix}  \sigma_0 & 0 & 0 \\ 0 & \sigma_1 & 0 \\ 0 & 0 & \sigma_2 \end{matrix}\right] .
+\end{equation}
+
+The $\sigma_i$ denote the singular values of $\mathbf{\Sigma}$. Unlike the normal convention the authors of the paper \textit{Stable Neo-Hookean Flesh Simulation} the rotation variant moves reflections to $\mathbf{\Sigma}$. This results into $\operatorname{det}(\mathbf{U})=\operatorname{det}(\mathbf{V})=1$ and the property that $\Sigma$ is allowed to have negative entries.
+
 
 
 \todoredefined[inline]{
@@ -189,7 +203,7 @@ TODO: Add some examples. Already include definitions of the paper?
 With the help of mathematics we can decompose the deformation gradient in the following form:
 
 \[
-F = R S
+\mathbf{F} = \mathbf{RS}
 \]
 
 

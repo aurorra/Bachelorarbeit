@@ -32,7 +32,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.4.2}Polar Decomposition of the Deformation Gradient}{9}{subsection.2.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.3}Material Constants}{9}{subsection.2.4.3}
+\contentsline {subsection}{\numberline {2.4.3}Material Constants}{10}{subsection.2.4.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.4.4}Deformation Energy}{11}{subsection.2.4.4}
 \defcounter {refsection}{0}\relax 
@@ -58,22 +58,22 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.3.2}The Energy Hessian Terms}{19}{subsection.3.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.3}The Tikhonov, Mu, and Gradient Terms}{19}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.3}The Tikhonov, Mu, and Gradient Terms}{20}{subsection.3.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.4}The Volume Hessian}{20}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.4}The Volume Hessian}{21}{subsection.3.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.5}The Complete Eigensystem}{21}{subsection.3.3.5}
+\contentsline {subsection}{\numberline {3.3.5}The Complete Eigensystem}{22}{subsection.3.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Experiments with the Code}{21}{section.3.4}
+\contentsline {section}{\numberline {3.4}Experiments with the Code}{22}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.5}Discussion}{22}{section.3.5}
+\contentsline {section}{\numberline {3.5}Discussion}{23}{section.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline List of Figures}{A}{chapter*.32}
+\contentsline {chapter}{\nonumberline List of Figures}{A}{chapter*.33}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline List of Tables}{B}{chapter*.33}
+\contentsline {chapter}{\nonumberline List of Tables}{B}{chapter*.34}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Bibliography}{D}{chapter*.34}
+\contentsline {chapter}{\nonumberline Bibliography}{D}{chapter*.35}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Online Sources}{E}{chapter*.35}
+\contentsline {chapter}{\nonumberline Online Sources}{E}{chapter*.36}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Figure Sources}{F}{chapter*.36}
+\contentsline {chapter}{\nonumberline Figure Sources}{F}{chapter*.37}

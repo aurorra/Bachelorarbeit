@@ -267,27 +267,38 @@ r+ \underbrace{\lambda \frac{\partial J}{\partial f_i} \frac{\partial J}{\partia
 Each term in the final equation $\mathrm{T}_i$, $\mathrm{M}_i$, $\mathrm{G}_i$, $\mathrm{H}_i$ respectively the Tikohonov, Mu, volume Gradient and volume Hessian term will be examined separately in the following.
 
 \subsection{The Tikhonov, Mu, and Gradient Terms}
-\textbf{Tikhonov}: We start with the Tikhonov term:
+\textbf{Tikhonov}: The Tikhonov term can be viewed as a fourth-order matrix-of-matrices
 \[
-\mathbb{T} = \frac{\partial F}{\partial f_i} = \left[\begin{array}{ccc}{\begin{bmatrix} 1 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}} & {\begin{bmatrix} 0 & 1 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}} & {\begin{bmatrix} 0 & 0 & 1 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}} \\ {\begin{bmatrix} 0 & 0 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}} & {\begin{bmatrix} 0 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 0 \end{bmatrix}} & {\begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{bmatrix}} \\ {\begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 1 & 0 & 0 \end{bmatrix}} & {\begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 1 & 0 \end{bmatrix}} & {\begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 1 \end{bmatrix}} \end{array}\right].
+\mathbb{T} = \frac{\partial \mathbf{F}}{\partial f_i} = \left[\begin{array}{ccc}{\begin{bmatrix} 1 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}} & {\begin{bmatrix} 0 & 1 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}} & {\begin{bmatrix} 0 & 0 & 1 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}} \\ {\begin{bmatrix} 0 & 0 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}} & {\begin{bmatrix} 0 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 0 \end{bmatrix}} & {\begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{bmatrix}} \\ {\begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 1 & 0 & 0 \end{bmatrix}} & {\begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 1 & 0 \end{bmatrix}} & {\begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 1 \end{bmatrix}} \end{array}\right].
 \]
-If we vectorize $\mathbb{T}$ we get the identity matrix $\mathbb{I} \in \mathbb{R}^{9x9}$ which is full rank, positive definite and independent of the values in F. It serves as a regularizer for the rest of the energy:
+If we vectorize $\mathbb{T}$ we get the identity matrix $\mathbb{I} \in \mathbb{R}^{9x9}$ which is full rank, positive definite and independent of the values in F. It serves as a regularizer for the rest of the energy
 \[
-\operatorname{vec}(\mathbb{T}) = \mathbb{I} = \in \mathbb{R}^{9x9}.
+\operatorname{vec}(\mathbb{T}) =  \mathbf{\check{T}} = \mathbb{I} = \in \mathbb{R}^{9x9}.
 \]
 
-\textbf{Mu}: 
+\textbf{Mu}: The Mu term has the same structure with different entries
 \[
-\mathbb{M} = F f_i = \left[\begin{array}{ccc}{\begin{bmatrix} f_0^2 & f_0f_3 & f_0f_6 \\ f_0f_1 & f_0f_4 & f_0f_7 \\ f_0f_2 & f_0f_5 & f_0f_8 \end{bmatrix}} & {\begin{bmatrix} f_3f_0 & f_3^2 & f_3f_6 \\ f_3f_1 & f_3f_4 & f_3f_7 \\ f_3f_2 & f_3f_5 & f_3f_8 \end{bmatrix}} & {\begin{bmatrix} f_6f_0 & f_6f_3 & f_6f_6 \\ f_6f_1 & f_6f_4 & f_6f_7 \\ f_6f_2 & f_6f_5 & f_6f_8 \end{bmatrix}} \\ {\begin{bmatrix} f_1f_0 & f_1f_3 & f_1f_6 \\ f_1^2 & f_1f_4 & f_1f_7 \\ f_1f_2 & f_1f_5 & f_1f_8 \end{bmatrix}} & {\begin{bmatrix} f_4f_0 & f_4f_3 & f_4f_6 \\ f_4f_1 & f_4^2 & f_4f_7 \\ f_4f_2 & f_4f_5 & f_4f_8 \end{bmatrix}} & {\begin{bmatrix} f_7f_0 & f_7f_3 & f_7f_6 \\ f_7f_1 & f_7f_4 & f_7^2 \\ f_7f_2 & f_7f_5 & f_7f_8 \end{bmatrix}} \\ {\begin{bmatrix} f_2f_0 & f_2f_3 & f_2f_6 \\ f_2f_1 & f_2f_4 & f_2f_7 \\ f_2^2 & f_2f_5 & f_2f_8 \end{bmatrix}} & {\begin{bmatrix} f_5f_0 & f_5f_3 & f_5f_6 \\ f_5f_1 & f_5f_4 & f_5f_7 \\ f_5f_2 & f_5^2 & f_5f_8 \end{bmatrix}} & {\begin{bmatrix} f_8f_0 & f_8f_3 & f_8f_6 \\ f_8f_1 & f_8f_4 & f_8f_7 \\ f_8f_2 & f_8f_5 & f_8^2 \end{bmatrix}} \end{array}\right]
+\mathbb{M} = \mathbf{F} f_i = \left[\begin{array}{ccc}{\begin{bmatrix} f_0^2 & f_0f_3 & f_0f_6 \\ f_0f_1 & f_0f_4 & f_0f_7 \\ f_0f_2 & f_0f_5 & f_0f_8 \end{bmatrix}} & {\begin{bmatrix} f_3f_0 & f_3^2 & f_3f_6 \\ f_3f_1 & f_3f_4 & f_3f_7 \\ f_3f_2 & f_3f_5 & f_3f_8 \end{bmatrix}} & {\begin{bmatrix} f_6f_0 & f_6f_3 & f_6f_6 \\ f_6f_1 & f_6f_4 & f_6f_7 \\ f_6f_2 & f_6f_5 & f_6f_8 \end{bmatrix}} \\ {\begin{bmatrix} f_1f_0 & f_1f_3 & f_1f_6 \\ f_1^2 & f_1f_4 & f_1f_7 \\ f_1f_2 & f_1f_5 & f_1f_8 \end{bmatrix}} & {\begin{bmatrix} f_4f_0 & f_4f_3 & f_4f_6 \\ f_4f_1 & f_4^2 & f_4f_7 \\ f_4f_2 & f_4f_5 & f_4f_8 \end{bmatrix}} & {\begin{bmatrix} f_7f_0 & f_7f_3 & f_7f_6 \\ f_7f_1 & f_7f_4 & f_7^2 \\ f_7f_2 & f_7f_5 & f_7f_8 \end{bmatrix}} \\ {\begin{bmatrix} f_2f_0 & f_2f_3 & f_2f_6 \\ f_2f_1 & f_2f_4 & f_2f_7 \\ f_2^2 & f_2f_5 & f_2f_8 \end{bmatrix}} & {\begin{bmatrix} f_5f_0 & f_5f_3 & f_5f_6 \\ f_5f_1 & f_5f_4 & f_5f_7 \\ f_5f_2 & f_5^2 & f_5f_8 \end{bmatrix}} & {\begin{bmatrix} f_8f_0 & f_8f_3 & f_8f_6 \\ f_8f_1 & f_8f_4 & f_8f_7 \\ f_8f_2 & f_8f_5 & f_8^2 \end{bmatrix}} \end{array}\right].
 \]
+When vectorizing $\mathbb{M}$ the resulting matrix has the squared values of $f_i$ placed on the diagonal
 \[
-\operatorname{vec}(\mathbb{M})= \begin{bmatrix} f_0^2 & f_1f_0 & f_2f_0 & f_3f_0 & f_4f_0 & f_5f_0 & f_6f_0 & f_7f_0 & f_8f_0 \\ f_0f_1 & f_1^2 & f_2f_1 & f_3f_1 & f_4f_1 & f_5f_1 & f_6f_1 & f_7f_1 & f_8f_1 \\ f_0f_2 & f_1f_2 & f_2^2 & f_3f_2 & f_4f_2 & f_5f_2 & f_6f_2 & f_7f_2 & f_8f_2 \\ f_0f_3 & f_1f_3 & f_2f_3 & f_3^2 & f_4f_2^3 & f_5f_3 & f_6f_3 & f_7f_3 & f_8f_3 \\ f_0f_4 & f_1f_4 & f_2f_4 & f_3f_4 & f_4^2 & f_5f_4 & f_6f_4 & f_7f_4 & f_8f_4 \\ f_0f_5 & f_1f_5 & f_2f_5 & f_3f_5 & f_4f_5 & f_5^2 & f_6f_5 & f_7f_5 & f_8f_5 \\ f_0f_6 & f_1f_6 & f_2f_6 & f_3f_6 & f_4f_6 & f_5f_6 & f_6^2 & f_7f_6 & f_8f_6 \\ f_0f_7 & f_1f_7 & f_2f_7 & f_3f_7 & f_4f_7 & f_5f_7 & f_6f_7 & f_7^2 & f_8f_7 \\ f_0f_8 & f_1f_8 & f_2f_8 & f_3f_8 & f_4f_8 & f_5f_8 & f_6f_8 & f_7f_8 & f_8^2 \end{bmatrix} = \operatorname{vec}(F)\operatorname{vec}(F)^\intercal
+\operatorname{vec}(\mathbb{M})= \mathbf{\check{M}} = \begin{bmatrix} f_0^2 & f_1f_0 & f_2f_0 & f_3f_0 & f_4f_0 & f_5f_0 & f_6f_0 & f_7f_0 & f_8f_0 \\ f_0f_1 & f_1^2 & f_2f_1 & f_3f_1 & f_4f_1 & f_5f_1 & f_6f_1 & f_7f_1 & f_8f_1 \\ f_0f_2 & f_1f_2 & f_2^2 & f_3f_2 & f_4f_2 & f_5f_2 & f_6f_2 & f_7f_2 & f_8f_2 \\ f_0f_3 & f_1f_3 & f_2f_3 & f_3^2 & f_4f_3 & f_5f_3 & f_6f_3 & f_7f_3 & f_8f_3 \\ f_0f_4 & f_1f_4 & f_2f_4 & f_3f_4 & f_4^2 & f_5f_4 & f_6f_4 & f_7f_4 & f_8f_4 \\ f_0f_5 & f_1f_5 & f_2f_5 & f_3f_5 & f_4f_5 & f_5^2 & f_6f_5 & f_7f_5 & f_8f_5 \\ f_0f_6 & f_1f_6 & f_2f_6 & f_3f_6 & f_4f_6 & f_5f_6 & f_6^2 & f_7f_6 & f_8f_6 \\ f_0f_7 & f_1f_7 & f_2f_7 & f_3f_7 & f_4f_7 & f_5f_7 & f_6f_7 & f_7^2 & f_8f_7 \\ f_0f_8 & f_1f_8 & f_2f_8 & f_3f_8 & f_4f_8 & f_5f_8 & f_6f_8 & f_7f_8 & f_8^2 \end{bmatrix}.
 \]
+This structure makes it possible to write $\mathbf{\check{M}}$ as an outer product of $\operatorname{vec}(\mathbf{F})$
+\[
+\mathbf{\check{M}}= \operatorname{vec}(\mathbf{F})\operatorname{vec}(\mathbf{F})^\intercal = \mathbf{\check{f}} \mathbf{\check{f}}^\intercal.
+\]
+This matrix has rank one and has a single non-zero eigenvalue. In order to examine the eigenvalues one can calculate
+\[
+\| \mathbf{\check{f}} \|^{2}_{2} = \sum_{n=0}^8 | f_n |^2 = \| \mathbf{F} \|^{2}_{F} = \sum_{n=0}^3 \sigma^2_i = \left( \sigma_0^2 + \sigma_1^2 + \sigma_2^2 \right)
+\]
+in which $\|\cdot\|_F$ stands for the Frobenius norm and $\sigma_i$ for the singular values from $\mathbf{\Sigma}$ in the SVD of $\mathbf{F}$ stated in eq. \ref{eq:svd_simga}. The eigenvector is $\mathbf{\check{f}} / \| \mathbf{\check{f}} \|$. The eigenvalue is always non-negative and large if $\mathbf{F}$ contains a large strech.
 
 \textbf{Gradient}:
-\[
-\mathbb{G}(F) = \frac{\partial J}{\partial F} \frac{\partial J}{\partial fi}
-\]
+\begin{align*}
+\mathbb{G}(\mathbf{F}) &= \frac{\partial J}{\partial \mathbf{F}} \frac{\partial J}{\partial fi} \\ \\
+\operatorname{vec}(\mathbb{G}(\mathbf{F})) &= \mathbf{\check{G}} = \operatorname{vec}\left(\frac{\partial J}{\partial \mathbf{F}}\right) \operatorname{vec}\left(\frac{\partial J}{\partial \mathbf{F}}\right)^\intercal = \mathbf{\check{g}} \mathbf{\check{g}}^\intercal
+\end{align*}
 
 
 \subsection{The Volume Hessian}
@@ -296,7 +307,9 @@ Calculations
 \subsection{The Complete Eigensystem}
 Calculations
 
-
+\todoredefined[inline]{
+TODO: Make notation consistent (bold, cursive etc.) Explain better each step. Include all calculations? Make matrix of matrices more beautiful (more space). Eigenvalues of Mu term?
+}
 
 
 \section{Experiments with the Code}
