@@ -40,7 +40,7 @@ This term above is equivalent to the notation described here:
 
 \[
 \mathbb{A}=\left[\begin{array}{llll}{a} & {e} & {i} & {m} \\ {b} & {f} & {j} & {n} \\ {c} & {g} & {k} & {o} \\ {d} & {h} & {l} & {p}\end{array}\right] 
-=\boldsymbol{\check{A}}.
+=\mathbf{\check{A}}.
 \]
 
 The advantage of this form is that one can write several expressions as a cross product. I will need this property later to simplify complicated expressions and calculations.
@@ -128,7 +128,7 @@ TODO: Complete this section. Add lemmas and theorems used afterwards in the calc
 
 
 \section{Continuum Mechanics}
-In this section I will give a broad introduction into the field of Continuum Mechanics. In Continuum Mechanics one is less interested in small particles like atoms or molecules of an object but rather in pieces of matter which are in comparison very large. I are therefore concerned with the mechanical behavior of solids and fluids on the macroscopic scale (\cite{Spencer1980}, p. 1).
+In this section I will give a broad introduction into the field of Continuum Mechanics. In Continuum Mechanics one is less interested in small particles like atoms or molecules of an object but rather in pieces of matter which are in comparison very large. I am therefore concerned with the mechanical behavior of solids and fluids on the macroscopic scale (\cite{Spencer1980}, p. 1).
 
 
 \section{Deformation}
@@ -199,10 +199,10 @@ TODO: Add some examples. Already include definitions of the paper?
 }
 
 \subsubsection{Polar Decomposition of the Deformation Gradient}
-With the help of mathematics one can decompose the deformation gradient in the following form:
+With the help of theorem \ref{PD} one can decompose the deformation gradient in the following form:
 
 \[
-\mathbf{F} = \mathbf{RS}
+\mathbf{F} = \mathbf{RS}.
 \]
 
 \todoredefined[inline]{
@@ -244,12 +244,12 @@ Here are some examples of the poisson's ratio of various materials:
 \label{table:1}
 \end{table}
 
-In the context of flesh simulations I use the poisson's ratio as a characterization for the resistance to volume change of flesh. Biological tissues such as flesh, fat and muscles have one important property: Volume preservation. As a result the poisson's ratio is a higher value, meaning it is found in the range between 0.45 and 0.5 \cite{Smith:2018:SNF:3191713.3180491}.
+In the context of flesh simulations I am using the poisson's ratio as a characterization for the resistance to volume change of flesh. Biological tissues such as flesh, fat and muscles have one important property: Volume preservation. As a result the poisson's ratio is a higher value, meaning it is found in the range between 0.45 and 0.5 \cite{Smith:2018:SNF:3191713.3180491}.
 
-The calculation of the poisson's ratio defined in equation \ref{eq:poisson} is a challenge. Fortunately we can make use of the \textit{Lamé Parameters}. These are the two constants $\mu$ and $\lambda$ that are specific for a material. With the help of these two constants one can transform the equation \ref{eq:poisson} into the following form:
+The calculation of the poisson's ratio defined in equation \ref{eq:poisson} is a challenge. Fortunately we can make use of the \textit{Lamé Parameters}. These are the two constants $\mu$ and $\lambda$ that are specific for a material. With the help of these two constants one can transform equation \ref{eq:poisson} into the following form:
 
 \begin{equation}\label{eq:poisson_ratio}
-\sigma =  \frac{\lambda}{2(\lambda + \mu)}
+\sigma =  \frac{\lambda}{2(\lambda + \mu)}.
 \end{equation}
 
 This equation allows to calculate the poisson's ratio much easier. 

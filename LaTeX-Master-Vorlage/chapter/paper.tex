@@ -26,9 +26,9 @@ TODO: Check if everything is explained enough in Background.
 \section{Energy Formulation}
 
 \subsection{Stability}
-The core goal of the paper was to model deformations for virtual characters that have human-like features. They concentrated on the deformation energy. In order to achieve a convincing result as a first step we need to specify some requirements. For our needs in this case the stability of the energy is important. More precisely we need a hyperelastic energy that is stable in the following four important ways:
+The core goal of the paper was to model deformations for virtual characters that have human-like features. They concentrated on the deformation energy. In order to achieve a convincing result the first step is to specify some requirements. For our needs in this case the stability of the energy is important. More precisely we need a hyperelastic energy that is stable in the following four important ways:
 
-\textbf{1. Inversion Stability:} Given some arbitrary object it is possible that while deforming the object we can arrive at a zero volume state or even an entire inversion. Take for example the tetrahedron shown in figure \ref{fig:inversion_1}. In figure \ref{fig:inversion_2} we see a deformed state of this tetrahedron where the volume is scaled down to zero and we are left with a simple triangle. In figure \ref{fig:inversion_3} image we have an inversion of the object. The needed deformation energy has to be able to deal with both cases. That means that the energy has to be singularity-free and does not need any filters or threshold (\cite{Smith:2018:SNF:3191713.3180491}, 12:3).
+\textbf{1. Inversion Stability:} Given some arbitrary object it is possible that while deforming the object one can arrive at a zero volume state or even an entire inversion. Take for example the tetrahedron shown in figure \ref{fig:inversion_1}. In figure \ref{fig:inversion_2} we see a deformed state of this tetrahedron where the volume is scaled down to zero and we are left with a simple triangle. In figure \ref{fig:inversion_3} image we have an inversion of the object. The needed deformation energy has to be able to deal with both cases. That means that the energy has to be singularity-free and does not need any filters or threshold (\cite{Smith:2018:SNF:3191713.3180491}, 12:3).
 
 \todoredefined[inline]{
 TODO: Explain what last sentence means. Reference correct like this?
@@ -62,8 +62,7 @@ TODO: Explain what last sentence means. Reference correct like this?
 \end{figure}
 
 
-\textbf{2. Reflection stability:} A reflection is rotation around the coordinate origin.
-For the deformation energy we need it to be well behaved regardless of the reflection convention used in the singular value decomposition.
+\textbf{2. Reflection stability:} A reflection is rotation around the coordinate origin. The deformation energy needs to be well behaved regardless of the reflection convention used in the singular value decomposition.
 
 \textbf{3. Rest stability:} When deforming an object in a certain way we apply one or multiple forces over that object. With rest stability we want that if the sum of forces is equal to zero the object must be back in its rest state.
 
@@ -79,12 +78,12 @@ For the deformation energy we need it to be well behaved regardless of the refle
 Based on these four requirements we will in the following determine if a deformation energy is suited for our needs.
 
 \todoredefined[inline]{
-TODO: Finish reflection stability. Maybe add own images? Some more sources?
+TODO: Finish reflection stability. Maybe add own images and more sources. Improve English in this section.
 }
 
 \subsection{Existing Neo-Hookean Energies}
 
-In previous literature a few energies were proposed that should be analysed properly.
+In previous literature a few energies were proposed that should be analysed properly. They are listed in table \ref{table:energies} below.
 
 \begin{table}[!htbp]
 \centering
@@ -159,7 +158,7 @@ does not have these noted difficulties. It is bounded, well defined and invertib
 and is singularity free and well defined under inversion. Unfortunately $\Psi_D$ does not satisfy the requirement of being rest stable which will be discussed in the next section.
 
 \todoredefined[inline]{
-TODO: Bonet and Wood 2008 or 1997? Table looks ugly, improve and add resources. Overall okay?
+TODO: Bonet and Wood 2008 or 1997? Table looks ugly, improve and add resources. Improve English sentences. Overall okay concerning the content?
 }
 
 \subsection{Rest Stabilization}
@@ -423,7 +422,7 @@ The following images in figure \ref{fig:stretchtest} show the stretch test with 
 
 
 \todoredefined[inline]{
-TODO: Load into OpenFlipper and screenshot results. Include more examples and what went right and what went wrong.
+TODO: Load into OpenFlipper and screenshot results. Include remaining examples (diff. lamé param. and changes in method) and what went right and what went wrong.
 }
 
 
