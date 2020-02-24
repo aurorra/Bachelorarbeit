@@ -84,8 +84,14 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\nonumberline List of Tables}{B}{chapter*.51}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Bibliography}{D}{chapter*.52}
+\contentsline {chapter}{\nonumberline Quelltextverzeichnis}{C}{chapter*.52}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Online Sources}{E}{chapter*.53}
+\contentsline {chapter}{Glossary}{D}{section*.53}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Figure Sources}{F}{chapter*.54}
+\contentsline {chapter}{List of abbreviations}{E}{section*.55}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline Bibliography}{F}{chapter*.57}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline Online Sources}{G}{chapter*.58}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline Figure Sources}{H}{chapter*.59}
