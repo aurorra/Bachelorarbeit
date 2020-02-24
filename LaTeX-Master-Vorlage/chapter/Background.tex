@@ -2,24 +2,24 @@
 As in the paper \textit{\acrshort{snh}}, my goal is to animate human-like characters. More precisely, the focus is on the behaviour of the character's flesh. This chapter serves as an introduction into the mathematical as well as physical background, needed to understand the upcoming calculations and conclusions. At the beginning of this chapter I will define the notation and convention used throughout this whole thesis. Next, I will give insights in the mathematics used and present some of the concepts used in continuum mechanics. However, I will not include each proof explicitly, as there are already many good resources for an interested reader.
 
 \section{Notation and Convention}
-At first I will declare the notation used in this thesis to avoid misunderstandings. I will use the common notation used in continuum mechanics taken from the book \textit{Continuum Mechanics} \cite{Spencer1980}. Additionally I will include some more specific declarations formulated and used by the authors of the paper \textit{Stable Neo-Hookean Flesh Simulation} \cite{Smith:2018:SNF:3191713.3180491}. 
+At first I will declare the notation used in this thesis to avoid misunderstandings. I will use the common notation used in continuum mechanics taken from the book \textit{Continuum Mechanics} \cite{Spencer1980}. Additionally I will include some more specific declarations formulated and used by the authors of the paper \textit{\acrshort{snh}}.
 
 
 \subsection{General Notation}
-Scalars are represented by regular, normal-weight variables such as $a$ whereas 
-tensors and matrices are represented by upper-case bold letters as for example $\textbf{A}$. Vectors will be denoted by bold lower-case variables like $\textbf{a}$. 
+Scalars are represented by regular, normal-weight variables such as $a$, whereas 
+tensors and matrices are represented by upper-case bold letters such as for example $\textbf{A}$. Vectors will be denoted by bold lower-case variables like $\textbf{a}$. 
 
 
 \subsection{Tensor Notation}
-Furthermore I will use the tensor notation used in the paper \textit{Stable Neo-Hookean Flesh Simulation}. They decided to to define vectorization vec(\cdot) as column-wise flattening of a matrix into a vector (\cite{Smith:2018:SNF:3191713.3180491}, 12:5) similar to Golub and Van Loan (2012) \cite{golub2012matrix}.
+Furthermore, I will use the tensor notation used in \textit{\acrshort{snh}}. They decided to define the vectorization vec(\cdot) as column-wise flattening of a matrix into a vector (\cite{Smith:2018:SNF:3191713.3180491}, 12:5) similar to Golub and Van Loan (2012) \cite{golub2012matrix}.
 
 In order to indicate that I am dealing with a vectorized matrix I will use the symbol $\check{\cdot}$ as shown in the following equation:
 
 \[
-\textbf{A} = \begin{bmatrix} a & c \\ b & d \end{bmatrix} \qquad \operatorname{vec}(\textbf{A}) = \mathbf{\check{a}} = \begin{bmatrix} a \\ b \\ c \\ d \end{bmatrix}.
+\mathbf{A} = \begin{bmatrix} a & c \\ b & d \end{bmatrix} \qquad \operatorname{vec}(\mathbf{A}) = \mathbf{\check{a}} = \begin{bmatrix} a \\ b \\ c \\ d \end{bmatrix}.
 \]
 
-Additionally I will have to deal with $4^{th}$ order tensors in a form of matrix-of-matrices. These matrices are denoted by using blackboard bold:
+Additionally, I will have to deal with $4^{th}$ order tensors in a form of matrix-of-matrices. These matrices are denoted by using blackboard bold:
 
 \[
 \mathbb{A} = 
@@ -28,56 +28,55 @@ Additionally I will have to deal with $4^{th}$ order tensors in a form of matrix
 \left[\begin{array}{cc}{\left[\mathbf{A}_{00}\right]} & {\left[\mathbf{A}_{01}\right]} \\ {\left[\mathbf{A}_{10}\right]} & {\left[\mathbf{A}_{11}\right]}\end{array}\right]
 \]
 
-When vectorizing $\mathbb{A}$ the received form looks as described in the following line:
+We can now vectorize $\mathbb{A}$ and get the following result
 
 \[
-\mathbb{A} = \operatorname{vec}(\mathbb{A})= \left[ \,\operatorname{vec}\left(\mathbf{A}_{00}\right)\, \bigg| \,\operatorname{vec}\left(\mathbf{A}_{10}\right)\, \bigg| \,\operatorname{vec}\left(\mathbf{A}_{01}\right)\, \bigg| \,\operatorname{vec}\left(\mathbf{A}_{11}\right)\, \right].
+\operatorname{vec}(\mathbb{A}) = \left[ \,\operatorname{vec}\left(\mathbf{A}_{00}\right)\, \bigg| \,\operatorname{vec}\left(\mathbf{A}_{10}\right)\, \bigg| \,\operatorname{vec}\left(\mathbf{A}_{01}\right)\, \bigg| \,\operatorname{vec}\left(\mathbf{A}_{11}\right)\, \right] = \mathbf{\check{A}}.
 \]
 
-This term above is equivalent to the notation described here:
+This term above is equivalent to the subsequent notation
 
 \[
-\mathbb{A}=\left[\begin{array}{llll}{a} & {e} & {i} & {m} \\ {b} & {f} & {j} & {n} \\ {c} & {g} & {k} & {o} \\ {d} & {h} & {l} & {p}\end{array}\right] 
-=\mathbf{\check{A}}.
+\mathbf{\check{A}}=\left[\begin{array}{llll}{a} & {e} & {i} & {m} \\ {b} & {f} & {j} & {n} \\ {c} & {g} & {k} & {o} \\ {d} & {h} & {l} & {p}\end{array}\right].
 \]
 
-The advantage of this form is that one can write several expressions as a cross product. I will need this property later to simplify complicated expressions and calculations.
+The advantage of this form is that we can write several expressions as a cross product. I will need this property later to simplify complicated expressions and calculations.
 
 
 \subsection{Summary}
-A quick overview of the notation used so far:
-
-\begin{addmargin}[1cm]{1cm}
-a: Scalar \\
-\textbf{A}: Matrix or tensor \\
-\textbf{a}: Vector \\
-vec(\textbf{A}) = $\mathbf{\check{a}}$: Vectorized matrix \\
-$\mathbb{A} = \mathbf{\check{A}}$: matrix-of-matrices
-\end{addmargin}
+Here is a quick overview of the introduced notation:
+\begin{align*}
+\text{a}&: \text{Scalar} \\
+\mathbf{A}&: \text{Matrix or tensor} \\
+\mathbf{a}&: \text{Vector} \\
+\mathbf{\check{a}}&: \text{Vectorized matrix (also written as vec($\mathbb{A}$))} \\
+\mathbf{\check{A}}&: \text{matrix-of-matrices}
+\end{align*}
 
 \todoredefined[inline]{
-TODO: Check if all notations used later are declared. Make matrix of matrices better looking.
+TODO: Check if all notations used later are declared.
 }
 
 
-
 \section{Mathematical Background}
-Since mathematics play an important role in the field of interest the first step is to build a solid background before diving further into more complex calculations. This chapter should cover all the important concepts used later in the calculations. A basic understanding of linear algebra is assumed.
+Since mathematics play an important role in the field of interest, the first step is to build a solid background before diving further into more complex calculations. This section covers all the important concepts used later in the calculations. A basic understanding of linear algebra is assumed.
 
 
 \subsection{Matrices}
-At first I will discuss the physical or geometrical meaning of some common matrix properties.
+In the upcoming chapters I will mainly be using matrices  in the calculations. This subsection lists an overview of the matrix properties used later:
 
-A matrix \textbf{A} is positive definite if $\textbf{x}^\intercal \textbf{Ax}$ is positive for all of the non-zero values of the column matrix \textbf{x}.
+\begin{property}[\textbf{Positive Definiteness}]
+A matrix $\mathbf{A}$ is positive definite if $\mathbf{x}^\intercal \mathbf{Ax}$ is positive for all of the non-zero values of the column matrix $\mathbf{x}$.
+\end{property}
 
 \todoredefined[inline]{
-TODO: Not done yet. What needs to be covered here? positive definite matrices definition and lemmas, orthogonal, etc. Should it even be included?
+TODO: Not done yet. Include determinant and what is used later
 }
 
 
 \subsection{Singular Value Decomposition}
 
-The \acrlong{svd}, which is abbreviated \acrshort{svd}, will play an important role in formulating the deformation gradient. It is important for this application since it represents the best possible approximation of a given matrix by a matrix of low rank. This approximation can be looked at as a compression of the data given (\cite{LiesenMehrmann2015}, S. 295).
+The \acrlong{svd} (\acrshort{svd}) will play an important role in the formulation of the deformation gradient. It represents the best possible approximation of a given matrix by a matrix of low rank. This approximation can be looked at as a compression of the data given (\cite{LiesenMehrmann2015}, S. 295).
 
 \begin{definition}[\textbf{Singular Values}]
 \label{singular_values}
@@ -126,24 +125,19 @@ TODO: Complete this section. Add lemmas and theorems used afterwards in the calc
 
 
 \section{Continuum Mechanics}
-In this section I will give a broad introduction into the field of Continuum Mechanics. In Continuum Mechanics one is less interested in small particles like atoms or molecules of an object but rather in pieces of matter which are in comparison very large. I am therefore concerned with the mechanical behavior of solids and fluids on the macroscopic scale (\cite{Spencer1980}, p. 1).
+In this section I will give a broad introduction into the field of Continuum Mechanics. In Continuum Mechanics we are less interested in small particles like atoms or molecules of an object but rather in pieces of matter which are in comparison very large. We are therefore concerned with the mechanical behavior of solids and fluids on the macroscopic scale (\cite{Spencer1980}, p. 1).
 
 
 \section{Deformation}
-When applying a force over an object naturally the object itself undergoes a deformation. In the following I will be consistent with most previous literature in continuum mechanics and use the term strain as a measure of deformation and stress as the force per unit area:
+If we apply a force over an object, the object itself undergoes a deformation. This behavior is intuitively clear. But how do we formalize this in a mathematical construct? 
 
-\begin{addmargin}[2cm]{2cm}
-\textit{Strain = measure of deformation}  \\
-\textit{Stress = force per unit area} 
-\end{addmargin}
-
+In the following, I will be consistent with most previous literature in continuum mechanics and use the term \textit{strain} as a measure of deformation and \textit{stress} as the force per unit area.
 
 \todoredefined[inline]{
 TODO: Decide whether to include the above paragraph and how to connect it better to the paper.
 }
 
-
-Now let us have a look at a deformation in a rather mathematical sense. Graphically one can imagine a deformation with the help of a two dimensional deformation map as shown in Fig. \ref{fig:deformationmap}. Here on the left side there is an ellipse that represents an object or material in its rest state. A function $\phi$ maps this rest state of the ellipse to a deformed state shown in Fig. \ref{fig:deformationmap} on the right side. Mathematically spoken this means that one can map each point of a chosen object from its rest state to a deformed one.
+Now let us have a look at a deformation in a rather mathematical sense. Graphically, one can imagine a deformation with the help of a two dimensional deformation map as shown in Fig. \ref{fig:deformationmap}. The ellipse on the left side represents an object or material in its rest state. A function $\phi$ maps this rest state of the ellipse to a deformed state as shown on the right side. Mathematically speaking, this means that we can map each point of a chosen object from its rest state to a deformed one.
 
 \begin{figure}[!htbp]
 	\centering

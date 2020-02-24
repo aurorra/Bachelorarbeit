@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.0.4 (TeX Live 2017/W32TeX)  (format=lualatex 2018.3.10)  24 FEB 2020 12:25
+This is LuaTeX, Version 1.0.4 (TeX Live 2017/W32TeX)  (format=lualatex 2018.3.10)  24 FEB 2020 17:41
  restricted system commands enabled.
 **main.tex
 (./main.tex
@@ -32,7 +32,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.354 seconds
+luaotfload | main : initialization completed in 0.254 seconds
 Babel <3.18> and hyphenation patterns for 1 language(s) loaded.
 \@input{settings.aux}
 
@@ -1580,6 +1580,9 @@ Package: amsthm 2017/10/31 v2.20.4
 )
 \c@definition=\count366
 \c@theorem=\count367
+\c@corollary=\count368
+\c@lemma=\count369
+\c@property=\count370
 
 (c:/texlive/2017/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
@@ -1620,12 +1623,12 @@ File: pgflibraryarrows.code.tex 2013/09/23 v3.0.1a (rcs-revision 1.16)
 \arrowsize=\dimen305
 )) (c:/texlive/2017/texmf-dist/tex/latex/csquotes/csquotes.sty
 Package: csquotes 2018/02/11 v5.2c context-sensitive quotations (JAW)
-\csq@reset=\count368
-\csq@gtype=\count369
-\csq@glevel=\count370
-\csq@qlevel=\count371
-\csq@maxlvl=\count372
-\csq@tshold=\count373
+\csq@reset=\count371
+\csq@gtype=\count372
+\csq@glevel=\count373
+\csq@qlevel=\count374
+\csq@maxlvl=\count375
+\csq@tshold=\count376
 \csq@ltx@everypar=\toks65
 
 (c:/texlive/2017/texmf-dist/tex/latex/csquotes/csquotes.def
@@ -1642,49 +1645,49 @@ Package: biblatex 2017/12/19 v3.10 programmable bibliographies (PK/JW/AB)
 
 (c:/texlive/2017/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count374
+\lrq@indent=\count377
 
 (c:/texlive/2017/texmf-dist/tex/latex/logreq/logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 ))
-\c@tabx@nest=\count375
-\c@listtotal=\count376
-\c@listcount=\count377
-\c@liststart=\count378
-\c@liststop=\count379
-\c@citecount=\count380
-\c@citetotal=\count381
-\c@multicitecount=\count382
-\c@multicitetotal=\count383
-\c@instcount=\count384
-\c@maxnames=\count385
-\c@minnames=\count386
-\c@maxitems=\count387
-\c@minitems=\count388
-\c@citecounter=\count389
-\c@savedcitecounter=\count390
-\c@uniquelist=\count391
-\c@uniquename=\count392
-\c@refsection=\count393
-\c@refsegment=\count394
-\c@maxextratitle=\count395
-\c@maxextratitleyear=\count396
-\c@maxextradate=\count397
-\c@maxextraalpha=\count398
-\c@abbrvpenalty=\count399
-\c@highnamepenalty=\count400
-\c@lownamepenalty=\count401
-\c@maxparens=\count402
-\c@parenlevel=\count403
-\blx@tempcnta=\count404
-\blx@tempcntb=\count405
-\blx@tempcntc=\count406
-\blx@maxsection=\count407
-\blx@maxsegment@0=\count408
-\blx@notetype=\count409
-\blx@parenlevel@text=\count410
-\blx@parenlevel@foot=\count411
-\blx@sectionciteorder@0=\count412
+\c@tabx@nest=\count378
+\c@listtotal=\count379
+\c@listcount=\count380
+\c@liststart=\count381
+\c@liststop=\count382
+\c@citecount=\count383
+\c@citetotal=\count384
+\c@multicitecount=\count385
+\c@multicitetotal=\count386
+\c@instcount=\count387
+\c@maxnames=\count388
+\c@minnames=\count389
+\c@maxitems=\count390
+\c@minitems=\count391
+\c@citecounter=\count392
+\c@savedcitecounter=\count393
+\c@uniquelist=\count394
+\c@uniquename=\count395
+\c@refsection=\count396
+\c@refsegment=\count397
+\c@maxextratitle=\count398
+\c@maxextratitleyear=\count399
+\c@maxextradate=\count400
+\c@maxextraalpha=\count401
+\c@abbrvpenalty=\count402
+\c@highnamepenalty=\count403
+\c@lownamepenalty=\count404
+\c@maxparens=\count405
+\c@parenlevel=\count406
+\blx@tempcnta=\count407
+\blx@tempcntb=\count408
+\blx@tempcntc=\count409
+\blx@maxsection=\count410
+\blx@maxsegment@0=\count411
+\blx@notetype=\count412
+\blx@parenlevel@text=\count413
+\blx@parenlevel@foot=\count414
+\blx@sectionciteorder@0=\count415
 \labelnumberwidth=\skip99
 \labelalphawidth=\skip100
 \biblabelsep=\skip101
@@ -1695,9 +1698,9 @@ File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 \bibhang=\skip106
 \blx@bcfin=\read2
 \blx@bcfout=\write5
-\c@mincomprange=\count413
-\c@maxcomprange=\count414
-\c@mincompwidth=\count415
+\c@mincomprange=\count416
+\c@maxcomprange=\count417
+\c@mincompwidth=\count418
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
@@ -1706,74 +1709,74 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'alphabetic.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count416
-\c@savedafterword=\count417
-\c@annotator=\count418
-\c@savedannotator=\count419
-\c@author=\count420
-\c@savedauthor=\count421
-\c@bookauthor=\count422
-\c@savedbookauthor=\count423
-\c@commentator=\count424
-\c@savedcommentator=\count425
-\c@editor=\count426
-\c@savededitor=\count427
-\c@editora=\count428
-\c@savededitora=\count429
-\c@editorb=\count430
-\c@savededitorb=\count431
-\c@editorc=\count432
-\c@savededitorc=\count433
-\c@foreword=\count434
-\c@savedforeword=\count435
-\c@holder=\count436
-\c@savedholder=\count437
-\c@introduction=\count438
-\c@savedintroduction=\count439
-\c@namea=\count440
-\c@savednamea=\count441
-\c@nameb=\count442
-\c@savednameb=\count443
-\c@namec=\count444
-\c@savednamec=\count445
-\c@translator=\count446
-\c@savedtranslator=\count447
-\c@shortauthor=\count448
-\c@savedshortauthor=\count449
-\c@shorteditor=\count450
-\c@savedshorteditor=\count451
-\c@labelname=\count452
-\c@savedlabelname=\count453
-\c@institution=\count454
-\c@savedinstitution=\count455
-\c@lista=\count456
-\c@savedlista=\count457
-\c@listb=\count458
-\c@savedlistb=\count459
-\c@listc=\count460
-\c@savedlistc=\count461
-\c@listd=\count462
-\c@savedlistd=\count463
-\c@liste=\count464
-\c@savedliste=\count465
-\c@listf=\count466
-\c@savedlistf=\count467
-\c@location=\count468
-\c@savedlocation=\count469
-\c@organization=\count470
-\c@savedorganization=\count471
-\c@origlocation=\count472
-\c@savedoriglocation=\count473
-\c@origpublisher=\count474
-\c@savedorigpublisher=\count475
-\c@publisher=\count476
-\c@savedpublisher=\count477
-\c@language=\count478
-\c@savedlanguage=\count479
-\c@origlanguage=\count480
-\c@savedoriglanguage=\count481
-\c@pageref=\count482
-\c@savedpageref=\count483
+\c@afterword=\count419
+\c@savedafterword=\count420
+\c@annotator=\count421
+\c@savedannotator=\count422
+\c@author=\count423
+\c@savedauthor=\count424
+\c@bookauthor=\count425
+\c@savedbookauthor=\count426
+\c@commentator=\count427
+\c@savedcommentator=\count428
+\c@editor=\count429
+\c@savededitor=\count430
+\c@editora=\count431
+\c@savededitora=\count432
+\c@editorb=\count433
+\c@savededitorb=\count434
+\c@editorc=\count435
+\c@savededitorc=\count436
+\c@foreword=\count437
+\c@savedforeword=\count438
+\c@holder=\count439
+\c@savedholder=\count440
+\c@introduction=\count441
+\c@savedintroduction=\count442
+\c@namea=\count443
+\c@savednamea=\count444
+\c@nameb=\count445
+\c@savednameb=\count446
+\c@namec=\count447
+\c@savednamec=\count448
+\c@translator=\count449
+\c@savedtranslator=\count450
+\c@shortauthor=\count451
+\c@savedshortauthor=\count452
+\c@shorteditor=\count453
+\c@savedshorteditor=\count454
+\c@labelname=\count455
+\c@savedlabelname=\count456
+\c@institution=\count457
+\c@savedinstitution=\count458
+\c@lista=\count459
+\c@savedlista=\count460
+\c@listb=\count461
+\c@savedlistb=\count462
+\c@listc=\count463
+\c@savedlistc=\count464
+\c@listd=\count465
+\c@savedlistd=\count466
+\c@liste=\count467
+\c@savedliste=\count468
+\c@listf=\count469
+\c@savedlistf=\count470
+\c@location=\count471
+\c@savedlocation=\count472
+\c@organization=\count473
+\c@savedorganization=\count474
+\c@origlocation=\count475
+\c@savedoriglocation=\count476
+\c@origpublisher=\count477
+\c@savedorigpublisher=\count478
+\c@publisher=\count479
+\c@savedpublisher=\count480
+\c@language=\count481
+\c@savedlanguage=\count482
+\c@origlanguage=\count483
+\c@savedoriglanguage=\count484
+\c@pageref=\count485
+\c@savedpageref=\count486
 \shorthandwidth=\skip107
 \shortjournalwidth=\skip108
 \shortserieswidth=\skip109
@@ -1795,13 +1798,13 @@ Package biblatex Info: ... file 'biblatex.def' found.
 
 (c:/texlive/2017/texmf-dist/tex/latex/biblatex/biblatex.def
 File: biblatex.def 2017/12/19 v3.10 biblatex compatibility (PK/JW/AB)
-\c@textcitecount=\count484
-\c@textcitetotal=\count485
-\c@textcitemaxnames=\count486
-\c@biburlnumpenalty=\count487
-\c@biburlucpenalty=\count488
-\c@biburllcpenalty=\count489
-\c@smartand=\count490
+\c@textcitecount=\count487
+\c@textcitetotal=\count488
+\c@textcitemaxnames=\count489
+\c@biburlnumpenalty=\count490
+\c@biburlucpenalty=\count491
+\c@biburllcpenalty=\count492
+\c@smartand=\count493
 )
 Package biblatex Info: Trying to load bibliography style 'alphabetic'...
 Package biblatex Info: ... file 'alphabetic.bbx' found.
@@ -1813,8 +1816,8 @@ Package biblatex Info: ... file 'standard.bbx' found.
 
 (c:/texlive/2017/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
 File: standard.bbx 2017/12/19 v3.10 biblatex bibliography style (PK/JW/AB)
-\c@bbx:relatedcount=\count491
-\c@bbx:relatedtotal=\count492
+\c@bbx:relatedcount=\count494
+\c@bbx:relatedtotal=\count495
 ))
 Package biblatex Info: Trying to load citation style 'alphabetic'...
 Package biblatex Info: ... file 'alphabetic.cbx' found.
@@ -1890,16 +1893,16 @@ LaTeX Font Info:    ... okay on input line 34.
 
 (c:/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count493
+\scratchcounter=\count496
 \scratchdimen=\dimen306
 \scratchbox=\box95
-\nofMPsegments=\count494
-\nofMParguments=\count495
+\nofMPsegments=\count497
+\nofMParguments=\count498
 \everyMPshowfont=\toks66
-\MPscratchCnt=\count496
+\MPscratchCnt=\count499
 \MPscratchDim=\dimen307
-\MPnumerator=\count497
-\makeMPintoPDFobject=\count498
+\MPnumerator=\count500
+\makeMPintoPDFobject=\count501
 \everyMPtoPDFconversion=\toks67
 ) (c:/texlive/2017/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -1952,7 +1955,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count499
+\c@lstlisting=\count502
 Package scrhack Info: undefining \float@addtolists on input line 34.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
@@ -2011,7 +2014,7 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (c:/texlive/2017/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count500
+\c@section@level=\count503
 )
 LaTeX Info: Redefining \ref on input line 34.
 LaTeX Info: Redefining \pageref on input line 34.
@@ -2200,81 +2203,80 @@ chapter 2.
 
 
 ] [4]
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 60--60
+Overfull \hbox (11.24983pt too wide) in paragraph at lines 58--58
 [] 
  []
 
 [5
-\pgfsyspdfmark {pgfid2}{19562754}{25284093}
+\pgfsyspdfmark {pgfid2}{19562754}{23447694}
 ]
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 75--75
+Overfull \hbox (11.24983pt too wide) in paragraph at lines 74--74
 [] 
  []
 
 LaTeX Font Info:    Font shape `OMS/lmr/m/it' in size <12> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 96.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 95.
 
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 104--104
+Overfull \hbox (11.24983pt too wide) in paragraph at lines 103--103
 [] 
  []
 
 [6
-\pgfsyspdfmark {pgfid3}{19562754}{44376881}
-\pgfsyspdfmark {pgfid4}{19562754}{6880737}
+\pgfsyspdfmark {pgfid3}{19562754}{38201386}
 ]
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 124--124
-[] 
- []
-
-
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 143--143
+Overfull \hbox (11.24983pt too wide) in paragraph at lines 123--123
 [] 
  []
 
 [7
-\pgfsyspdfmark {pgfid5}{19562754}{32810095}
+\pgfsyspdfmark {pgfid4}{19562754}{44693458}
+\pgfsyspdfmark {pgfid5}{19562754}{25176497}
 ]
-<resources/deformation_map.png, id=320, 357.43538pt x 206.27063pt>
+Overfull \hbox (11.24983pt too wide) in paragraph at lines 138--138
+[] 
+ []
+
+<resources/deformation_map.png, id=319, 357.43538pt x 206.27063pt>
 File: resources/deformation_map.png Graphic file (type png)
 <use resources/deformation_map.png>
-Package luatex.def Info: resources/deformation_map.png  used on input line 150.
+Package luatex.def Info: resources/deformation_map.png  used on input line 144.
 (luatex.def)             Requested size: 184.94292pt x 106.72942pt.
 
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 168--168
+Overfull \hbox (11.24983pt too wide) in paragraph at lines 162--162
 [] 
  []
 
 [8
-\pgfsyspdfmark {pgfid6}{19562754}{47510961}
-\pgfsyspdfmark {pgfid7}{19562754}{13367042}
+\pgfsyspdfmark {pgfid6}{19562754}{36882654}
 <./resources/deformation_map.png>]
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 197--197
+Overfull \hbox (11.24983pt too wide) in paragraph at lines 191--191
 [] 
  []
 
 [9
-\pgfsyspdfmark {pgfid8}{19562754}{15285612}
+\pgfsyspdfmark {pgfid7}{19562754}{46408134}
+\pgfsyspdfmark {pgfid8}{19562754}{8263863}
 ]
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 208--208
+Overfull \hbox (11.24983pt too wide) in paragraph at lines 202--202
 [] 
  []
 
 [10
-\pgfsyspdfmark {pgfid9}{19562754}{44951063}
+\pgfsyspdfmark {pgfid9}{19562754}{39726020}
 ]
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 261--261
+Overfull \hbox (11.24983pt too wide) in paragraph at lines 255--255
 [] 
  []
 
-
-Overfull \hbox (11.24983pt too wide) in paragraph at lines 273--273
+[11
+\pgfsyspdfmark {pgfid10}{19562754}{17614330}
+]
+Overfull \hbox (11.24983pt too wide) in paragraph at lines 267--267
 [] 
  []
 
-) [11
-\pgfsyspdfmark {pgfid10}{19562754}{22921112}
-] [12
-\pgfsyspdfmark {pgfid11}{19562754}{45742033}
+) [12
+\pgfsyspdfmark {pgfid11}{19562754}{41941853}
 ] (./chapter/Paper.tex
 chapter 3.
 
@@ -2293,17 +2295,17 @@ Overfull \hbox (11.24983pt too wide) in paragraph at lines 35--35
 [] 
  []
 
-<resources/inversion_1.png, id=391, 221.02576pt x 147.25012pt>
+<resources/inversion_1.png, id=390, 221.02576pt x 147.25012pt>
 File: resources/inversion_1.png Graphic file (type png)
 <use resources/inversion_1.png>
 Package luatex.def Info: resources/inversion_1.png  used on input line 42.
 (luatex.def)             Requested size: 88.77383pt x 59.14165pt.
-<resources/inversion_2.png, id=392, 220.72462pt x 146.949pt>
+<resources/inversion_2.png, id=391, 220.72462pt x 146.949pt>
 File: resources/inversion_2.png Graphic file (type png)
 <use resources/inversion_2.png>
 Package luatex.def Info: resources/inversion_2.png  used on input line 49.
 (luatex.def)             Requested size: 88.77383pt x 59.10144pt.
-<resources/inversion_3.png, id=393, 220.72462pt x 147.25012pt>
+<resources/inversion_3.png, id=392, 220.72462pt x 147.25012pt>
 File: resources/inversion_3.png Graphic file (type png)
 <use resources/inversion_3.png>
 Package luatex.def Info: resources/inversion_3.png  used on input line 56.
@@ -2312,7 +2314,7 @@ Package luatex.def Info: resources/inversion_3.png  used on input line 56.
 \pgfsyspdfmark {pgfid13}{19562754}{23740369}
 <./resources/inversion_1.png><./resources/inversion_2.png><./resources/inversion
 _3.png>]
-<resources/meta_stability.png, id=405, 424.88737pt x 259.26863pt>
+<resources/meta_stability.png, id=404, 424.88737pt x 259.26863pt>
 File: resources/meta_stability.png Graphic file (type png)
 <use resources/meta_stability.png>
 Package luatex.def Info: resources/meta_stability.png  used on input line 73.
@@ -2417,42 +2419,42 @@ Overfull \hbox (11.24983pt too wide) in paragraph at lines 385--385
 [] 
  []
 
-<resources/hexcli_step0.png, id=502, 1912.14375pt x 1038.88126pt>
+<resources/hexcli_step0.png, id=501, 1912.14375pt x 1038.88126pt>
 File: resources/hexcli_step0.png Graphic file (type png)
 <use resources/hexcli_step0.png>
 Package luatex.def Info: resources/hexcli_step0.png  used on input line 398.
 (luatex.def)             Requested size: 88.77463pt x 48.22188pt.
-<resources/hexcli_step8.png, id=503, 1912.14375pt x 1038.88126pt>
+<resources/hexcli_step8.png, id=502, 1912.14375pt x 1038.88126pt>
 File: resources/hexcli_step8.png Graphic file (type png)
 <use resources/hexcli_step8.png>
 Package luatex.def Info: resources/hexcli_step8.png  used on input line 400.
 (luatex.def)             Requested size: 88.77463pt x 48.22188pt.
-<resources/hexcli_step16.png, id=504, 1912.14375pt x 1038.88126pt>
+<resources/hexcli_step16.png, id=503, 1912.14375pt x 1038.88126pt>
 File: resources/hexcli_step16.png Graphic file (type png)
 <use resources/hexcli_step16.png>
 Package luatex.def Info: resources/hexcli_step16.png  used on input line 402.
 (luatex.def)             Requested size: 88.77463pt x 48.22188pt.
-<resources/hexcli_step24.png, id=505, 1912.14375pt x 1038.88126pt>
+<resources/hexcli_step24.png, id=504, 1912.14375pt x 1038.88126pt>
 File: resources/hexcli_step24.png Graphic file (type png)
 <use resources/hexcli_step24.png>
 Package luatex.def Info: resources/hexcli_step24.png  used on input line 404.
 (luatex.def)             Requested size: 88.77463pt x 48.22188pt.
-<resources/tetcli_step0.png, id=506, 1912.14375pt x 1038.88126pt>
+<resources/tetcli_step0.png, id=505, 1912.14375pt x 1038.88126pt>
 File: resources/tetcli_step0.png Graphic file (type png)
 <use resources/tetcli_step0.png>
 Package luatex.def Info: resources/tetcli_step0.png  used on input line 410.
 (luatex.def)             Requested size: 88.77463pt x 48.22188pt.
-<resources/tetcli_step8.png, id=507, 1912.14375pt x 1038.88126pt>
+<resources/tetcli_step8.png, id=506, 1912.14375pt x 1038.88126pt>
 File: resources/tetcli_step8.png Graphic file (type png)
 <use resources/tetcli_step8.png>
 Package luatex.def Info: resources/tetcli_step8.png  used on input line 412.
 (luatex.def)             Requested size: 88.77463pt x 48.22188pt.
-<resources/tetcli_step16.png, id=508, 1912.14375pt x 1038.88126pt>
+<resources/tetcli_step16.png, id=507, 1912.14375pt x 1038.88126pt>
 File: resources/tetcli_step16.png Graphic file (type png)
 <use resources/tetcli_step16.png>
 Package luatex.def Info: resources/tetcli_step16.png  used on input line 414.
 (luatex.def)             Requested size: 88.77463pt x 48.22188pt.
-<resources/tetcli_step24.png, id=509, 1912.14375pt x 1038.88126pt>
+<resources/tetcli_step24.png, id=508, 1912.14375pt x 1038.88126pt>
 File: resources/tetcli_step24.png Graphic file (type png)
 <use resources/tetcli_step24.png>
 Package luatex.def Info: resources/tetcli_step24.png  used on input line 416.
@@ -2552,7 +2554,7 @@ chapter without number
 
 
 ]
-<Erklaerung.pdf, id=597, 597.23125pt x 845.1575pt>
+<Erklaerung.pdf, id=596, 597.23125pt x 845.1575pt>
 File: Erklaerung.pdf Graphic file (type pdf)
 <use Erklaerung.pdf>
 Package luatex.def Info: Erklaerung.pdf  used on input line 94.
@@ -2561,7 +2563,7 @@ File: Erklaerung.pdf Graphic file (type pdf)
 <use Erklaerung.pdf>
 Package luatex.def Info: Erklaerung.pdf  used on input line 94.
 (luatex.def)             Requested size: 597.22978pt x 845.15544pt.
-<Erklaerung.pdf, id=600, page=1, 597.23125pt x 845.1575pt>
+<Erklaerung.pdf, id=599, page=1, 597.23125pt x 845.1575pt>
 File: Erklaerung.pdf Graphic file (type pdf)
 <use Erklaerung.pdf, page 1>
 Package luatex.def Info: Erklaerung.pdf , page1 used on input line 94.
@@ -2601,15 +2603,15 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 48965 strings out of 494480
+ 49008 strings out of 494480
  100000,1648299 words of node,token memory allocated
- 1261 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 1 kern, 42 sub_mlist, 107 attribute, 94 glu
-e_spec, 107 attribute_list, 3 write, 2 close, 7 pdf_action nodes
-   avail lists: 1:4,2:1658,3:308,4:135,5:349,6:1954,7:1859,8:289,9:1062,10:14,11
-:182
- 50985 multiletter control sequences out of 65536+600000
- 74 fonts using 7661039 bytes
+ 1287 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 1 kern, 48 sub_mlist, 109 attribute, 94 glu
+e_spec, 109 attribute_list, 3 write, 2 close, 7 pdf_action nodes
+   avail lists: 1:4,2:1658,3:308,4:135,5:349,6:2082,7:1859,8:289,9:1062,10:12,11
+:193
+ 51020 multiletter control sequences out of 65536+600000
+ 80 fonts using 7951155 bytes
  68i,20n,93p,8833b,1656s stack positions out of 5000i,500n,10000p,200000b,100000s
 {c:/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/texlive/2017/texmf-
 dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/texlive/2017/texmf-dist/fonts/enc/dvip
@@ -2633,10 +2635,10 @@ lmsy8.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/texli
 ve/2017/texmf-dist/fonts/type1/public/lm/lmtt12.pfb><c:/texlive/2017/texmf-dist/
 fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2017/texmf-dist/fonts
 /type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (41 pages, 2051526 bytes).
+Output written on main.pdf (41 pages, 2051727 bytes).
 
-PDF statistics: 713 PDF objects out of 1000 (max. 8388607)
- 609 compressed objects within 7 object streams
- 154 named destinations out of 1000 (max. 131072)
+PDF statistics: 712 PDF objects out of 1000 (max. 8388607)
+ 608 compressed objects within 7 object streams
+ 155 named destinations out of 1000 (max. 131072)
  344 words of extra memory for PDF output out of 10000 (max. 100000000)
 
