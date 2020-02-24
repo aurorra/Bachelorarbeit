@@ -22,13 +22,13 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2.2}Singular Value Decomposition}{6}{subsection.2.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.3}Polar Decomposition}{6}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.3}Polar Decomposition}{7}{subsection.2.2.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.3}Continuum Mechanics}{7}{section.2.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.4}Deformation}{7}{section.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.1}Deformation Gradient}{8}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.1}Deformation Gradient}{9}{subsection.2.4.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\nonumberline Polar Decomposition of the Deformation Gradient}{9}{section*.14}
 \defcounter {refsection}{0}\relax 
@@ -36,49 +36,49 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.4.3}Deformation Energy}{11}{subsection.2.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Paper}{12}{chapter.3}
+\contentsline {chapter}{\numberline {3}Paper}{13}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Deformation Gradient}{12}{section.3.1}
+\contentsline {section}{\numberline {3.1}Deformation Gradient}{13}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Energy Formulation}{13}{section.3.2}
+\contentsline {section}{\numberline {3.2}Energy Formulation}{14}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.1}Stability}{13}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.1}Stability}{14}{subsection.3.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.2}Existing Neo-Hookean Energies}{14}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.2}Existing Neo-Hookean Energies}{15}{subsection.3.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\nonumberline 1D Length Term}{15}{section*.27}
+\contentsline {subsubsection}{\nonumberline 1D Length Term}{16}{section*.27}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\nonumberline 3D Volume Term}{16}{section*.28}
+\contentsline {subsubsection}{\nonumberline 3D Volume Term}{17}{section*.28}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.3}Rest Stabilization}{16}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.3}Rest Stabilization}{17}{subsection.3.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.4}Meta-Stability under Degeneracy}{18}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.4}Meta-Stability under Degeneracy}{19}{subsection.3.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.5}Lam\'e Reparametrization}{18}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.5}Lam\'e Reparametrization}{19}{subsection.3.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Energy Analysis}{18}{section.3.3}
+\contentsline {section}{\numberline {3.3}Energy Analysis}{19}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.1}First Piola-Kirchhoff Stress (PK1)}{19}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.1}First Piola-Kirchhoff Stress (PK1)}{20}{subsection.3.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.2}The Energy Hessian Terms}{19}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.2}The Energy Hessian Terms}{20}{subsection.3.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.3}The Tikhonov, Mu, and Gradient Terms}{20}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.3}The Tikhonov, Mu, and Gradient Terms}{21}{subsection.3.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\nonumberline Tikhonov}{20}{section*.34}
+\contentsline {subsubsection}{\nonumberline Tikhonov}{21}{section*.34}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\nonumberline Mu}{21}{section*.35}
+\contentsline {subsubsection}{\nonumberline Mu}{22}{section*.35}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\nonumberline Gradient}{22}{section*.36}
+\contentsline {subsubsection}{\nonumberline Gradient}{23}{section*.36}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.4}The Volume Hessian}{22}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.4}The Volume Hessian}{23}{subsection.3.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\nonumberline Volume Hessian Eigenvalues}{24}{section*.39}
+\contentsline {subsubsection}{\nonumberline Volume Hessian Eigenvalues}{25}{section*.39}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.5}The Complete Eigensystem}{24}{subsection.3.3.5}
+\contentsline {subsection}{\numberline {3.3.5}The Complete Eigensystem}{25}{subsection.3.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Experiments with the Code}{25}{section.3.4}
+\contentsline {section}{\numberline {3.4}Experiments with the Code}{26}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.5}Discussion}{26}{section.3.5}
+\contentsline {section}{\numberline {3.5}Discussion}{27}{section.3.5}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\nonumberline List of Figures}{A}{chapter*.50}
 \defcounter {refsection}{0}\relax 
