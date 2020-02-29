@@ -92,7 +92,7 @@ Let $\mathbf{A}$ $\in$ $\mathbb{R}^{m x n}$ be a matrix having r positive singul
 \mathbf{A} &= \mathbf{U \tilde{\Sigma} V^\intercal} \\
 \mathbf{\tilde{\Sigma}} &= \left[ \begin{array}{cc} \mathbf{\Sigma} & 0 \\ 0 & 0 \end{array} \right]
 \end{align*}
-where $\mathbf{\Sigma}$ = diag ($\sigma$1, $\sigma$2, . . . , $\sigma$r), and $\sigma$1 $\geq$ $\sigma$2 $\geq$ · · · $\geq$ $\sigma$r $>$ 0 are the positive singular values of $\mathbf{A}$.
+where $\mathbf{\Sigma}$ = diag ($\sigma_1$, $\sigma_2$, . . . , $\sigma_r$), and $\sigma_1$ $\geq$ $\sigma_2$ $\geq$ · · · $\geq$ $\sigma_r$ $>$ 0 are the positive singular values of $\mathbf{A}$.
 
 \end{theorem}
 The definition and theorem were taken from \cite{ford2014numerical} (def. \ref{SVD} S.113, thm. \ref{singular_values} S.300).
@@ -125,7 +125,7 @@ TODO: Complete this section. Add lemmas and theorems used afterwards in the calc
 
 
 \section{Continuum Mechanics}
-In this section I will give a broad introduction into the field of Continuum Mechanics. In Continuum Mechanics we are less interested in small particles like atoms or molecules of an object but rather in pieces of matter which are in comparison very large. We are therefore concerned with the mechanical behavior of solids and fluids on the macroscopic scale (\cite{Spencer1980}, p. 1).
+In this section, I will give a broad introduction into the field of Continuum Mechanics. In Continuum Mechanics, we are less interested in small particles like atoms or molecules of an object but rather in pieces of matter which are in comparison very large. We are therefore concerned with the mechanical behavior of solids and fluids on the macroscopic scale (\cite{Spencer1980}, p. 1).
 
 
 \section{Deformation}
@@ -146,30 +146,28 @@ Now let us have a look at a deformation in a rather mathematical sense. Graphica
 	\label{fig:deformationmap}
 \end{figure}
 
-In conclusion the function $\phi$ describes the deformation. When deriving $\phi$ one can calculate the deformation gradient \textbf{F} which serves as a measure of the deformation in the following sense: 
+When deriving $\phi$, we can calculate the deformation gradient \textbf{F} which serves as a measure of the deformation in the following sense: 
 
-\[
-\begin{array}{l}
-{\text { Deformation gradient: }} {\mathbf{F}=\operatorname{\nabla} \phi}
-\\
-{\text { Length changes: }} {\qquad I_{C}=\operatorname{tr}\left(\mathbf{F}^{T} \mathbf{F}\right)} 
-\\ 
-{\text { Volume changes: }} {\qquad J=\operatorname{det}(\mathbf{F})}\end{array}
-\]
+\begin{align*}
+&\text{Deformation gradient:} & \mathbf{F}&=\operatorname{\nabla} \phi \\
+&\text{Length changes:} & \qquad I_{C}&=\operatorname{tr}\left(\mathbf{F}^{T} \mathbf{F}\right) \\
+&\text{Volume changes:} & \qquad J&=\operatorname{det}(\mathbf{F})
+\end{align*}
 
 \todoredefined[inline]{
-TODO: Adjust so the equal sign is at the same place in each column. Explain strain and stress and their meaning for later use in material constants (not explained in paper). Include own image instead of the one here?
+TODO: Explain strain and stress and their meaning for later use in material constants (not explained in paper). Include own image instead of the one here?
 }
 
 
 \subsection{Deformation Gradient}
-The deformation gradient \textbf{F} offers as said previously a measurement of the deformation. With its help one can amongst other things calculate the volume and length change an object undergoes during a deformation. For my needs I define the deformation gradient exactely as the authors of the paper \cite{Smith:2018:SNF:3191713.3180491} did:
+With the help of the deformation gradient \textbf{F}, we can calculate the change in volume and length of an object during a deformation.
+For my needs, I am defining the deformation gradient analogous to the authors of \textit{\acrshort{snh}}:
 
 \begin{equation}\label{eq:deformation_gradient}
 \textbf{F} = \left[ \,f_0\, \bigg| \,f_1\, \bigg| \,f_2\, \right] = \begin{bmatrix} f_0 & f_3 & f_6 \\ f_1 & f_4 & f_7 \\ f_2 & f_5 & f_8 \end{bmatrix}.
 \end{equation}
 
-Using the SVD theorem mentioned in thm.\ref{SVD} $\mathbf{F}$ can be written in the form of
+Using the SVD theorem shown in Thm.\ref{SVD}, \textbf{F} can be written in the form of
 
 \begin{equation}\label{eq:svd_gradient}
 \mathbf{F} = \mathbf{U \Sigma V^\intercal}
@@ -180,7 +178,7 @@ in which $\mathbf{\Sigma}$ stands for
 \mathbf{\Sigma} = \left[\begin{matrix}  \sigma_0 & 0 & 0 \\ 0 & \sigma_1 & 0 \\ 0 & 0 & \sigma_2 \end{matrix}\right] .
 \end{equation}
 
-The $\sigma_i$ denote the singular values of $\mathbf{\Sigma}$. Unlike the normal convention the authors of the paper \textit{Stable Neo-Hookean Flesh Simulation} decided that the rotation variant moves reflections to $\mathbf{\Sigma}$. This results into $\operatorname{det}(\mathbf{U})=\operatorname{det}(\mathbf{V})=1$ and the property that $\mathbf{\Sigma}$ is allowed to have negative entries.
+The $\sigma_i$ denote the singular values of $\mathbf{\Sigma}$. Unlike the normal convention, the authors of \textit{\acrshort{snh}} decided that the rotation variant moves reflections to $\mathbf{\Sigma}$. This results in $\operatorname{det}(\mathbf{U})$ and $\operatorname{det}(\mathbf{V})$ being equal to 1 and the property that $\mathbf{\Sigma}$ is allowed to have negative entries.
 
 
 
@@ -191,7 +189,7 @@ TODO: Add some examples. Already include definitions of the paper?
 }
 
 \subsubsection{Polar Decomposition of the Deformation Gradient}
-With the help of theorem \ref{PD} one can decompose the deformation gradient in the following form:
+With the help of Thm. \ref{PD} we can decompose the deformation gradient into the following form:
 
 \[
 \mathbf{F} = \mathbf{RS}.
@@ -203,7 +201,7 @@ TODO: Explain more here.
 
 
 \subsection{Material Constants}
-When we look at a deformation of an object we need to consider the material the object consists of. A material can be very stiff like steel or easily deformable like rubber. In order to measure the deformation in a specific material we need the \textit{Poisson's Ratio} of said material. The poisson's ratio is a material constant that is defined as 
+When we look at a deformation of an object, we need to consider the material the object consists of. A material can be very stiff like steel or easily deformable like rubber. In order to measure the deformation of a specific material, we need the \textit{Poisson's Ratio} of said material. The poisson's ratio is a material constant that is defined as 
 
 \begin{equation}\label{eq:poisson}
 \sigma = - \frac{\epsilon_{11}}{\epsilon_{22}} \in [-1, 0.5]
@@ -236,9 +234,9 @@ Here are some examples of the poisson's ratio of various materials:
 \label{table:1}
 \end{table}
 
-In the context of flesh simulations I am using the poisson's ratio as a characterization for the resistance to volume change of flesh. Biological tissues such as flesh, fat and muscles have one important property: Volume preservation. As a result the poisson's ratio is a higher value, meaning it is found in the range between 0.45 and 0.5 \cite{Smith:2018:SNF:3191713.3180491}.
+In the context of flesh simulations, I am using the poisson's ratio as a characterization for the resistance to volume change of flesh. Biological tissues such as flesh, fat and muscles have one important property: Volume preservation. As a result the poisson's ratio takes on higher values in the range of 0.45 and 0.5 \cite{Smith:2018:SNF:3191713.3180491}.
 
-The calculation of the poisson's ratio defined in equation \ref{eq:poisson} is a challenge. Fortunately we can make use of the \textit{Lamé Parameters}. These are the two constants $\mu$ and $\lambda$ that are specific for a material. With the help of these two constants one can transform equation \ref{eq:poisson} into the following form:
+The calculation of the poisson's ratio defined in Eq. \ref{eq:poisson} is a challenge. Fortunately, we can make use of the \textit{Lamé Parameters}, the two material specific constants $\mu$ and $\lambda$. With the help of these two constants we can transform Eq. \ref{eq:poisson} into the following form:
 
 \begin{equation}\label{eq:poisson_ratio}
 \sigma =  \frac{\lambda}{2(\lambda + \mu)}.

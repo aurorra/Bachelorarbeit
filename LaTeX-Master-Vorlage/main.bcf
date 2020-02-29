@@ -1933,25 +1933,24 @@
     <bcf:citekey order="8">Spencer1980</bcf:citekey>
     <bcf:citekey order="9">STREAM2018</bcf:citekey>
     <bcf:citekey order="10">STREAM2018</bcf:citekey>
-    <bcf:citekey order="11">Smith:2018:SNF:3191713.3180491</bcf:citekey>
-    <bcf:citekey order="12">PhysRevB.80.132104</bcf:citekey>
-    <bcf:citekey order="13">lakes1987foam</bcf:citekey>
-    <bcf:citekey order="14">lakes1993advances</bcf:citekey>
+    <bcf:citekey order="11">PhysRevB.80.132104</bcf:citekey>
+    <bcf:citekey order="12">lakes1987foam</bcf:citekey>
+    <bcf:citekey order="13">lakes1993advances</bcf:citekey>
+    <bcf:citekey order="14">PhysRevB.80.132104</bcf:citekey>
     <bcf:citekey order="15">PhysRevB.80.132104</bcf:citekey>
-    <bcf:citekey order="16">PhysRevB.80.132104</bcf:citekey>
+    <bcf:citekey order="16">Smith:2018:SNF:3191713.3180491</bcf:citekey>
     <bcf:citekey order="17">Smith:2018:SNF:3191713.3180491</bcf:citekey>
     <bcf:citekey order="18">Smith:2018:SNF:3191713.3180491</bcf:citekey>
     <bcf:citekey order="19">Smith:2018:SNF:3191713.3180491</bcf:citekey>
     <bcf:citekey order="20">Smith:2018:SNF:3191713.3180491</bcf:citekey>
-    <bcf:citekey order="21">Smith:2018:SNF:3191713.3180491</bcf:citekey>
+    <bcf:citekey order="21">STREAM2018</bcf:citekey>
     <bcf:citekey order="22">STREAM2018</bcf:citekey>
     <bcf:citekey order="23">STREAM2018</bcf:citekey>
     <bcf:citekey order="24">STREAM2018</bcf:citekey>
-    <bcf:citekey order="25">STREAM2018</bcf:citekey>
+    <bcf:citekey order="25">Smith:2018:SNF:3191713.3180491</bcf:citekey>
     <bcf:citekey order="26">Smith:2018:SNF:3191713.3180491</bcf:citekey>
-    <bcf:citekey order="27">Smith:2018:SNF:3191713.3180491</bcf:citekey>
-    <bcf:citekey order="28">mooney1940theory</bcf:citekey>
-    <bcf:citekey order="29">Smith:2018:SNF:3191713.3180491</bcf:citekey>
+    <bcf:citekey order="27">mooney1940theory</bcf:citekey>
+    <bcf:citekey order="28">Smith:2018:SNF:3191713.3180491</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="anyt">
