@@ -1,8 +1,8 @@
-\chapter{Paper} \label{c:Paper}
-In this chapter I will examine the topic of the paper \textit{Stable Neo-Hookean Flesh Simulation} \cite{Smith:2018:SNF:3191713.3180491}. In the interest of understanding the thought process of the authors I will include some of their calculations a bit more detailed. In addition examples and visualisations should help for a better perception. 
+\chapter{Stable Neo-Hookean Flesh Simulation} \label{c:Paper}
+In this chapter, I will examine further the topic of the paper \textit{\acrshort{snh}}. In the interest of understanding the thought process of the authors, I will include some of their calculations more detailed. In addition, examples and visualisations are presented for a better understanding. 
 
 \section{Deformation Gradient}
-In the following calculations some properties of the deformation gradient $\mathbf{F}$ covered in the background chapter will be used. These properties are summarized in table \ref{table:gradient_quantities} for a better overview:
+In the following calculations some properties of the deformation gradient $\mathbf{F}$ covered in chapter 2 will be used. These properties are summarized in table \ref{table:gradient_quantities} for a better overview:
 
 \begin{table}[!htbp]
 \centering
@@ -14,7 +14,7 @@ In the following calculations some properties of the deformation gradient $\math
     $\mathbf{C}=\mathbf{F}^\intercal \mathbf{F}$ & Right Cauchy-Green  \\ \hline	
     $I_{C}=\operatorname{tr}(\mathbf{C})$ & First right Cauchy-Green invariant \\ \hline
     \end{tabular}
-    \caption{Quantities Derived from the Deformation Gradient \textbf{F} taken from \cite{Smith:2018:SNF:3191713.3180491}}
+    \caption{Quantities derived from the Deformation Gradient \textbf{F} taken from \cite{Smith:2018:SNF:3191713.3180491}}
 \label{table:gradient_quantities}
 \end{table}
 
@@ -26,9 +26,9 @@ TODO: Check if everything is explained enough in Background.
 \section{Energy Formulation}
 
 \subsection{Stability}
-The core goal of the paper was to model deformations for virtual characters that have human-like features. They concentrated on the deformation energy. In order to achieve a convincing result the first step is to specify some requirements. For our needs in this case the stability of the energy is important. More precisely we need a hyperelastic energy that is stable in the following four important ways:
+The core goal of the paper was to model deformations for virtual characters that have human-like features. The focus of the authors was the deformation energy. In order to achieve a convincing result the first step is to specify some requirements. Firstly the energy has to be stable. More precisely, we need a hyperelastic energy that is stable in the following four important ways:
 
-\textbf{1. Inversion Stability:} Given some arbitrary object it is possible that while deforming the object one can arrive at a zero volume state or even an entire inversion. Take for example the tetrahedron shown in figure \ref{fig:inversion_1}. In figure \ref{fig:inversion_2} we see a deformed state of this tetrahedron where the volume is scaled down to zero and we are left with a simple triangle. In figure \ref{fig:inversion_3} image we have an inversion of the object. The needed deformation energy has to be able to deal with both cases. That means that the energy has to be singularity-free and does not need any filters or threshold (\cite{Smith:2018:SNF:3191713.3180491}, 12:3).
+\textbf{1. Inversion Stability:} Given some arbitrary object, it is possible that while deforming the object one can arrive at a zero volume state or even an entire inversion. Take for example the tetrahedron shown in Fig. \ref{fig:inversion_1}. In Fig. \ref{fig:inversion_2} we see a deformed state of this tetrahedron where the volume is scaled down to zero and we are left with a simple triangle. In Fig. \ref{fig:inversion_3} we have an inversion of the object. The deformation energy has to be able to deal with both cases. That means that the energy has to be singularity-free and does not need any filters or threshold (\cite{Smith:2018:SNF:3191713.3180491}, 12:3).
 
 \todoredefined[inline]{
 TODO: Explain what last sentence means. Reference correct like this?

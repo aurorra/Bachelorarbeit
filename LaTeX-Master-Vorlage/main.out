@@ -11,11 +11,11 @@
 \BOOKMARK [2][-]{subsection.2.2.2}{Singular Value Decomposition}{section.2.2}% 11
 \BOOKMARK [2][-]{subsection.2.2.3}{Polar Decomposition}{section.2.2}% 12
 \BOOKMARK [1][-]{section.2.3}{Continuum Mechanics}{chapter.2}% 13
-\BOOKMARK [1][-]{section.2.4}{Deformation}{chapter.2}% 14
-\BOOKMARK [2][-]{subsection.2.4.1}{Deformation Gradient}{section.2.4}% 15
-\BOOKMARK [2][-]{subsection.2.4.2}{Material Constants}{section.2.4}% 16
-\BOOKMARK [2][-]{subsection.2.4.3}{Deformation Energy}{section.2.4}% 17
-\BOOKMARK [0][-]{chapter.3}{Paper}{}% 18
+\BOOKMARK [2][-]{subsection.2.3.1}{Deformation}{section.2.3}% 14
+\BOOKMARK [2][-]{subsection.2.3.2}{Deformation Gradient}{section.2.3}% 15
+\BOOKMARK [2][-]{subsection.2.3.3}{Material Constants}{section.2.3}% 16
+\BOOKMARK [2][-]{subsection.2.3.4}{Deformation Energy}{section.2.3}% 17
+\BOOKMARK [0][-]{chapter.3}{Stable Neo-Hookean Flesh Simulation}{}% 18
 \BOOKMARK [1][-]{section.3.1}{Deformation Gradient}{chapter.3}% 19
 \BOOKMARK [1][-]{section.3.2}{Energy Formulation}{chapter.3}% 20
 \BOOKMARK [2][-]{subsection.3.2.1}{Stability}{section.3.2}% 21

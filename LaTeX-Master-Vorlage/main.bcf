@@ -1942,15 +1942,14 @@
     <bcf:citekey order="17">Smith:2018:SNF:3191713.3180491</bcf:citekey>
     <bcf:citekey order="18">Smith:2018:SNF:3191713.3180491</bcf:citekey>
     <bcf:citekey order="19">Smith:2018:SNF:3191713.3180491</bcf:citekey>
-    <bcf:citekey order="20">Smith:2018:SNF:3191713.3180491</bcf:citekey>
+    <bcf:citekey order="20">STREAM2018</bcf:citekey>
     <bcf:citekey order="21">STREAM2018</bcf:citekey>
     <bcf:citekey order="22">STREAM2018</bcf:citekey>
     <bcf:citekey order="23">STREAM2018</bcf:citekey>
-    <bcf:citekey order="24">STREAM2018</bcf:citekey>
+    <bcf:citekey order="24">Smith:2018:SNF:3191713.3180491</bcf:citekey>
     <bcf:citekey order="25">Smith:2018:SNF:3191713.3180491</bcf:citekey>
-    <bcf:citekey order="26">Smith:2018:SNF:3191713.3180491</bcf:citekey>
-    <bcf:citekey order="27">mooney1940theory</bcf:citekey>
-    <bcf:citekey order="28">Smith:2018:SNF:3191713.3180491</bcf:citekey>
+    <bcf:citekey order="26">mooney1940theory</bcf:citekey>
+    <bcf:citekey order="27">Smith:2018:SNF:3191713.3180491</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="anyt">
