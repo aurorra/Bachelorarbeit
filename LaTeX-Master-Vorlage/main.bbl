@@ -19,36 +19,6 @@
 
 \refsection{0}
   \datalist[entry]{anyt/global//global/global}
-    \entry{bonet1997nonlinear}{book}{}
-      \name{author}{2}{}{%
-        {{hash=1f328278070b466b433976f886673f62}{%
-           family={Bonet},
-           familyi={B\bibinitperiod},
-           given={Javier},
-           giveni={J\bibinitperiod}}}%
-        {{hash=c66f726f6ff99613939906de99f3ddfd}{%
-           family={Wood},
-           familyi={W\bibinitperiod},
-           given={Richard\bibnamedelima D},
-           giveni={R\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Cambridge university press}%
-      }
-      \strng{namehash}{aa7bb8a75fb5aac856632290ca1a0b10}
-      \strng{fullhash}{aa7bb8a75fb5aac856632290ca1a0b10}
-      \strng{bibnamehash}{aa7bb8a75fb5aac856632290ca1a0b10}
-      \strng{authorbibnamehash}{aa7bb8a75fb5aac856632290ca1a0b10}
-      \strng{authornamehash}{aa7bb8a75fb5aac856632290ca1a0b10}
-      \strng{authorfullhash}{aa7bb8a75fb5aac856632290ca1a0b10}
-      \field{labelalpha}{BW97}
-      \field{sortinit}{B}
-      \field{sortinithash}{276475738cc058478c1677046f857703}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Nonlinear continuum mechanics for finite element analysis}
-      \field{year}{1997}
-    \endentry
     \entry{ford2014numerical}{book}{}
       \name{author}{1}{}{%
         {{hash=4bf15b49912cde7e5b6008e01bb67f28}{%
@@ -299,6 +269,36 @@
       \verb https://dl.acm.org/ft_gateway.cfm?id=3180491&ftid=2009597
       \endverb
       \keyw{image}
+    \endentry
+    \entry{rivlin1948large}{article}{}
+      \name{author}{1}{}{%
+        {{hash=b816f92e12e29d5843dfbea512592d68}{%
+           family={Rivlin},
+           familyi={R\bibinitperiod},
+           given={RS},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {The Royal Society London}%
+      }
+      \strng{namehash}{b816f92e12e29d5843dfbea512592d68}
+      \strng{fullhash}{b816f92e12e29d5843dfbea512592d68}
+      \strng{bibnamehash}{b816f92e12e29d5843dfbea512592d68}
+      \strng{authorbibnamehash}{b816f92e12e29d5843dfbea512592d68}
+      \strng{authornamehash}{b816f92e12e29d5843dfbea512592d68}
+      \strng{authorfullhash}{b816f92e12e29d5843dfbea512592d68}
+      \field{labelalpha}{Riv48}
+      \field{sortinit}{R}
+      \field{sortinithash}{da6b42bd3ab22fee61abed031ee405f7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Philosophical Transactions of the Royal Society of London. Series A, Mathematical and Physical Sciences}
+      \field{number}{835}
+      \field{title}{Large elastic deformations of isotropic materials IV. Further developments of the general theory}
+      \field{volume}{241}
+      \field{year}{1948}
+      \field{pages}{379\bibrangedash 397}
+      \range{pages}{19}
     \endentry
     \entry{Smith:2018:SNF:3191713.3180491}{article}{}
       \name{author}{3}{}{%

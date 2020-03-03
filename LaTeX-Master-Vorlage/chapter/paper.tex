@@ -28,7 +28,7 @@ TODO: Check if everything is explained enough in Background.
 \subsection{Stability}
 The core goal of the paper was to model deformations for virtual characters that have human-like features. The focus of the authors was the deformation energy. In order to achieve a convincing result the first step is to specify some requirements. Firstly the energy has to be stable. More precisely, we need a hyperelastic energy that is stable in the following four important ways:
 
-\textbf{1. Inversion Stability:} Given some arbitrary object, it is possible that while deforming the object one can arrive at a zero volume state or even an entire inversion. Take for example the tetrahedron shown in Fig. \ref{fig:inversion_1}. In Fig. \ref{fig:inversion_2} we see a deformed state of this tetrahedron where the volume is scaled down to zero and we are left with a simple triangle. In Fig. \ref{fig:inversion_3} we have an inversion of the object. The deformation energy has to be able to deal with both cases. That means that the energy has to be singularity-free and does not need any filters or threshold (\cite{Smith:2018:SNF:3191713.3180491}, 12:3).
+\textbf{1. Inversion Stability:} Given some arbitrary object, it is possible that while deforming the object we can arrive at a zero volume state or even an entire inversion. Take for example the tetrahedron shown in Fig. \ref{fig:inversion_1}. In Fig. \ref{fig:inversion_2} we see a deformed state of this tetrahedron where the volume is scaled down to zero and we are left with a simple triangle. In Fig. \ref{fig:inversion_3} we have an inversion of the object. The deformation energy has to be able to deal with both cases. That means that the energy has to be singularity-free and does not need any filters or threshold (\cite{Smith:2018:SNF:3191713.3180491}, 12:3).
 
 \todoredefined[inline]{
 TODO: Explain what last sentence means. Reference correct like this?
@@ -62,11 +62,14 @@ TODO: Explain what last sentence means. Reference correct like this?
 \end{figure}
 
 
-\textbf{2. Reflection stability:} A reflection is rotation around the coordinate origin. The deformation energy needs to be well behaved regardless of the reflection convention used in the singular value decomposition.
+\textbf{2. Reflection stability:} A reflection is a rotation around the coordinate origin. The deformation energy needs to be well behaved regardless of the reflection convention used in the singular value decomposition.
+\todoredefined[inline]{
+TODO: Explain a bit better what this means. What means well behaved?
+}
 
-\textbf{3. Rest stability:} When deforming an object in a certain way we apply one or multiple forces over that object. With rest stability we want that if the sum of forces is equal to zero the object must be back in its rest state.
+\textbf{3. Rest stability:} When deforming an object in a certain way, we apply one or multiple forces to that object. When we achieve rest stability, we ensure that if the sum of all forces is equal to zero, the object must be back in its rest state.
 
-\textbf{4. Meta-stability under degeneracy:} We can crush an object into an arbitrary shape like a plane, line or point. That process is illustrated for a cube in figure \ref{fig:meta_stability}. The cube should now be able to recover to its actual shape after the deformation.
+\textbf{4. Meta-stability under degeneracy:} We can crush an object into an arbitrary shape like a plane, line or point. This process is illustrated for a cube in Fig. \ref{fig:meta_stability}. The cube should be able to recover to its actual shape after the deformation.
 
 \begin{figure}[!htbp]
 	\centering
@@ -75,15 +78,15 @@ TODO: Explain what last sentence means. Reference correct like this?
 	\label{fig:meta_stability}
 \end{figure}
 
-Based on these four requirements we will in the following determine if a deformation energy is suited for our needs.
+Based on these four requirements, we will in the following determine if a deformation energy is suited for our needs.
 
 \todoredefined[inline]{
-TODO: Finish reflection stability. Maybe add own images and more sources. Improve English in this section.
+TODO: Maybe add own images and more sources.
 }
 
 \subsection{Existing Neo-Hookean Energies}
 
-In previous literature a few energies were proposed that should be analysed properly. They are listed in table \ref{table:energies} below.
+In previous literature, a few energies were proposed that I will analyse in this section. They are listed in table \ref{table:energies} below.
 
 \begin{table}[!htbp]
 \centering
@@ -95,11 +98,11 @@ In previous literature a few energies were proposed that should be analysed prop
     $\Psi_{\mathrm{B}}=\frac{\mu}{2}\left(J^{-2 / 3} I_{C}-3\right)+\frac{\lambda}{2}(J-1)^{2}$ & Bower 2009 \\ \hline
     $\Psi_{\mathrm{C}}=\frac{\mu}{2}\left(J^{-2 / 3} I_{C}-3\right)+\frac{\lambda}{2}(J-1)^{2}$ & Wang and Yang 2016 \\ \hline
     \end{tabular}
-    \caption{Summary of proposed energies taken from \cite{Smith:2018:SNF:3191713.3180491}}
+    \caption{Summary of proposed energies (\cite{Smith:2018:SNF:3191713.3180491}, 12:3)}
 \label{table:energies}
 \end{table}
 
-Each energy formulation can be split up into a 1D length term and a 3D volume term. The 1D length term penalizes length changes the object undergoes whereas the 3D volume term is a volume-preserving penalty term.
+Each energy formulation can be split up into a 1D length term and a 3D volume term. The 1D length term penalizes the length changes an object undergoes, whereas the 3D volume term is a volume-preserving penalty term.
 
 \begin{table}[!htbp]
 \centering
@@ -111,7 +114,7 @@ Each energy formulation can be split up into a 1D length term and a 3D volume te
     $\Psi_{\mathrm{B}}$ & $\frac{\mu}{2}\left(J^{-2 / 3} I_{C}-3\right)$ & $\frac{\lambda}{2}(J-1)^{2}$ \\ \hline
     $\Psi_{\mathrm{C}}$ & $\frac{\mu}{2}\left(J^{-2 / 3} I_{C}-3\right)$ & $\frac{\lambda}{2}(J-1)^{2}$ \\ \hline
     \end{tabular}
-    \caption{Energies split up into its 1D length and 3D volume term}
+    \caption{Energies split up into their 1D length and 3D volume term}
 \label{table:energies_split}
 \end{table}
 
@@ -120,17 +123,17 @@ Mooney (\cite{mooney1940theory}) originally proposed the 1D length term
 \[
 \Psi_{M}=\frac{\mu}{2}\left(I_{C}-3\right)
 \]
-that is used in $\Psi_{Neo}$ and $\Psi_{A}$. If we expand the energy with the singular values of the deformation gradient \textbf{F} we get the following term:
+that is used in $\Psi_{Neo}$ and $\Psi_{A}$. If we expand the energy with the singular values of the deformation gradient \textbf{F}, we get the following term:
 \[
 \Psi_{M}=\frac{\mu}{2}\left(\sigma_{0}^2 + \sigma_{1}^2 + \sigma_{2}^2 - 3\right)
 \]
-The energy as it is formulated reaches its minimum at a zero volume state, meaning $I_{C}=0$ which results in $\Psi_{M}=-3$. Mooney added the hard constraint that $J=1$ so that the energy is minimized at the volume preserving configuration that is closest to the stretch space origin. Note that the energy is singularity free and well defined under inversion.
+This energy reaches its minimum at a zero volume state, meaning $I_{C}=0$ which results in $\Psi_{M}=-3$. Mooney added the hard constraint that $J=1$, so that the energy is minimized at the volume preserving configuration that is closest to the stretch space origin. Note that the energy is singularity free and well defined under inversion.
 
 The second term 
 \[
 \Psi_{R} = \frac{\mu}{2}\left(J^{-2 / 3} I_{C}-3\right)
 \]
-is used in $\Psi_{B}$ and $\Psi_{C}$ and was introduced by Rivlin in 1948. Using the singular values of \textbf{F} we get the following term:
+is used in $\Psi_{B}$ and $\Psi_{C}$ and was introduced by Rivlin (\cite{rivlin1948large}). Using the singular values of \textbf{F}, we get the following term:
 \[
 \Psi_{R} = \frac{\mu}{2}\left(\frac{\sigma_{0}^2 + \sigma_{1}^2 + \sigma_{2}^2}{(\sigma_{0}  \sigma_{1}  \sigma_{2})^\frac{2}{3}}
  - 3\right)
