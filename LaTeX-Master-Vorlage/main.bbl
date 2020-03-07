@@ -19,6 +19,39 @@
 
 \refsection{0}
   \datalist[entry]{anyt/global//global/global}
+    \entry{4052506}{article}{}
+      \name{author}{1}{}{%
+        {{hash=993a06b0b88c4cd8a52e19e7d7326ee7}{%
+           family={{Blinn}},
+           familyi={B\bibinitperiod},
+           given={J.\bibnamedelimi F.},
+           giveni={J\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \strng{namehash}{993a06b0b88c4cd8a52e19e7d7326ee7}
+      \strng{fullhash}{993a06b0b88c4cd8a52e19e7d7326ee7}
+      \strng{bibnamehash}{993a06b0b88c4cd8a52e19e7d7326ee7}
+      \strng{authorbibnamehash}{993a06b0b88c4cd8a52e19e7d7326ee7}
+      \strng{authornamehash}{993a06b0b88c4cd8a52e19e7d7326ee7}
+      \strng{authorfullhash}{993a06b0b88c4cd8a52e19e7d7326ee7}
+      \field{labelalpha}{Bli07}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1558-1756}
+      \field{journaltitle}{IEEE Computer Graphics and Applications}
+      \field{month}{1}
+      \field{number}{1}
+      \field{title}{How to Solve a Cubic Equation, Part 4: The 111 Case}
+      \field{volume}{27}
+      \field{year}{2007}
+      \field{pages}{100\bibrangedash 103}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1109/MCG.2007.10
+      \endverb
+      \keyw{equations;cubic equation;cube root;complex coefficients;complex roots;Differential equations;Differential algebraic equations;Numerical stability;Blinn;cubic equations;Algorithms;Mathematics;Numerical Analysis,Computer-Assisted}
+    \endentry
     \entry{ford2014numerical}{book}{}
       \name{author}{1}{}{%
         {{hash=4bf15b49912cde7e5b6008e01bb67f28}{%

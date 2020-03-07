@@ -1,18 +1,19 @@
 [0] Config.pm:302> INFO - This is Biber 2.10
 [0] Config.pm:305> INFO - Logfile is 'main.blg'
-[68] biber-MSWIN32:313> INFO - === 
-[101] Biber.pm:371> INFO - Reading 'main.bcf'
-[212] Biber.pm:857> INFO - Found 11 citekeys in bib section 0
-[229] Biber.pm:3976> INFO - Processing section 0
-[247] Biber.pm:4136> INFO - Looking for bibtex format file 'references/references.bib' for section 0
-[250] bibtex.pm:1444> INFO - Reading ascii input as UTF-8
-[252] bibtex.pm:1490> INFO - LaTeX decoding ...
-[283] bibtex.pm:1306> INFO - Found BibTeX data source 'references/references.bib'
-[341] Utils.pm:193> WARN - month field 'Oct' in entry 'PhysRevB.80.132104' is not an integer - this will probably not sort properly.
-[402] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[402] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[403] Biber.pm:3804> INFO - Sorting list 'anyt/global//global/global' of type 'entry' with template 'anyt' and locale 'en-US'
-[403] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-US'
-[438] bbl.pm:617> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[448] bbl.pm:720> INFO - Output to main.bbl
-[449] Biber.pm:110> INFO - WARNINGS: 1
+[39] biber-MSWIN32:313> INFO - === 
+[68] Biber.pm:371> INFO - Reading 'main.bcf'
+[182] Biber.pm:857> INFO - Found 12 citekeys in bib section 0
+[199] Biber.pm:3976> INFO - Processing section 0
+[214] Biber.pm:4136> INFO - Looking for bibtex format file 'references/references.bib' for section 0
+[216] bibtex.pm:1444> INFO - Reading ascii input as UTF-8
+[219] bibtex.pm:1490> INFO - LaTeX decoding ...
+[252] bibtex.pm:1306> INFO - Found BibTeX data source 'references/references.bib'
+[308] Utils.pm:193> WARN - month field 'Oct' in entry 'PhysRevB.80.132104' is not an integer - this will probably not sort properly.
+[330] Utils.pm:193> WARN - month field 'Jan' in entry '4052506' is not an integer - this will probably not sort properly.
+[360] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[360] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[363] Biber.pm:3804> INFO - Sorting list 'anyt/global//global/global' of type 'entry' with template 'anyt' and locale 'en-US'
+[373] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-US'
+[400] bbl.pm:617> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[407] bbl.pm:720> INFO - Output to main.bbl
+[408] Biber.pm:110> INFO - WARNINGS: 2

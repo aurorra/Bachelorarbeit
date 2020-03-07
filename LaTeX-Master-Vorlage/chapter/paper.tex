@@ -154,30 +154,30 @@ The term of $\Psi_{A}$ and $\Psi_{B}$ which is of the form
 \[
 \Psi_{M} = \frac{\lambda}{2}(J-1)^{2}
 \]
-does not have these noted difficulties. It is bounded, well defined and invertible. After these observations we combine the robust length with the robust volume term and receive $\Psi_D$ that is defined as
+does not have these problems. It is bounded, well defined and invertible. After these observations we combine the robust length with the robust volume term and receive $\Psi_D$ that is defined as
 \[
 \Psi_{D} = \frac{\mu}{2}\left(I_{C}-3\right) +\frac{\lambda}{2}(J-1)^{2}
 \]
-and is singularity free and well defined under inversion. Unfortunately $\Psi_D$ does not satisfy the requirement of being rest stable which will be discussed in the next section.
+and is singularity free and well defined under inversion. Unfortunately, $\Psi_D$ does not satisfy the requirement of being rest stable which will be discussed in the next section.
 
 \todoredefined[inline]{
-TODO: Bonet and Wood 2008 or 1997? Table looks ugly, improve and add resources. Improve English sentences. Overall okay concerning the content?
+TODO: Bonet and Wood 2008 or 1997?
 }
 
 \subsection{Rest Stabilization}
-Although $\Psi_{D}$ meets almost all stated requirements it is not rest stable. This can be shown with the Piola-Kirchhoff (PK1) stress tensor for $\Psi_D$ depending on the identity matrix $\mathbf{I}$:
+Although $\Psi_{D}$ meets almost all stated requirements, it is not rest stable. This can be shown with the Piola-Kirchhoff (PK1) stress tensor for $\Psi_D$ derived by the deformation gradient \textbf{F}:
 \begin{align*}
 P_{D}(\mathbf{I}) &= \frac{\partial \Psi_{D}}{\partial \mathbf{F}} (\mathbf{I}) = \frac{\partial \Psi_{D}}{\partial \mathbf{F}} \left[ \frac{\mu}{2}\left(I_{C}-3\right) +\frac{\lambda}{2}(J-1)^{2} \right] \\
 &= \frac{\partial \Psi_{D}}{\partial \mathbf{F}}  \frac{\mu}{2}\left(\operatorname{tr}(\mathbf{I}^\intercal \mathbf{I})-3\right) +\frac{\partial \Psi_{D}}{\partial \mathbf{F}} \frac{\lambda}{2}(\operatorname{tr}(\mathbf{I})-1)^{2} \\
 &= \mu I + \lambda (\operatorname{det}(\mathbf{I})-1)  \frac{\partial}{\partial \mathbf{F}} \operatorname{det}(\mathbf{I}) = \mu \mathbf{I} \neq 0
 \end{align*}
 
-If the energy had rest stability $P_{D}(\mathbf{I})$ would resolve to zero. Unfortunately this is not the case here. In order to solve that problem the authors modified $(J-1)^{2}$ to $(J-\alpha)^{2}$. Using this modification the energy shifts to
+If the energy had rest stability, $P_{D}(\mathbf{I})$ would resolve to zero. Unfortunately, this is not the case here. In order to solve that problem, the authors modified $(J-1)^{2}$ to $(J-\alpha)^{2}$. Using this modification the energy can written as
 \[
 \Psi_{E} = \frac{\mu}{2}\left(I_{C}-3\right) +\frac{\lambda}{2}(J-\alpha)^{2}.
 \]
 
-Taking $\Psi_E$ in the PK1 equation from before we get
+Inserting $\Psi_E$ into the PK1 equation from before, we get
 \begin{align*}
 P_{E}(\mathbf{F}) &= \frac{\partial \Psi_{E}}{\partial \mathbf{F}} \left[ \frac{\mu}{2}\left(I_{C}-3\right) +\frac{\lambda}{2}(J-\alpha)^{2} \right] \\
 &= \mu \mathbf{F} + \lambda (\operatorname{det}(\mathbf{F})-\alpha)  \frac{\partial}{\partial \mathbf{F}} \operatorname{det}(\mathbf{F}).
@@ -187,15 +187,16 @@ Solving for an alpha that satisfies $P_{E}(\mathbf{I})=0$ gives us $\alpha=1+\fr
 \Psi_{E} &= \frac{\mu}{2}\left(I_{C}-3\right) +\frac{\lambda}{2}(J-1-\frac{\mu}{\lambda})^{2} \\
 &= \frac{\mu}{2}\left(I_{C}-3\right) - \mu\left(J-1\right) + \frac{\lambda}{2}(J-1)^{2} + \left(\frac{\mu}{\lambda}\right)^{2}.
 \end{align*}
-Since constant disappear under differentiation this expression is functionally equivalent to 
+Since constants disappear under differentiation this expression is functionally equivalent to 
 \[
 \Psi_{E} = \frac{\mu}{2}\left(I_{C}-3\right) - \mu\left(J-1\right) + \frac{\lambda}{2}(J-1)^{2}.
 \]
-Now one can notice that $\Psi_{E}$ looks very similar to $\Psi_{Neo}$. The difference is that $log(J)$ is replaced with $(J-1)$ in $\Psi_{E}$. Remember that $(J-1)$ is the first term in the taylor approximation of $\operatorname{log}(J)$ at $J=1$:
+Now we can see that $\Psi_{E}$ looks very similar to $\Psi_{Neo}$. The difference is that $log(J)$ is replaced with $(J-1)$ in $\Psi_{E}$. Keep in mind that $(J-1)$ is the first term in the taylor approximation of $\operatorname{log}(J)$ at $J=1$:
 \begin{align*}
 \sum_{n=0}^{\infty} &= \frac{f^{(n)}(1)}{n!} (J-1)^{n} \\
-&= \boldsymbol{(J-1)} - \frac{1}{2} (J-1)^{2} + \frac{1}{3} (J-1)^{3} -\frac{1}{4} (J-1)^{4} + ...
+&= \boldsymbol{(J-1)} - \frac{1}{2} (J-1)^{2} + \frac{1}{3} (J-1)^{3} -\frac{1}{4} (J-1)^{4} + \text{...}
 \end{align*}
+Thus $\Psi_{E}$ is an approximation of $\Psi_{Neo}$.
 
 \todoredefined[inline]{
 TODO: Add "Zwischenschritte"? Include all calculations? Do we need a bit of a better conclusion of what we did (taylor, neo, sing. free, rest stable)? Check consistency of calculations (when trace when $I_C$ etc.).
@@ -206,7 +207,7 @@ The final energy is
 \begin{equation}\label{eq:stable_energy}
 \Psi_{new} = \frac{\mu}{2}\left(I_{C}-3\right) + \frac{\lambda}{2}(J-\alpha)^{2} - \frac{\mu}{2} \operatorname{log}\left(I_{C}+1\right).
 \end{equation}
-With that adjustment the rest stability term shifts to $\alpha=1+\frac{\mu}{\lambda}-\left(\frac{\mu}{4}\right)\lambda$.
+With that adjustment the rest stability term can be written as $\alpha=1+\frac{\mu}{\lambda}-\left(\frac{\mu}{4}\right)\lambda$.
 
 \todoredefined[inline]{
 TODO: How much needs to be explained here?
@@ -219,11 +220,11 @@ TODO: How much needs to be explained here?
 
 
 \section{Energy Analysis}
-The goal of this chapter is to show that a complete eigenanalysis can be performed on equation \ref{eq:stable_energy}.
+The goal of this chapter is to show that a complete eigenanalysis can be performed on Eq. \ref{eq:stable_energy}.
 
 
 \subsection{First Piola-Kirchhoff Stress (PK1)}
-In order to analyse the energy PK1 can be used for equation \ref{eq:stable_energy}:
+In order to analyse the energy PK1 can be used for Eq. \ref{eq:stable_energy}:
 \begin{align*}
 P(\mathbf{F}) &= \frac{\partial \Psi_{D}}{\partial \mathbf{F}} \left[ \frac{\mu}{2}\left(I_{C}-3\right) + \frac{\lambda}{2}(J-\alpha)^{2} - \frac{\mu}{2}\left(I_{C}+1\right) \right] \\
 &= \mu \mathbf{F} + \lambda (\operatorname{det}(\mathbf{F})-\alpha)  \frac{\partial}{\partial \mathbf{F}} \operatorname{det}(\mathbf{F}) - \frac{\partial}{\partial \mathbf{F}} \left[\operatorname{log}\left(\operatorname{tr}(\mathbf{F}^\intercal \mathbf{F})+1\right)\right] \\
@@ -231,7 +232,7 @@ P(\mathbf{F}) &= \frac{\partial \Psi_{D}}{\partial \mathbf{F}} \left[ \frac{\mu}
 &= \mu \left( 1 - \frac{1}{\operatorname{tr}(\mathbf{F}^\intercal \mathbf{F}) + 1}\right) \mathbf{F} + \lambda(J-\alpha)\frac{\partial J}{\partial \mathbf{F}}
 \end{align*}
 
-with $\alpha=1+\frac{\mu}{\lambda}-\left(\frac{\mu}{4}\right)\lambda$. For future use it can be more practical to write $\frac{\partial J}{\partial \mathbf{F}}$ as a result of cross products:
+with $\alpha=1+\frac{\mu}{\lambda}-\left(\frac{\mu}{4}\right)\lambda$. For further use it can be more practical to write $\frac{\partial J}{\partial \mathbf{F}}$ as a result of cross products:
 \begin{equation}\label{eq:cross_product}
 \frac{\partial J}{\partial \mathbf{F}} = \left[ \,f_1 \times f_2\, \bigg| \,f_2 \times f_0\, \bigg| \,f_0 \times f_1\, \right].
 \end{equation}
@@ -241,7 +242,7 @@ TODO: Is it easy to follow? Maybe add some explanations of some steps? Maybe mov
 }
 
 \subsection{The Energy Hessian Terms}
-Using the scalar notation for $\mathbf{F}$ the hessian of the energy can be written in a fourth-order matrix-of-matrices:
+Using the scalar notation for $\mathbf{F}$, the Hessian of the energy can be written as a fourth-order matrix-of-matrices:
 \[
 \frac{\partial^2 \psi}{\partial \mathbf{F}^2} = \frac{\partial P(\mathbf{F})}{\partial \mathbf{F}} = 
 \left[\begin{array}{ccc}{\left[\frac{\partial P(\mathbf{F})}{\partial f_0}\right]} & {\left[\frac{\partial P(\mathbf{F})}{\partial f_3}\right]} & {\left[\frac{\partial P(\mathbf{F})}{\partial f_6}\right]} \\ {\left[\frac{\partial P(\mathbf{F})}{\partial f_1}\right]} & {\left[\frac{\partial P(\mathbf{F})}{\partial f_4}\right]} & {\left[\frac{\partial P(\mathbf{F})}{\partial f_7}\right]} \\ {\left[\frac{\partial P(\mathbf{F})}{\partial f_2}\right]} & {\left[\frac{\partial P(\mathbf{F})}{\partial f_5}\right]} & {\left[\frac{\partial P(\mathbf{F})}{\partial f_8}\right]} \end{array}\right]
@@ -257,25 +258,26 @@ in which each entry is defined as
 \[
 r+ \underbrace{\lambda \frac{\partial J}{\partial f_i} \frac{\partial J}{\partial \mathbf{F}}}_{_{\mathrm{G}_{i}}}+ \underbrace{\lambda (J- \alpha) \frac{\partial^2 J}{\partial \mathbf{F}\partial f_i}}_{_{\mathrm{H}_{i}}} \in \mathbb{R}^{3}.
 \]
-Each term in the final equation $\mathrm{T}_i$, $\mathrm{M}_i$, $\mathrm{G}_i$, $\mathrm{H}_i$ respectively the Tikohonov, Mu, volume Gradient and volume Hessian term will be examined separately in the following sections.
+We can split up this final equation into these four term: $\mathrm{T}_i$ (Tikohonov), $\mathrm{M}_i$ (Mu), $\mathrm{G}_i$ (Volume Gradient), $\mathrm{H}_i$ (Volume Hessian). I will examine them separately in the next section.
 
 \subsection{The Tikhonov, Mu, and Gradient Terms}
 \subsubsection{Tikhonov}
-The Tikhonov term can be viewed as a fourth-order matrix-of-matrices
+The Tikhonov term is a fourth-order matrix-of-matrices
 \[
 \mathbb{T} = \frac{\partial \mathbf{F}}{\partial f_i} = \left[\begin{array}{ccc}{\begin{bmatrix} 1 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}} & {\begin{bmatrix} 0 & 1 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}} & {\begin{bmatrix} 0 & 0 & 1 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}} \\ {\begin{bmatrix} 0 & 0 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}} & {\begin{bmatrix} 0 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 0 \end{bmatrix}} & {\begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{bmatrix}} \\ {\begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 1 & 0 & 0 \end{bmatrix}} & {\begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 1 & 0 \end{bmatrix}} & {\begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 1 \end{bmatrix}} \end{array}\right].
 \]
-If we vectorize $\mathbb{T}$ we get the identity matrix $\mathbf{I} \in \mathbb{R}^{9x9}$ which is full rank, positive definite and independent of the values in F. It serves as a regularizer for the rest of the energy
+If we vectorize $\mathbb{T}$, we get the identity matrix $\mathbf{I} \in \mathbb{R}^{9x9}$ which is of full rank, positive definite and independent of the values in \textbf{F}. 
 \[
 \operatorname{vec}(\mathbb{T}) =  \mathbf{\check{T}} = \mathbf{I} = \in \mathbb{R}^{9x9}.
 \]
+It serves as a regularizer for the rest of the energy.
 
 \subsubsection{Mu}
 The Mu term has the same structure with different entries
 \[
 \mathbb{M} = \mathbf{F} f_i = \left[\begin{array}{ccc}{\begin{bmatrix} f_0^2 & f_0f_3 & f_0f_6 \\ f_0f_1 & f_0f_4 & f_0f_7 \\ f_0f_2 & f_0f_5 & f_0f_8 \end{bmatrix}} & {\begin{bmatrix} f_3f_0 & f_3^2 & f_3f_6 \\ f_3f_1 & f_3f_4 & f_3f_7 \\ f_3f_2 & f_3f_5 & f_3f_8 \end{bmatrix}} & {\begin{bmatrix} f_6f_0 & f_6f_3 & f_6f_6 \\ f_6f_1 & f_6f_4 & f_6f_7 \\ f_6f_2 & f_6f_5 & f_6f_8 \end{bmatrix}} \\ {\begin{bmatrix} f_1f_0 & f_1f_3 & f_1f_6 \\ f_1^2 & f_1f_4 & f_1f_7 \\ f_1f_2 & f_1f_5 & f_1f_8 \end{bmatrix}} & {\begin{bmatrix} f_4f_0 & f_4f_3 & f_4f_6 \\ f_4f_1 & f_4^2 & f_4f_7 \\ f_4f_2 & f_4f_5 & f_4f_8 \end{bmatrix}} & {\begin{bmatrix} f_7f_0 & f_7f_3 & f_7f_6 \\ f_7f_1 & f_7f_4 & f_7^2 \\ f_7f_2 & f_7f_5 & f_7f_8 \end{bmatrix}} \\ {\begin{bmatrix} f_2f_0 & f_2f_3 & f_2f_6 \\ f_2f_1 & f_2f_4 & f_2f_7 \\ f_2^2 & f_2f_5 & f_2f_8 \end{bmatrix}} & {\begin{bmatrix} f_5f_0 & f_5f_3 & f_5f_6 \\ f_5f_1 & f_5f_4 & f_5f_7 \\ f_5f_2 & f_5^2 & f_5f_8 \end{bmatrix}} & {\begin{bmatrix} f_8f_0 & f_8f_3 & f_8f_6 \\ f_8f_1 & f_8f_4 & f_8f_7 \\ f_8f_2 & f_8f_5 & f_8^2 \end{bmatrix}} \end{array}\right].
 \]
-When vectorizing $\mathbb{M}$ the resulting matrix has the squared values of $f_i$ placed on the diagonal
+When vectorizing $\mathbb{M}$, the resulting matrix $\mathbf{\check{M}}$ has the squared values of $f_i$ placed on the diagonal
 \[
 \operatorname{vec}(\mathbb{M})= \mathbf{\check{M}} = \begin{bmatrix} f_0^2 & f_1f_0 & f_2f_0 & f_3f_0 & f_4f_0 & f_5f_0 & f_6f_0 & f_7f_0 & f_8f_0 \\ f_0f_1 & f_1^2 & f_2f_1 & f_3f_1 & f_4f_1 & f_5f_1 & f_6f_1 & f_7f_1 & f_8f_1 \\ f_0f_2 & f_1f_2 & f_2^2 & f_3f_2 & f_4f_2 & f_5f_2 & f_6f_2 & f_7f_2 & f_8f_2 \\ f_0f_3 & f_1f_3 & f_2f_3 & f_3^2 & f_4f_3 & f_5f_3 & f_6f_3 & f_7f_3 & f_8f_3 \\ f_0f_4 & f_1f_4 & f_2f_4 & f_3f_4 & f_4^2 & f_5f_4 & f_6f_4 & f_7f_4 & f_8f_4 \\ f_0f_5 & f_1f_5 & f_2f_5 & f_3f_5 & f_4f_5 & f_5^2 & f_6f_5 & f_7f_5 & f_8f_5 \\ f_0f_6 & f_1f_6 & f_2f_6 & f_3f_6 & f_4f_6 & f_5f_6 & f_6^2 & f_7f_6 & f_8f_6 \\ f_0f_7 & f_1f_7 & f_2f_7 & f_3f_7 & f_4f_7 & f_5f_7 & f_6f_7 & f_7^2 & f_8f_7 \\ f_0f_8 & f_1f_8 & f_2f_8 & f_3f_8 & f_4f_8 & f_5f_8 & f_6f_8 & f_7f_8 & f_8^2 \end{bmatrix}.
 \]
@@ -283,22 +285,22 @@ This structure makes it possible to write $\mathbf{\check{M}}$ as an outer produ
 \[
 \mathbf{\check{M}}= \operatorname{vec}(\mathbf{F})\operatorname{vec}(\mathbf{F})^\intercal = \mathbf{\check{f}} \mathbf{\check{f}}^\intercal.
 \]
-This matrix has rank one and has a single non-zero eigenvalue. In order to examine the eigenvalues one can calculate
+This matrix has rank one and has a single non-zero eigenvalue. In order to examine the eigenvalues, we can calculate
 \[
 \| \mathbf{\check{f}} \|^{2}_{2} = \sum_{n=0}^8 | f_n |^2 = \| \mathbf{F} \|^{2}_{F} = \sum_{n=0}^3 \sigma^2_i = \left( \sigma_0^2 + \sigma_1^2 + \sigma_2^2 \right)
 \]
-in which $\|\cdot\|_F$ stands for the Frobenius norm and $\sigma_i$ for the singular values from $\mathbf{\Sigma}$ in the SVD of $\mathbf{F}$ stated in eq. \ref{eq:svd_simga}. The eigenvector is $\mathbf{\check{f}} / \| \mathbf{\check{f}} \|$. The eigenvalue is always non-negative and large if $\mathbf{F}$ contains a large strech.
+in which $\|\cdot\|_F$ stands for the Frobenius norm and $\sigma_i$ for the singular values from $\mathbf{\Sigma}$ in the SVD of $\mathbf{F}$ stated in Eq. \ref{eq:svd_simga}. The eigenvector is $\mathbf{\check{f}} / \| \mathbf{\check{f}} \|$. The eigenvalue is always non-negative and large if $\mathbf{F}$ contains a large strech.
 
 \subsubsection{Gradient}
 The gradient term also has the same structure as the two terms before with different entries defined by
 \[
 \mathbb{G}(\mathbf{F}) = \frac{\partial J}{\partial \mathbf{F}} \frac{\partial J}{\partial fi}.
 \]
-The vectorized matrix $\mathbf{\check{G}}$ can be written in a similar form as for the Mu term. With the help of the cross product of $\partial J / \partial \mathbf{F}$ stated in eq. \ref{eq:cross_product} $\mathbf{\check{G}}$ can be written as an outer product in the following way:
+The vectorized matrix $\mathbf{\check{G}}$ can be written in a similar form as for the Mu term. With the help of the cross product of $\partial J / \partial \mathbf{F}$ stated in Eq. \ref{eq:cross_product}, $\mathbf{\check{G}}$ can be written as an outer product in the following way:
 \[
 \operatorname{vec}(\mathbb{G}(\mathbf{F})) = \mathbf{\check{G}} = \operatorname{vec}\left(\frac{\partial J}{\partial \mathbf{F}}\right) \operatorname{vec}\left(\frac{\partial J}{\partial \mathbf{F}}\right)^\intercal = \mathbf{\check{g}} \mathbf{\check{g}}^\intercal.
 \]
-As in the Mu term one can notice a single non-zero, non-negative:
+As in the Mu term, we again have a single non-zero, non-negative eigenvalue calculated by
 \[
 \| \mathbf{\check{g}} \|^2_2 = \left\| \frac{\partial J}{\partial \mathbf{F}} \right \|^2_F = \left[ (\sigma_0 \sigma_1)^2 + (\sigma_0 \sigma_2)^2 + (\sigma_1 \sigma_2)^2 \right].
 \]
@@ -328,32 +330,38 @@ where $\mathbf{\widehat{f_1}}$ stands for a cross-product matrix:
 \mathbf{\widehat{x}} = \left[ \begin{matrix}
 0 & -x_2 & x_1 \\ x_2 & 0 & -x_0 \\ -x_1 & x_0 & 0 \end{matrix} \right].
 \]
-One can easily observe that $\mathbf{\check{H}}$ is a \textit{self-similar} cross-product matrix. Meaning that the macro structure of the matrix is the same as the micro structure.
+We can easily observe that $\mathbf{\check{H}}$ is a \textit{self-similar} cross-product matrix. This means that  the macro structure of the matrix is the same as the micro structure.
 
 \todoredefined[inline]{
 TODO: Check each $f_1$ and $-$ in vectorization of H because it's exhausting.
 }
 
 \subsubsection{Volume Hessian Eigenvalues}
-For determining the eigenvalues of $\mathbf{\check{H}}$ one needs to examine the two characteristic polynomials:
+For determining the eigenvalues of $\mathbf{\check{H}}$, we need to examine the two characteristic polynomials
 \begin{align*}
 &\epsilon^3 - \operatorname{tr}(\mathbf{C}) \epsilon - 2 J = 0 \tag{1}  \\
 &\epsilon^3 - \operatorname{tr}(\mathbf{C}) \epsilon^2 + \frac{1}{2} \left( \operatorname{tr^2}(\mathbf{C}) - \operatorname{tr}(\mathbf{C}^2) \right) \epsilon - \operatorname{det}(\mathbf{C}) = 0 \tag{2}
 \end{align*}
 
-where $\epsilon$ denote the eigenvalues of $\mathbf{\check{H}}$ and $\mathbf{C}$ is taken from table \ref{table:gradient_quantities}. Equation (1) is easier to solve and corresponds o the characteristic polynomial of $\mathbf{C}$. Given its roots $\epsilon_\alpha$, $\epsilon_\beta$, $\epsilon_\gamma$ the eigenvalues of $\mathbf{\check{H}}$ are: $\pm \sqrt{\epsilon_\alpha}$, $\pm \sqrt{\epsilon_\beta}$, $\pm \sqrt{\epsilon_\gamma}$. Using the singular values of $\mathbf{F}$ the eigenvalues can be written nicely in the following way:
+where $\epsilon$ denotes the eigenvalues of $\mathbf{\check{H}}$ and $\mathbf{C}$ is taken from Table \ref{table:gradient_quantities}. Eq. (1) is easier to solve and corresponds to the characteristic polynomial of $\mathbf{C}$. Given its roots $\epsilon_\alpha$, $\epsilon_\beta$, $\epsilon_\gamma$, the eigenvalues of $\mathbf{\check{H}}$ are: $\pm \sqrt{\epsilon_\alpha}$, $\pm \sqrt{\epsilon_\beta}$, $\pm \sqrt{\epsilon_\gamma}$. Using the singular values of $\mathbf{F}$, the eigenvalues can be written nicely in the following way:
 \begin{align*}
-&\epsilon_3 = \sigma_0 &\epsilon_6 = -\sigma_0 \\
-&\epsilon_4 = \sigma_1 &\epsilon_7 = -\sigma_1 \\
-&\epsilon_5 = \sigma_2 &\epsilon_8 = -\sigma_2.
+\epsilon_3 &= \sigma_0 & \epsilon_6 &= -\sigma_0 \\
+\epsilon_4 &= \sigma_1 & \epsilon_7 &= -\sigma_1 \\
+\epsilon_5 &= \sigma_2 & \epsilon_8 &= -\sigma_2.
 \end{align*}
-The remaining eigenvalues can be obtained by equation (2). This equation represents a depressed cube and the roots can be obtained by
+The remaining eigenvalues can be obtained by using Eq.(2). This equation represents a depressed cube. A depressed cube is a cubic of the form
+\[
+t^3 + pt + q. 
+\]
+Eq.(2) can be written in this form with $p=-\operatorname{tr}(\mathbf{C})$ and $q= -2$. Using this knowledge, the roots of Eq.(2) can be obtained by
 \[
 \epsilon_k = 2 \sqrt{\frac{I_C}{3}} \operatorname{cos}\left[ \frac{1}{3} \left( \operatorname{arccos}\left(\frac{3 J}{I_C} \sqrt{\frac{3}{I_C}} \right) + 2 \pi k \right) \right] \quad  k= 0,1,2.
 \]
 
+For further reading about how to solve depressed cubic equations, see e.g. \textit{How to Solve a Cubic Equation, Part 4: The 111 Case} \cite{4052506}.
+
 \todoredefined[inline]{
-TODO: Not happy with this section, improve and complete
+TODO: Not happy with this section, improve and complete. Change Nummerierung falsch? Explain what a depressed cube is.
 }
  
 \subsection{The Complete Eigensystem}
@@ -367,12 +375,12 @@ TODO: Make notation consistent (bold, cursive etc.) Explain better each step. In
 
 
 \section{Experiments with the Code}
-The authors of the paper \textit{Stable Neo-Hookean Flesh Simulation} \cite{Smith:2018:SNF:3191713.3180491} provided the implementation for an application of their formulated energy. In said code they implemented the stretch test on a cube. Their implementation demands a directory into which the output files should be saved, the two lamé parameters $\mu$ and $\lambda$ and a value for defining the desired resolution as input data. Here is an example for a command with resolution = 10, $\mu=1.0$, $\lambda=10.0$ and asks the output files to be written into the directory \textit{output}:
+The authors of the paper \textit{\acrshort{snh}} provided the implementation for an application of their formulated energy. In said code, they implemented the stretch test on a cube. Their implementation demands a directory into which the output files should be saved, the two lamé parameters $\mu$ and $\lambda$ and a value for defining the desired resolution as input data. Here is an example for a command with resolution = 10, $\mu=1.0$, $\lambda=10.0$ and output directory \textit{output}:
 \begin{lstlisting}[language=bash]
 $ ./tetcli 10 stable_neo_hookean 1.0 10.0 output
 \end{lstlisting}
 
-The algorithm then calculates the deformation in 25 steps and the deformation increases in each step. The outputs are 26 static objects that show the object in its rest state and the 25 steps of deformation.
+The algorithm progressively calculates the deformation in 25 steps. The outputs are 26 static objects that show the object in its rest state and the 25 steps of deformation.
 
 \begin{tikzpicture}[node distance=2cm]
 \node (input) [process] {$\mu$, $\lambda$, resolution};
@@ -389,10 +397,10 @@ TODO: Explain how the code is implemented in simple words and how the energy is 
 
 For starters let us take common values for $\mu$ and $\lambda$. We first start with $\mu = 1.0$, $\lambda = 10.0$ and a resolution of 10.0. For the poisson's ratio we get the value $0.4545$:
 
-\[ \sigma =  \frac{10.0}{2 (10.0 + 1.0)} = 0.4545 \in [-1, 0.5] \]
+\[ \sigma =  \frac{10.0}{2 (10.0 + 1.0)} = 0.4545 \]
 
 
-The following images in figure \ref{fig:stretchtest} show the stretch test with $\mu = 1.0$, $\lambda = 10.0$ and a resolution of 10.0 on a tetrahedral and a hexahedral mesh.
+The images in Fig. \ref{fig:stretchtest} show the stretch test with $\mu = 1.0$, $\lambda = 10.0$ and a resolution of 10.0 on a tetrahedral and a hexahedral mesh.
 
 \begin{figure}[!htbp]
 	\centering
