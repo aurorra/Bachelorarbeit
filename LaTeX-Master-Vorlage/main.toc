@@ -80,18 +80,18 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.5}Discussion}{27}{section.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline List of Figures}{A}{chapter*.51}
+\contentsline {chapter}{\nonumberline List of Figures}{A}{chapter*.47}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline List of Tables}{B}{chapter*.52}
+\contentsline {chapter}{\nonumberline List of Tables}{B}{chapter*.48}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Quelltextverzeichnis}{C}{chapter*.53}
+\contentsline {chapter}{\nonumberline Quelltextverzeichnis}{C}{chapter*.49}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Glossary}{D}{section*.54}
+\contentsline {chapter}{Glossary}{D}{section*.50}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{List of abbreviations}{E}{section*.56}
+\contentsline {chapter}{List of abbreviations}{E}{section*.52}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Bibliography}{F}{chapter*.58}
+\contentsline {chapter}{\nonumberline Bibliography}{F}{chapter*.54}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Online Sources}{H}{chapter*.59}
+\contentsline {chapter}{\nonumberline Online Sources}{H}{chapter*.55}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Figure Sources}{I}{chapter*.60}
+\contentsline {chapter}{\nonumberline Figure Sources}{I}{chapter*.56}

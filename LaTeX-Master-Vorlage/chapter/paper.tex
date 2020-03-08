@@ -338,32 +338,33 @@ TODO: Check each $f_1$ and $-$ in vectorization of H because it's exhausting.
 
 \subsubsection{Volume Hessian Eigenvalues}
 For determining the eigenvalues of $\mathbf{\check{H}}$, we need to examine the two characteristic polynomials
-\begin{align*}
-&\epsilon^3 - \operatorname{tr}(\mathbf{C}) \epsilon - 2 J = 0 \tag{1}  \\
-&\epsilon^3 - \operatorname{tr}(\mathbf{C}) \epsilon^2 + \frac{1}{2} \left( \operatorname{tr^2}(\mathbf{C}) - \operatorname{tr}(\mathbf{C}^2) \right) \epsilon - \operatorname{det}(\mathbf{C}) = 0 \tag{2}
-\end{align*}
+\begin{align}
+&\epsilon^3 - \operatorname{tr}(\mathbf{C}) \epsilon - 2 J = 0  \label{vol_hessian_eq1} \\
+&\epsilon^3 - \operatorname{tr}(\mathbf{C}) \epsilon^2 + \frac{1}{2} \left( \operatorname{tr^2}(\mathbf{C}) - \operatorname{tr}(\mathbf{C}^2) \right) \epsilon - \operatorname{det}(\mathbf{C}) = 0 \label{vol_hessian_eq2}
+\end{align}
 
-where $\epsilon$ denotes the eigenvalues of $\mathbf{\check{H}}$ and $\mathbf{C}$ is taken from Table \ref{table:gradient_quantities}. Eq. (1) is easier to solve and corresponds to the characteristic polynomial of $\mathbf{C}$. Given its roots $\epsilon_\alpha$, $\epsilon_\beta$, $\epsilon_\gamma$, the eigenvalues of $\mathbf{\check{H}}$ are: $\pm \sqrt{\epsilon_\alpha}$, $\pm \sqrt{\epsilon_\beta}$, $\pm \sqrt{\epsilon_\gamma}$. Using the singular values of $\mathbf{F}$, the eigenvalues can be written nicely in the following way:
+where $\epsilon$ denotes the eigenvalues of $\mathbf{\check{H}}$ and $\mathbf{C}$ is taken from Table \ref{table:gradient_quantities}. Eq. \ref{vol_hessian_eq1} is easier to solve and corresponds to the characteristic polynomial of $\mathbf{C}$. Given its roots $\epsilon_\alpha$, $\epsilon_\beta$, $\epsilon_\gamma$, the eigenvalues of $\mathbf{\check{H}}$ are: $\pm \sqrt{\epsilon_\alpha}$, $\pm \sqrt{\epsilon_\beta}$, $\pm \sqrt{\epsilon_\gamma}$. Using the singular values of $\mathbf{F}$, the eigenvalues can be written nicely in the following way:
 \begin{align*}
 \epsilon_3 &= \sigma_0 & \epsilon_6 &= -\sigma_0 \\
 \epsilon_4 &= \sigma_1 & \epsilon_7 &= -\sigma_1 \\
 \epsilon_5 &= \sigma_2 & \epsilon_8 &= -\sigma_2.
 \end{align*}
-The remaining eigenvalues can be obtained by using Eq.(2). This equation represents a depressed cube. A depressed cube is a cubic of the form
+The remaining eigenvalues can be obtained by using Eq. \ref{vol_hessian_eq2}. This equation represents a depressed cube. A depressed cube is a cubic of the form
 \[
 t^3 + pt + q. 
 \]
-Eq.(2) can be written in this form with $p=-\operatorname{tr}(\mathbf{C})$ and $q= -2$. Using this knowledge, the roots of Eq.(2) can be obtained by
+Eq. \ref{vol_hessian_eq2} can be written in this form with $p=-\operatorname{tr}(\mathbf{C})$ and $q= -2$. Using this knowledge, the roots of Eq. \ref{vol_hessian_eq2} can be obtained by
 \[
 \epsilon_k = 2 \sqrt{\frac{I_C}{3}} \operatorname{cos}\left[ \frac{1}{3} \left( \operatorname{arccos}\left(\frac{3 J}{I_C} \sqrt{\frac{3}{I_C}} \right) + 2 \pi k \right) \right] \quad  k= 0,1,2.
 \]
-
 For further reading about how to solve depressed cubic equations, see e.g. \textit{How to Solve a Cubic Equation, Part 4: The 111 Case} \cite{4052506}.
 
+These are all of the eigenvalues of $\mathbf{\check{H}}$. We know that three of the six eigenvalues ($\epsilon_3$, ... $\epsilon_8$) have to negative or equal to zero since we take the positive and negative roots. In addition, the cosine function for calculating $\epsilon_0$, $\epsilon_1$ and $\epsilon_2$ ensures that one or two of these eigenvalues are also negative. As we have seen in the previous sections, the other terms of $\frac{\partial^2 \psi}{\partial \mathbf{F}^2}$ all only have nonnegative eigenvalues. So the volume Hessian is the only possible source of negative eigenvalues (\cite{Smith:2018:SNF:3191713.3180491}, 12:6).
+
 \todoredefined[inline]{
-TODO: Not happy with this section, improve and complete. Change Nummerierung falsch? Explain what a depressed cube is.
+TODO: include reflection convention? check with background
 }
- 
+
 \subsection{The Complete Eigensystem}
 \todoredefined[inline]{
 TODO: Include what is necessary.
