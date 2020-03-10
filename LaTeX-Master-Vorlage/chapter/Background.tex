@@ -70,7 +70,7 @@ A matrix $\mathbf{A}$ is positive definite if $\mathbf{x}^\intercal \mathbf{Ax}$
 \end{property}
 
 \todoredefined[inline]{
-TODO: Not done yet. Include determinant and what is used later
+TODO: Not done yet. Include what is used later
 }
 
 
@@ -117,9 +117,23 @@ where $\mathbf{R}$ is orthogonal and $\mathbf{U}$ and $\mathbf{V}$ are positive 
 
 The definition and theorem were taken from \cite{Spencer1980} (thm. \ref{PD} S.12).
 
+\subsection{Frobenius Norm}
+
+\begin{definition}[\textbf{Frobenius Norm}]
+\label{FN}
+Let \textbf{A} be a (m $\times$ n) matrix in the real or complex space. Then the Frobenius norm is defined as 
+\[
+\| \mathbf{A} \|_{F} := \sqrt{\sum\limits_{i=1}^{m} \sum\limits_{j=1}^{n} |a_{ij}|^2}.
+\]
+\end{definition}
+
+We can further represent the norm with the trace of the matrix, in which $\mathbf{A}^*$ is the conjugate transpose of \textbf{A}. Going from there, we can use the \acrshort{svd} of \textbf{A} and write the norm with respect to the singular values of \textbf{A}, denoted by $\sigma_i$
+\[
+\| \mathbf{A} \|_{F} = \sqrt{\operatorname{trace}(\mathbf{A} \mathbf{A}^*)} = \sqrt{\sum\limits_{i=1}^{\operatorname{min}\{m,n\}} \sigma_i^2}.
+\]
 
 \todoredefined[inline]{
-TODO: Complete this section. Add lemmas and theorems used afterwards in the calculations. Possible adjustments may come at the end. Add Frobenius norm?
+TODO: Complete this section. Add lemmas and theorems used afterwards in the calculations. Possible adjustments may come at the end.
 }
 
 
@@ -177,26 +191,26 @@ in which $\mathbf{\Sigma}$ stands for
 \mathbf{\Sigma} = \left[\begin{matrix}  \sigma_0 & 0 & 0 \\ 0 & \sigma_1 & 0 \\ 0 & 0 & \sigma_2 \end{matrix}\right] .
 \end{equation}
 
-The $\sigma_i$ denote the singular values of $\mathbf{\Sigma}$. Unlike the normal convention, the authors of \textit{\acrshort{snh}} decided that the rotation variant moves reflections to $\mathbf{\Sigma}$. This results in $\operatorname{det}(\mathbf{U})$ and $\operatorname{det}(\mathbf{V})$ being equal to 1 and the property that $\mathbf{\Sigma}$ is allowed to have negative entries.
-
-
+The $\sigma_i$ denote the singular values of $\mathbf{\Sigma}$. Unlike the normal convention, \textbf{U} and \textbf{V} are rotations, which results in $\operatorname{det}(\mathbf{U})$ and $\operatorname{det}(\mathbf{V})$ being equal to 1. In addition, $\mathbf{\Sigma}$ is allowed to have negative entries.
 
 \todoredefined[inline]{
-TODO: Add some examples. Already include definitions of the paper?
+TODO: Add some examples.
 \\ Some more sources:
 \\ http://www.continuummechanics.org/deformationgradient.html
 }
 
 \subsubsection{Polar Decomposition of the Deformation Gradient}
-With the help of Thm.\ref{PD} we can decompose the deformation gradient into the following form:
-
+With the help of Thm.\ref{PD} we can decompose the deformation gradient into the following form
 \[
-\mathbf{F} = \mathbf{RS}.
+\mathbf{F} = \mathbf{RS}
 \]
+where \textbf{R} is orthogonal and \textbf{S} is a positive definite symmetric matrix. \textbf{R} symbolises the rotation (with possible reflection) that \textbf{F} undergoes, whereas \textbf{S} contains the scaling along orthogonal directions of \textbf{F}.
 
-\todoredefined[inline]{
-TODO: Explain more here.
-}
+\subsubsection{Relative volume change}
+
+\subsubsection{Right Cauchy-Green}
+
+\subsubsection{First right Cuachy-Green invariant}
 
 
 \subsection{Material Constants}

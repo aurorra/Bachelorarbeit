@@ -361,17 +361,32 @@ For further reading about how to solve depressed cubic equations, see e.g. \text
 
 These are all of the eigenvalues of $\mathbf{\check{H}}$. We know that three of the six eigenvalues ($\epsilon_3$, ... $\epsilon_8$) have to negative or equal to zero since we take the positive and negative roots. In addition, the cosine function for calculating $\epsilon_0$, $\epsilon_1$ and $\epsilon_2$ ensures that one or two of these eigenvalues are also negative. As we have seen in the previous sections, the other terms of $\frac{\partial^2 \psi}{\partial \mathbf{F}^2}$ all only have nonnegative eigenvalues. So the volume Hessian is the only possible source of negative eigenvalues (\cite{Smith:2018:SNF:3191713.3180491}, 12:6).
 
+In order to investigate the behaviour of the volume Hessian term further, let us look at J = det(\textbf{F}) a bit more in detail. J is not convex which is problematic since we want to use the Newton method for the optimization process. Fortunately, the other terms of $\frac{\partial^2 \psi}{\partial \mathbf{F}^2}$ serve as an additional regularization.
+
 \todoredefined[inline]{
-TODO: include reflection convention? check with background
+TODO: include reflection convention? check with background. Regularisation?
 }
 
+\subsubsection{Volume Hessian Eigenvectors}
+$\mathbf{\check{H}}$ can be factorized as $\mathbf{\check{H}} = \mathbf{\check{Q}}\mathbf{\Lambda}\mathbf{\check{H}}^\intercal$ according to its eigendecomposition. The eigenvectors can then be obtained by $\mathbf{\check{Q}}$. In the tensor form signified by $\mathbb{Q}$ each eigenvector is a 3 \times	 3 matrix:
+\[
+\mathbb{Q} = \left[\begin{array}{ccc}{\left[\mathbf{Q}_0\right]} & {\left[\mathbf{Q}_3\right]} & {\left[\mathbf{Q}_6\right]} \\ {\left[\mathbf{Q}_1\right]} & {\left[\mathbf{Q}_4\right]} & {\left[\mathbf{Q}_7\right]} \\ {\left[\mathbf{Q}_2\right]} & {\left[\mathbf{Q}_5\right]} & {\left[\mathbf{Q}_8\right]} \end{array}\right].
+\]
+The eigenvector corresponding to $\epsilon_3$ can be written as
+\[
+\mathbf{Q}_3 = \frac{1}{\sqrt{2}} \mathbf{U} \mathbf{D}_3 \mathbf{V}\intercal
+\]
+where \textbf{U} and \textbf{V} are taken from the \acrshort{svd} of \textbf{F}, $\frac{1}{\sqrt{•}}$
+
+
 \subsection{The Complete Eigensystem}
+
 \todoredefined[inline]{
 TODO: Include what is necessary.
 }
 
 \todoredefined[inline]{
-TODO: Make notation consistent (bold, cursive etc.) Explain better each step. Include all calculations? Make matrix of matrices more beautiful (more space). Eigenvalues of Mu and Gradient term better explain? Check each equation if correctly written.
+TODO: Eigenvalues of Mu and Gradient term better explain?
 }
 
 

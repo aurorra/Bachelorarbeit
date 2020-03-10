@@ -10,32 +10,33 @@
 \BOOKMARK [2][-]{subsection.2.2.1}{Matrices}{section.2.2}% 10
 \BOOKMARK [2][-]{subsection.2.2.2}{Singular Value Decomposition}{section.2.2}% 11
 \BOOKMARK [2][-]{subsection.2.2.3}{Polar Decomposition}{section.2.2}% 12
-\BOOKMARK [1][-]{section.2.3}{Continuum Mechanics}{chapter.2}% 13
-\BOOKMARK [2][-]{subsection.2.3.1}{Deformation}{section.2.3}% 14
-\BOOKMARK [2][-]{subsection.2.3.2}{Deformation Gradient}{section.2.3}% 15
-\BOOKMARK [2][-]{subsection.2.3.3}{Material Constants}{section.2.3}% 16
-\BOOKMARK [2][-]{subsection.2.3.4}{Deformation Energy}{section.2.3}% 17
-\BOOKMARK [0][-]{chapter.3}{Stable Neo-Hookean Flesh Simulation}{}% 18
-\BOOKMARK [1][-]{section.3.1}{Deformation Gradient}{chapter.3}% 19
-\BOOKMARK [1][-]{section.3.2}{Energy Formulation}{chapter.3}% 20
-\BOOKMARK [2][-]{subsection.3.2.1}{Stability}{section.3.2}% 21
-\BOOKMARK [2][-]{subsection.3.2.2}{Existing Neo-Hookean Energies}{section.3.2}% 22
-\BOOKMARK [2][-]{subsection.3.2.3}{Rest Stabilization}{section.3.2}% 23
-\BOOKMARK [2][-]{subsection.3.2.4}{Meta-Stability under Degeneracy}{section.3.2}% 24
-\BOOKMARK [2][-]{subsection.3.2.5}{Lam\351 Reparametrization}{section.3.2}% 25
-\BOOKMARK [1][-]{section.3.3}{Energy Analysis}{chapter.3}% 26
-\BOOKMARK [2][-]{subsection.3.3.1}{First Piola-Kirchhoff Stress \(PK1\)}{section.3.3}% 27
-\BOOKMARK [2][-]{subsection.3.3.2}{The Energy Hessian Terms}{section.3.3}% 28
-\BOOKMARK [2][-]{subsection.3.3.3}{The Tikhonov, Mu, and Gradient Terms}{section.3.3}% 29
-\BOOKMARK [2][-]{subsection.3.3.4}{The Volume Hessian}{section.3.3}% 30
-\BOOKMARK [2][-]{subsection.3.3.5}{The Complete Eigensystem}{section.3.3}% 31
-\BOOKMARK [1][-]{section.3.4}{Experiments with the Code}{chapter.3}% 32
-\BOOKMARK [1][-]{section.3.5}{Discussion}{chapter.3}% 33
-\BOOKMARK [0][-]{chapter*.47}{List of Figures}{}% 34
-\BOOKMARK [0][-]{chapter*.48}{List of Tables}{}% 35
-\BOOKMARK [0][-]{chapter*.49}{Quelltextverzeichnis}{}% 36
-\BOOKMARK [0][-]{section*.50}{Glossary}{}% 37
-\BOOKMARK [0][-]{section*.52}{List of abbreviations}{}% 38
-\BOOKMARK [0][-]{chapter*.54}{Bibliography}{}% 39
-\BOOKMARK [0][-]{chapter*.55}{Online Sources}{}% 40
-\BOOKMARK [0][-]{chapter*.56}{Figure Sources}{}% 41
+\BOOKMARK [2][-]{subsection.2.2.4}{Frobenius Norm}{section.2.2}% 13
+\BOOKMARK [1][-]{section.2.3}{Continuum Mechanics}{chapter.2}% 14
+\BOOKMARK [2][-]{subsection.2.3.1}{Deformation}{section.2.3}% 15
+\BOOKMARK [2][-]{subsection.2.3.2}{Deformation Gradient}{section.2.3}% 16
+\BOOKMARK [2][-]{subsection.2.3.3}{Material Constants}{section.2.3}% 17
+\BOOKMARK [2][-]{subsection.2.3.4}{Deformation Energy}{section.2.3}% 18
+\BOOKMARK [0][-]{chapter.3}{Stable Neo-Hookean Flesh Simulation}{}% 19
+\BOOKMARK [1][-]{section.3.1}{Deformation Gradient}{chapter.3}% 20
+\BOOKMARK [1][-]{section.3.2}{Energy Formulation}{chapter.3}% 21
+\BOOKMARK [2][-]{subsection.3.2.1}{Stability}{section.3.2}% 22
+\BOOKMARK [2][-]{subsection.3.2.2}{Existing Neo-Hookean Energies}{section.3.2}% 23
+\BOOKMARK [2][-]{subsection.3.2.3}{Rest Stabilization}{section.3.2}% 24
+\BOOKMARK [2][-]{subsection.3.2.4}{Meta-Stability under Degeneracy}{section.3.2}% 25
+\BOOKMARK [2][-]{subsection.3.2.5}{Lam\351 Reparametrization}{section.3.2}% 26
+\BOOKMARK [1][-]{section.3.3}{Energy Analysis}{chapter.3}% 27
+\BOOKMARK [2][-]{subsection.3.3.1}{First Piola-Kirchhoff Stress \(PK1\)}{section.3.3}% 28
+\BOOKMARK [2][-]{subsection.3.3.2}{The Energy Hessian Terms}{section.3.3}% 29
+\BOOKMARK [2][-]{subsection.3.3.3}{The Tikhonov, Mu, and Gradient Terms}{section.3.3}% 30
+\BOOKMARK [2][-]{subsection.3.3.4}{The Volume Hessian}{section.3.3}% 31
+\BOOKMARK [2][-]{subsection.3.3.5}{The Complete Eigensystem}{section.3.3}% 32
+\BOOKMARK [1][-]{section.3.4}{Experiments with the Code}{chapter.3}% 33
+\BOOKMARK [1][-]{section.3.5}{Discussion}{chapter.3}% 34
+\BOOKMARK [0][-]{chapter*.50}{List of Figures}{}% 35
+\BOOKMARK [0][-]{chapter*.51}{List of Tables}{}% 36
+\BOOKMARK [0][-]{chapter*.52}{Quelltextverzeichnis}{}% 37
+\BOOKMARK [0][-]{section*.53}{Glossary}{}% 38
+\BOOKMARK [0][-]{section*.55}{List of abbreviations}{}% 39
+\BOOKMARK [0][-]{chapter*.57}{Bibliography}{}% 40
+\BOOKMARK [0][-]{chapter*.58}{Online Sources}{}% 41
+\BOOKMARK [0][-]{chapter*.59}{Figure Sources}{}% 42
