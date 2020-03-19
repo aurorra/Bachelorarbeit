@@ -14,7 +14,7 @@ In the following calculations some properties of the deformation gradient $\math
     $\mathbf{C}=\mathbf{F}^\intercal \mathbf{F}$ & Right Cauchy-Green  \\ \hline	
     $I_{C}=\operatorname{tr}(\mathbf{C})$ & First right Cauchy-Green invariant \\ \hline
     \end{tabular}
-    \caption{Quantities derived from the Deformation Gradient \textbf{F} taken from \cite{Smith:2018:SNF:3191713.3180491}}
+    \caption{Quantities derived from the Deformation Gradient \textbf{F}}
 \label{table:gradient_quantities}
 \end{table}
 
@@ -289,7 +289,7 @@ This matrix has rank one and has a single non-zero eigenvalue. In order to exami
 \[
 \| \mathbf{\check{f}} \|^{2}_{2} = \sum_{n=0}^8 | f_n |^2 = \| \mathbf{F} \|^{2}_{F} = \sum_{n=0}^3 \sigma^2_i = \left( \sigma_0^2 + \sigma_1^2 + \sigma_2^2 \right)
 \]
-in which $\|\cdot\|_F$ stands for the Frobenius norm and $\sigma_i$ for the singular values from $\mathbf{\Sigma}$ in the SVD of $\mathbf{F}$ stated in Eq. \ref{eq:svd_simga}. The eigenvector is $\mathbf{\check{f}} / \| \mathbf{\check{f}} \|$. The eigenvalue is always non-negative and large if $\mathbf{F}$ contains a large strech.
+in which $\|\cdot\|_F$ stands for the Frobenius norm introduced in Def. \ref{FN} and $\sigma_i$ for the singular values from $\mathbf{\Sigma}$ in the SVD of $\mathbf{F}$ stated in Eq. \ref{eq:svd_simga}. The equation can be obtained by using Eq. \ref{eq:FN}. The eigenvector is $\mathbf{\check{f}} / \| \mathbf{\check{f}} \|$. The eigenvalue is always non-negative and large if $\mathbf{F}$ contains a large strech.
 
 \subsubsection{Gradient}
 The gradient term also has the same structure as the two terms before with different entries defined by

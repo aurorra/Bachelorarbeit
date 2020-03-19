@@ -70,7 +70,7 @@ A matrix $\mathbf{A}$ is positive definite if $\mathbf{x}^\intercal \mathbf{Ax}$
 \end{property}
 
 \todoredefined[inline]{
-TODO: Not done yet. Include what is used later
+TODO: Is this necessary?
 }
 
 
@@ -128,9 +128,9 @@ Let \textbf{A} be a (m $\times$ n) matrix in the real or complex space. Then the
 \end{definition}
 
 We can further represent the norm with the trace of the matrix, in which $\mathbf{A}^*$ is the conjugate transpose of \textbf{A}. Going from there, we can use the \acrshort{svd} of \textbf{A} and write the norm with respect to the singular values of \textbf{A}, denoted by $\sigma_i$
-\[
+\begin{equation} \label{eq:FN}
 \| \mathbf{A} \|_{F} = \sqrt{\operatorname{trace}(\mathbf{A} \mathbf{A}^*)} = \sqrt{\sum\limits_{i=1}^{\operatorname{min}\{m,n\}} \sigma_i^2}.
-\]
+\end{equation}
 
 \todoredefined[inline]{
 TODO: Complete this section. Add lemmas and theorems used afterwards in the calculations. Possible adjustments may come at the end.
@@ -143,7 +143,7 @@ In this section, I will give a broad introduction into the field of Continuum Me
 
 
 \subsection{Deformation}
-If we apply a force over an object, the object itself undergoes a deformation. This behavior is intuitively clear. But how do we formalize this in a mathematical construct? 
+If we apply a force over an object, the object itself undergoes a deformation. This behavior is intuitively clear. But how do we formalize this in a mathematical construct?
 
 In the following, I will be consistent with most previous literature in continuum mechanics and use the term \textit{strain} as a measure of deformation and \textit{stress} as the force per unit area.
 
@@ -151,7 +151,7 @@ In the following, I will be consistent with most previous literature in continuu
 TODO: Decide whether to include the above paragraph and how to connect it better to the paper.
 }
 
-Now let us have a look at a deformation in a rather mathematical sense. Graphically, one can imagine a deformation with the help of a two dimensional deformation map as shown in Fig. \ref{fig:deformationmap}. The ellipse on the left side represents an object or material in its rest state. A function $\phi$ maps this rest state of the ellipse to a deformed state as shown on the right side. Mathematically speaking, this means that we can map each point of a chosen object from its rest state to a deformed one.
+We can formalize the behaviour of a deformation. Graphically, one can imagine a deformation with the help of a two dimensional deformation map as shown in Fig. \ref{fig:deformationmap}. The ellipse on the left side represents an object or material in its rest state. A function $\phi$ maps this rest state of the ellipse to a deformed state as shown on the right side. Mathematically speaking, this means that we can map each point of a chosen object from its rest state to a deformed one.
 
 \begin{figure}[!htbp]
 	\centering
@@ -159,6 +159,11 @@ Now let us have a look at a deformation in a rather mathematical sense. Graphica
 	\caption{Deformation Map {\cite{STREAM2018}}}
 	\label{fig:deformationmap}
 \end{figure}
+
+Each particle $X$ of a body can be characterized by a vector $\mathbf{x}$ containing its coordinates. If the particles undergo a displacement, we can describe their new coordinate vector with 
+\[
+	\check{\mathbf{x}} = \phi (\mathbf{x}).
+\]
 
 When deriving $\phi$, we can calculate the deformation gradient \textbf{F} which serves as a measure of the deformation in the following sense: 
 \begin{align*}
@@ -180,6 +185,10 @@ For my needs, I am defining the deformation gradient analogous to the authors of
 \textbf{F} = \left[ \,f_0\, \bigg| \,f_1\, \bigg| \,f_2\, \right] = \begin{bmatrix} f_0 & f_3 & f_6 \\ f_1 & f_4 & f_7 \\ f_2 & f_5 & f_8 \end{bmatrix}.
 \end{equation}
 
+\textbf{F} can be factorized in various ways. The next few sections show these factorizations.
+
+\subsubsection{Singular Value Decomposition of F}
+
 Using the SVD theorem shown in Thm.\ref{SVD}, \textbf{F} can be written in the form of
 
 \begin{equation}\label{eq:svd_gradient}
@@ -191,10 +200,12 @@ in which $\mathbf{\Sigma}$ stands for
 \mathbf{\Sigma} = \left[\begin{matrix}  \sigma_0 & 0 & 0 \\ 0 & \sigma_1 & 0 \\ 0 & 0 & \sigma_2 \end{matrix}\right] .
 \end{equation}
 
-The $\sigma_i$ denote the singular values of $\mathbf{\Sigma}$. Unlike the normal convention, \textbf{U} and \textbf{V} are rotations, which results in $\operatorname{det}(\mathbf{U})$ and $\operatorname{det}(\mathbf{V})$ being equal to 1. In addition, $\mathbf{\Sigma}$ is allowed to have negative entries.
+The $\sigma_i$ denote the singular values of $\mathbf{\Sigma}$.
+\textbf{U} and $\mathbf{V^\intercal}$ are both orthogonal matrices that represent the rotation of \textbf{F}. $\Sigma$ on the other hand indicates the scaling of each coordinate $x_i$ by the factor $\sigma_i$.
 
 \todoredefined[inline]{
-TODO: Add some examples.
+TODO: Unlike the normal convention, $\mathbf{\Sigma}$ is allowed to have negative entries. --> reflection, maybe add subchapter
+\\ Add some examples.
 \\ Some more sources:
 \\ http://www.continuummechanics.org/deformationgradient.html
 }
@@ -207,11 +218,29 @@ With the help of Thm.\ref{PD} we can decompose the deformation gradient into the
 where \textbf{R} is orthogonal and \textbf{S} is a positive definite symmetric matrix. \textbf{R} symbolises the rotation (with possible reflection) that \textbf{F} undergoes, whereas \textbf{S} contains the scaling along orthogonal directions of \textbf{F}.
 
 \subsubsection{Relative volume change}
+A useful information about a deformation is the volume change of the deformed object. It can be calculated by the determinate of \textbf{F}
+\[
+J = \operatorname{det}(\mathbf{F}).
+\]
+For a normal deformation, $J$ is a positive value. A determinant of zero would mean that the object is being deformed into a zero volume state e.g. a plane or a point. A negative determinant, on the other hand, indicates an inversion.
 
-\subsubsection{Right Cauchy-Green}
 
-\subsubsection{First right Cuachy-Green invariant}
+\subsubsection{Right Cauchy-Green tensor}
 
+\[
+\mathbf{C} = \mathbf{F^\intercal F}
+\]
+
+\subsubsection{First right Cauchy -Green invariant}
+
+\[
+I_C = \operatorname{\mathbf{C}}
+\]
+
+\subsection{Deformation Energy}
+In order to get a convincing simulation of high quality, we have to choose an appropriate energy. In the case of modelling deformations on human-like characters an elastic energy needs to be chosen. The key property that makes an energy elastic is that if all the forces that are applied over an object add up to zero, the object must come back into its rest shape.
+\\
+The energy then has to be minimized in order to get the results we want.
 
 \subsection{Material Constants}
 When we look at a deformation of an object, we need to consider the material the object consists of. A material can be very stiff like steel or easily deformable like rubber. In order to measure the deformation of a specific material, we need the \textit{Poisson's Ratio} of said material. The poisson's ratio is a material constant that is defined as 
@@ -266,11 +295,6 @@ Further reading: http://silver.neep.wisc.edu/~lakes/PoissonIntro.html
 }
 
 
-
-\subsection{Deformation Energy}
-In order to get a convincing simulation of high quality, we have to choose an appropriate energy. In the case of modelling deformations on human-like characters an elastic energy needs to be chosen. The key property that makes an energy elastic is that if all the forces that are applied over an object add up to zero, the object must come back into its rest shape.
-\\
-The energy then has to be minimized in order to get the results we want.
 
 \todoredefined[inline]{
 TODO: Add some exaples and visualisations. What exactly is it and what role does it play in a deformation process? Hyperelastic energy, connect with paper.
