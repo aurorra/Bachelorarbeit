@@ -143,15 +143,9 @@ In this section, I will give a broad introduction into the field of Continuum Me
 
 
 \subsection{Deformation}
-If we apply a force over an object, the object itself undergoes a deformation. This behavior is intuitively clear. But how do we formalize this in a mathematical construct?
+If we apply a force over an object, the object itself undergoes a deformation. This behavior is intuitively clear. But how can we formalize it?
 
-In the following, I will be consistent with most previous literature in continuum mechanics and use the term \textit{strain} as a measure of deformation and \textit{stress} as the force per unit area.
-
-\todoredefined[inline]{
-TODO: Decide whether to include the above paragraph and how to connect it better to the paper.
-}
-
-We can formalize the behaviour of a deformation. Graphically, one can imagine a deformation with the help of a two dimensional deformation map as shown in Fig. \ref{fig:deformationmap}. The ellipse on the left side represents an object or material in its rest state. A function $\phi$ maps this rest state of the ellipse to a deformed state as shown on the right side. Mathematically speaking, this means that we can map each point of a chosen object from its rest state to a deformed one.
+Graphically, we can imagine a deformation with the help of a two dimensional deformation map as shown in Fig. \ref{fig:deformationmap}. The ellipse on the left side represents an object or material in its rest state. A function $\phi$ maps this rest state of the ellipse to a deformed state as shown on the right side.
 
 \begin{figure}[!htbp]
 	\centering
@@ -160,10 +154,41 @@ We can formalize the behaviour of a deformation. Graphically, one can imagine a 
 	\label{fig:deformationmap}
 \end{figure}
 
-Each particle $X$ of a body can be characterized by a vector $\mathbf{x}$ containing its coordinates. If the particles undergo a displacement, we can describe their new coordinate vector with 
+This means that we can map each particle of a chosen object from its rest state (at time $t_0 = 0$) to a deformed one. Each particle $X$ of a body can be characterized by a vector $\mathbf{x}$ containing its coordinates. If the particles are displaced after a time $t$, we can describe their new coordinate vector with 
 \[
-	\check{\mathbf{x}} = \phi (\mathbf{x}).
+	\check{\mathbf{x}} = \phi (\mathbf{x}, t).
 \]
+If we for example consider a \textit{Translation}, every particle is displaced by the same distance and direction. Thus we can calculate $\check{\mathbf{x}}$ with
+\[
+	\check{\mathbf{x}} = \mathbf{x} + \mathbf{c}(t)
+\]
+where $\mathbf{c}$ is a vector that only depends on $t$ (\cite{Spencer1980}, p.63).
+
+\todoredefined[inline]{
+TODO: Include own image instead of the one here? \\
+Include this? \\
+In the following, I will be consistent with most previous literature in continuum mechanics and use the term \textit{strain} as a measure of deformation and \textit{stress} as the force per unit area.
+}
+
+
+\subsection{Deformation Gradient}
+The deformation gradient \textbf{F} can be obtained by deriving $\phi$. It is therefore the derivative of...
+
+\begin{wrapfigure}{r}{5.5cm}
+\centering
+	\includegraphics[width=6.5cm]{resources/stretch_plot.png}
+	\caption{Stretching of a rectangle}
+	\label{stretch:1}
+\end{wrapfigure} 
+
+We can take a simple deformation in 2D to illustrate \textbf{F}. We can stretch an area in the following way:
+\[
+	Here comes formulas
+\]
+This is illustrated in \ref{stretch:1}.
+
+
+
 
 When deriving $\phi$, we can calculate the deformation gradient \textbf{F} which serves as a measure of the deformation in the following sense: 
 \begin{align*}
@@ -172,12 +197,6 @@ When deriving $\phi$, we can calculate the deformation gradient \textbf{F} which
 &\text{Volume changes:} & \qquad J&=\operatorname{det}(\mathbf{F})
 \end{align*}
 
-\todoredefined[inline]{
-TODO: Explain strain and stress and their meaning for later use in material constants (not explained in paper). Include own image instead of the one here?
-}
-
-
-\subsection{Deformation Gradient}
 With the help of the deformation gradient \textbf{F}, we can calculate the change in volume and length of an object during a deformation.
 For my needs, I am defining the deformation gradient analogous to the authors of \textit{\acrshort{snh}}:
 
