@@ -6,8 +6,7 @@ At first I will declare the notation used in this thesis to avoid misunderstandi
 
 
 \subsection{General Notation}
-Scalars are represented by regular, normal-weight variables such as $a$, whereas 
-tensors and matrices are represented by upper-case bold letters such as for example $\textbf{A}$. Vectors will be denoted by bold lower-case variables like $\textbf{a}$. 
+Scalars are represented by regular, normal-weight variables such as $a$, whereas tensors and matrices are represented by upper-case bold letters such as for example $\textbf{A}$. Vectors will be denoted by bold lower-case variables like $\textbf{a}$. 
 
 
 \subsection{Tensor Notation}
@@ -139,13 +138,11 @@ TODO: Complete this section. Add lemmas and theorems used afterwards in the calc
 
 
 \section{Continuum Mechanics}
-In this section, I will give a broad introduction into the field of Continuum Mechanics. In Continuum Mechanics, we are less interested in small particles like atoms or molecules of an object but rather in pieces of matter which are in comparison very large. We are therefore concerned with the mechanical behavior of solids and fluids on the macroscopic scale (\cite{Spencer1980}, p. 1).
+In this section, I will give a broad introduction into the field of Continuum Mechanics. In Continuum Mechanics, we are less interested in small particles like atoms or molecules of an object but rather in pieces of matter which are in comparison very large. The reason for this is that the calculation for the behaviour of individual atoms is very difficult for larger systems. We are therefore concerned with the mechanical behavior of solids and fluids on the macroscopic scale and we treat material as uniformly distribeted throughout regions of space. With this approach, it is possible to define quantities such as displacement, density, etc. as continuous functions of position (\cite{Spencer1980}, p. 1).
 
 
 \subsection{Deformation}
-If we apply a force over an object, the object itself undergoes a deformation. This behavior is intuitively clear. But how can we formalize it?
-
-Graphically, we can imagine a deformation with the help of a two dimensional deformation map as shown in Fig. \ref{fig:deformationmap}. The ellipse on the left side represents an object or material in its rest state. A function $\phi$ maps this rest state of the ellipse to a deformed state as shown on the right side.
+If we apply a force over an object, the object itself undergoes a deformation. This behavior is intuitively clear. Graphically, we can imagine a deformation with the help of a two dimensional deformation map as shown in Fig. \ref{fig:deformationmap}. The ellipse on the left side represents an object in its rest state. A function $\phi$ maps this rest state of the ellipse to a deformed state as shown on the right side.
 
 \begin{figure}[!htbp]
 	\centering
@@ -154,57 +151,48 @@ Graphically, we can imagine a deformation with the help of a two dimensional def
 	\label{fig:deformationmap}
 \end{figure}
 
-This means that we can map each particle of a chosen object from its rest state (at time $t_0 = 0$) to a deformed one. Each particle $X$ of a body can be characterized by a vector $\mathbf{x}$ containing its coordinates. If the particles are displaced after a time $t$, we can describe their new coordinate vector with 
+We can imagine, that we map each particle of a chosen object from its rest state to a deformed one. Each particle $X$ of a body can be characterized by a vector $\mathbf{x}$ containing its positional coordinates at time $t_0=0$. This is the reference configuration. If the particles are displaced after a time $t$, we can describe their new coordinate vector with 
 \[
 	\check{\mathbf{x}} = \phi (\mathbf{x}, t).
 \]
-If we for example consider a \textit{Translation}, every particle is displaced by the same distance and direction. Thus we can calculate $\check{\mathbf{x}}$ with
+If we consider, for example a \textit{Translation}, every particle is displaced by the same distance and direction. Hence, we can calculate $\check{\mathbf{x}}$ with
 \[
 	\check{\mathbf{x}} = \mathbf{x} + \mathbf{c}(t)
 \]
 where $\mathbf{c}$ is a vector that only depends on $t$ (\cite{Spencer1980}, p.63).
 
 \todoredefined[inline]{
-TODO: Include own image instead of the one here? \\
+TODO: Include own image instead of the one here? Other example than translation? \\
 Include this? \\
 In the following, I will be consistent with most previous literature in continuum mechanics and use the term \textit{strain} as a measure of deformation and \textit{stress} as the force per unit area.
 }
 
 
 \subsection{Deformation Gradient}
-The deformation gradient \textbf{F} can be obtained by deriving $\phi$. It is therefore the derivative of...
+The next quantity, I will use in the upcoming chapters, is the deformation gradient \textbf{F}. With its help, we can calculate the change in volume and length of an object during a deformation. We can obtain \textbf{F} by taking the gradient of the function $\phi$ discussed in the last section.
 
-\begin{wrapfigure}{r}{5.5cm}
+\begin{wrapfigure}[10]{r}{5.5cm}
 \centering
-	\includegraphics[width=6.5cm]{resources/stretch_plot.png}
+	\includegraphics[width=5.5cm]{resources/stretch_plot.png}
 	\caption{Stretching of a rectangle}
 	\label{stretch:1}
 \end{wrapfigure} 
-
-We can take a simple deformation in 2D to illustrate \textbf{F}. We can stretch an area in the following way:
-\[
-	Here comes formulas
-\]
-This is illustrated in \ref{stretch:1}.
-
-
-
-
-When deriving $\phi$, we can calculate the deformation gradient \textbf{F} which serves as a measure of the deformation in the following sense: 
+As an example, I am taking a simple deformation in 2D. Consider the coloured area in Fig. \ref{stretch:1}. We can stretch this area in the following way:
 \begin{align*}
-&\text{Deformation gradient:} & \mathbf{F}&=\operatorname{\nabla} \phi \\
-&\text{Length changes:} & \qquad I_{C}&=\operatorname{tr}\left(\mathbf{F}^{T} \mathbf{F}\right) \\
-&\text{Volume changes:} & \qquad J&=\operatorname{det}(\mathbf{F})
+	\check{x} &= 1.5x + 0y		\\
+	\check{y} &= 0x + 2y	
 \end{align*}
 
-With the help of the deformation gradient \textbf{F}, we can calculate the change in volume and length of an object during a deformation.
-For my needs, I am defining the deformation gradient analogous to the authors of \textit{\acrshort{snh}}:
-
+The resulting deformation gradient is then calculated by
+\[
+	\mathbf{F} = \begin{bmatrix} \frac{\partial [1.5x + 0y]}{\partial x} & \frac{\partial [1.5x + 0y]}{\partial y} \\ \frac{\partial [0x + 2y]}{\partial x} & \frac{\partial [0x + 2y]}{\partial y} \end{bmatrix} = \begin{bmatrix} 1.5 & 0.0 \\ 0.0 & 2.0 \end{bmatrix}.
+\]
+If \textbf{F} is equal to the identity matrix \textbf{I}, there is no deformation present. This would be the case, if we look at rigid body displacements.
+Since we will be handling deformation in the 3D space, the deformation gradient will have the form of a $3 \times 3$ matrix: 
 \begin{equation}\label{eq:deformation_gradient}
 \textbf{F} = \left[ \,f_0\, \bigg| \,f_1\, \bigg| \,f_2\, \right] = \begin{bmatrix} f_0 & f_3 & f_6 \\ f_1 & f_4 & f_7 \\ f_2 & f_5 & f_8 \end{bmatrix}.
 \end{equation}
-
-\textbf{F} can be factorized in various ways. The next few sections show these factorizations.
+\textbf{F} can be factorized and used to calculate other quantities. The next few sections show these factorizations and calculations.
 
 \subsubsection{Singular Value Decomposition of F}
 
@@ -220,40 +208,35 @@ in which $\mathbf{\Sigma}$ stands for
 \end{equation}
 
 The $\sigma_i$ denote the singular values of $\mathbf{\Sigma}$.
-\textbf{U} and $\mathbf{V^\intercal}$ are both orthogonal matrices that represent the rotation of \textbf{F}. $\Sigma$ on the other hand indicates the scaling of each coordinate $x_i$ by the factor $\sigma_i$.
+\textbf{U} and $\mathbf{V}$ are both orthogonal matrices that represent the rotation of \textbf{F}. $\Sigma$ on the other hand indicates the scaling of each coordinate $x_i$ by the factor $\sigma_i$. Unlike the standard convention, where a possible reflection lies in the rotation variants (meaning \textbf{U} and \textbf{V}), here the reflections are moved to $\mathbf{\Sigma}$ and it is allowed to have a negative entry.
 
-\todoredefined[inline]{
-TODO: Unlike the normal convention, $\mathbf{\Sigma}$ is allowed to have negative entries. --> reflection, maybe add subchapter
-\\ Add some examples.
-\\ Some more sources:
-\\ http://www.continuummechanics.org/deformationgradient.html
-}
 
 \subsubsection{Polar Decomposition of the Deformation Gradient}
-With the help of Thm.\ref{PD} we can decompose the deformation gradient into the following form
+With the help of Thm.\ref{PD} we can decompose the deformation gradient into the form
 \[
 \mathbf{F} = \mathbf{RS}
 \]
-where \textbf{R} is orthogonal and \textbf{S} is a positive definite symmetric matrix. \textbf{R} symbolises the rotation (with possible reflection) that \textbf{F} undergoes, whereas \textbf{S} contains the scaling along orthogonal directions of \textbf{F}.
+where \textbf{R} is orthogonal and \textbf{S} is a positive definite symmetric matrix. \textbf{R} symbolises the rotation (with possible reflection) that \textbf{F} undergoes, whereas \textbf{S} contains the scaling along the orthogonal directions of \textbf{F}.
 
 \subsubsection{Relative volume change}
 A useful information about a deformation is the volume change of the deformed object. It can be calculated by the determinate of \textbf{F}
 \[
 J = \operatorname{det}(\mathbf{F}).
 \]
-For a normal deformation, $J$ is a positive value. A determinant of zero would mean that the object is being deformed into a zero volume state e.g. a plane or a point. A negative determinant, on the other hand, indicates an inversion.
+For a normal deformation, $J$ is a positive value. A determinant of zero would mean that the object is being deformed into a zero volume state, e.g. a plane or a point. A negative determinant, on the other hand, indicates an inversion.
 
 
 \subsubsection{Right Cauchy-Green tensor}
-
+The right Cauchy-Green tensor \textbf{C} can be calculated by multiplying \textbf{F} with itself:
 \[
-\mathbf{C} = \mathbf{F^\intercal F}
+\mathbf{C} = \mathbf{F^\intercal F}.
 \]
+It serves as a direct measurement of the deformation. 
 
-\subsubsection{First right Cauchy -Green invariant}
-
+\subsubsection{First right Cauchy-Green invariant}
+This quantity describes the length change of the object after a deformation.
 \[
-I_C = \operatorname{\mathbf{C}}
+I_C = \operatorname{tr}(\mathbf{C})
 \]
 
 \subsection{Deformation Energy}
