@@ -142,7 +142,7 @@ In this section, I will give a broad introduction into the field of Continuum Me
 
 
 \subsection{Deformation}
-If we apply a force over an object, the object itself undergoes a deformation. This behavior is intuitively clear. Graphically, we can imagine a deformation with the help of a two dimensional deformation map as shown in Fig. \ref{fig:deformationmap}. The ellipse on the left side represents an object in its rest state. A function $\phi$ maps this rest state of the ellipse to a deformed state as shown on the right side.
+In continuum mechanics the term \textit{strain} is used as a measure of deformation and we denote \textit{stress} as the force per unit area. If we apply a force over an object, the object itself undergoes a deformation. This behavior is intuitively clear. Graphically, we can imagine a deformation with the help of a two dimensional deformation map as shown in Fig. \ref{fig:deformationmap}. The ellipse on the left side represents an object in its rest state. A function $\phi$ maps this rest state of the ellipse to a deformed state as shown on the right side.
 
 \begin{figure}[!htbp]
 	\centering
@@ -162,14 +162,12 @@ If we consider, for example a \textit{Translation}, every particle is displaced 
 where $\mathbf{c}$ is a vector that only depends on $t$ (\cite{Spencer1980}, p.63).
 
 \todoredefined[inline]{
-TODO: Include own image instead of the one here? Other example than translation? \\
-Include this? \\
-In the following, I will be consistent with most previous literature in continuum mechanics and use the term \textit{strain} as a measure of deformation and \textit{stress} as the force per unit area.
+TODO: Include own image instead of the one here? Other example than translation? Explain strain and stress more?
 }
 
 
 \subsection{Deformation Gradient}
-The next quantity, I will use in the upcoming chapters, is the deformation gradient \textbf{F}. With its help, we can calculate the change in volume and length of an object during a deformation. We can obtain \textbf{F} by taking the gradient of the function $\phi$ discussed in the last section.
+The next quantity, I will use in the upcoming chapters, is the deformation gradient \textbf{F}. With its help, we can calculate the change in volume and length of an object during a deformation. We can obtain \textbf{F} by taking the gradient of the function $\phi$ discussed in the previous section.
 
 \begin{wrapfigure}[10]{r}{5.5cm}
 \centering
@@ -183,12 +181,11 @@ As an example, I am taking a simple deformation in 2D. Consider the coloured are
 	\check{y} &= 0x + 2y	
 \end{align*}
 
-The resulting deformation gradient is then calculated by
+The resulting deformation gradient can then be obtained by
 \[
 	\mathbf{F} = \begin{bmatrix} \frac{\partial [1.5x + 0y]}{\partial x} & \frac{\partial [1.5x + 0y]}{\partial y} \\ \frac{\partial [0x + 2y]}{\partial x} & \frac{\partial [0x + 2y]}{\partial y} \end{bmatrix} = \begin{bmatrix} 1.5 & 0.0 \\ 0.0 & 2.0 \end{bmatrix}.
 \]
-If \textbf{F} is equal to the identity matrix \textbf{I}, there is no deformation present. This would be the case, if we look at rigid body displacements.
-Since we will be handling deformation in the 3D space, the deformation gradient will have the form of a $3 \times 3$ matrix: 
+If \textbf{F} is equal to the identity matrix \textbf{I}, there is no deformation present. This would be the case for rigid body displacements. Since we will be handling deformation in the 3D space, the deformation gradient will have the form of a $3 \times 3$ matrix: 
 \begin{equation}\label{eq:deformation_gradient}
 \textbf{F} = \left[ \,f_0\, \bigg| \,f_1\, \bigg| \,f_2\, \right] = \begin{bmatrix} f_0 & f_3 & f_6 \\ f_1 & f_4 & f_7 \\ f_2 & f_5 & f_8 \end{bmatrix}.
 \end{equation}
@@ -208,38 +205,47 @@ in which $\mathbf{\Sigma}$ stands for
 \end{equation}
 
 The $\sigma_i$ denote the singular values of $\mathbf{\Sigma}$.
-\textbf{U} and $\mathbf{V}$ are both orthogonal matrices that represent the rotation of \textbf{F}. $\Sigma$ on the other hand indicates the scaling of each coordinate $x_i$ by the factor $\sigma_i$. Unlike the standard convention, where a possible reflection lies in the rotation variants (meaning \textbf{U} and \textbf{V}), here the reflections are moved to $\mathbf{\Sigma}$ and it is allowed to have a negative entry.
+\textbf{U} and $\mathbf{V}$ are both orthogonal matrices that represent the rotation of \textbf{F}. $\mathbf{\Sigma}$ on the other hand indicates the scaling of each coordinate $x_i$ by the factor $\sigma_i$. Unlike the standard convention, where a possible reflection lies in the rotation variants (meaning \textbf{U} and \textbf{V}), here the reflections are moved to $\mathbf{\Sigma}$ and it is therefore allowed to have a negative entry. This has the effect that $\operatorname{det}(\mathbf{U}) = \operatorname{det}(\mathbf{V}) =1$.
 
 
 \subsubsection{Polar Decomposition of the Deformation Gradient}
 With the help of Thm.\ref{PD} we can decompose the deformation gradient into the form
-\[
-\mathbf{F} = \mathbf{RS}
-\]
+\begin{equation}\label{PD_DG}
+	\mathbf{F} = \mathbf{RS}
+\end{equation}
 where \textbf{R} is orthogonal and \textbf{S} is a positive definite symmetric matrix. \textbf{R} symbolises the rotation (with possible reflection) that \textbf{F} undergoes, whereas \textbf{S} contains the scaling along the orthogonal directions of \textbf{F}.
 
 \subsubsection{Relative volume change}
-A useful information about a deformation is the volume change of the deformed object. It can be calculated by the determinate of \textbf{F}
-\[
-J = \operatorname{det}(\mathbf{F}).
-\]
+A useful information about a deformation is the relative volume change of the deformed object. It can be calculated by the determinate of \textbf{F}
+\begin{equation}\label{det_DG}
+	J = \operatorname{det}(\mathbf{F}).
+\end{equation}
 For a normal deformation, $J$ is a positive value. A determinant of zero would mean that the object is being deformed into a zero volume state, e.g. a plane or a point. A negative determinant, on the other hand, indicates an inversion.
 
 
-\subsubsection{Right Cauchy-Green tensor}
-The right Cauchy-Green tensor \textbf{C} can be calculated by multiplying \textbf{F} with itself:
-\[
-\mathbf{C} = \mathbf{F^\intercal F}.
-\]
-It serves as a direct measurement of the deformation. 
-
-\subsubsection{First right Cauchy-Green invariant}
+\subsubsection{Cauchy-Green}
+The right Cauchy-Green tensor \textbf{C} can be calculated by 
+\begin{equation}\label{CG_DG}
+	\mathbf{C} = \mathbf{F^\intercal F}
+\end{equation}
+and is a $3 \times 3$ matrix for deformations in the 3D space. Using \textbf{C}, we can calculate the first right Cauchy-Green invariant $I_C$ with
+\begin{equation} \label{tr_CG_DG}
+	I_C = \operatorname{tr}(\mathbf{C}).
+\end{equation}
 This quantity describes the length change of the object after a deformation.
-\[
-I_C = \operatorname{tr}(\mathbf{C})
-\]
 
 \subsection{Deformation Energy}
+The deformation energy or strain energy $\Psi$ is a scalar that defines the stored energy of a object undergoing a deformation. The strain energy density is then the strain energy per unit volume. It equal to the work that has to be done by the stresses in order to alter the strains (\cite{KORSUNSKY20175}, p.10). This means that it is an indicator of how much force must be applied in order for an object to be deformed in a certain way. We can use the deformation energy to express the relationship between the stresses and strains. We can illustrate this with a stress-strain curve:
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{resources/stress_strain_curve.png}
+	\caption{Example for a stress-strain curve}
+	\label{fig:stress_strain}
+\end{figure}
+
+Unfortunately, this relationship is not always linear, which makes it harder to find a suitable model. For example if we reach a stress state that produces yielding, we cannot assume that the relationship is linear. If the material reaches the yield point, it can no longer recover into its rest shape due to permanent fractures during the deformation. This point is illustrated in Fig. \ref{fig:stress_strain} with \textit{Yield stress}. \textit{UTS} in Fig. \ref{fig:stress_strain} is abbreviated for Ultimate tensile strength and defines the maximal stress an object can bear before breaking. The area under the stress-strain curve corresponds to the strain energy.
+
 In order to get a convincing simulation of high quality, we have to choose an appropriate energy. In the case of modelling deformations on human-like characters an elastic energy needs to be chosen. The key property that makes an energy elastic is that if all the forces that are applied over an object add up to zero, the object must come back into its rest shape.
 \\
 The energy then has to be minimized in order to get the results we want.
