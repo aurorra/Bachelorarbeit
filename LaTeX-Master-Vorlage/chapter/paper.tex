@@ -14,24 +14,19 @@ In the following calculations some properties of the deformation gradient $\math
     $\mathbf{C}=\mathbf{F}^\intercal \mathbf{F}$ & Right Cauchy-Green  \\ \hline	
     $I_{C}=\operatorname{tr}(\mathbf{C})$ & First right Cauchy-Green invariant \\ \hline
     \end{tabular}
-    \caption{Quantities derived from the Deformation Gradient \textbf{F}}
+    \caption[Quantities derived from the Deformation Gradient]{Quantities derived from the Deformation Gradient \textbf{F}}
 \label{table:gradient_quantities}
 \end{table}
 
-\todoredefined[inline]{
-TODO: Check if everything is explained enough in Background.
-}
-
 
 \section{Energy Formulation}
-
 \subsection{Stability}
 The core goal of the paper was to model deformations for virtual characters that have human-like features. The focus of the authors was the deformation energy. In order to achieve a convincing result the first step is to specify some requirements. Firstly the energy has to be stable. More precisely, we need a hyperelastic energy that is stable in the following four important ways:
 
 \textbf{1. Inversion Stability:} Given some arbitrary object, it is possible that while deforming the object we can arrive at a zero volume state or even an entire inversion. Take for example the tetrahedron shown in Fig. \ref{fig:inversion_1}. In Fig. \ref{fig:inversion_2} we see a deformed state of this tetrahedron where the volume is scaled down to zero and we are left with a simple triangle. In Fig. \ref{fig:inversion_3} we have an inversion of the object. The deformation energy has to be able to deal with both cases. That means that the energy has to be singularity-free and does not need any filters or threshold (\cite{Smith:2018:SNF:3191713.3180491}, 12:3).
 
 \todoredefined[inline]{
-TODO: Explain what last sentence means. Reference correct like this?
+TODO: Explain what last sentence means.
 }
 
 \begin{figure}[!ht]
@@ -57,7 +52,7 @@ TODO: Explain what last sentence means. Reference correct like this?
   \caption{Inversed state}
   \label{fig:inversion_3}
 \end{subfigure}
-\caption{Inversion of a tetrahedron {\cite{STREAM2018}}}
+\caption[Inversion of a tetrahedron]{Inversion of a tetrahedron {\cite{STREAM2018}}}
 \label{fig:inversion}
 \end{figure}
 
@@ -74,7 +69,7 @@ TODO: Explain a bit better what this means. What means well behaved?
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{resources/meta_stability}
-	\caption{Illustration of meta stability {\cite{STREAM2018}}}
+	\caption[Illustration of meta stability]{Illustration of meta stability {\cite{STREAM2018}}}
 	\label{fig:meta_stability}
 \end{figure}
 
@@ -98,7 +93,7 @@ In previous literature, a few energies were proposed that I will analyse in this
     $\Psi_{\mathrm{B}}=\frac{\mu}{2}\left(J^{-2 / 3} I_{C}-3\right)+\frac{\lambda}{2}(J-1)^{2}$ & Bower 2009 \\ \hline
     $\Psi_{\mathrm{C}}=\frac{\mu}{2}\left(J^{-2 / 3} I_{C}-3\right)+\frac{\lambda}{2}(J-1)^{2}$ & Wang and Yang 2016 \\ \hline
     \end{tabular}
-    \caption{Summary of proposed energies (\cite{Smith:2018:SNF:3191713.3180491}, 12:3)}
+    \caption[Summary of proposed energies]{Summary of proposed energies (\cite{Smith:2018:SNF:3191713.3180491}, 12:3)}
 \label{table:energies}
 \end{table}
 
@@ -307,7 +302,7 @@ As in the Mu term, we again have a single non-zero, non-negative eigenvalue calc
 The eigenvector is $\mathbf{\check{g}} / \| \mathbf{\check{g}} \|$.
 
 \todoredefined[inline]{
-TODO: Not all proofs and calculations included yet. Add or leave out some if too confusing.
+TODO: Not all proofs and calculations included. Add or leave out some if too confusing.
 }
 
 
@@ -443,7 +438,7 @@ The images in Fig. \ref{fig:stretchtest} show the stretch test with $\mu = 1.0$,
         \includegraphics[width=0.24\textwidth]{resources/tetcli_step24.png}
         \caption{Stretch test on a tetrahedral mesh}
     \end{subfigure}
-    \caption{Stretch test performed on a cube with (a) a hexahedral mesh and (b) a tetrahedral mesh}
+    \caption[Stretch test performed on a cube]{Stretch test performed on a cube with (a) a hexahedral mesh and (b) a tetrahedral mesh}
     \label{fig:stretchtest}
 \end{figure}
 
