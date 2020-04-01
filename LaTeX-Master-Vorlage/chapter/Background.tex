@@ -235,7 +235,7 @@ and is a $3 \times 3$ matrix for deformations in the 3D space. Using \textbf{C},
 This quantity describes the length change of the object after a deformation.
 
 \subsection{Deformation Energy}
-The deformation energy or strain energy $\Psi$ is a scalar that defines the stored energy of a object undergoing a deformation. The strain energy density is then the strain energy per unit volume. It equal to the work that has to be done by the stresses in order to alter the strains (\cite{KORSUNSKY20175}, p.10). This means that it is an indicator of how much force must be applied in order for an object to be deformed in a certain way. We can use the deformation energy to express the relationship between the stresses and strains. We can illustrate this with a stress-strain curve:
+The deformation energy or strain energy $\Psi$ is a scalar that defines the stored energy of a object undergoing a deformation. The strain energy density is then the strain energy per unit volume. It equal to the work that has to be done by the stresses in order to alter the strains (\cite{KORSUNSKY20175}, p.10). This means that it is an indicator of how much force must be applied in order for an object to be deformed in a certain way. Thus we can use the deformation energy to express the relationship between the stresses and strains. We can illustrate this with a stress-strain curve shown in Fig. \ref{fig:stress_strain}. The area under the stress-strain curve corresponds to the strain energy.
 
 \begin{figure}[!htbp]
 	\centering
@@ -244,11 +244,10 @@ The deformation energy or strain energy $\Psi$ is a scalar that defines the stor
 	\label{fig:stress_strain}
 \end{figure}
 
-Unfortunately, this relationship is not always linear, which makes it harder to find a suitable model. For example if we reach a stress state that produces yielding, we cannot assume that the relationship is linear. If the material reaches the yield point, it can no longer recover into its rest shape due to permanent fractures during the deformation. This point is illustrated in Fig. \ref{fig:stress_strain} with \textit{Yield stress}. \textit{UTS} in Fig. \ref{fig:stress_strain} is abbreviated for Ultimate tensile strength and defines the maximal stress an object can bear before breaking. The area under the stress-strain curve corresponds to the strain energy.
+Unfortunately, this relationship is not always linear, which makes it harder to find a suitable model. For example if we reach a stress state that produces yielding, we cannot assume that the relationship is linear. If the material reaches the yield point, it can no longer recover into its rest shape due to permanent fractures during the deformation. This point is illustrated in Fig. \ref{fig:stress_strain} with \textit{Yield stress}. \textit{UTS} in Fig. \ref{fig:stress_strain} is abbreviated for Ultimate tensile strength and defines the maximal stress an object can bear before breaking. 
 
-In order to get a convincing simulation of high quality, we have to choose an appropriate energy. In the case of modelling deformations on human-like characters an elastic energy needs to be chosen. The key property that makes an energy elastic is that if all the forces that are applied over an object add up to zero, the object must come back into its rest shape.
-\\
-The energy then has to be minimized in order to get the results we want.
+The behaviour of the object depends heavily on the material it consists of. This will be further explained in the next section concerning \textit{Material Constants}. In order to get a convincing simulation for a specific material, we have to choose an appropriate energy function. The behaviour of human flesh can be put into the category of hyperelastic materials. One key property of elasticity is, that if all the forces that are applied over an object add up to zero, the object must come back into its rest shape.
+
 
 \subsection{Material Constants}
 When we look at a deformation of an object, we need to consider the material the object consists of. A material can be very stiff like steel or easily deformable like rubber. In order to measure the deformation of a specific material, we need the \textit{Poisson's Ratio} of said material. The poisson's ratio is a material constant that is defined as 
