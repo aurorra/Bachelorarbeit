@@ -454,7 +454,7 @@ Table \ref{table:default_tet} and \ref{table:default_hex} show, how many Newton 
 }
 \end{table}
 
-The images in Fig. \ref{fig:stretchtest} show four of the resulting objects of this example. They show step $0$ (initial cube), $8$, $16$ and $24$ for a tetrahedral and hexahedral mesh. The result is very good, no artefacts can be seen. There is no obvious difference recognizable whether we took a hexahedral or a tetrahedral mesh. The snapshots are taken with the help of the software OpenFlipper\footnote{https://www.graphics.rwth-aachen.de/software/openflipper/}.
+The images in Fig. \ref{fig:stretchtest} show four of the resulting objects of this example. They show step $0$ (initial cube), $8$, $16$ and $24$ for a tetrahedral and hexahedral mesh. The result is very good, no artefacts can be seen. There is no obvious difference recognizable whether we took a hexahedral or a tetrahedral mesh. All snapshots in this chapter are taken with the help of the software OpenFlipper\footnote{https://www.graphics.rwth-aachen.de/software/openflipper/}.
 
 \begin{figure}[!htbp]
 	\centering
@@ -519,6 +519,29 @@ For examining the influence of the input variable, I experimented with different
 \label{table:res_hex}
 }
 \end{table}
+
+Fig. \ref{fig:res} shows the results with a higher resolution of $30$ compared to a lower resolution of $10$. All other input variables are the same. The figure shows the results of the deformation step $25$. We can see that a higher resolution clearly gives us much nicer results.
+
+\begin{figure}[!ht]
+\centering
+\begin{subfigure}{.47\textwidth}
+  \centering
+  % include first image
+  \includegraphics[width=.8\linewidth]{resources/default_zoom_tet.png}  
+  \caption{Resolution of 10}
+  \label{fig:res_1}
+\end{subfigure}
+\begin{subfigure}{.47\textwidth}
+  \centering
+  % include second image
+  \includegraphics[width=.8\linewidth]{resources/res_zoom_tet.png}  
+  \caption{Resolution of 30}
+  \label{fig:res_2}
+\end{subfigure}
+\caption{Results with a different resolution on a tetrahedral mesh}
+\label{fig:res}
+\end{figure}
+
 
 In addition, we can increase or decrease \textit{\mu} and \textit{\lambda} which changes the poisson's ratio. If we decrease \textit{\lambda}, the poisson's ratio also decreases. We can set \textit{\lambda} equal to $1.0$ and let the other variables stay the same as in the first example (\textit{\mu} $= 1.0$, resolution $= 10.0$). With these inputs the cube gets wider in the middle part, as the poisson's ratio indicated that the material is more resistant to the stretching.
 
