@@ -14,20 +14,16 @@ In the following calculations the properties of the deformation gradient $\mathb
     $\mathbf{C}=\mathbf{F}^\intercal \mathbf{F}$ & Right Cauchy-Green  \\ \hline	
     $I_{C}=\operatorname{tr}(\mathbf{C})$ & First right Cauchy-Green invariant \\ \hline
     \end{tabular}
-    \caption[Quantities derived from the Deformation Gradient]{Quantities derived from the Deformation Gradient \textbf{F}}
+    \caption[Quantities derived from the Deformation Gradient]{Quantities derived from the Deformation Gradient}
 \label{table:gradient_quantities}
 \end{table}
 
 
 \section{Energy Formulation}
 \subsection{Stability}
-The core goal of the paper was to model deformations for virtual characters that have human-like features. In order to achieve better results than what has been done in current research, they formulated a new deformation energy. In chapter 2 I concluded that the appropriate energy for animating soft tissues as flesh has to be hyperelastic. An important property is the stability of the energy. We need an energy that is stable in the following four ways:
+The core goal of the paper was to model deformations for virtual characters that have human-like features. In order to achieve better results than what has been done in current research, they formulated a new deformation energy. In chapter 2, I concluded that the appropriate energy for animating soft tissues such as flesh has to be hyperelastic. An important property is the stability of the energy. We need an energy that is stable in the following four ways:
 
-\textbf{1. Inversion Stability:} Given some arbitrary object, it is possible that while deforming the object we can arrive at a zero volume state or even an entire inversion. Take for example the tetrahedron shown in Fig. \ref{fig:inversion_1}. In Fig. \ref{fig:inversion_2} we see a deformed state of this tetrahedron where the volume is scaled down to zero and we are left with a simple triangle. In Fig. \ref{fig:inversion_3} we have an inversion of the object. The deformation energy has to be able to deal with both cases. That means that the energy has to be singularity-free and does not need any filters or threshold (\cite{Smith:2018:SNF:3191713.3180491}, 12:3).
-
-\todoredefined[inline]{
-TODO: Explain what last sentence means.
-}
+\textbf{1. Inversion Stability:} Given some arbitrary object, it is possible that while deforming the object we can arrive at a zero volume state or even an entire inversion. Take for example the tetrahedron shown in Fig. \ref{fig:inversion_1}. In Fig. \ref{fig:inversion_2} we see a deformed state of this tetrahedron where the volume is scaled down to zero and we are left with a simple triangle. In Fig. \ref{fig:inversion_3} the tetrahedron arrives at an inversed stated. The deformation energy has to be able to deal with both cases without creating severe artefacts. That means, that the energy has to be singularity-free, meaning that it is defined for every possible point. This should hold without needing any filters or threshold (\cite{Smith:2018:SNF:3191713.3180491}, 12:3).
 
 \begin{figure}[!ht]
 \centering
@@ -57,14 +53,18 @@ TODO: Explain what last sentence means.
 \end{figure}
 
 
-\textbf{2. Reflection stability:} A reflection is a rotation around the coordinate origin. The deformation energy needs to be well behaved regardless of the reflection convention used in the singular value decomposition.
-\todoredefined[inline]{
-TODO: Explain a bit better what this means. What means well behaved?
-}
+\textbf{2. Reflection stability:} While deforming an object, it can occur that we are dealing with reflections. An example of a reflection in 2D is shown in Fig. \ref{fig:reflection}. Here the coloured triangle is reflected over the y-axis. A matrix that represents a reflection is orthogonal with determinant $-1$. The deformation energy needs to be well behaved under reflections. This has to hold, regardless of the reflection convention used in the \acrshort{svd} of \textbf{F}. The reflection convention is explained in chapter 2.3.2 in the subsection \textit{Singular Value Decomposition of \textbf{F}}.
 
-\textbf{3. Rest stability:} When deforming an object in a certain way, we apply one or multiple forces to that object. When we achieve rest stability, we ensure that if the sum of all forces is equal to zero, the object must be back in its rest state.
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{resources/reflection_plot.png}
+	\caption[Reflection of a triangle over the y-axis]{Reflection of a triangle over the y-axis}
+	\label{fig:reflection}
+\end{figure}
 
-\textbf{4. Meta-stability under degeneracy:} We can crush an object into an arbitrary shape like a plane, line or point. This process is illustrated for a cube in Fig. \ref{fig:meta_stability}. The cube should be able to recover to its actual shape after the deformation.
+\textbf{3. Rest stability:} When deforming an object in a certain way, we apply one or multiple forces to that object which influences the deformation. But when we remove all the forces, the object should be back in its rest state.
+
+\textbf{4. Meta-stability under degeneracy:} This is a special case of rest stability. We can crush an object into an arbitrary shape like a plane, line or point. This process is illustrated for a cube in Fig. \ref{fig:meta_stability}. Afterwards, when the applied forces are removed, the cube should still be able to recover from this arbitrary shape to its actual shape.
 
 \begin{figure}[!htbp]
 	\centering
@@ -73,25 +73,26 @@ TODO: Explain a bit better what this means. What means well behaved?
 	\label{fig:meta_stability}
 \end{figure}
 
-Based on these four requirements, we will in the following determine if a deformation energy is suited for our needs.
+Based on these four requirements, we will determine if a deformation energy is suited for our needs.
 
 \todoredefined[inline]{
-TODO: Maybe add own images and more sources.
+TODO: Are images ok?
 }
+
 
 \subsection{Existing Neo-Hookean Energies}
 
-In previous literature, a few energies were proposed that I will analyse in this section. They are listed in table \ref{table:energies} below.
+In previous literature, a few energies were proposed that I will analyse in this section. They are listed in table \ref{table:energies}.
 
 \begin{table}[!htbp]
 \centering
     \begin{tabular}{ | l | l |}
     \hline
     \textbf{Energy} & \textbf{Author(s)} \\ \hline
-    $\Psi_{Neo}=\frac{\mu}{2}\left(I_{C}-3\right)-\mu \log J+\frac{\lambda}{2}(\log J)^{2}$ & e.g. Bonet and Wood 2008 \\ \hline
-    $\Psi_{\mathrm{A}}=\frac{\mu}{2}\left(I_{C}-3\right)-\mu \log J+\frac{\lambda}{2}(J-1)^{2}$ & Odgen 1997 \\ \hline
-    $\Psi_{\mathrm{B}}=\frac{\mu}{2}\left(J^{-2 / 3} I_{C}-3\right)+\frac{\lambda}{2}(J-1)^{2}$ & Bower 2009 \\ \hline
-    $\Psi_{\mathrm{C}}=\frac{\mu}{2}\left(J^{-2 / 3} I_{C}-3\right)+\frac{\lambda}{2}(J-1)^{2}$ & Wang and Yang 2016 \\ \hline
+    $\Psi_{Neo}=\frac{\mu}{2}\left(I_{C}-3\right)-\mu \log J+\frac{\lambda}{2}(\log J)^{2}$ & \begin{tabular}{@{}l@{}}e.g. Bonet and Wood 1997 \\ (\cite{bonet1997nonlinear})\end{tabular}  \\ \hline
+    $\Psi_{\mathrm{A}}=\frac{\mu}{2}\left(I_{C}-3\right)-\mu \log J+\frac{\lambda}{2}(J-1)^{2}$ & Odgen 1997 (\cite{ogden1997non}) \\ \hline
+    $\Psi_{\mathrm{B}}=\frac{\mu}{2}\left(J^{-2 / 3} I_{C}-3\right)+\frac{\lambda}{2}(J-1)^{2}$ & Bower 2009 (\cite{bower2009applied}) \\ \hline
+    $\Psi_{\mathrm{C}}=\frac{\mu}{2}\left(J^{-2 / 3} I_{C}-3\right)+\frac{\lambda}{2}(J-1)^{2}$ & \begin{tabular}{@{}l@{}}Wang and Yang 2016 \\ (\cite{wang2016descent}) \end{tabular} \\ \hline
     \end{tabular}
     \caption[Summary of proposed energies]{Summary of proposed energies (\cite{Smith:2018:SNF:3191713.3180491}, 12:3)}
 \label{table:energies}
@@ -122,25 +123,25 @@ that is used in $\Psi_{Neo}$ and $\Psi_{A}$. If we expand the energy with the si
 \[
 \Psi_{M}=\frac{\mu}{2}\left(\sigma_{0}^2 + \sigma_{1}^2 + \sigma_{2}^2 - 3\right)
 \]
-This energy reaches its minimum at a zero volume state, meaning $I_{C}=0$ which results in $\Psi_{M}=-3$. Mooney added the hard constraint that $J=1$, so that the energy is minimized at the volume preserving configuration that is closest to the stretch space origin. Note that the energy is singularity free and well defined under inversion.
+This energy reaches its minimum at a zero volume state, meaning $I_{C}=0$. Mooney added the hard constraint that $J$ should be equal to $1$, so that the energy is minimized at the volume preserving configuration that is closest to the stretch space origin. Note that the energy is singularity free and well defined under inversion.
 
-The second term 
+The second term is
 \[
 \Psi_{R} = \frac{\mu}{2}\left(J^{-2 / 3} I_{C}-3\right)
 \]
-is used in $\Psi_{B}$ and $\Psi_{C}$ and was introduced by Rivlin (\cite{rivlin1948large}). Using the singular values of \textbf{F}, we get the following term:
+and used in $\Psi_{B}$ and $\Psi_{C}$ and was introduced by Rivlin (\cite{rivlin1948large}). Using the singular values of \textbf{F}, we get the following term:
 \[
 \Psi_{R} = \frac{\mu}{2}\left(\frac{\sigma_{0}^2 + \sigma_{1}^2 + \sigma_{2}^2}{(\sigma_{0}  \sigma_{1}  \sigma_{2})^\frac{2}{3}}
  - 3\right)
 \]
-Unfortunately this term is not singularity free. If either $\sigma_{0}$, $\sigma_{1}$ or $\sigma_{2}$ is equal to zero the result is not defined anymore.
+Unfortunately, this term is not singularity free. If either $\sigma_{0}$, $\sigma_{1}$ or $\sigma_{2}$ is equal to zero the result is not defined anymore.
 
 \subsubsection{3D Volume Term}
 The volume term of $\Psi_{Neo}$, meaning
 \[
 \Psi_{Neo, volume} = -\mu \log J+\frac{\lambda}{2}(\log J)^{2}
 \]
-results in some numerical problems since the logarithmic function is not defined for $J<0$ and grows unbounded for $J \rightarrow 0$. In conclusion $\Psi_{Neo, volume}$ is not singularity free. 
+results in numerical problems, since the logarithmic function is not defined for $J<0$ and grows unbounded for $J \rightarrow 0$. In conclusion, $\Psi_{Neo, volume}$ is not singularity free. 
 The same applies for the 3D volume term of $\Psi_{A}$, namely
 \[
 \Psi_{A, volume} = -\mu \log J+\frac{\lambda}{2}(J-1)^{2}.
@@ -149,25 +150,25 @@ The term of $\Psi_{A}$ and $\Psi_{B}$ which is of the form
 \[
 \Psi_{M} = \frac{\lambda}{2}(J-1)^{2}
 \]
-does not have these problems. It is bounded, well defined and invertible. After these observations we combine the robust length with the robust volume term and receive $\Psi_D$ that is defined as
+does not have these problems. It is bounded, well defined and invertible. After these observations we combine the robust length with the robust volume term and receive $\Psi_D$, which is defined as
 \[
-\Psi_{D} = \frac{\mu}{2}\left(I_{C}-3\right) +\frac{\lambda}{2}(J-1)^{2}
+\Psi_{D} = \frac{\mu}{2}\left(I_{C}-3\right) +\frac{\lambda}{2}(J-1)^{2}.
 \]
-and is singularity free and well defined under inversion. Unfortunately, $\Psi_D$ does not satisfy the requirement of being rest stable which will be discussed in the next section.
+$\Psi_{D}$ is singularity free and well defined under inversion. Unfortunately, it does not satisfy the requirement of being rest stable which will be discussed in the next section.
 
 \todoredefined[inline]{
-TODO: Bonet and Wood 2008 or 1997?
+TODO: explain how to get to equation with singular values
 }
 
 \subsection{Rest Stabilization}
-Although $\Psi_{D}$ meets almost all stated requirements, it is not rest stable. This can be shown with the Piola-Kirchhoff (PK1) stress tensor for $\Psi_D$ derived by the deformation gradient \textbf{F}:
+Although $\Psi_{D}$ meets almost all stated requirements, it is not rest stable. This can be shown with the first Piola-Kirchhoff (PK1) stress tensor, defined as $\Psi_D$ derived by the deformation gradient \textbf{F}:
 \begin{align*}
 P_{D}(\mathbf{I}) &= \frac{\partial \Psi_{D}}{\partial \mathbf{F}} (\mathbf{I}) = \frac{\partial \Psi_{D}}{\partial \mathbf{F}} \left[ \frac{\mu}{2}\left(I_{C}-3\right) +\frac{\lambda}{2}(J-1)^{2} \right] \\
 &= \frac{\partial \Psi_{D}}{\partial \mathbf{F}}  \frac{\mu}{2}\left(\operatorname{tr}(\mathbf{I}^\intercal \mathbf{I})-3\right) +\frac{\partial \Psi_{D}}{\partial \mathbf{F}} \frac{\lambda}{2}(\operatorname{tr}(\mathbf{I})-1)^{2} \\
 &= \mu I + \lambda (\operatorname{det}(\mathbf{I})-1)  \frac{\partial}{\partial \mathbf{F}} \operatorname{det}(\mathbf{I}) = \mu \mathbf{I} \neq 0
 \end{align*}
 
-If the energy had rest stability, $P_{D}(\mathbf{I})$ would resolve to zero. Unfortunately, this is not the case here. In order to solve that problem, the authors modified $(J-1)^{2}$ to $(J-\alpha)^{2}$. Using this modification the energy can written as
+If the energy had rest stability, $P_{D}(\mathbf{I})$ would resolve to zero. Unfortunately, this is not the case here. In order to solve this problem, the authors modified $(J-1)^{2}$ to $(J-\alpha)^{2}$. Using this modification, the energy can written as
 \[
 \Psi_{E} = \frac{\mu}{2}\left(I_{C}-3\right) +\frac{\lambda}{2}(J-\alpha)^{2}.
 \]
@@ -182,11 +183,11 @@ Solving for an alpha that satisfies $P_{E}(\mathbf{I})=0$ gives us $\alpha=1+\fr
 \Psi_{E} &= \frac{\mu}{2}\left(I_{C}-3\right) +\frac{\lambda}{2}(J-1-\frac{\mu}{\lambda})^{2} \\
 &= \frac{\mu}{2}\left(I_{C}-3\right) - \mu\left(J-1\right) + \frac{\lambda}{2}(J-1)^{2} + \left(\frac{\mu}{\lambda}\right)^{2}.
 \end{align*}
-Since constants disappear under differentiation this expression is functionally equivalent to 
+Since constants disappear under differentiation, this expression is functionally equivalent to 
 \[
 \Psi_{E} = \frac{\mu}{2}\left(I_{C}-3\right) - \mu\left(J-1\right) + \frac{\lambda}{2}(J-1)^{2}.
 \]
-Now we can see that $\Psi_{E}$ looks very similar to $\Psi_{Neo}$. The difference is that $log(J)$ is replaced with $(J-1)$ in $\Psi_{E}$. Keep in mind that $(J-1)$ is the first term in the taylor approximation of $\operatorname{log}(J)$ at $J=1$:
+Note that $\Psi_{E}$ looks very similar to $\Psi_{Neo}$. The difference is that $log(J)$ is replaced with $(J-1)$ in $\Psi_{E}$. Keep in mind that $(J-1)$ is the first term in the taylor approximation of $\operatorname{log}(J)$ at $J=1$:
 \begin{align*}
 \sum_{n=0}^{\infty} &= \frac{f^{(n)}(1)}{n!} (J-1)^{n} \\
 &= \boldsymbol{(J-1)} - \frac{1}{2} (J-1)^{2} + \frac{1}{3} (J-1)^{3} -\frac{1}{4} (J-1)^{4} + \text{...}
@@ -194,7 +195,7 @@ Now we can see that $\Psi_{E}$ looks very similar to $\Psi_{Neo}$. The differenc
 Thus $\Psi_{E}$ is an approximation of $\Psi_{Neo}$.
 
 \todoredefined[inline]{
-TODO: Add "Zwischenschritte"? Include all calculations? Do we need a bit of a better conclusion of what we did (taylor, neo, sing. free, rest stable)? Check consistency of calculations (when trace when $I_C$ etc.).
+TODO: Include all calculations? Check consistency of calculations (when trace when $I_C$ etc.).
 }
 
 \subsection{Meta-Stability under Degeneracy}
@@ -215,11 +216,11 @@ TODO: How much needs to be explained here?
 
 
 \section{Energy Analysis}
-The goal of this chapter is to show that a complete eigenanalysis can be performed on Eq. \ref{eq:stable_energy}.
+The goal of this chapter is to show that a complete eigenanalysis can be performed on Eq. \ref{eq:stable_energy}. This helps us understand the properties and limitations of the new energy.
 
 
 \subsection{First Piola-Kirchhoff Stress (PK1)}
-In order to analyse the energy PK1 can be used for Eq. \ref{eq:stable_energy}:
+In order to analyse the energy PK1 can be used for Eq. \ref{eq:stable_energy} with $\alpha=1+\frac{\mu}{\lambda}-\left(\frac{\mu}{4}\right)\lambda$:
 \begin{align*}
 P(\mathbf{F}) &= \frac{\partial \Psi_{D}}{\partial \mathbf{F}} \left[ \frac{\mu}{2}\left(I_{C}-3\right) + \frac{\lambda}{2}(J-\alpha)^{2} - \frac{\mu}{2}\left(I_{C}+1\right) \right] \\
 &= \mu \mathbf{F} + \lambda (\operatorname{det}(\mathbf{F})-\alpha)  \frac{\partial}{\partial \mathbf{F}} \operatorname{det}(\mathbf{F}) - \frac{\partial}{\partial \mathbf{F}} \left[\operatorname{log}\left(\operatorname{tr}(\mathbf{F}^\intercal \mathbf{F})+1\right)\right] \\
@@ -227,13 +228,13 @@ P(\mathbf{F}) &= \frac{\partial \Psi_{D}}{\partial \mathbf{F}} \left[ \frac{\mu}
 &= \mu \left( 1 - \frac{1}{\operatorname{tr}(\mathbf{F}^\intercal \mathbf{F}) + 1}\right) \mathbf{F} + \lambda(J-\alpha)\frac{\partial J}{\partial \mathbf{F}}
 \end{align*}
 
-with $\alpha=1+\frac{\mu}{\lambda}-\left(\frac{\mu}{4}\right)\lambda$. For further use it can be more practical to write $\frac{\partial J}{\partial \mathbf{F}}$ as a result of cross products:
+For further use it can be more practical to write $\frac{\partial J}{\partial \mathbf{F}}$ as a result of cross products:
 \begin{equation}\label{eq:cross_product}
 \frac{\partial J}{\partial \mathbf{F}} = \left[ \,f_1 \times f_2\, \bigg| \,f_2 \times f_0\, \bigg| \,f_0 \times f_1\, \right].
 \end{equation}
 
 \todoredefined[inline]{
-TODO: Is it easy to follow? Maybe add some explanations of some steps? Maybe move cross product into background instead of here.
+TODO: Is it easy to follow? Maybe add some explanations of some steps?
 }
 
 \subsection{The Energy Hessian Terms}
@@ -243,7 +244,7 @@ Using the scalar notation for $\mathbf{F}$, the Hessian of the energy can be wri
 \left[\begin{array}{ccc}{\left[\frac{\partial P(\mathbf{F})}{\partial f_0}\right]} & {\left[\frac{\partial P(\mathbf{F})}{\partial f_3}\right]} & {\left[\frac{\partial P(\mathbf{F})}{\partial f_6}\right]} \\ {\left[\frac{\partial P(\mathbf{F})}{\partial f_1}\right]} & {\left[\frac{\partial P(\mathbf{F})}{\partial f_4}\right]} & {\left[\frac{\partial P(\mathbf{F})}{\partial f_7}\right]} \\ {\left[\frac{\partial P(\mathbf{F})}{\partial f_2}\right]} & {\left[\frac{\partial P(\mathbf{F})}{\partial f_5}\right]} & {\left[\frac{\partial P(\mathbf{F})}{\partial f_8}\right]} \end{array}\right]
 \]
 
-in which each entry is defined as
+Each entry of the Hessian is defined as
 \[
 \frac{\partial P(\mathbf{F})}{\partial f_i} = \frac{\partial}{\partial f_i} \left[ \mu \left( 1 - \frac{1}{\operatorname{tr}(\mathbf{F}^\intercal \mathbf{F}) + 1}\right) \mathbf{F} + \lambda(J-\alpha)\frac{\partial J}{\partial \mathbf{F}} \right]
 \]
@@ -257,34 +258,34 @@ We can split up this final equation into these four term: $\mathrm{T}_i$ (Tikoho
 
 \subsection{The Tikhonov, Mu, and Gradient Terms}
 \subsubsection{Tikhonov}
-The Tikhonov term is a fourth-order matrix-of-matrices
+The Tikhonov term is a fourth-order matrix-of-matrices. It is calculated by $\frac{\partial \mathbf{F}}{\partial f_i}$ and takes on the form
 \[
-\mathbb{T} = \frac{\partial \mathbf{F}}{\partial f_i} = \left[\begin{array}{ccc}{\begin{bmatrix} 1 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}} & {\begin{bmatrix} 0 & 1 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}} & {\begin{bmatrix} 0 & 0 & 1 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}} \\ {\begin{bmatrix} 0 & 0 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}} & {\begin{bmatrix} 0 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 0 \end{bmatrix}} & {\begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{bmatrix}} \\ {\begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 1 & 0 & 0 \end{bmatrix}} & {\begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 1 & 0 \end{bmatrix}} & {\begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 1 \end{bmatrix}} \end{array}\right].
+\mathbb{T} = \left[\begin{array}{ccc}{\begin{bmatrix} 1 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}} & {\begin{bmatrix} 0 & 1 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}} & {\begin{bmatrix} 0 & 0 & 1 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}} \\ {\begin{bmatrix} 0 & 0 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}} & {\begin{bmatrix} 0 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 0 \end{bmatrix}} & {\begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{bmatrix}} \\ {\begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 1 & 0 & 0 \end{bmatrix}} & {\begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 1 & 0 \end{bmatrix}} & {\begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 1 \end{bmatrix}} \end{array}\right].
 \]
-If we vectorize $\mathbb{T}$, we get the identity matrix $\mathbf{I} \in \mathbb{R}^{9x9}$ which is of full rank, positive definite and independent of the values in \textbf{F}. 
+If we vectorize $\mathbb{T}$, we get the identity matrix $\mathbf{I} \in \mathbb{R}^{9x9}$ which is of full rank, positive definite and independent of the values in \textbf{F}: 
 \[
-\operatorname{vec}(\mathbb{T}) =  \mathbf{\check{T}} = \mathbf{I} = \in \mathbb{R}^{9x9}.
+\operatorname{vec}(\mathbb{T}) =  \mathbf{\check{T}} = \mathbf{I} = \in \mathbb{R}^{9x9}
 \]
-It serves as a regularizer for the rest of the energy.
+The Tikhonov term serves as a regularizer for the rest of the energy.
 
 \subsubsection{Mu}
-The Mu term has the same structure with different entries
+The Mu term has the same structure with different entries. It can be obtained by $\mathbf{F} f_i$ and has the form
 \[
-\mathbb{M} = \mathbf{F} f_i = \left[\begin{array}{ccc}{\begin{bmatrix} f_0^2 & f_0f_3 & f_0f_6 \\ f_0f_1 & f_0f_4 & f_0f_7 \\ f_0f_2 & f_0f_5 & f_0f_8 \end{bmatrix}} & {\begin{bmatrix} f_3f_0 & f_3^2 & f_3f_6 \\ f_3f_1 & f_3f_4 & f_3f_7 \\ f_3f_2 & f_3f_5 & f_3f_8 \end{bmatrix}} & {\begin{bmatrix} f_6f_0 & f_6f_3 & f_6f_6 \\ f_6f_1 & f_6f_4 & f_6f_7 \\ f_6f_2 & f_6f_5 & f_6f_8 \end{bmatrix}} \\ {\begin{bmatrix} f_1f_0 & f_1f_3 & f_1f_6 \\ f_1^2 & f_1f_4 & f_1f_7 \\ f_1f_2 & f_1f_5 & f_1f_8 \end{bmatrix}} & {\begin{bmatrix} f_4f_0 & f_4f_3 & f_4f_6 \\ f_4f_1 & f_4^2 & f_4f_7 \\ f_4f_2 & f_4f_5 & f_4f_8 \end{bmatrix}} & {\begin{bmatrix} f_7f_0 & f_7f_3 & f_7f_6 \\ f_7f_1 & f_7f_4 & f_7^2 \\ f_7f_2 & f_7f_5 & f_7f_8 \end{bmatrix}} \\ {\begin{bmatrix} f_2f_0 & f_2f_3 & f_2f_6 \\ f_2f_1 & f_2f_4 & f_2f_7 \\ f_2^2 & f_2f_5 & f_2f_8 \end{bmatrix}} & {\begin{bmatrix} f_5f_0 & f_5f_3 & f_5f_6 \\ f_5f_1 & f_5f_4 & f_5f_7 \\ f_5f_2 & f_5^2 & f_5f_8 \end{bmatrix}} & {\begin{bmatrix} f_8f_0 & f_8f_3 & f_8f_6 \\ f_8f_1 & f_8f_4 & f_8f_7 \\ f_8f_2 & f_8f_5 & f_8^2 \end{bmatrix}} \end{array}\right].
+\mathbb{M} = \left[\begin{array}{ccc}{\begin{bmatrix} f_0^2 & f_0f_3 & f_0f_6 \\ f_0f_1 & f_0f_4 & f_0f_7 \\ f_0f_2 & f_0f_5 & f_0f_8 \end{bmatrix}} & {\begin{bmatrix} f_3f_0 & f_3^2 & f_3f_6 \\ f_3f_1 & f_3f_4 & f_3f_7 \\ f_3f_2 & f_3f_5 & f_3f_8 \end{bmatrix}} & {\begin{bmatrix} f_6f_0 & f_6f_3 & f_6f_6 \\ f_6f_1 & f_6f_4 & f_6f_7 \\ f_6f_2 & f_6f_5 & f_6f_8 \end{bmatrix}} \\ {\begin{bmatrix} f_1f_0 & f_1f_3 & f_1f_6 \\ f_1^2 & f_1f_4 & f_1f_7 \\ f_1f_2 & f_1f_5 & f_1f_8 \end{bmatrix}} & {\begin{bmatrix} f_4f_0 & f_4f_3 & f_4f_6 \\ f_4f_1 & f_4^2 & f_4f_7 \\ f_4f_2 & f_4f_5 & f_4f_8 \end{bmatrix}} & {\begin{bmatrix} f_7f_0 & f_7f_3 & f_7f_6 \\ f_7f_1 & f_7f_4 & f_7^2 \\ f_7f_2 & f_7f_5 & f_7f_8 \end{bmatrix}} \\ {\begin{bmatrix} f_2f_0 & f_2f_3 & f_2f_6 \\ f_2f_1 & f_2f_4 & f_2f_7 \\ f_2^2 & f_2f_5 & f_2f_8 \end{bmatrix}} & {\begin{bmatrix} f_5f_0 & f_5f_3 & f_5f_6 \\ f_5f_1 & f_5f_4 & f_5f_7 \\ f_5f_2 & f_5^2 & f_5f_8 \end{bmatrix}} & {\begin{bmatrix} f_8f_0 & f_8f_3 & f_8f_6 \\ f_8f_1 & f_8f_4 & f_8f_7 \\ f_8f_2 & f_8f_5 & f_8^2 \end{bmatrix}} \end{array}\right].
 \]
-When vectorizing $\mathbb{M}$, the resulting matrix $\mathbf{\check{M}}$ has the squared values of $f_i$ placed on the diagonal
+When vectorizing $\mathbb{M}$, the resulting matrix $\mathbf{\check{M}}$ has the squared values of $f_i$ placed on the diagonal:
 \[
-\operatorname{vec}(\mathbb{M})= \mathbf{\check{M}} = \begin{bmatrix} f_0^2 & f_1f_0 & f_2f_0 & f_3f_0 & f_4f_0 & f_5f_0 & f_6f_0 & f_7f_0 & f_8f_0 \\ f_0f_1 & f_1^2 & f_2f_1 & f_3f_1 & f_4f_1 & f_5f_1 & f_6f_1 & f_7f_1 & f_8f_1 \\ f_0f_2 & f_1f_2 & f_2^2 & f_3f_2 & f_4f_2 & f_5f_2 & f_6f_2 & f_7f_2 & f_8f_2 \\ f_0f_3 & f_1f_3 & f_2f_3 & f_3^2 & f_4f_3 & f_5f_3 & f_6f_3 & f_7f_3 & f_8f_3 \\ f_0f_4 & f_1f_4 & f_2f_4 & f_3f_4 & f_4^2 & f_5f_4 & f_6f_4 & f_7f_4 & f_8f_4 \\ f_0f_5 & f_1f_5 & f_2f_5 & f_3f_5 & f_4f_5 & f_5^2 & f_6f_5 & f_7f_5 & f_8f_5 \\ f_0f_6 & f_1f_6 & f_2f_6 & f_3f_6 & f_4f_6 & f_5f_6 & f_6^2 & f_7f_6 & f_8f_6 \\ f_0f_7 & f_1f_7 & f_2f_7 & f_3f_7 & f_4f_7 & f_5f_7 & f_6f_7 & f_7^2 & f_8f_7 \\ f_0f_8 & f_1f_8 & f_2f_8 & f_3f_8 & f_4f_8 & f_5f_8 & f_6f_8 & f_7f_8 & f_8^2 \end{bmatrix}.
+\operatorname{vec}(\mathbb{M})= \mathbf{\check{M}} = \begin{bmatrix} f_0^2 & f_1f_0 & f_2f_0 & f_3f_0 & f_4f_0 & f_5f_0 & f_6f_0 & f_7f_0 & f_8f_0 \\ f_0f_1 & f_1^2 & f_2f_1 & f_3f_1 & f_4f_1 & f_5f_1 & f_6f_1 & f_7f_1 & f_8f_1 \\ f_0f_2 & f_1f_2 & f_2^2 & f_3f_2 & f_4f_2 & f_5f_2 & f_6f_2 & f_7f_2 & f_8f_2 \\ f_0f_3 & f_1f_3 & f_2f_3 & f_3^2 & f_4f_3 & f_5f_3 & f_6f_3 & f_7f_3 & f_8f_3 \\ f_0f_4 & f_1f_4 & f_2f_4 & f_3f_4 & f_4^2 & f_5f_4 & f_6f_4 & f_7f_4 & f_8f_4 \\ f_0f_5 & f_1f_5 & f_2f_5 & f_3f_5 & f_4f_5 & f_5^2 & f_6f_5 & f_7f_5 & f_8f_5 \\ f_0f_6 & f_1f_6 & f_2f_6 & f_3f_6 & f_4f_6 & f_5f_6 & f_6^2 & f_7f_6 & f_8f_6 \\ f_0f_7 & f_1f_7 & f_2f_7 & f_3f_7 & f_4f_7 & f_5f_7 & f_6f_7 & f_7^2 & f_8f_7 \\ f_0f_8 & f_1f_8 & f_2f_8 & f_3f_8 & f_4f_8 & f_5f_8 & f_6f_8 & f_7f_8 & f_8^2 \end{bmatrix}
 \]
-This structure makes it possible to write $\mathbf{\check{M}}$ as an outer product of $\operatorname{vec}(\mathbf{F})$
+This structure makes it possible to write $\mathbf{\check{M}}$ as an outer product of $\operatorname{vec}(\mathbf{F})$:
 \[
-\mathbf{\check{M}}= \operatorname{vec}(\mathbf{F})\operatorname{vec}(\mathbf{F})^\intercal = \mathbf{\check{f}} \mathbf{\check{f}}^\intercal.
+\mathbf{\check{M}}= \operatorname{vec}(\mathbf{F})\operatorname{vec}(\mathbf{F})^\intercal = \mathbf{\check{f}} \mathbf{\check{f}}^\intercal
 \]
 This matrix has rank one and has a single non-zero eigenvalue. In order to examine the eigenvalues, we can calculate
 \[
 \| \mathbf{\check{f}} \|^{2}_{2} = \sum_{n=0}^8 | f_n |^2 = \| \mathbf{F} \|^{2}_{F} = \sum_{n=0}^3 \sigma^2_i = \left( \sigma_0^2 + \sigma_1^2 + \sigma_2^2 \right)
 \]
-in which $\|\cdot\|_F$ stands for the Frobenius norm introduced in Def. \ref{FN} and $\sigma_i$ for the singular values from $\mathbf{\Sigma}$ in the SVD of $\mathbf{F}$ stated in Eq. \ref{eq:svd_simga}. The equation can be obtained by using Eq. \ref{eq:FN}. The eigenvector is $\mathbf{\check{f}} / \| \mathbf{\check{f}} \|$. The eigenvalue is always non-negative and large if $\mathbf{F}$ contains a large strech.
+in which $\|\cdot\|_F$ stands for the Frobenius norm introduced in Def. \ref{FN} and $\sigma_i$ for the singular values from $\mathbf{\Sigma}$ in the \acrshort{svd} of $\mathbf{F}$ stated in Eq. \ref{eq:svd_simga}. The equation can be obtained by using Eq. \ref{eq:FN}, explained in chapter 2. The eigenvector is $\mathbf{\check{f}} / \| \mathbf{\check{f}} \|$. The eigenvalue is always non-negative and large if $\mathbf{F}$ contains a large strech.
 
 \subsubsection{Gradient}
 The gradient term also has the same structure as the two terms before with different entries defined by
@@ -307,7 +308,7 @@ TODO: Not all proofs and calculations included. Add or leave out some if too con
 
 
 \subsection{The Volume Hessian}
-The volume Hessian term is of the form
+To make an analysis of the volume Hessian term is a bit trickier. It is of the form
 \[
 \mathbb{H} = \frac{\partial^2 J}{\partial \mathbf{F} \partial f_i} = \left[\begin{array}{ccc}{\frac{\partial}{\partial \mathbf{F}}\left[\frac{\partial J}{\partial f_0}\right]} & {\frac{\partial}{\partial \mathbf{F}}\left[\frac{\partial J}{\partial f_3}\right]} & {\frac{\partial}{\partial \mathbf{F}}\left[\frac{\partial J}{\partial f_6}\right]} \\ {\frac{\partial}{\partial \mathbf{F}}\left[\frac{\partial J}{\partial f_1}\right]} & {\frac{\partial}{\partial \mathbf{F}}\left[\frac{\partial J}{\partial f_4}\right]} & {\frac{\partial}{\partial \mathbf{F}}\left[\frac{\partial J}{\partial f_7}\right]} \\ {\frac{\partial}{\partial \mathbf{F}}\left[\frac{\partial J}{\partial f_2}\right]} & {\frac{\partial}{\partial \mathbf{F}}\left[\frac{\partial J}{\partial f_5}\right]} & {\frac{\partial}{\partial \mathbf{F}}\left[\frac{\partial J}{\partial f_8}\right]} \end{array}\right].
 \]
@@ -318,9 +319,9 @@ Vectorizing $\mathbb{H}$ reveals the structure
 We can write $\mathbf{\check{H}}$ as a cross-product matrix in the form
 \[
 \mathbf{\check{H}} = \left[ \begin{matrix}
-0 & -\mathbf{\widehat{f_2}} & \mathbf{\widehat{f_1}} \\ \mathbf{\widehat{f_2}} & 0 & -\mathbf{\widehat{f_0}} \\ -\mathbf{\widehat{f_1}} & \mathbf{\widehat{f_0}} & 0 \end{matrix} \right]
+0 & -\mathbf{\widehat{f_2}} & \mathbf{\widehat{f_1}} \\ \mathbf{\widehat{f_2}} & 0 & -\mathbf{\widehat{f_0}} \\ -\mathbf{\widehat{f_1}} & \mathbf{\widehat{f_0}} & 0 \end{matrix} \right].
 \]
-where $\mathbf{\widehat{f_1}}$ stands for a cross-product matrix:
+In this form, $\mathbf{\widehat{f_1}}$ stands for the cross-product matrix
 \[
 \mathbf{\widehat{x}} = \left[ \begin{matrix}
 0 & -x_2 & x_1 \\ x_2 & 0 & -x_0 \\ -x_1 & x_0 & 0 \end{matrix} \right].
@@ -328,7 +329,7 @@ where $\mathbf{\widehat{f_1}}$ stands for a cross-product matrix:
 We can easily observe that $\mathbf{\check{H}}$ is a \textit{self-similar} cross-product matrix. This means that  the macro structure of the matrix is the same as the micro structure.
 
 \todoredefined[inline]{
-TODO: Check each $f_1$ and $-$ in vectorization of H because it's exhausting.
+TODO: Check again each $f_1$ and $-$ in vectorization of H.
 }
 
 \subsubsection{Volume Hessian Eigenvalues}
@@ -342,7 +343,7 @@ where $\epsilon$ denotes the eigenvalues of $\mathbf{\check{H}}$ and $\mathbf{C}
 \begin{align*}
 \epsilon_3 &= \sigma_0 & \epsilon_6 &= -\sigma_0 \\
 \epsilon_4 &= \sigma_1 & \epsilon_7 &= -\sigma_1 \\
-\epsilon_5 &= \sigma_2 & \epsilon_8 &= -\sigma_2.
+\epsilon_5 &= \sigma_2 & \epsilon_8 &= -\sigma_2
 \end{align*}
 The remaining eigenvalues can be obtained by using Eq. \ref{vol_hessian_eq2}. This equation represents a depressed cube. A depressed cube is a cubic of the form
 \[
@@ -354,12 +355,12 @@ Eq. \ref{vol_hessian_eq2} can be written in this form with $p=-\operatorname{tr}
 \]
 For further reading about how to solve depressed cubic equations, see e.g. \textit{How to Solve a Cubic Equation, Part 4: The 111 Case} \cite{4052506}.
 
-These are all of the eigenvalues of $\mathbf{\check{H}}$. We know that three of the six eigenvalues ($\epsilon_3$, ... $\epsilon_8$) have to negative or equal to zero since we take the positive and negative roots. In addition, the cosine function for calculating $\epsilon_0$, $\epsilon_1$ and $\epsilon_2$ ensures that one or two of these eigenvalues are also negative. As we have seen in the previous sections, the other terms of $\frac{\partial^2 \psi}{\partial \mathbf{F}^2}$ all only have nonnegative eigenvalues. So the volume Hessian is the only possible source of negative eigenvalues (\cite{Smith:2018:SNF:3191713.3180491}, 12:6).
+These are all of the eigenvalues of $\mathbf{\check{H}}$. We know that three of the six eigenvalues ($\epsilon_3$, ..., $\epsilon_8$) have to be negative or equal to zero since the root function yields a positive and a negative value. In addition, the cosine function for calculating $\epsilon_0$, $\epsilon_1$ and $\epsilon_2$ ensures that one or two of these eigenvalues are also negative. As we have seen in the previous sections, the other terms of $\frac{\partial^2 \psi}{\partial \mathbf{F}^2}$ all only have nonnegative eigenvalues. Thus, the volume Hessian is the only possible source of negative eigenvalues (\cite{Smith:2018:SNF:3191713.3180491}, 12:6).
 
-In order to investigate the behaviour of the volume Hessian term further, let us look at J = det(\textbf{F}) a bit more in detail. J is not convex which is problematic since we want to use the Newton method for the optimization process. Fortunately, the other terms of $\frac{\partial^2 \psi}{\partial \mathbf{F}^2}$ serve as an additional regularization.
+In order to investigate the behaviour of the volume Hessian term further, let us look at $J = \operatorname{det}(\mathbf{F})$ a bit more in detail. $J$ is not convex which is problematic, because we will use the Newton method for the optimization process. In order for the Newton method to work correctly, it needs a convex function. Fortunately, the other terms of $\frac{\partial^2 \psi}{\partial \mathbf{F}^2}$ serve as an additional regularization as already stated for the Tikhonov term.
 
 \todoredefined[inline]{
-TODO: include reflection convention? check with background. Regularisation?
+TODO: Regularisation?
 }
 
 \subsubsection{Volume Hessian Eigenvectors}
@@ -380,18 +381,11 @@ where \textbf{U} and \textbf{V} are taken from the \acrshort{svd} of \textbf{F},
 TODO: Include what is necessary.
 }
 
-\todoredefined[inline]{
-TODO: Eigenvalues of Mu and Gradient term better explain?
-}
-
 
 \section{Experiments with the Code}
-The authors of the paper \textit{\acrshort{snh}} provided the implementation for an application of their formulated energy. In said code, they implemented the stretch test on a cube. Their implementation demands a directory into which the output files should be saved, the two lamé parameters $\mu$ and $\lambda$ and a value for defining the desired resolution as input data. Here is an example for a command with resolution = 10, $\mu=1.0$, $\lambda=10.0$ and output directory \textit{output}:
-\begin{lstlisting}[language=bash]
-$ ./tetcli 10 stable_neo_hookean 1.0 10.0 output
-\end{lstlisting}
+The authors of the paper \textit{\acrshort{snh}} provided the implementation for an application of their formulated energy\footnote{http://graphics.pixar.com/library/StableElasticity/snh\_code.tar.bz2}. The code performs a stretch test on a cube with either a tetrahedral or hexahedral mesh. Their implementation demands a string for defining the directory into which the output files should be saved, a value for each of the two lamé parameters $\mu$ and $\lambda$ and a value for defining the desired resolution as input data.
 
-The algorithm progressively calculates the deformation in 25 steps. The outputs are 26 static objects that show the object in its rest state and the 25 steps of deformation.
+The algorithm progressively calculates the deformation in 25 steps. The outputs are 26 static objects in the format .obj that firstly show the object in its rest state and then illustrate the 25 steps of deformation.
 
 \begin{tikzpicture}[node distance=2cm]
 \node (input) [process] {$\mu$, $\lambda$, resolution};
@@ -402,16 +396,65 @@ The algorithm progressively calculates the deformation in 25 steps. The outputs 
 \draw [arrow] (code) -- node[anchor=south] {Output}(output);
 \end{tikzpicture}
 
-\todoredefined[inline]{
-TODO: Explain how the code is implemented in simple words and how the energy is taken in account with the poisson's ratio. Do I have to reference code? Explain tetcli and Hexcli.
+\subsection{Example}
+
+I will explain how the implementation works based on an example. For this I am taking the input variables $\mu = 1.0$, $\lambda = 10.0$ and a resolution of $10.0$. Thus, for the poisson's ratio we get the value
+
+\[ \sigma =  \frac{10.0}{2 (10.0 + 1.0)} = 0.4545. \]
+
+The command to start the execution for a tetrahedral mesh with these input variables is shown in code snippet \ref{lst:bashCommand}.
+\newline
+\begin{lstlisting}[language=bash, numbers=none, label=lst:bashCommand, caption=Bash command for executing the code, captionpos=b]
+$ ./tetcli 10 stable_neo_hookean 1.0 10.0 output
+\end{lstlisting}
+
+The code then creates a cube with $10$ edges (corresponds to the chosen resolution) and $11$ vertices (calculated by resolution + $1$) on each side. The cube therefore consists of $1'331$ vertices in total. The amount of hexahedra respectively tetrahedra are calculated by
+\begin{align*}
+	&\text{Tet count} = 6 * 10 * 10 * 10 = 6'000 \\
+	&\text{Cube count} = 10 * 10 * 10 = 1'000.
+\end{align*}
+Afterwards the simulation with the $25$ steps of the deformation starts. The stretching is done by modifying the y-value of the vertices. The cube is stretched by pulling its two faces in the y-axis further away from each other. This is done by updating the y-value of a vertex with a new value \textit{newNegativeBoundary} or \textit{newPositiveBoundary} depending on whether the vertex should move in the positive or negative direction of the y-axis. The definition of these two values is shown in code snippet \ref{lst:newBoundary}. The variable \verb|stepDelta| is equal to $0.1$. It is not a fixed value but modifying it which would influence the extend of the deformation. The variable \verb|stepNum| is the value of the current step from the $25$ we are in right now.
+\newline
+\begin{lstlisting}[language=C++, numbers=none, label=lst:newBoundary, caption=Updating y-coordinates of vertices, captionpos=b]
+const double newNegativeBoundary = -1.0 - stepNum * stepDelta;
+const double newPositiveBoundary = 1.0 + stepNum * stepDelta;
+\end{lstlisting}
+
+After the new positions are declared, the \verb|TetNewtonSolver| respectively \verb|CubeNewtonSolver| are used to minimize the strain energy over the meshes. The final mesh is then saved in an .obj file in the directory \textit{output}. 
+
+Table \ref{table:default_tet} and \ref{table:default_hex} show, how many Newton iteration had to be done for solving the system. The amount of iterations increase with increasing step size. This is not surprising, since the deformation is increased with each step resulting in more complex calculations.
+
+\begin{table}[!htbp]
+\parbox{.45\linewidth}{
+\centering
+\begin{tabular}{ | l | l |}
+\hline
+\textbf{Step size} & \textbf{Iterations} \\ \hline
+1-10 & 2 \\ \hline
+11-21 & 3 \\ \hline
+22-25 & 4 \\ \hline
+\end{tabular}
+\caption{Newton iterations for a tetrahedral mesh}
+\label{table:default_tet}
 }
+\hfill
+\parbox{.45\linewidth}{
+\centering
+\begin{tabular}{ | l | l |}
+\hline
+\textbf{Step size} & \textbf{Iterations} \\ \hline
+1-7 & 3 \\ \hline
+8-14 & 4 \\ \hline
+15-18 & 5 \\ \hline
+19-22 & 6 \\ \hline
+23-25 & 7 \\ \hline
+\end{tabular}
+\caption{Newton iterations for a hexahedral mesh}
+\label{table:default_hex}
+}
+\end{table}
 
-For starters let us take common values for $\mu$ and $\lambda$. We first start with $\mu = 1.0$, $\lambda = 10.0$ and a resolution of 10.0. For the poisson's ratio we get the value $0.4545$:
-
-\[ \sigma =  \frac{10.0}{2 (10.0 + 1.0)} = 0.4545 \]
-
-
-The images in Fig. \ref{fig:stretchtest} show the stretch test with $\mu = 1.0$, $\lambda = 10.0$ and a resolution of 10.0 on a tetrahedral and a hexahedral mesh.
+The images in Fig. \ref{fig:stretchtest} show four of the resulting objects of this example. They show step $0$ (initial cube), $8$, $16$ and $24$ for a tetrahedral and hexahedral mesh. The result is very good, no artefacts can be seen. There is no obvious difference recognizable whether we took a hexahedral or a tetrahedral mesh. The snapshots are taken with the help of the software OpenFlipper\footnote{https://www.graphics.rwth-aachen.de/software/openflipper/}.
 
 \begin{figure}[!htbp]
 	\centering
@@ -442,14 +485,55 @@ The images in Fig. \ref{fig:stretchtest} show the stretch test with $\mu = 1.0$,
     \label{fig:stretchtest}
 \end{figure}
 
+\subsection{Comparison of different input variables}
+For examining the influence of the input variable, I experimented with different values. The importance of the resolution is straight forward. For a higher resolution, the cube consists of more vertices and edges. This results in smoother results but also a longer runtime. If we choose a resolution of $30$, the cube consists of $29'791$ vertices and $162'000$ tetrahedra respectively $27'000$ hexahedra. Table \ref{table:res_tet} and \ref{table:res_hex} show the completed Newton iterations. The amount of iterations is slightly more than in the example in section 3.4.1.
 
-\todoredefined[inline]{
-TODO: Load into OpenFlipper and screenshot results. Include remaining examples (diff. lamé param. and changes in method) and what went right and what went wrong.
+\begin{table}[!htbp]
+\parbox{.45\linewidth}{
+\centering
+\begin{tabular}{ | l | l |}
+\hline
+\textbf{Step size} & \textbf{Iterations} \\ \hline
+1-7 & 2 \\ \hline
+8-13 & 3 \\ \hline
+14-20 & 4 \\ \hline
+21-25 & 5 \\ \hline
+\end{tabular}
+\caption{Newton iterations for a tetrahedral mesh (res=30)}
+\label{table:res_tet}
 }
+\hfill
+\parbox{.45\linewidth}{
+\centering
+\begin{tabular}{ | l | l |}
+\hline
+\textbf{Step size} & \textbf{Iterations} \\ \hline
+1-4 & 3 \\ \hline
+5-10 & 4 \\ \hline
+11-15 & 5 \\ \hline
+16-19 & 6 \\ \hline
+20-23 & 7 \\ \hline
+24-25 & 8 \\ \hline
+\end{tabular}
+\caption{Newton iterations for a hexahedral mesh (res=30)}
+\label{table:res_hex}
+}
+\end{table}
+
+In addition, we can increase or decrease \textit{\mu} and \textit{\lambda} which changes the poisson's ratio. If we decrease \textit{\lambda}, the poisson's ratio also decreases. We can set \textit{\lambda} equal to $1.0$ and let the other variables stay the same as in the first example (\textit{\mu} $= 1.0$, resolution $= 10.0$). With these inputs the cube gets wider in the middle part, as the poisson's ratio indicated that the material is more resistant to the stretching.
 
 
+
+
+
+\newpage
 
 \section{Discussion}
 Stuff, Taylor approx.
+
+\todoredefined[inline]{
+TODO: Include remaining examples (diff. lamé param. and changes in method) and what went right and what went wrong. \\
+Include other examples with Newton iterations?
+}
 
 
