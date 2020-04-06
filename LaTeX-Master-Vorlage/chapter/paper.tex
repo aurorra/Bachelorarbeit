@@ -552,14 +552,14 @@ In addition, we can increase or decrease \textit{\mu} and \textit{\lambda} which
   % include first image
   \includegraphics[width=.8\linewidth]{resources/lambda_comparison_res.png}  
   \caption{Step 25 with $\lambda = 10.0$}
-  \label{fig:res_1}
+  \label{fig:lambda_1}
 \end{subfigure}
 \begin{subfigure}{.47\textwidth}
   \centering
   % include second image
   \includegraphics[width=.8\linewidth]{resources/lambda_comparison_lambda.png}  
   \caption{Step 25 with $\lambda = 1.0$}
-  \label{fig:res_2}
+  \label{fig:lambda_2}
 \end{subfigure}
 \caption{Results with a different values for $\lambda$ on a hexahedral mesh}
 \label{fig:lambda}
@@ -592,6 +592,27 @@ Table \ref{table:lambda_tet} and \ref{table:lambda_hex} show the amount of Newto
 \end{table}
 
 Now instead of decreasing the poisson's ratio, let's increase it. We can achieve that by choosing $\mu = 0.1$ and letting the other variables stay the same as in the first example of this section ($\lambda = 10.0$, res $= 10$). This is an extreme case because the poisson's ratio is very close to $0.5$. A higher poisson's value makes the cube more susceptible for stretching. We can see this effect by comparing the two images in Fig. -.
+
+\begin{figure}[!ht]
+\centering
+\begin{subfigure}{.47\textwidth}
+  \centering
+  % include first image
+  \includegraphics[width=.8\linewidth]{resources/mu_res.png}  
+  \caption{Step 25 with $\mu = 1.0$}
+  \label{fig:mu_1}
+\end{subfigure}
+\begin{subfigure}{.47\textwidth}
+  \centering
+  % include second image
+  \includegraphics[width=.8\linewidth]{resources/mu_mu.png}  
+  \caption{Step 25 with $\mu = 0.1$}
+  \label{fig:mu_2}
+\end{subfigure}
+\caption{Results with a different values for $\mu$ on a tetrahedral mesh}
+\label{fig:mu}
+\end{figure}
+
 
 For solving this system, we need more Newton iterations as we can see in Table \ref{table:mu_tet}  and \ref{table:mu_hex}. This is caused by the more complex deformation. The cube gets a lot narrower in the middle part which increases the difficulty of reaching a solution without artefacts.
 \begin{table}[!htbp]
