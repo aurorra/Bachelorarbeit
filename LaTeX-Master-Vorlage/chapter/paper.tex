@@ -165,7 +165,7 @@ Although $\Psi_{D}$ meets almost all stated requirements, it is not rest stable.
 \begin{align*}
 P_{D}(\mathbf{I}) &= \frac{\partial \Psi_{D}}{\partial \mathbf{F}} (\mathbf{I}) = \frac{\partial \Psi_{D}}{\partial \mathbf{F}} \left[ \frac{\mu}{2}\left(I_{C}-3\right) +\frac{\lambda}{2}(J-1)^{2} \right] \\
 &= \frac{\partial \Psi_{D}}{\partial \mathbf{F}}  \frac{\mu}{2}\left(\operatorname{tr}(\mathbf{I}^\intercal \mathbf{I})-3\right) +\frac{\partial \Psi_{D}}{\partial \mathbf{F}} \frac{\lambda}{2}(\operatorname{tr}(\mathbf{I})-1)^{2} \\
-&= \mu I + \lambda (\operatorname{det}(\mathbf{I})-1)  \frac{\partial}{\partial \mathbf{F}} \operatorname{det}(\mathbf{I}) = \mu \mathbf{I} \neq 0
+&= \mu \mathbf{I} + \lambda (\operatorname{det}(\mathbf{I})-1)  \frac{\partial}{\partial \mathbf{F}} \operatorname{det}(\mathbf{I}) = \mu \mathbf{I} \neq 0
 \end{align*}
 
 If the energy had rest stability, $P_{D}(\mathbf{I})$ would resolve to zero. Unfortunately, this is not the case here. In order to solve this problem, the authors modified $(J-1)^{2}$ to $(J-\alpha)^{2}$. Using this modification, the energy can written as
@@ -528,14 +528,14 @@ Fig. \ref{fig:res} shows the results with a higher resolution of $30$ compared t
   \centering
   % include first image
   \includegraphics[width=.8\linewidth]{resources/default_zoom_tet.png}  
-  \caption{Resolution of 10}
+  \caption{Step 25 with a resolution of 10}
   \label{fig:res_1}
 \end{subfigure}
 \begin{subfigure}{.47\textwidth}
   \centering
   % include second image
   \includegraphics[width=.8\linewidth]{resources/res_zoom_tet.png}  
-  \caption{Resolution of 30}
+  \caption{Step 25 with a resolution of 30}
   \label{fig:res_2}
 \end{subfigure}
 \caption{Results with a different resolution on a tetrahedral mesh}
@@ -543,10 +543,104 @@ Fig. \ref{fig:res} shows the results with a higher resolution of $30$ compared t
 \end{figure}
 
 
-In addition, we can increase or decrease \textit{\mu} and \textit{\lambda} which changes the poisson's ratio. If we decrease \textit{\lambda}, the poisson's ratio also decreases. We can set \textit{\lambda} equal to $1.0$ and let the other variables stay the same as in the last example (\textit{\mu} $= 1.0$, resolution $= 30.0$). With these inputs the cube gets wider in the middle part, as the poisson's ratio indicated that the material is more resistant to the stretching.
+In addition, we can increase or decrease \textit{\mu} and \textit{\lambda} which changes the poisson's ratio. If we decrease \textit{\lambda}, the poisson's ratio also decreases. We can set \textit{\lambda} equal to $1.0$ and let the other variables stay the same as in the last example (\textit{\mu} $= 1.0$, resolution $= 30.0$). Fig. \ref{fig:lambda} shows how the deformation is influenced by changing $\lambda$. With these inputs the cube gets wider in the middle part, as the poisson's ratio indicates that the material is more resistant to the stretching.
+
+\begin{figure}[!ht]
+\centering
+\begin{subfigure}{.47\textwidth}
+  \centering
+  % include first image
+  \includegraphics[width=.8\linewidth]{resources/lambda_comparison_res.png}  
+  \caption{Step 25 with $\lambda = 10.0$}
+  \label{fig:res_1}
+\end{subfigure}
+\begin{subfigure}{.47\textwidth}
+  \centering
+  % include second image
+  \includegraphics[width=.8\linewidth]{resources/lambda_comparison_lambda.png}  
+  \caption{Step 25 with $\lambda = 1.0$}
+  \label{fig:res_2}
+\end{subfigure}
+\caption{Results with a different values for $\lambda$ on a hexahedral mesh}
+\label{fig:lambda}
+\end{figure}
+
+Table \ref{table:lambda_tet} and \ref{table:lambda_hex} show the amount of Newton iteration needed for the chosen input values. The amount of iterations has decreased for both meshes. We need less iterations because the extend of the deformation is smaller.
+
+\begin{table}[!htbp]
+\parbox{.45\linewidth}{
+\centering
+\begin{tabular}{ | l | l |}
+\hline
+\textbf{Step size} & \textbf{Iterations} \\ \hline
+1-25 & 2 \\ \hline
+\end{tabular}
+\caption{Newton iterations for a tetrahedral mesh ($\lambda = 1.0$)}
+\label{table:lambda_tet}
+}
+\hfill
+\parbox{.45\linewidth}{
+\centering
+\begin{tabular}{ | l | l |}
+\hline
+\textbf{Step size} & \textbf{Iterations} \\ \hline
+1-25 & 3 \\ \hline
+\end{tabular}
+\caption{Newton iterations for a hexahedral mesh ($\lambda = 1.0$)}
+\label{table:lambda_hex}
+}
+\end{table}
+
+Now instead of decreasing the poisson's ratio, let's increase it. We can achieve that by choosing $\mu = 0.1$ and letting the other variables stay the same as in the first example of this section ($\lambda = 10.0$, res $= 10$). This is an extreme case because the poisson's ratio is very close to $0.5$. A higher poisson's value makes the cube more susceptible for stretching. We can see this effect by comparing the two images in Fig. -.
+
+For solving this system, we need more Newton iterations as we can see in Table \ref{table:mu_tet}  and \ref{table:mu_hex}. This is caused by the more complex deformation. The cube gets a lot narrower in the middle part which increases the difficulty of reaching a solution without artefacts.
+\begin{table}[!htbp]
+\parbox{.45\linewidth}{
+\centering
+\begin{tabular}{ | l | l |}
+\hline
+\textbf{Step size} & \textbf{Iterations} \\ \hline
+1 & 2 \\ \hline
+2-3 & 3 \\ \hline
+4-6 & 4 \\ \hline
+7 & 5 \\ \hline
+8-11 & 6 \\ \hline
+12 & 7 \\ \hline
+13-20 & 8 \\ \hline
+21-25 & 10 \\ \hline
+\end{tabular}
+\caption{Newton iterations for a tetrahedral mesh ($\mu = 0.1$)}
+\label{table:mu_tet}
+}
+\hfill
+\parbox{.45\linewidth}{
+\centering
+\begin{tabular}{ | l | l |}
+\hline
+\textbf{Step size} & \textbf{Iterations} \\ \hline
+1 & 5 \\ \hline
+2 & 6 \\ \hline
+3 & 7 \\ \hline
+4 & 8 \\ \hline
+5-6 & 9 \\ \hline
+7 & 10 \\ \hline
+8-9 & 11 \\ \hline
+10-11 & 12 \\ \hline
+12 & 13 \\ \hline
+13-14 & 14 \\ \hline
+15 & 15 \\ \hline
+16 & 16 \\ \hline
+17-19 & 17 \\ \hline
+20-25 & 19 \\ \hline
+\end{tabular}
+\caption{Newton iterations for a hexahedral mesh ($\mu = 0.1$)}
+\label{table:mu_hex}
+}
+\end{table}
 
 
-
+\subsubsection{Extreme values}
+We can test the energy with some extreme values. For a very low poisson's value, I choose $\lambda = 0.1$ and $\mu = 10.0$ with a resolution of $30$. This takes about $100$ to $200$ Newton iterations. I increased the original limit of a maximum of $50$ Newton iterations per step because the solve failed to get the result within these $50$ iterations. The finished result gives us some strange looking deformations as shown in Fig. -. But since the goal is to simulate human flesh, we are not very concerned how the energy performs with a low poissson's ratio.
 
 
 \newpage
@@ -555,8 +649,7 @@ In addition, we can increase or decrease \textit{\mu} and \textit{\lambda} which
 Stuff, Taylor approx.
 
 \todoredefined[inline]{
-TODO: Include remaining examples (diff. lamé param. and changes in method) and what went right and what went wrong. \\
-Include other examples with Newton iterations?
+TODO: Explain difference in iteration with meshes
 }
 
 
