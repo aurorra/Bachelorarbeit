@@ -383,9 +383,9 @@ TODO: Include what is necessary.
 
 
 \section{Experiments with the Code}
-The authors of the paper \textit{\acrshort{snh}} provided the implementation for an application of their formulated energy\footnote{http://graphics.pixar.com/library/StableElasticity/snh\_code.tar.bz2}. The code performs a stretch test on a cube with either a tetrahedral or hexahedral mesh. Their implementation demands a string for defining the directory into which the output files should be saved, a value for each of the two lamé parameters $\mu$ and $\lambda$ and a value for defining the desired resolution as input data.
+The authors of the paper \textit{\acrshort{snh}} provided the implementation for an application of their formulated energy in C++\footnote{http://graphics.pixar.com/library/StableElasticity/snh\_code.tar.bz2}. The code performs a stretch test on a cube with either a tetrahedral or hexahedral mesh. Their implementation demands a string for defining the directory into which the output files should be saved, a value for each of the two lamé parameters $\mu$ and $\lambda$ and a value for defining the desired resolution as input data.
 
-The algorithm progressively calculates the deformation in 25 steps. The outputs are 26 static objects in the format .obj that firstly show the object in its rest state and then illustrate the 25 steps of deformation.
+The algorithm progressively calculates the deformation in 25 steps. The outputs are 26 static objects in the format .obj that show the object in its rest state and then illustrate the 25 steps of deformation.
 
 \begin{tikzpicture}[node distance=2cm]
 \node (input) [process] {$\mu$, $\lambda$, resolution};
@@ -413,7 +413,7 @@ The code then creates a cube with $10$ edges (corresponds to the chosen resoluti
 	&\text{Tet count} = 6 * 10 * 10 * 10 = 6'000 \\
 	&\text{Cube count} = 10 * 10 * 10 = 1'000.
 \end{align*}
-Afterwards the simulation with the $25$ steps of the deformation starts. The stretching is done by modifying the y-value of the vertices. The cube is stretched by pulling its two faces in the y-axis further away from each other. This is done by updating the y-value of a vertex with a new value \textit{newNegativeBoundary} or \textit{newPositiveBoundary} depending on whether the vertex should move in the positive or negative direction of the y-axis. The definition of these two values is shown in code snippet \ref{lst:newBoundary}. The variable \verb|stepDelta| is equal to $0.1$. It is not a fixed value but modifying it which would influence the extend of the deformation. The variable \verb|stepNum| is the value of the current step from the $25$ we are in right now.
+Afterwards the simulation with the $25$ steps of the deformation starts. The code sets two faces of the cube as a boundary condition. The stretching is done by modifying these two boundaries further away from each other in the y-axis. This is done by updating the y-value of the vertices with a new value \verb|newNegativeBoundary| or \verb|newPositiveBoundary| depending on whether the vertex should move in the positive or negative direction of the y-axis. The definition of these two values is shown in code snippet \ref{lst:newBoundary}. The variable \verb|stepDelta| is equal to $0.1$. It is not a fixed value but modifying it which would influence the extend of the deformation. The variable \verb|stepNum| is the value of the current step from the $25$ we are in right now. The position of the remaining vertices are then kinematically scripted.
 \newline
 \begin{lstlisting}[language=C++, numbers=none, label=lst:newBoundary, caption=Updating y-coordinates of vertices, captionpos=b]
 const double newNegativeBoundary = -1.0 - stepNum * stepDelta;
@@ -454,7 +454,7 @@ Table \ref{table:default_tet} and \ref{table:default_hex} show, how many Newton 
 }
 \end{table}
 
-The images in Fig. \ref{fig:stretchtest} show four of the resulting objects of this example. They show step $0$ (initial cube), $8$, $16$ and $24$ for a tetrahedral and hexahedral mesh. The result is very good, no artefacts can be seen. There is no obvious difference recognizable whether we took a hexahedral or a tetrahedral mesh. All snapshots in this chapter are taken with the help of the software OpenFlipper\footnote{https://www.graphics.rwth-aachen.de/software/openflipper/}.
+The images in Fig. \ref{fig:stretchtest} show four of the resulting objects of this example. They show step $0$ (initial cube), $8$, $16$ and $24$ for a tetrahedral and hexahedral mesh. The result is good, no artefacts can be seen. There is no obvious difference recognizable whether we took a hexahedral or a tetrahedral mesh. All snapshots in this chapter are taken with the help of the software OpenFlipper\footnote{https://www.graphics.rwth-aachen.de/software/openflipper/}.
 
 \begin{figure}[!htbp]
 	\centering
@@ -543,7 +543,7 @@ Fig. \ref{fig:res} shows the results with a higher resolution of $30$ compared t
 \end{figure}
 
 
-In addition, we can increase or decrease \textit{\mu} and \textit{\lambda} which changes the poisson's ratio. If we decrease \textit{\lambda}, the poisson's ratio also decreases. We can set \textit{\lambda} equal to $1.0$ and let the other variables stay the same as in the first example (\textit{\mu} $= 1.0$, resolution $= 10.0$). With these inputs the cube gets wider in the middle part, as the poisson's ratio indicated that the material is more resistant to the stretching.
+In addition, we can increase or decrease \textit{\mu} and \textit{\lambda} which changes the poisson's ratio. If we decrease \textit{\lambda}, the poisson's ratio also decreases. We can set \textit{\lambda} equal to $1.0$ and let the other variables stay the same as in the last example (\textit{\mu} $= 1.0$, resolution $= 30.0$). With these inputs the cube gets wider in the middle part, as the poisson's ratio indicated that the material is more resistant to the stretching.
 
 
 
