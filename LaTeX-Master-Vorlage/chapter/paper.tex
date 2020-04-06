@@ -591,21 +591,21 @@ Table \ref{table:lambda_tet} and \ref{table:lambda_hex} show the amount of Newto
 }
 \end{table}
 
-Now instead of decreasing the poisson's ratio, let's increase it. We can achieve that by choosing $\mu = 0.1$ and letting the other variables stay the same as in the first example of this section ($\lambda = 10.0$, res $= 10$). This is an extreme case because the poisson's ratio is very close to $0.5$. A higher poisson's value makes the cube more susceptible for stretching. We can see this effect by comparing the two images in Fig. -.
+Now instead of decreasing the poisson's ratio, let's increase it. We can achieve that by choosing $\mu = 0.1$ and letting the other variables stay the same as in the first example of this section ($\lambda = 10.0$, res $= 10$). This is an extreme case because the poisson's ratio is very close to $0.5$. A higher poisson's value makes the cube more susceptible for stretching. We can see this effect a bit by comparing the two images in Fig. \ref{fig:mu}, although the difference is not extreme. The model still behaves well and no artefacts can be seen.
 
 \begin{figure}[!ht]
 \centering
 \begin{subfigure}{.47\textwidth}
   \centering
   % include first image
-  \includegraphics[width=.8\linewidth]{resources/mu_res.png}  
+  \includegraphics[width=.8\linewidth]{resources/mu_res_new.png}  
   \caption{Step 25 with $\mu = 1.0$}
   \label{fig:mu_1}
 \end{subfigure}
 \begin{subfigure}{.47\textwidth}
   \centering
   % include second image
-  \includegraphics[width=.8\linewidth]{resources/mu_mu.png}  
+  \includegraphics[width=.8\linewidth]{resources/mu_mu_new.png}  
   \caption{Step 25 with $\mu = 0.1$}
   \label{fig:mu_2}
 \end{subfigure}
@@ -613,8 +613,7 @@ Now instead of decreasing the poisson's ratio, let's increase it. We can achieve
 \label{fig:mu}
 \end{figure}
 
-
-For solving this system, we need more Newton iterations as we can see in Table \ref{table:mu_tet}  and \ref{table:mu_hex}. This is caused by the more complex deformation. The cube gets a lot narrower in the middle part which increases the difficulty of reaching a solution without artefacts.
+For solving this system, we need more Newton iterations as we can see in Table \ref{table:mu_tet}  and \ref{table:mu_hex}. This is caused by the more complex deformation. The cube gets narrower in the middle part which increases the difficulty of reaching a valid solution.
 \begin{table}[!htbp]
 \parbox{.45\linewidth}{
 \centering
@@ -663,6 +662,13 @@ For solving this system, we need more Newton iterations as we can see in Table \
 \subsubsection{Extreme values}
 We can test the energy with some extreme values. For a very low poisson's value, I choose $\lambda = 0.1$ and $\mu = 10.0$ with a resolution of $30$. This takes about $100$ to $200$ Newton iterations. I increased the original limit of a maximum of $50$ Newton iterations per step because the solve failed to get the result within these $50$ iterations. The finished result gives us some strange looking deformations as shown in Fig. -. But since the goal is to simulate human flesh, we are not very concerned how the energy performs with a low poissson's ratio.
 
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=.7\textwidth]{resources/mu_extreme_small.png}  
+\caption{Results with a different values for $\mu$ on a tetrahedral mesh}
+\label{fig:mu_extreme}
+\end{figure}
+
 
 \newpage
 
@@ -670,7 +676,7 @@ We can test the energy with some extreme values. For a very low poisson's value,
 Stuff, Taylor approx.
 
 \todoredefined[inline]{
-TODO: Explain difference in iteration with meshes
+TODO: Explain difference in iteration with meshes. Explain artefacts.
 }
 
 
