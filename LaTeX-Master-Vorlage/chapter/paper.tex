@@ -157,7 +157,7 @@ does not have these problems. It is bounded, well defined and invertible. After 
 $\Psi_{D}$ is singularity free and well defined under inversion. Unfortunately, it does not satisfy the requirement of being rest stable which will be discussed in the next section.
 
 \todoredefined[inline]{
-TODO: explain how to get to equation with singular values
+TODO: explain how to get to equation with singular values?
 }
 
 \subsection{Rest Stabilization}
@@ -199,19 +199,32 @@ TODO: Include all calculations? Check consistency of calculations (when trace wh
 }
 
 \subsection{Meta-Stability under Degeneracy}
-The final energy is
+We have seen that he energy $\Psi_{E}$ has inversion, reflection and rest stability. Now we are interested how it behaves under degeneracy. The authors of the paper \textit{\acrshort{snh}} viewed this as a Drucker stability analysis (see \cite{bower2009applied}). By Drucker stability, we mean a set of criteria that a material can satisfy or not. This is a measurement of the stability of the material. The calculations can be found in the supplemental material of \textit{\acrshort{snh}}, I will only present the results here. 
+
+The energy remains stable when crushing the object into a \textit{plane}. The object is able to return to its rest state. Thus, no further adjustments needs to be done. When crushing the object into a \textit{line}, the energy is meta-stable. A meta-stable state is a weaker state of stability that is resistant to small changes but not to large ones. The alternative would be a state that yields singularities, which worsens the situation. Hence, we can leave the energy as it is. Crushing the object to a \textit{point}, the material cannot recover into its rest state. This effect is small for a higher poisson's ratio as for biological tissue. For completeness the authors nevertheless added a regularized origin barrier:
+\[
+	\Psi_{origin} = \operatorname{log}(I_C +\delta)
+\]
+This term eliminates the point meta-stability for a positive poisson's ratio without interfering with the other requirements for the energy. It can be shown that the value $\delta$ should be set to $1$. This is also included in the supplemental material of the paper (\cite{Smith:2018:SNF:3191713.3180491}, 12:4).
+
+The final energy is then
 \begin{equation}\label{eq:stable_energy}
 \Psi_{new} = \frac{\mu}{2}\left(I_{C}-3\right) + \frac{\lambda}{2}(J-\alpha)^{2} - \frac{\mu}{2} \operatorname{log}\left(I_{C}+1\right).
 \end{equation}
 With that adjustment the rest stability term can be written as $\alpha=1+\frac{\mu}{\lambda}-\left(\frac{\mu}{4}\right)\lambda$.
 
-\todoredefined[inline]{
-TODO: How much needs to be explained here?
-}
-
 \subsection{Lamé Reparametrization}
+In order to stay consistent with Hooke's law, we need to do a reparametrization of $\mu$ and $\lambda$. For achieving this, we set
+\begin{equation}
+	\mathbf{P}(\mathbf{F}) = 2 \mu_{Lamé} \epsilon + \lambda_{Lamé} \operatorname{tr}(\epsilon) \mathbf{I},
+\end{equation}
+where $\epsilon = \frac{1}{2} (\mathbf{F} + \mathbf{F}^\intercal) - \mathbf{I}$ is the linearized strain tensor. We then set $\mu = \frac{4}{3} \mu_{Lamé}$ and $\lambda = \lambda_{Lamé} + \frac{5}{6} \mu_{Lamé}$. The equation for the poisson's ratio then shifts to 
+\[
+	v= \frac{\lambda - \left( \frac{5}{8} \right) \mu}{2 \left(\lambda + \left( \frac{1}{8} \mu \right) \right)}.
+\]
+
 \todoredefined[inline]{
-TODO: How much needs to be explained here?
+TODO: Do a better job here.
 }
 
 
@@ -660,13 +673,13 @@ For solving this system, we need more Newton iterations as we can see in Table \
 
 
 \subsubsection{Extreme values}
-We can test the energy with some extreme values. For a very low poisson's value, I choose $\lambda = 0.1$ and $\mu = 10.0$ with a resolution of $30$. This takes about $100$ to $200$ Newton iterations. I increased the original limit of a maximum of $50$ Newton iterations per step because the solve failed to get the result within these $50$ iterations. The finished result gives us some strange looking deformations as shown in Fig. -. But since the goal is to simulate human flesh, we are not very concerned how the energy performs with a low poissson's ratio.
+We can test the energy with some extreme values. For getting a very low poisson's value near 0, I choose $\lambda = 0.1$ and $\mu = 10.0$ with a resolution of $30$. This takes about $100$ to $200$ Newton iterations. The finished result gives us a strange looking deformations and little artefacts as shown in Fig. \ref{fig:mu_extreme}. This does not mean that it is a bad model, but rather that is only suited for higher poisson's ratio like it is the case for simulating flesh.
 
-\begin{figure}[!ht]
-\centering
-\includegraphics[width=.7\textwidth]{resources/mu_extreme_small.png}  
-\caption{Results with a different values for $\mu$ on a tetrahedral mesh}
-\label{fig:mu_extreme}
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{resources/mu_extreme_1.png}
+	\caption{Step 4 with $\lambda = 0.1$ and $\mu = 10.0$ on a tetrahedral mesh shown from above}
+	\label{fig:mu_extreme}
 \end{figure}
 
 
