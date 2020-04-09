@@ -2,7 +2,7 @@
 My goal is the same as in the paper \textit{\acrshort{snh}}, namely to animate human-like characters. More precisely, the focus is on the behaviour of the character's flesh. This chapter serves as an introduction into the mathematical as well as physical background, needed to understand the upcoming calculations and conclusions. At the beginning of this chapter, I will define the notation and convention used throughout this whole thesis. Next, I will give insights in the mathematics used and present some of the concepts used in continuum mechanics. However, I will not include each proof explicitly, as there are already many good resources for an interested reader.
 
 \section{Notation and Convention}
-At first I will declare the notation used in this thesis to avoid misunderstandings. I will use the common notation used in continuum mechanics taken from the book \textit{Continuum Mechanics} \cite{Spencer1980}. Additionally I will include some more specific declarations formulated and used by the authors of the paper \textit{\acrshort{snh}}.
+At first, I will declare the notation used in this thesis to avoid misunderstandings. I will use the common notation used in continuum mechanics taken from the book \textit{Continuum Mechanics} \cite{Spencer1980}. Additionally, I will include some more specific declarations formulated and used by the authors of the paper \textit{\acrshort{snh}}.
 
 
 \subsection{General Notation}
@@ -10,12 +10,12 @@ Scalars are represented by regular, normal-weight variables such as $a$, whereas
 
 
 \subsection{Tensor Notation}
-Furthermore, I will use the tensor notation used in \textit{\acrshort{snh}}. They decided to define the vectorization vec(\cdot) as column-wise flattening of a matrix into a vector (\cite{Smith:2018:SNF:3191713.3180491}, 12:5) similar to Golub and Van Loan (2012) \cite{golub2012matrix}.
+Furthermore, I will use the tensor notation used in \textit{\acrshort{snh}}. They decided to define the vectorization vec(\cdot) as column-wise flattening of a matrix into a vector (\cite{Smith:2018:SNF:3191713.3180491}, 12:5) similar to Golub and Van Loan (2012) (\cite{golub2012matrix}).
 
-In order to indicate that I am dealing with a vectorized matrix I will use the symbol $\check{\cdot}$ as shown in the following equation:
+In order to indicate that I am dealing with a vectorized matrix, I will use the symbol $\check{\cdot}$ as shown in the following equation:
 
 \[
-\mathbf{A} = \begin{bmatrix} a & c \\ b & d \end{bmatrix} \qquad \operatorname{vec}(\mathbf{A}) = \mathbf{\check{a}} = \begin{bmatrix} a \\ b \\ c \\ d \end{bmatrix}.
+\mathbf{A} = \begin{bmatrix} a & c \\ b & d \end{bmatrix} \qquad \operatorname{vec}(\mathbf{A}) = \mathbf{\check{a}} = \begin{bmatrix} a \\ b \\ c \\ d \end{bmatrix}
 \]
 
 Additionally, I will have to deal with $4^{th}$ order tensors in a form of matrix-of-matrices. These matrices are denoted by using blackboard bold:
@@ -27,13 +27,13 @@ Additionally, I will have to deal with $4^{th}$ order tensors in a form of matri
 \left[\begin{array}{cc}{\left[\mathbf{A}_{00}\right]} & {\left[\mathbf{A}_{01}\right]} \\ {\left[\mathbf{A}_{10}\right]} & {\left[\mathbf{A}_{11}\right]}\end{array}\right]
 \]
 
-We can now vectorize $\mathbb{A}$ and get the following result
+We can now vectorize $\mathbb{A}$ and get the following result:
 
 \[
-\operatorname{vec}(\mathbb{A}) = \left[ \,\operatorname{vec}\left(\mathbf{A}_{00}\right)\, \bigg| \,\operatorname{vec}\left(\mathbf{A}_{10}\right)\, \bigg| \,\operatorname{vec}\left(\mathbf{A}_{01}\right)\, \bigg| \,\operatorname{vec}\left(\mathbf{A}_{11}\right)\, \right] = \mathbf{\check{A}}.
+\operatorname{vec}(\mathbb{A}) = \left[ \,\operatorname{vec}\left(\mathbf{A}_{00}\right)\, \bigg| \,\operatorname{vec}\left(\mathbf{A}_{10}\right)\, \bigg| \,\operatorname{vec}\left(\mathbf{A}_{01}\right)\, \bigg| \,\operatorname{vec}\left(\mathbf{A}_{11}\right)\, \right] = \mathbf{\check{A}}
 \]
 
-This term above is equivalent to the subsequent notation
+This term above is equivalent to
 
 \[
 \mathbf{\check{A}}=\left[\begin{array}{llll}{a} & {e} & {i} & {m} \\ {b} & {f} & {j} & {n} \\ {c} & {g} & {k} & {o} \\ {d} & {h} & {l} & {p}\end{array}\right].
@@ -81,7 +81,7 @@ This definition and theorem were taken from \textit{Numerical linear algebra wit
 
 
 \subsection{Polar Decomposition}
-Another theorem we will use in the next sections is the the Polar Decomposition Theorem.
+Another theorem we will use in the next sections is the Polar Decomposition Theorem.
 
 \begin{theorem}[\textbf{The Polar Decomposition Theorem}]
 \label{PD}
@@ -105,9 +105,9 @@ Let \textbf{A} be a (m $\times$ n) matrix in the real or complex domain. Then th
 \]
 \end{definition}
 
-We can further represent the norm with the trace of the matrix, in which $\mathbf{A}^*$ is the conjugate transpose of \textbf{A}. Going from there, we can use the \acrshort{svd} of \textbf{A} and write the norm with respect to the singular values of \textbf{A}, denoted by $\sigma_i$
+We can further represent the norm with the trace of the matrix, in which $\mathbf{A}^*$ is the conjugate transpose of \textbf{A}. Going from there, we can use the \acrshort{svd} of \textbf{A} and write the norm with respect to the singular values of \textbf{A}, denoted by $\sigma_i$:
 \begin{equation} \label{eq:FN}
-\| \mathbf{A} \|_{F} = \sqrt{\operatorname{trace}(\mathbf{A} \mathbf{A}^*)} = \sqrt{\sum\limits_{i=1}^{\operatorname{min}\{m,n\}} \sigma_i^2}.
+\| \mathbf{A} \|_{F} = \sqrt{\operatorname{trace}(\mathbf{A} \mathbf{A}^*)} = \sqrt{\sum\limits_{i=1}^{\operatorname{min}\{m,n\}} \sigma_i^2}
 \end{equation}
 
 
@@ -159,9 +159,9 @@ The resulting deformation gradient can then be obtained by
 \[
 	\mathbf{F} = \begin{bmatrix} \frac{\partial [1.5x + 0y]}{\partial x} & \frac{\partial [1.5x + 0y]}{\partial y} \\ \frac{\partial [0x + 2y]}{\partial x} & \frac{\partial [0x + 2y]}{\partial y} \end{bmatrix} = \begin{bmatrix} 1.5 & 0.0 \\ 0.0 & 2.0 \end{bmatrix}.
 \]
-If \textbf{F} is equal to the identity matrix \textbf{I}, there is no deformation present. This would be the case for rigid body displacements. Since we will be handling deformation in the 3D space, the deformation gradient will have the form of a $3 \times 3$ matrix 
+If \textbf{F} is equal to the identity matrix \textbf{I}, there is no deformation present. This would be the case for rigid body displacements. Since we will be handling deformation in the 3D space, the deformation gradient will have the form of a $3 \times 3$ matrix:
 \begin{equation}\label{eq:deformation_gradient}
-\textbf{F} = \left[ \,f_0\, \bigg| \,f_1\, \bigg| \,f_2\, \right] = \begin{bmatrix} f_0 & f_3 & f_6 \\ f_1 & f_4 & f_7 \\ f_2 & f_5 & f_8 \end{bmatrix}.
+\textbf{F} = \left[ \,f_0\, \bigg| \,f_1\, \bigg| \,f_2\, \right] = \begin{bmatrix} f_0 & f_3 & f_6 \\ f_1 & f_4 & f_7 \\ f_2 & f_5 & f_8 \end{bmatrix}
 \end{equation}
 \textbf{F} can be factorized and used to calculate other quantities. The next few sections will explain this.
 
@@ -183,9 +183,9 @@ The $\sigma_i$ denote the singular values of $\mathbf{\Sigma}$.
 
 
 \subsubsection{Polar Decomposition of the Deformation Gradient}
-With the help of Thm.\ref{PD} we can decompose the deformation gradient into the form
+With the help of Thm. \ref{PD} we can decompose the deformation gradient into the form
 \begin{equation}\label{PD_DG}
-	\mathbf{F} = \mathbf{RS}
+	\mathbf{F} = \mathbf{RS},
 \end{equation}
 where \textbf{R} is orthogonal and \textbf{S} is a positive definite symmetric matrix. \textbf{R} symbolises the rotation (with possible reflection) that \textbf{F} undergoes, whereas \textbf{S} contains the scaling along the orthogonal directions of \textbf{F}.
 
@@ -194,13 +194,13 @@ A useful information about a deformation is the relative volume change of the de
 \begin{equation}\label{det_DG}
 	J = \operatorname{det}(\mathbf{F}).
 \end{equation}
-For a normal deformation, $J$ is a positive value. A determinant of zero would mean that the object is being deformed into a zero volume state, e.g. a plane or a point. A negative determinant, on the other hand, indicates an inversion.
+For a normal deformation, $J$ is a positive value. A determinant of zero would mean that the object is being deformed into a zero volume state, e.g. a plane or a point. A negative determinant indicates an inversion.
 
 
 \subsubsection{Cauchy-Green}
 The right Cauchy-Green tensor \textbf{C} can be calculated by 
 \begin{equation}\label{CG_DG}
-	\mathbf{C} = \mathbf{F^\intercal F}
+	\mathbf{C} = \mathbf{F^\intercal F},
 \end{equation}
 and is a $3 \times 3$ matrix for deformations in the 3D domain. Using \textbf{C}, we can calculate the first right Cauchy-Green invariant $I_C$ with
 \begin{equation} \label{tr_CG_DG}
@@ -209,7 +209,7 @@ and is a $3 \times 3$ matrix for deformations in the 3D domain. Using \textbf{C}
 This quantity describes the length change of the object after a deformation.
 
 \subsection{Deformation Energy}
-The deformation energy or strain energy $\Psi$ is a scalar that defines the stored energy of a object undergoing a deformation. The strain energy density is the strain energy per unit volume. It equal to the work that has to be done by the stresses in order to alter the strains (\cite{KORSUNSKY20175}, p.10). This means that the energy is an indicator of how much force must be applied in order for an object to be deformed in a certain way. Thus we can use the deformation energy to express the relationship between the stresses and strains. We can illustrate this with a stress-strain curve shown in Fig. \ref{fig:stress_strain}. The area under the stress-strain curve corresponds to the strain energy. 
+The deformation energy or strain energy $\Psi$ is a scalar that defines the stored energy of a object undergoing a deformation. The strain energy density is the strain energy per unit volume. It equal to the work that has to be done by the stresses in order to alter the strains (\cite{KORSUNSKY20175}, p.10). This means that the energy is an indicator of how much force must be applied in order for an object to be deformed in a certain way. Thus, we can use the deformation energy to express the relationship between the stresses and strains. We can illustrate this with a stress-strain curve shown in Fig. \ref{fig:stress_strain}. The area under the stress-strain curve corresponds to the strain energy. 
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{resources/stress_strain_curve.png}
@@ -221,14 +221,14 @@ The deformation energy or strain energy $\Psi$ is a scalar that defines the stor
 This relationship is not always linear. For example if we reach a stress state that produces yielding, we cannot assume that the relationship is linear anymore. If the material reaches the yield point, it can no longer recover into its rest shape due to permanent fractures during the deformation. This point is illustrated in Fig. \ref{fig:stress_strain} with \textit{Yield stress}. \textit{UTS} in Fig. \ref{fig:stress_strain} is abbreviated for Ultimate tensile strength and defines the maximal stress an object can bear before breaking. 
 
 
-The behaviour of the object depends heavily on the material it consists of. This will be further explained in the next section concerning \textit{Material Constants}. In order to get a convincing simulation for a specific material, we have to choose an appropriate energy function. The behaviour of human flesh can be put into the category of hyperelastic materials. The key property of elasticity is, that if all the forces that are applied over an object are removed, the object recovers into its original shape and volume (\cite{KORSUNSKY20175}, p. 5). For deformations of elastic materials, the Hooke's equation holds to some extend. Hooke's law describes a linear relationship of the applied force and the distance to the original position of a spring:
+The behaviour of the object depends heavily on the material it consists of. This will be further explained in the next section concerning \textit{Material Constants}. In order to get a convincing simulation for a specific material, we have to choose an appropriate energy function. The behaviour of human flesh can be put into the category of hyperelastic materials. So we need a hyperelastic energy. The key property of elasticity is, that if all the forces that are applied over an object are removed, the object recovers into its original shape and volume (\cite{KORSUNSKY20175}, p. 5). For deformations of elastic materials, the Hooke's equation holds to some extend. Hooke's law describes a linear relationship of the applied force and the distance to the original position of a spring:
 \[
 	F = kx
 \]
 \textit{F} decribes the force, \textit{x} the distance and \textit{k} is a constant value. Material for which this equation holds are called linear-elastic or Hookean.
 
 \todoredefined[inline]{
-TODO: Explain Hooke better and add source for hookean, Neo-Hookean Model in Hyperelasticity
+TODO: Explain Hooke better and add source for hookean, Neo-Hookean Model in Hyperelasticity. Not happy with last paragraph, maybe additional subsection?
 }
 
 \subsection{Material Constants}
@@ -265,7 +265,7 @@ Usually the poisson's ratio of a material is positive. A negative value would me
 \label{table:1}
 \end{table}
 
-In the context of flesh simulations, I am using the poisson's ratio as a characterization for the resistance to volume change of flesh. Biological tissues such as flesh, fat and muscles have one important property: Volume preservation. As a result the poisson's ratio takes on higher values in the range of 0.45 and 0.5 (\cite{Smith:2018:SNF:3191713.3180491}, 12:1).
+In the context of flesh simulations, I am using the poisson's ratio as a characterization for the resistance to volume change of flesh. The poisson's ratio of biological tissues such as flesh, fat and muscles takes on higher values in the range of 0.45 and 0.5 (\cite{Smith:2018:SNF:3191713.3180491}, 12:1).
 
 The calculation of the poisson's ratio defined in Eq. \ref{eq:poisson} is a challenge. Fortunately, we can make use of the \textit{Lamé Parameters}, the two material specific constants $\mu$ and $\lambda$. With the help of these two constants we can transform Eq. \ref{eq:poisson} into the form
 

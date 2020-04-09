@@ -62,7 +62,7 @@ The core goal of the paper was to model deformations for virtual characters that
 	\label{fig:reflection}
 \end{figure}
 
-\textbf{3. Rest stability:} When deforming an object in a certain way, we apply one or multiple forces to that object which influences the deformation. But when we remove all the forces, the object should be back in its rest state.
+\textbf{3. Rest stability:} When deforming an object in a certain way, we apply one or multiple forces to that object, which influences the deformation. But when we remove all the forces, the object should be back in its rest state.
 
 \textbf{4. Meta-stability under degeneracy:} This is a special case of rest stability. We can crush an object into an arbitrary shape like a plane, line or point. This process is illustrated for a cube in Fig. \ref{fig:meta_stability}. Afterwards, when the applied forces are removed, the cube should still be able to recover from this arbitrary shape to its actual shape.
 
@@ -117,9 +117,9 @@ Each energy formulation can be split up into a 1D length term and a 3D volume te
 \subsubsection{1D Length Term}
 Mooney (\cite{mooney1940theory}) originally proposed the 1D length term 
 \[
-\Psi_{M}=\frac{\mu}{2}\left(I_{C}-3\right)
+\Psi_{M}=\frac{\mu}{2}\left(I_{C}-3\right),
 \]
-that is used in $\Psi_{Neo}$ and $\Psi_{A}$. If we expand the energy with the singular values of the deformation gradient \textbf{F}, we get the following term:
+which is used in $\Psi_{Neo}$ and $\Psi_{A}$. If we expand the energy with the singular values of the deformation gradient \textbf{F}, we get the following term:
 \[
 \Psi_{M}=\frac{\mu}{2}\left(\sigma_{0}^2 + \sigma_{1}^2 + \sigma_{2}^2 - 3\right)
 \]
@@ -139,22 +139,22 @@ Unfortunately, this term is not singularity free. If either $\sigma_{0}$, $\sigm
 \subsubsection{3D Volume Term}
 The volume term of $\Psi_{Neo}$, meaning
 \[
-\Psi_{Neo, volume} = -\mu \log J+\frac{\lambda}{2}(\log J)^{2}
+\Psi_{Neo, volume} = -\mu \log J+\frac{\lambda}{2}(\log J)^{2},
 \]
 results in numerical problems, since the logarithmic function is not defined for $J<0$ and grows unbounded for $J \rightarrow 0$. In conclusion, $\Psi_{Neo, volume}$ is not singularity free. 
 The same applies for the 3D volume term of $\Psi_{A}$, namely
 \[
 \Psi_{A, volume} = -\mu \log J+\frac{\lambda}{2}(J-1)^{2}.
 \]
-The term of $\Psi_{A}$ and $\Psi_{B}$ which is of the form
+The term of $\Psi_{A}$ and $\Psi_{B}$, which is of the form
 \[
-\Psi_{M} = \frac{\lambda}{2}(J-1)^{2}
+\Psi_{M} = \frac{\lambda}{2}(J-1)^{2},
 \]
 does not have these problems. It is bounded, well defined and invertible. After these observations we combine the robust length with the robust volume term and receive $\Psi_D$, which is defined as
 \[
 \Psi_{D} = \frac{\mu}{2}\left(I_{C}-3\right) +\frac{\lambda}{2}(J-1)^{2}.
 \]
-$\Psi_{D}$ is singularity free and well defined under inversion. Unfortunately, it does not satisfy the requirement of being rest stable which will be discussed in the next section.
+$\Psi_{D}$ is singularity free and well defined under inversion. Unfortunately, it does not satisfy the requirement of being rest stable, which will be discussed in the next section.
 
 \todoredefined[inline]{
 TODO: explain how to get to equation with singular values?
@@ -168,7 +168,7 @@ P_{D}(\mathbf{I}) &= \frac{\partial \Psi_{D}}{\partial \mathbf{F}} (\mathbf{I}) 
 &= \mu \mathbf{I} + \lambda (\operatorname{det}(\mathbf{I})-1)  \frac{\partial}{\partial \mathbf{F}} \operatorname{det}(\mathbf{I}) = \mu \mathbf{I} \neq 0
 \end{align*}
 
-If the energy had rest stability, $P_{D}(\mathbf{I})$ would resolve to zero. Unfortunately, this is not the case here. In order to solve this problem, the authors modified $(J-1)^{2}$ to $(J-\alpha)^{2}$. Using this modification, the energy can written as
+If the energy had rest stability, $P_{D}(\mathbf{I})$ would resolve to zero. Unfortunately, this is not the case here. In order to solve this problem, the authors modified $(J-1)^{2}$ to $(J-\alpha)^{2}$. Using this modification, the energy can be written as
 \[
 \Psi_{E} = \frac{\mu}{2}\left(I_{C}-3\right) +\frac{\lambda}{2}(J-\alpha)^{2}.
 \]
@@ -199,13 +199,13 @@ TODO: Include all calculations? Check consistency of calculations (when trace wh
 }
 
 \subsection{Meta-Stability under Degeneracy}
-We have seen that he energy $\Psi_{E}$ has inversion, reflection and rest stability. Now we are interested how it behaves under degeneracy. The authors of the paper \textit{\acrshort{snh}} viewed this as a Drucker stability analysis (see \cite{bower2009applied}). By Drucker stability, we mean a set of criteria that a material can satisfy or not. This is a measurement of the stability of the material. The calculations can be found in the supplemental material of \textit{\acrshort{snh}}, I will only present the results here. 
+We have seen that he energy $\Psi_{E}$ has inversion, reflection and rest stability. Now we are interested in how it behaves under degeneracy. The authors of the paper \textit{\acrshort{snh}} viewed this as a Drucker stability analysis (see \cite{bower2009applied}). By Drucker stability, we mean a set of criteria that a material can satisfy or not. This is a measurement of the stability of the material. The calculations can be found in the supplemental material of \textit{\acrshort{snh}}, I will only present the results here. 
 
-The energy remains stable when crushing the object into a \textit{plane}. The object is able to return to its rest state. Thus, no further adjustments needs to be done. When crushing the object into a \textit{line}, the energy is meta-stable. A meta-stable state is a weaker state of stability that is resistant to small changes but not to large ones. The alternative would be a state that yields singularities, which worsens the situation. Hence, we can leave the energy as it is. Crushing the object to a \textit{point}, the material cannot recover into its rest state. This effect is small for a higher poisson's ratio as for biological tissue. For completeness the authors nevertheless added a regularized origin barrier:
+The energy remains stable when crushing the object into a \textit{plane}. The object is able to return to its rest state. Thus, no further adjustments need to be done. When crushing the object into a \textit{line}, the energy is meta-stable. A meta-stable state is a weaker state of stability that is resistant to small changes but not to large ones. The alternative would be a state that yields singularities, which worsens the situation. Hence, we can leave the energy as it is. After crushing the object to a \textit{point}, the material cannot recover into its rest state. This effect is small for a higher poisson's ratio. For completeness the authors nevertheless added a regularized origin barrier:
 \[
 	\Psi_{origin} = \operatorname{log}(I_C +\delta)
 \]
-This term eliminates the point meta-stability for a positive poisson's ratio without interfering with the other requirements for the energy. It can be shown that the value $\delta$ should be set to $1$. This is also included in the supplemental material of the paper (\cite{Smith:2018:SNF:3191713.3180491}, 12:4).
+This term eliminates the point meta-stability for a positive poisson's ratio, without interfering with the other requirements for the energy. It can be shown that the value $\delta$ should be set to $1$. This is also included in the supplemental material of the paper (\cite{Smith:2018:SNF:3191713.3180491}, 12:4).
 
 The final energy is then
 \begin{equation}\label{eq:stable_energy}
@@ -233,7 +233,7 @@ The goal of this chapter is to show that a complete eigenanalysis can be perform
 
 
 \subsection{First Piola-Kirchhoff Stress (PK1)}
-In order to analyse the energy PK1 can be used for Eq. \ref{eq:stable_energy} with $\alpha=1+\frac{\mu}{\lambda}-\left(\frac{\mu}{4}\right)\lambda$:
+In order to analyse the energy, PK1 can be used for Eq. \ref{eq:stable_energy} with $\alpha=1+\frac{\mu}{\lambda}-\left(\frac{\mu}{4}\right)\lambda$:
 \begin{align*}
 P(\mathbf{F}) &= \frac{\partial \Psi_{D}}{\partial \mathbf{F}} \left[ \frac{\mu}{2}\left(I_{C}-3\right) + \frac{\lambda}{2}(J-\alpha)^{2} - \frac{\mu}{2}\left(I_{C}+1\right) \right] \\
 &= \mu \mathbf{F} + \lambda (\operatorname{det}(\mathbf{F})-\alpha)  \frac{\partial}{\partial \mathbf{F}} \operatorname{det}(\mathbf{F}) - \frac{\partial}{\partial \mathbf{F}} \left[\operatorname{log}\left(\operatorname{tr}(\mathbf{F}^\intercal \mathbf{F})+1\right)\right] \\
@@ -296,7 +296,7 @@ This structure makes it possible to write $\mathbf{\check{M}}$ as an outer produ
 \]
 This matrix has rank one and has a single non-zero eigenvalue. In order to examine the eigenvalues, we can calculate
 \[
-\| \mathbf{\check{f}} \|^{2}_{2} = \sum_{n=0}^8 | f_n |^2 = \| \mathbf{F} \|^{2}_{F} = \sum_{n=0}^3 \sigma^2_i = \left( \sigma_0^2 + \sigma_1^2 + \sigma_2^2 \right)
+\| \mathbf{\check{f}} \|^{2}_{2} = \sum_{n=0}^8 | f_n |^2 = \| \mathbf{F} \|^{2}_{F} = \sum_{n=0}^3 \sigma^2_i = \left( \sigma_0^2 + \sigma_1^2 + \sigma_2^2 \right),
 \]
 in which $\|\cdot\|_F$ stands for the Frobenius norm introduced in Def. \ref{FN} and $\sigma_i$ for the singular values from $\mathbf{\Sigma}$ in the \acrshort{svd} of $\mathbf{F}$ stated in Eq. \ref{eq:svd_simga}. The equation can be obtained by using Eq. \ref{eq:FN}, explained in chapter 2. The eigenvector is $\mathbf{\check{f}} / \| \mathbf{\check{f}} \|$. The eigenvalue is always non-negative and large if $\mathbf{F}$ contains a large strech.
 
@@ -340,10 +340,6 @@ In this form, $\mathbf{\widehat{f_1}}$ stands for the cross-product matrix
 0 & -x_2 & x_1 \\ x_2 & 0 & -x_0 \\ -x_1 & x_0 & 0 \end{matrix} \right].
 \]
 We can easily observe that $\mathbf{\check{H}}$ is a \textit{self-similar} cross-product matrix. This means that  the macro structure of the matrix is the same as the micro structure.
-
-\todoredefined[inline]{
-TODO: Check again each $f_1$ and $-$ in vectorization of H.
-}
 
 \subsubsection{Volume Hessian Eigenvalues}
 For determining the eigenvalues of $\mathbf{\check{H}}$, we need to examine the two characteristic polynomials
@@ -389,9 +385,40 @@ where \textbf{U} and \textbf{V} are taken from the \acrshort{svd} of \textbf{F},
 
 
 \subsection{The Complete Eigensystem}
+With these expressions for each individual term, we can now analyse the complete system, which will be called $\mathbf{\check{A}}$.
+\[
+	\mathbf{\check{A}} = \mu \left(1-\frac{1}{I_C+1} \right) \mathbf{I} + \mu \frac{2}{(I_C +1)^2} \mathbf{\check{f}\check{f}}^\intercal + \lambda \mathbf{\check{g}\check{g}}^\intercal + \lambda (J-\alpha) \mathbf{\check{H}}
+\]
+Deriving the eigenvalues from $\mathbf{\check{A}}$ is nontrivial. Therefore, I will not include the calculations here and will only present the results. An interested reader can have a look at the paper \textit{\acrshort{snh}} on p.12:7 and 12:8.
+
+The final eigenvalues are
+\begin{align*}
+	&\epsilon_k = \lambda (J-\alpha) \bar{\epsilon}_k + \mu_T		&k = 0, 1, 2
+\end{align*}	
+and 
+\begin{align*}
+	&\epsilon_3 = \lambda(J-\alpha)\sigma_0 + \mu_T	&\epsilon_6 = -\lambda (J-\alpha)\sigma_0 + \mu_T \\
+	&\epsilon_4 = \lambda(J-\alpha)\sigma_1 + \mu_T	&\epsilon_7 = -\lambda (J-\alpha)\sigma_1 + \mu_T \\
+	&\epsilon_5 = \lambda(J-\alpha)\sigma_2 + \mu_T	&\epsilon_8 = -\lambda (J-\alpha)\sigma_2 + \mu_T.
+\end{align*}
+
+The variable $\mu_T$ is equal to $\mu(1- \frac{1}{I_C +1})$ and serves as a regularization term. $\bar{\epsilon}_k$ are the roots of the equation
+\[
+	\bar{\epsilon}^3 + c_2 \bar{\epsilon}^2 + c_1 \bar{\epsilon} + c_0 = 0.
+\]
+The variables $c_0$, $c_1$ and $c_2$ are defined as
+\begin{align*}
+	c_2 &= - \|\mathbf{\check{g}}\|^2_2 \rho - I_C \eta \\
+	c_1 &= - (1+ 2J\rho)I_C - 6 J \eta + \left( \|\mathbf{\check{g}}\|^2_2 I_C - 9J^2 \right) \rho \eta	\\
+	c_0 &= - (2 +3J\rho)J + \left( I_C^2 - 4 \|\mathbf{\check{g}}\|^2_2 \right) \eta + 2J \left( I^2_C -3 \|\mathbf{\check{g}}\|^2_2 \right) \rho \eta 	\\
+\end{align*}
+with 
+\begin{align*}
+	&\eta = \frac{2\mu}{(I_C+1)^2 \left( \lambda (J-1) - \frac{3}{4}\mu \right)}		&\rho = \frac{\lambda}{\lambda (J-1) - \frac{3}{4} \mu}.
+\end{align*}
 
 \todoredefined[inline]{
-TODO: Include what is necessary.
+TODO: Not happy with this section.
 }
 
 
