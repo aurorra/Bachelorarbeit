@@ -1,0 +1,98 @@
+\include{settings}
+
+%%Titles - Uncomment one section of titles
+
+%%Used for titleGraduation
+\include{titles/titleGraduation}
+\logoPathL{} %just leave empty to hide logo
+\logoWidthL{0.5}
+\logoPathR{resources/uni_bern_logo.jpg} %just leave empty to hide logo
+\logoWidthR{1}
+\gradeType{Bachelor of Science (B.Sc.)}
+\secondExaminer{Max Mustermann}
+
+%%Used for titleResearchPaper
+%\include{titles/titleResearchPaper}
+%\subTitle{Ein optionaler Untertitel der Arbeit}
+%\researchPart{A}
+
+%%Used by all titles
+\title{Flesh Simulation with Application to Character Animation}
+\author{Corina Danja Masanti}
+\matrikelnr{15-128-655} % just leave empty to hide number
+\submitDate{06.11.2020}
+\firstExaminer{Prof. Dr. David Bommes}
+%%End Titles
+
+\makeindex[title=Stichwortverzeichnis, options=-s indexstyle.ist, intoc]
+\indexsetup{level=\chapter*,toclevel=chapter}
+
+\makeglossaries
+\loadglsentries{glossary_and_acronyms.tex}
+\setacronymstyle{long-short}
+
+\begin{document}
+
+\pagenumbering{alph} %fix for same identifier warning, character is not show in title
+\maketitle
+
+\pagenumbering{Roman}
+
+%\include{chapter/Vorwort} \clearpage
+\include{chapter/Abstract} \clearpage
+\include{chapter/Acknowledgements} \clearpage
+
+\tableofcontents \newpage
+
+\pagenumbering{arabic}
+\input{chapter/Introduction} \clearpage
+\input{chapter/Background} \clearpage
+%\input{chapter/Beispiele} \clearpage
+\input{chapter/Paper} \clearpage
+\input{chapter/Experiments} \clearpage
+
+\pagenumbering{Alph}
+\listoffigures \clearpage
+\listoftables \clearpage
+
+\lstlistoflistings \clearpage
+
+\printindex \clearpage
+
+%\printglossary[title={Glossary}] \clearpage
+
+\printglossary[style=dottedlocations,type=\acronymtype,title={List of abbreviations}] \clearpage
+
+
+% trying to make bibliography work
+\defbibfilter{booksAndPapers}{
+  type=article or
+  type=inproceedings or
+  type=incollection or
+  type=book or
+  type=inbook or
+  type=misc
+}
+\defbibfilter{onlineSource}{
+  type=online
+}
+
+\printbibliography[heading=bibintoc, filter=booksAndPapers, title={Bibliography}]\clearpage
+\printbibliography[heading=bibintoc, filter=onlineSource, title={Online Sources}]\clearpage
+\printbibliography[heading=bibintoc, keyword={image}, title={Figure Sources}]\clearpage
+
+%\printbibliography[heading=bibintoc, keyword={book}, title={Literature}]\clearpage
+%\printbibliography[heading=bibintoc, keyword={article}, title={Articles}]\clearpage
+%\printbibliography[heading=bibintoc, keyword={online}, title={Online Resources}]\clearpage
+%\printbibliography[heading=bibintoc, type=misc,title={Various References}] \clearpage
+%\printbibliography[heading=bibintoc, keyword={image}, title={Images Resources}]\clearpage
+
+% Anhang
+%\input{chapter/Anhang}
+
+% Eigenständigkeitserklärung
+%\input{chapter/Declaration_of_Originality}
+% This is required since 2012!!
+\includepdf{Erklaerung.pdf}
+
+\end{document}
