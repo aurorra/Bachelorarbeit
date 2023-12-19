@@ -1,6 +1,11 @@
 # Bachelorarbeit
 
-In diesem Verzeichnis befinden sich alle Dateien für den schriftlichen Teil der Bachelorarbeit **Flesh Simulation with Application to Character Animation**. Als PDF-Datei ist die Arbeit gespeichert unter ba_thesis_masanti/main.pdf oder in diesem Verzeichnis in der Datei ba_thesis_masanti.pdf.
+In diesem Verzeichnis befinden sich alle Dateien für den schriftlichen Teil der Bachelorarbeit **Flesh Simulation with Application to Character Animation**. Als PDF-Datei ist die Arbeit gespeichert unter `ba_thesis_masanti/main.pdf` oder in diesem Verzeichnis in der Datei `ba_thesis_masanti.pdf`. Diese Bachelorarbeit entstand in Zusammenarbeit mit der Computer Graphics Group der Universität Bern. Weitere Informationen zur Gruppe und ihren vielfältigen Projekten sind unter [Computer Graphics Group - Universität Bern](http://cgg.unibe.ch/) ersichtlich.
+
+
+## Abstract
+
+This thesis explores the process of simulating the fleshy appearances of virtual characters. The focus lies on the formulation of the deformation energy. In order to accurately simulate a fleshy look, nonlinear hyperelastic energies have proven to be the best choice. But simulating volume-preserving biological tissues such as flesh yields more than a few mathematical and physical challenges. Achieving rest stability while working with a high Poisson’s ratio can be named as an example. Inspired by the complexity of this field, this thesis serves as an entry-level document. Relevant mathematical and physical aspects are presented and explained in an introductory manner. In addition, this thesis includes some more detailed calculations to bridge the gap between an expert in the field and a beginner. At the end of this thesis, I am presenting a few results visually to conclude the studies.
 
 # Template
 
